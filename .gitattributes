@@ -1,0 +1,4 @@
+*.pd -merge
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mid filter=lfs diff=lfs merge=lfs -text
+*.kar filter=lfs diff=lfs merge=lfs -text

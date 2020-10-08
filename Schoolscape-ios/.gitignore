@@ -1,0 +1,6 @@
+
+obj/
+libs/*/
+build/
+res/raw/ofdataresources.zip
+
