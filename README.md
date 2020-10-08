@@ -15,7 +15,8 @@ itself thanks to [libpd](http://libpd.cc) and [openFrameworks](http://www.openfr
 ------
 
 ## Installation
-Install Pd
+Install Pd.
+
 From Pd, install externals:
 
 - pof
