@@ -432,7 +432,7 @@
 #X obj 332 498 loadbang;
 #X msg 332 547 the patch is running!;
 #X obj 316 275 mixtape/REC-lr;
-#N canvas 1085 658 298 397 instruments_pof 0;
+#N canvas 1345 612 298 397 instruments_pof 0;
 #X obj 42 162 instruments/Baignoire 5;
 #X obj 44 187 instruments/Regle 6;
 #X obj 44 211 instruments/Aspirateur 7;
