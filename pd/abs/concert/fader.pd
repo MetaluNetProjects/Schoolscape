@@ -1,4 +1,4 @@
-#N canvas 709 218 723 837 10;
+#N canvas 1034 176 723 837 10;
 #X obj 37 6 inlet;
 #X obj 37 586 outlet;
 #X msg 101 370 draw \$1;
@@ -134,6 +134,10 @@
 #X obj 114 198 pofimage Fader.png 40;
 #X floatatom 65 166 5 0 0 0 - - -;
 #X obj 114 145 poftranslate 12;
+#X floatatom 341 96 5 0 0 0 - - -;
+#X obj 242 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 54 203 5 0 0 0 - - -;
 #X connect 0 0 69 0;
 #X connect 2 0 103 0;
 #X connect 3 0 2 0;
@@ -267,6 +271,8 @@
 #X connect 121 0 122 0;
 #X connect 122 0 5 1;
 #X connect 123 0 91 0;
+#X connect 123 0 127 0;
 #X connect 124 0 109 0;
 #X connect 125 0 126 1;
 #X connect 126 0 6 0;
+#X connect 128 0 91 0;
