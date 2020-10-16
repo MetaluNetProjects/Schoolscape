@@ -1,4 +1,4 @@
-#N canvas 1011 513 577 542 10;
+#N canvas 1246 244 577 542 10;
 #X declare -path ../;
 #X obj 63 27 inlet;
 #X obj 63 60 t a a a;
@@ -8,7 +8,7 @@
 #X floatatom 222 163 5 0 0 0 - - -;
 #X floatatom 356 160 5 0 0 0 - - -;
 #X floatatom 188 162 5 0 0 0 - - -;
-#N canvas 728 1172 468 347 mode 0;
+#N canvas 336 537 468 347 mode 0;
 #X obj 113 20 inlet;
 #X obj 360 125 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -42,6 +42,8 @@
 #X obj 113 46 t a a;
 #X obj 155 68 cadreVec 138 101;
 #X obj 155 46 pofcolor 0.4 0.5 0.5 1;
+#X obj 4 200 s InterfaceModeOpened;
+#X obj 35 170 t b;
 #X connect 0 0 25 0;
 #X connect 1 0 24 1;
 #X connect 2 0 24 2;
@@ -50,6 +52,7 @@
 #X connect 4 0 5 1;
 #X connect 5 0 6 0;
 #X connect 5 0 14 0;
+#X connect 5 0 29 0;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
 #X connect 10 0 7 0;
@@ -70,6 +73,7 @@
 #X connect 25 0 23 0;
 #X connect 25 1 27 0;
 #X connect 27 0 26 0;
+#X connect 29 0 28 0;
 #X restore 63 282 pd mode;
 #X obj 63 260 poftranslate 0 8;
 #X obj 275 54 declare -path ../;
@@ -106,62 +110,62 @@
 -262144 -1 -1 -321 256;
 #X obj 244 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 72.57 256;
-#N canvas 2064 1024 987 895 set_load/save 0;
-#X obj 112 10 inlet;
-#X obj 91 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 788 185 987 895 set_load/save 1;
+#X obj 152 10 inlet;
+#X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 82 211 r overHead;
-#X obj 82 283 t a a;
-#X obj 109 330 poftouch 6000 6000;
-#X obj 214 352 route down;
-#X msg 154 234 0;
-#X obj 112 159 sel 1;
-#X msg 52 225 1;
-#X msg 212 260 draw 1;
-#X obj 212 239 loadbang;
-#X obj 154 209 r page;
-#X floatatom 234 76 5 0 0 0 - - -;
-#X obj 82 259 pofvisible;
-#X obj 299 197 r overHead;
-#X obj 369 256 t a a;
-#X obj 606 307 poftouch 6000 6000;
-#X obj 723 307 route down;
-#X msg 403 179 0;
-#X msg 369 176 1;
-#X msg 668 258 draw 1;
-#X obj 668 236 loadbang;
-#X obj 444 179 r page;
-#X floatatom 475 79 5 0 0 0 - - -;
-#X obj 369 232 pofvisible;
-#X obj 416 41 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 122 211 r overHead;
+#X obj 122 283 t a a;
+#X obj 149 330 poftouch 6000 6000;
+#X obj 254 352 route down;
+#X msg 194 234 0;
+#X obj 152 159 sel 1;
+#X msg 92 225 1;
+#X msg 252 260 draw 1;
+#X obj 252 239 loadbang;
+#X obj 194 209 r page;
+#X floatatom 274 76 5 0 0 0 - - -;
+#X obj 122 259 pofvisible;
+#X obj 337 185 r overHead;
+#X obj 409 256 t a a;
+#X obj 646 307 poftouch 6000 6000;
+#X obj 763 307 route down;
+#X msg 443 179 0;
+#X msg 409 176 1;
+#X msg 708 258 draw 1;
+#X obj 708 236 loadbang;
+#X obj 484 179 r page;
+#X floatatom 515 79 5 0 0 0 - - -;
+#X obj 409 232 pofvisible;
+#X obj 456 41 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 40 256;
-#X obj 112 89 poftranslate;
-#X obj 161 68 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 152 89 poftranslate;
+#X obj 201 68 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -39 256;
-#X obj 369 61 poftranslate;
-#X obj 112 136 imageTouchOnOff set/Load 0.28;
-#X obj 369 106 imageTouchOnOff set/Save 0.28;
-#X obj 282 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 409 61 poftranslate;
+#X obj 152 136 imageTouchOnOff set/Load 0.28;
+#X obj 409 106 imageTouchOnOff set/Save 0.28;
+#X obj 322 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 82 351 set/listGui;
-#X obj 112 182 del 200;
-#X msg 160 155 1;
-#X msg 168 179 0;
-#X obj 369 131 sel 1;
-#X obj 369 154 del 200;
-#X msg 417 127 1;
-#X msg 425 151 0;
-#X obj 671 412 poftranslate;
-#X obj 749 370 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 122 351 set/listGui;
+#X obj 152 182 del 200;
+#X msg 200 155 1;
+#X msg 208 179 0;
+#X obj 409 131 sel 1;
+#X obj 409 154 del 200;
+#X msg 457 127 1;
+#X msg 465 151 0;
+#X obj 711 412 poftranslate;
+#X obj 789 370 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 53 256;
-#X obj 684 394 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 724 394 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 675 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 715 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -159 256;
-#X obj 619 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 659 331 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 596 356 poftranslate;
-#X obj 109 305 pofcolor 0 0 0 0.85;
+#X obj 636 356 poftranslate;
+#X obj 149 305 pofcolor 0 0 0 0.85;
 #N canvas 632 92 669 742 setname 0;
 #X obj 195 68 t a a;
 #X floatatom 279 28 5 0 0 0 - - -;
@@ -297,46 +301,46 @@
 #X connect 65 0 44 0;
 #X connect 65 0 52 0;
 #X connect 65 0 60 0;
-#X restore 596 376 pd setname;
-#X obj 606 281 pofcolor 0 0 0 0.9;
-#X obj 244 438 poftranslate;
-#X obj 244 460 t a a;
-#X obj 137 585 poftexts typo 36;
-#X obj 279 484 pofcolor 1 1 1 0.1;
-#X obj 415 301 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X restore 636 376 pd setname;
+#X obj 646 281 pofcolor 0 0 0 0.9;
+#X obj 284 438 poftranslate;
+#X obj 284 460 t a a;
+#X obj 177 585 poftexts typo 36;
+#X obj 319 484 pofcolor 1 1 1 0.1;
+#X obj 455 301 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 215 256;
-#X obj 369 318 poftranslate;
-#X msg 95 491 text Enregistrer;
-#X obj 279 506 pofrect 230 50 10;
-#X obj 95 468 loadbang;
-#X obj 479 437 poftranslate;
-#X obj 479 459 t a a;
-#X obj 479 487 poftexts typo 36;
-#X obj 585 461 pofcolor 1 1 1 0.1;
-#X obj 506 418 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 409 318 poftranslate;
+#X msg 135 491 text Enregistrer;
+#X obj 319 506 pofrect 230 50 10;
+#X obj 135 468 loadbang;
+#X obj 519 437 poftranslate;
+#X obj 519 459 t a a;
+#X obj 519 487 poftexts typo 36;
+#X obj 625 461 pofcolor 1 1 1 0.1;
+#X obj 546 418 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
-#X obj 585 483 pofrect 230 50 10;
-#X obj 393 438 loadbang;
-#X obj 268 417 * -1;
-#X msg 393 461 text Annuler;
-#X obj 280 528 poftouch 230 50;
-#X obj 367 549 route up;
-#X obj 367 570 isInside 230 50;
-#X obj 585 503 poftouch 230 50;
-#X obj 665 523 route up;
-#X obj 664 543 isInside 230 50;
-#X msg 663 564 0;
-#X obj 137 564 pofcolor 1 1 1 0.1;
-#X obj 369 200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 625 483 pofrect 230 50 10;
+#X obj 433 438 loadbang;
+#X obj 308 417 * -1;
+#X msg 433 461 text Annuler;
+#X obj 320 528 poftouch 230 50;
+#X obj 407 549 route up;
+#X obj 407 570 isInside 230 50;
+#X obj 625 503 poftouch 230 50;
+#X obj 705 523 route up;
+#X obj 704 543 isInside 230 50;
+#X msg 703 564 0;
+#X obj 177 564 pofcolor 1 1 1 0.1;
+#X obj 409 200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 642 92 r set-saving;
-#X obj 642 113 sel 1;
-#X msg 642 134 0;
-#X obj 568 211 s set-saving-save-enabled;
-#X obj 123 513 r set-saving-save-enabled;
-#X obj 124 534 clip 0.1 1;
-#X obj 568 42 r set-saving-name;
-#X msg 568 65 1;
+#X obj 682 92 r set-saving;
+#X obj 682 113 sel 1;
+#X msg 682 134 0;
+#X obj 608 211 s set-saving-save-enabled;
+#X obj 163 513 r set-saving-save-enabled;
+#X obj 164 534 clip 0.1 1;
+#X obj 608 42 r set-saving-name;
+#X msg 608 65 1;
 #N canvas 689 1371 853 592 PLAY/REC 0;
 #X obj 325 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -434,14 +438,14 @@
 #X connect 40 0 0 0;
 #X connect 41 0 42 0;
 #X connect 44 0 43 0;
-#X restore 671 434 pd PLAY/REC;
-#X msg 596 85 1;
-#X obj 568 131 &&;
-#X obj 596 106 t b f;
-#X obj 596 65 r set-saving-name-recorded;
-#X obj 412 593 r set-saving-save-enabled;
-#X obj 432 616 r set-saving-name;
-#X obj 411 684 s setCreate;
+#X restore 711 434 pd PLAY/REC;
+#X msg 636 85 1;
+#X obj 608 131 &&;
+#X obj 636 106 t b f;
+#X obj 636 65 r set-saving-name-recorded;
+#X obj 452 593 r set-saving-save-enabled;
+#X obj 472 616 r set-saving-name;
+#X obj 451 684 s setCreate;
 #N canvas 610 78 631 603 ADMIN 0;
 #X obj 23 19 inlet;
 #X obj 23 57 pofvisible;
@@ -551,47 +555,51 @@
 #X connect 46 0 44 0;
 #X connect 47 0 40 0;
 #X connect 48 0 5 0;
-#X restore 146 430 pd ADMIN;
-#X obj 642 156 s set-saving-replace;
-#X obj 444 640 r set-saving-replace;
-#X obj 411 662 ddemux;
-#X obj 367 594 ddemux;
-#X obj 536 707 s set-save-as;
-#X obj 536 684 symbol;
-#X obj 411 638 list;
-#X obj 569 662 r set;
-#X obj 509 727 s setSetName;
-#X obj 509 664 t a b;
-#X obj 637 180 r set-saving-replace;
-#X obj 595 181 t b f;
-#X obj 568 181 ||;
-#X obj 378 618 t b a;
-#X obj 318 590 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 186 430 pd ADMIN;
+#X obj 682 156 s set-saving-replace;
+#X obj 484 640 r set-saving-replace;
+#X obj 451 662 ddemux;
+#X obj 407 594 ddemux;
+#X obj 576 707 s set-save-as;
+#X obj 576 684 symbol;
+#X obj 451 638 list;
+#X obj 609 662 r set;
+#X obj 549 727 s setSetName;
+#X obj 549 664 t a b;
+#X obj 677 180 r set-saving-replace;
+#X obj 635 181 t b f;
+#X obj 608 181 ||;
+#X obj 418 618 t b a;
+#X obj 358 590 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 28 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 68 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 304 662 r set-saving;
-#X obj 304 683 sel 1;
-#X msg 304 704 0;
-#X obj 275 641 r set-saving-name;
-#X msg 275 664 1;
-#X obj 235 708 ddemux;
-#X obj 439 245 mode/say 1 OuvertureSaveSet;
-#X obj 98 739 mode/say 1 RelanceNomSet;
-#X obj 34 384 mode/say 1 OuvertureLoadSet;
-#X obj 21 625 mode/say 1 finOuvertureLoadSet;
-#X obj 623 624 mode/say 1 finOuvertureSaveSet;
-#X obj 270 745 mode/say 1 RelanceRecNom;
-#X obj 425 745 mode/say 1 ConfirmSet;
-#X msg 475 550 0;
-#X obj 662 731 s rec-rec;
-#X msg 662 706 cancel;
-#X obj 112 112 fixScaleX;
-#X obj 369 83 fixScaleX;
-#X obj 112 33 t a a;
-#X obj 158 33 cadreVec 129 161;
-#X obj 158 11 pofcolor 0.4 0.5 0.5 1;
-#X obj 450 209 s set-saving;
+#X obj 344 662 r set-saving;
+#X obj 344 683 sel 1;
+#X msg 344 704 0;
+#X obj 315 641 r set-saving-name;
+#X msg 315 664 1;
+#X obj 275 708 ddemux;
+#X obj 479 245 mode/say 1 OuvertureSaveSet;
+#X obj 138 739 mode/say 1 RelanceNomSet;
+#X obj 74 384 mode/say 1 OuvertureLoadSet;
+#X obj 61 625 mode/say 1 finOuvertureLoadSet;
+#X obj 663 624 mode/say 1 finOuvertureSaveSet;
+#X obj 310 745 mode/say 1 RelanceRecNom;
+#X obj 465 745 mode/say 1 ConfirmSet;
+#X msg 515 550 0;
+#X obj 702 731 s rec-rec;
+#X msg 702 706 cancel;
+#X obj 152 112 fixScaleX;
+#X obj 409 83 fixScaleX;
+#X obj 152 33 t a a;
+#X obj 198 33 cadreVec 129 161;
+#X obj 198 11 pofcolor 0.4 0.5 0.5 1;
+#X obj 490 209 s set-saving;
+#X obj 17 182 s InterfaceModeOpened;
+#X obj 40 156 t b;
+#X obj 265 214 s InterfaceModeOpened;
+#X obj 288 188 t b;
 #X connect 0 0 127 0;
 #X connect 2 0 13 0;
 #X connect 3 0 32 0;
@@ -628,7 +636,10 @@
 #X connect 27 0 26 2;
 #X connect 28 0 126 0;
 #X connect 29 0 7 0;
+#X connect 29 0 1 0;
+#X connect 29 0 132 0;
 #X connect 30 0 36 0;
+#X connect 30 0 134 0;
 #X connect 31 0 29 2;
 #X connect 32 0 6 0;
 #X connect 33 0 8 0;
@@ -732,6 +743,8 @@
 #X connect 127 0 28 0;
 #X connect 127 1 129 0;
 #X connect 129 0 128 0;
+#X connect 132 0 131 0;
+#X connect 134 0 133 0;
 #X restore 150 316 pd set_load/save;
 #X obj 291 345 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 73 256;

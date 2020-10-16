@@ -1,4 +1,4 @@
-#N canvas 154 262 766 762 10;
+#N canvas 1009 235 766 762 10;
 #X floatatom 615 128 5 0 0 0 - - -;
 #X floatatom 449 11 5 0 0 0 - - -;
 #X floatatom 492 7 5 0 0 0 - - -;
@@ -158,7 +158,7 @@
 #X msg 317 568 0, f 1;
 #X obj 419 362 r ClignotteHelp;
 #X obj 599 41 r ClignotteBulle;
-#X obj 371 685 s ClignotteBulle;
+#X obj 366 707 s ClignotteBulle;
 #X obj 254 698 s ClignotteHelp;
 #X msg 567 267 1, f 1;
 #X msg 631 274 0, f 1;
@@ -170,6 +170,11 @@
 #X obj 380 608 t b;
 #X msg 380 642 0, f 1;
 #X obj 490 171 poftouch 183 126;
+#X obj 426 680 r concert-instrument-show;
+#X obj 432 657 r InterfaceMixtapeOpened;
+#X obj 451 607 r InterfaceModeOpened;
+#X obj 450 630 r InterfaceSetOpened;
+#X obj 435 585 r InterfaceSetSaveOpened;
 #X connect 0 0 47 1;
 #X connect 1 0 51 1;
 #X connect 2 0 51 2;
@@ -267,3 +272,8 @@
 #X connect 91 0 82 0;
 #X connect 91 0 81 0;
 #X connect 92 1 27 0;
+#X connect 93 0 91 0;
+#X connect 94 0 91 0;
+#X connect 95 0 91 0;
+#X connect 96 0 91 0;
+#X connect 97 0 91 0;
