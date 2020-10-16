@@ -443,7 +443,7 @@
 #X obj 38 88 instruments/MicroOnde 2;
 #X obj 39 112 instruments/Bidon 3;
 #X obj 40 137 instruments/Grille 4;
-#X restore 135 549 pd instruments_pof;
+#X restore 135 554 pd instruments_pof;
 #X obj 135 530 concert/instrument_panel;
 #X obj 17 386 mixtape/manager;
 #X obj 199 351 mixtape/listGui;
