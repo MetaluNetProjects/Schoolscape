@@ -1,4 +1,4 @@
-#N canvas 736 94 529 781 10;
+#N canvas 736 582 595 781 10;
 #X obj 27 267 *~ 0.2;
 #X obj 24 149 decoupeur_ctl decoupeur-setting2 DECSET;
 #N canvas 977 1172 943 689 distooo 0;
@@ -123,6 +123,7 @@ MOfiltreDisto -2 -6 1 8 -159808 -1 -1 0 1;
 #X obj 66 728 OutDec2~ \$1, f 52;
 #X obj 312 86 s DECSET-SEQ2-fragseq2-on-rcv;
 #X obj 312 58 r concert-instrument-isplaying-\$1;
+#X obj 351 252 MulClock DECSET-SEQ2-fragseq2;
 #X connect 0 0 9 0;
 #X connect 0 0 9 1;
 #X connect 2 0 8 0;
