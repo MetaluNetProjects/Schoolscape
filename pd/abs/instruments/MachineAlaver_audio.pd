@@ -1,6 +1,6 @@
-#N canvas 3007 140 603 785 10;
+#N canvas 3007 62 603 785 10;
 #X obj 27 41 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9686 1;
+-1 -1 0 1;
 #X obj 21 151 decoupeur_ctl decoupeur-setting1 DECSET;
 #X obj 21 268 *~ 0.2;
 #N canvas 1469 756 450 299 MALprog 0;
