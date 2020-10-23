@@ -1,41 +1,41 @@
-#N canvas 2329 92 398 823 12;
-#X obj 10 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8000 1;
-#X obj 30 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8100 1;
-#X obj 50 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6500 1;
-#X obj 70 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 9000 1;
-#X obj 90 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8700 1;
-#X obj 110 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7600 1;
-#X obj 130 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 9800 1;
-#X obj 150 39 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7800 1;
-#X obj 11 697 pack f f f f f f f f, f 48;
-#X obj 26 461 t b f;
-#X obj 74 490 t b f;
-#X obj 121 519 t b f;
-#X obj 169 547 t b f;
-#X obj 216 576 t b f;
-#X obj 264 606 t b f;
-#X obj 312 636 t b f;
-#X obj 11 730 outlet;
-#X obj 10 178 maxlib/scale 0 1 \$1 \$2;
-#X obj 30 208 maxlib/scale 0 1 \$1 \$2;
-#X obj 50 238 maxlib/scale 0 1 \$1 \$2;
-#X obj 70 268 maxlib/scale 0 1 \$1 \$2;
-#X obj 90 298 maxlib/scale 0 1 \$1 \$2;
-#X obj 110 328 maxlib/scale 0 1 \$1 \$2;
-#X obj 130 358 maxlib/scale 0 1 \$1 \$2;
-#X obj 150 388 maxlib/scale 0 1 \$1 \$2;
-#X obj 202 64 loadbang;
-#X msg 202 89 1;
-#X obj 147 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#N canvas 1945 92 398 823 12;
+#X obj 10 59 vsl 15 128 0 1 0 0 \$3-1-snd \$3-1-rcv empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 30 59 vsl 15 128 0 1 0 0 \$3-2-snd \$3-2-rcv empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 50 59 vsl 15 128 0 1 0 0 \$3-3-snd \$3-3-rcv empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 70 59 vsl 15 128 0 1 0 0 \$3-4-snd \$3-4-rcv empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 90 59 vsl 15 128 0 1 0 0 \$3-5-snd \$3-5-rcv empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 110 59 vsl 15 128 0 1 0 0 \$3-6-snd \$3-6-rcv empty 0 -9 0 10
+-262144 -1 -1 4826 1;
+#X obj 130 59 vsl 15 128 0 1 0 0 \$3-7-snd \$3-7-rcv empty 0 -9 0 10
+-262144 -1 -1 5461 1;
+#X obj 150 59 vsl 15 128 0 1 0 0 \$3-8-snd \$3-8-rcv empty 0 -9 0 10
+-262144 -1 -1 9271 1;
+#X obj 11 717 pack f f f f f f f f, f 48;
+#X obj 26 481 t b f;
+#X obj 74 510 t b f;
+#X obj 121 539 t b f;
+#X obj 169 567 t b f;
+#X obj 216 596 t b f;
+#X obj 264 626 t b f;
+#X obj 312 656 t b f;
+#X obj 11 750 outlet;
+#X obj 10 198 maxlib/scale 0 1 \$1 \$2;
+#X obj 30 228 maxlib/scale 0 1 \$1 \$2;
+#X obj 50 258 maxlib/scale 0 1 \$1 \$2;
+#X obj 70 288 maxlib/scale 0 1 \$1 \$2;
+#X obj 90 318 maxlib/scale 0 1 \$1 \$2;
+#X obj 110 348 maxlib/scale 0 1 \$1 \$2;
+#X obj 130 378 maxlib/scale 0 1 \$1 \$2;
+#X obj 150 408 maxlib/scale 0 1 \$1 \$2;
+#X obj 202 84 loadbang;
+#X msg 202 109 1;
+#X obj 147 36 bng 15 250 50 0 \$3-bang-snd \$3-bang-rcv empty 17 7
+0 10 -262144 -1 -1;
 #X connect 0 0 17 0;
 #X connect 1 0 18 0;
 #X connect 2 0 19 0;
@@ -77,4 +77,4 @@
 #X connect 26 0 6 0;
 #X connect 26 0 7 0;
 #X connect 27 0 26 0;
-#X coords 0 -1 1 1 155 160 1 10 10;
+#X coords 0 -1 1 1 155 180 1 10 10;
