@@ -1,4 +1,4 @@
-#N canvas 2909 62 526 413 12;
+#N canvas 1116 318 526 413 12;
 #X floatatom 155 300 5 0 0 0 - - -;
 #X obj 220 243 pofcolor 0 0 0 1;
 #X msg 23 218 draw \$1;
@@ -59,6 +59,8 @@
 #X obj 74 79 route float;
 #X obj 152 47 inlet;
 #X obj 74 232 pofcolor \$6 \$7 \$8 \$9;
+#X obj 179 191 unpack f f f f;
+#X obj 476 30 inlet;
 #X connect 0 0 4 0;
 #X connect 0 0 26 0;
 #X connect 1 0 25 0;
@@ -96,3 +98,8 @@
 #X connect 29 1 15 0;
 #X connect 30 0 23 1;
 #X connect 31 0 16 0;
+#X connect 32 0 31 1;
+#X connect 32 1 31 2;
+#X connect 32 2 31 3;
+#X connect 32 3 31 4;
+#X connect 33 0 32 0;

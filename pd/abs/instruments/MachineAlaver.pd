@@ -1,4 +1,4 @@
-#N canvas 2173 62 963 647 10;
+#N canvas 957 234 963 647 10;
 #X floatatom 72 52 5 0 0 0 - - -;
 #X floatatom 120 59 5 0 0 0 - - -;
 #X floatatom 483 11 5 0 0 0 - - -;
@@ -23,7 +23,7 @@
 #X floatatom 163 179 5 0 0 0 - - -;
 #X obj 58 250 pofimage instruments/PanneauMachine.png 658 307;
 #X obj 57 274 poftouch 658 307;
-#X obj 161 322 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 137 305 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 161 278 route down;
 #X obj 161 297 b;
@@ -108,7 +108,7 @@
 #X floatatom 136 660 5 0 0 0 - - -;
 #X floatatom 38 609 5 0 0 0 - - -;
 #X floatatom 83 606 5 0 0 0 - - -;
-#X obj 236 646 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 236 646 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 232 668 sel 0 1;
 #X floatatom 186 660 5 0 0 0 - - -;
@@ -117,7 +117,7 @@
 #X floatatom 136 836 5 0 0 0 - - -;
 #X floatatom 46 792 5 0 0 0 - - -;
 #X floatatom 91 789 5 0 0 0 - - -;
-#X obj 236 822 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 236 822 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 232 844 sel 0 1;
 #X floatatom 186 836 5 0 0 0 - - -;
@@ -250,7 +250,7 @@
 #X connect 79 0 52 0;
 #X connect 80 0 48 0;
 #X restore 25 543 pd LedsEssorage;
-#N canvas 1410 582 510 934 BoutonOptionRinçage&Depart 0;
+#N canvas 1410 311 510 934 BoutonOptionRinçage&Depart 1;
 #X obj 89 10 inlet head;
 #X floatatom 168 713 5 0 0 0 - - -;
 #X floatatom 118 660 5 0 0 0 - - -;
@@ -349,7 +349,7 @@
 #X obj 124 222 poftouch 36 36;
 #X obj 99 569 poftouch 36 36;
 #X obj 109 770 poftouch 36 36;
-#N canvas 3235 94 431 300 DivOption 0;
+#N canvas 2689 96 431 510 DivOption 1;
 #X obj 85 35 inlet;
 #X obj 85 122 hradio 15 1 0 3 nbDivOption-snd nbDivOption-rcv nbDivOption
 0 -8 0 10 -262144 -1 -1 0;
@@ -362,17 +362,22 @@
 #X msg 294 70 0;
 #X msg 141 82 0;
 #X obj 235 122 s option-light;
-#X obj 107 242 s fragseq1-DivOption;
 #X obj 85 147 sel 0 1 2;
 #X obj 77 87 mod 3;
 #X msg 39 172 1;
 #X msg 78 178 10;
 #X msg 107 173 20;
+#X obj 108 271 t b f;
+#X obj 82 453 s fragseq1-DivOption;
+#X obj 86 314 * 0;
+#X floatatom 129 389 5 0 0 0 - - -;
+#X obj 116 233 r \$1-MessDecay;
+#X floatatom 214 290 5 0 0 0 - - -;
 #X connect 0 0 2 0;
 #X connect 0 0 6 0;
-#X connect 1 0 12 0;
+#X connect 1 0 11 0;
 #X connect 2 0 3 0;
-#X connect 2 0 13 0;
+#X connect 2 0 12 0;
 #X connect 3 0 2 1;
 #X connect 4 0 9 0;
 #X connect 5 0 8 0;
@@ -381,18 +386,24 @@
 #X connect 7 0 10 0;
 #X connect 8 0 10 0;
 #X connect 9 0 1 0;
-#X connect 12 0 14 0;
-#X connect 12 1 15 0;
-#X connect 12 2 16 0;
-#X connect 13 0 1 0;
-#X connect 14 0 11 0;
-#X connect 15 0 11 0;
-#X connect 16 0 11 0;
+#X connect 11 0 13 0;
+#X connect 11 1 14 0;
+#X connect 11 2 15 0;
+#X connect 12 0 1 0;
+#X connect 13 0 18 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 16 1 18 1;
+#X connect 18 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 16 0;
+#X connect 20 0 21 0;
 #X restore 212 615 pd DivOption;
 #N canvas 1489 1172 431 300 DivRinçage 0;
 #X obj 85 35 inlet;
 #X obj 85 122 hradio 15 1 0 2 nbDivRinçage-snd nbDivRinçage-rcv nbDivRinçage
-0 -8 0 10 -262144 -1 -1 0;
+0 -8 0 10 -262144 -1 -1 1;
 #X obj 77 65 i;
 #X obj 108 65 + 1;
 #X obj 140 60 loadbang;
@@ -532,14 +543,14 @@
 #X connect 55 0 51 0;
 #X connect 55 0 54 0;
 #X restore 25 452 pd BoutonOptionRinçage&Depart;
-#N canvas 1048 462 553 600 BoutonEssorage&Pause 0;
+#N canvas 1171 368 553 600 BoutonEssorage&Pause 0;
 #X obj 18 18 inlet head;
 #X floatatom 173 225 5 0 0 0 - - -;
 #X floatatom 51 53 5 0 0 0 - - -;
 #X floatatom 90 52 5 0 0 0 - - -;
 #X floatatom 55 396 5 0 0 0 - - -;
 #X floatatom 98 396 5 0 0 0 - - -;
-#X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 146 34 t b b;
 #X obj 146 9 loadbang;
@@ -566,7 +577,7 @@
 #N canvas 477 590 700 300 DivEssorage 0;
 #X obj 85 35 inlet;
 #X obj 85 122 hradio 15 1 0 5 \$1-nbDivEssorage-snd \$1-nbDivEssorage-rcv
-\$1-nbDivEssorage 0 -8 0 10 -262144 -1 -1 1;
+\$1-nbDivEssorage 0 -8 0 10 -262144 -1 -1 0;
 #X obj 77 65 i;
 #X obj 108 65 + 1;
 #X floatatom 257 213 5 0 0 0 - - -;
@@ -655,6 +666,8 @@
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 74 519 pd Speed;
+#X floatatom 70 345 5 0 0 0 - - -;
+#X floatatom 191 347 5 0 0 0 - - -;
 #X connect 0 0 38 0;
 #X connect 1 0 25 1;
 #X connect 2 0 38 1;
@@ -689,8 +702,10 @@
 #X connect 29 1 12 0;
 #X connect 30 1 10 0;
 #X connect 31 0 32 1;
+#X connect 31 0 43 0;
 #X connect 32 0 33 0;
 #X connect 33 0 34 0;
+#X connect 33 0 42 0;
 #X connect 35 0 6 0;
 #X connect 36 0 19 0;
 #X connect 36 1 20 0;
@@ -711,7 +726,7 @@
 #X obj 271 293 sel 0 1;
 #X obj 35 173 t b b;
 #X obj 35 142 loadbang;
-#X obj 289 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 289 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 289 82 sel 1 0;
 #X obj 13 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -736,7 +751,7 @@
 #X floatatom 184 635 5 0 0 0 - - -;
 #X floatatom 84 564 5 0 0 0 - - -;
 #X floatatom 129 561 5 0 0 0 - - -;
-#X obj 281 581 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 281 581 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 277 603 sel 0 1;
 #X floatatom 234 635 5 0 0 0 - - -;

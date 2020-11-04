@@ -1,4 +1,4 @@
-#N canvas 1029 286 569 794 10;
+#N canvas 1029 234 569 970 10;
 #X floatatom 62 29 5 0 0 0 - - -;
 #X floatatom 116 29 5 0 0 0 - - -;
 #X floatatom 202 70 5 0 0 0 - - -;
@@ -136,7 +136,7 @@
 #X obj 21 242 poftranslate 0 0;
 #X obj 312 99 pofimage instruments/Glisse.png 80 50;
 #X obj 257 70 poftranslate 19 -170;
-#X obj 21 11 instrument_pof_common \$1 Grille;
+#X obj 21 11 instrument_pof_common \$1 Portail;
 #X connect 1 0 54 2;
 #X connect 2 0 4 2;
 #X connect 3 0 55 1;
