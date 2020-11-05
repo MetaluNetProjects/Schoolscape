@@ -1,6 +1,6 @@
-#N canvas 1083 467 807 414 10;
+#N canvas 1083 234 807 414 10;
 #X obj 245 282 mknob 25 100 0 127 0 1 BID-0-Note_adjust-snd BID-0-Note_adjust-rcv
-BID-0-Note_adjust -2 -6 0 8 -257985 -1 -1 5674 1;
+BID-0-Note_adjust -2 -6 0 8 -257985 -1 -1 8640 1;
 #X obj 9 69 melo 3;
 #X obj 249 102 s all-note-off;
 #X obj 249 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -21,16 +21,18 @@ BID-0-Note_adjust -2 -6 0 8 -257985 -1 -1 5674 1;
 #X msg 243 181 stop;
 #X obj 8 14 melotouch BID-0 30 /CHORD 48;
 #X obj 390 282 mknob 25 100 0 127 0 1 BID-0-Pitch-snd BID-0-Pitch-rcv
-BID-0-Pitch -2 -6 0 8 -257985 -1 -1 5295 1;
+BID-0-Pitch -2 -6 0 8 -257985 -1 -1 4989 1;
 #X obj 398 241 f;
 #X obj 368 205 del 100;
 #X obj 379 155 t b b f;
 #X msg 388 181 stop;
-#X obj 379 130 r BID-0-Pitch;
+#X obj 377 124 r BID-0-Pitch;
 #X obj 486 47 MulClock BID-0 \$1;
 #X obj 10 179 mull~ 1 10;
 #X obj 167 316 s \$2-MessDecay;
 #X obj 38 138 r \$1-MessVeloce;
+#X floatatom 480 173 5 0 0 0 - - -;
+#X obj 469 157 print;
 #X connect 1 0 10 0;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
@@ -54,4 +56,5 @@ BID-0-Pitch -2 -6 0 8 -257985 -1 -1 5295 1;
 #X connect 23 0 21 0;
 #X connect 24 0 22 0;
 #X connect 26 0 8 0;
+#X connect 26 0 8 1;
 #X connect 28 0 26 1;

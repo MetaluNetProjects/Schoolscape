@@ -168,7 +168,7 @@
 #X obj 17 340 set/manager;
 #X obj 192 289 s pageHead;
 #X obj 16 445 song/player;
-#N canvas 337 1371 570 416 audioMaster 0;
+#N canvas 2036 1134 775 416 audioMaster 1;
 #X obj 211 163 catch~ Out-1;
 #X obj 80 278 *~;
 #X obj 96 255 z~ 64;
@@ -229,6 +229,15 @@
 #X obj 210 389 throw~ REC-r;
 #X obj 14 359 s~ REC-l;
 #X obj 226 349 s~ REC-r;
+#X obj 527 142 mull~ 0.5 10;
+#X obj 713 67 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 602 223 mull~ 0.5 10;
+#X obj 543 67 adc~ 3 4;
+#X obj 509 308 dac~ 1 2 3 4;
+#X floatatom 649 47 5 0 0 0 - - -;
+#X obj 491 107 hip~ 112;
+#X obj 595 104 hip~ 112;
 #X connect 0 0 9 0;
 #X connect 1 0 29 0;
 #X connect 2 0 1 1;
@@ -271,6 +280,18 @@
 #X connect 30 0 28 1;
 #X connect 31 0 9 0;
 #X connect 32 0 5 0;
+#X connect 38 0 42 0;
+#X connect 38 0 42 2;
+#X connect 39 0 38 1;
+#X connect 39 0 40 1;
+#X connect 40 0 42 1;
+#X connect 40 0 42 3;
+#X connect 41 0 44 0;
+#X connect 41 1 45 0;
+#X connect 43 0 44 1;
+#X connect 43 0 45 1;
+#X connect 44 0 38 0;
+#X connect 45 0 40 0;
 #X restore 433 357 pd audioMaster;
 #X obj 16 363 song/manager;
 #X obj 184 437 song/listGui;
@@ -460,7 +481,7 @@
 #X obj 332 575 print SCHOOLSCAPE_DEBUG;
 #X obj 412 490 r datadir;
 #X msg 412 511 datadir: \$1;
-#N canvas 2126 96 460 523 PopupMulClock 1;
+#N canvas 2116 96 460 523 PopupMulClock 0;
 #X obj 44 14 inlet head;
 #X obj 167 71 instruments/PopupMulClock 0 Bureau;
 #X obj 139 118 instruments/PopupMulClock 2 Casiers;
