@@ -1,4 +1,4 @@
-#N canvas 2126 246 736 892 10;
+#N canvas 2103 331 736 892 10;
 #X msg 641 269 0 0;
 #X obj 140 651 outlet;
 #X obj 253 92 unpack f f;
@@ -95,7 +95,7 @@
 #X obj 292 789 s seqy-\$1 32;
 #X obj 100 786 s seqx-\$1 32;
 #X obj 167 26 r seqx-\$1 32;
-#X obj 442 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 442 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 520 363 r \$1-on;
 #X obj 520 407 del 100;
@@ -106,7 +106,7 @@
 #X obj 556 627 table seqy-\$1 128;
 #X obj 553 605 table seqx-\$1 128;
 #X obj 594 303 tgl 15 0 \$1-note1-on-snd \$1-note1-on-rcv \$1-note1-on
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 521 450 spigot;
 #X msg 98 356 1, f 1;
 #X obj 118 343 del 500;
@@ -139,7 +139,7 @@
 #X obj 596 403 loadbang;
 #X obj 99 409 metro 5;
 #X obj 6 214 tgl 15 0 \$1-note1-on-snd \$1-note1-on-rcv \$1-note1-on
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 597 429 \$2;
 #X obj 247 157 * 6.9;
 #X obj 339 224 sel 0 1 2 3 4 5 6, f 40;
@@ -157,7 +157,7 @@
 #X msg 554 263 2 4;
 #X obj 371 642 ndmetro 128 8;
 #X obj 232 230 r CLOCK;
-#X obj 309 302 r mulCLOCK;
+#X obj 309 302 r \$1-mulCLOCK;
 #X connect 0 0 6 0;
 #X connect 2 0 3 0;
 #X connect 2 0 77 1;
