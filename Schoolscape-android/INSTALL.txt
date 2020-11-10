@@ -1,6 +1,6 @@
 make PLATFORM_OS=Android
 chmod a+x ./gradlew
-./gradlew assembleRelease && adb -d install -r ./build/outputs/apk/Schoolscape-release.apk
+./gradlew assembleRelease && adb -d install -r ./build/outputs/apk/Schoolscape-android-release.apk
 
 gradle clean build
 
