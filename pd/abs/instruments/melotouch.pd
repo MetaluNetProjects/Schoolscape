@@ -1,4 +1,4 @@
-#N canvas 1120 334 736 892 10;
+#N canvas 1120 234 736 892 10;
 #X obj 140 651 outlet;
 #X obj 253 92 unpack f f;
 #X obj 247 122 maxlib/scale -260 260 0 1;
@@ -99,7 +99,7 @@
 #X obj 292 789 s seqy-\$1 32;
 #X obj 100 786 s seqx-\$1 32;
 #X obj 167 26 r seqx-\$1 32;
-#X obj 442 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 442 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 520 363 r \$1-on;
 #X obj 520 407 del 100;
@@ -110,7 +110,7 @@
 #X obj 486 544 table seqy-\$1 128;
 #X obj 483 522 table seqx-\$1 128;
 #X obj 594 303 tgl 15 0 \$1-note1-on-snd \$1-note1-on-rcv \$1-note1-on
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X obj 521 450 spigot;
 #X msg 98 356 1, f 1;
 #X obj 118 343 del 500;
@@ -143,7 +143,7 @@
 #X obj 596 403 loadbang;
 #X obj 99 409 metro 5;
 #X obj 6 214 tgl 15 0 \$1-note1-on-snd \$1-note1-on-rcv \$1-note1-on
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X obj 597 429 \$2;
 #X obj 247 157 * 6.9;
 #X obj 338 224 sel 0 1 2 3 4 5 6, f 29;
@@ -167,80 +167,30 @@
 #X obj 208 232 r \$1-mulCLOCK;
 #X obj 498 593 r \$1-mulCLOCK;
 #X obj 149 191 print;
-#N canvas 2312 1073 449 469 SoloPlay 1;
+#N canvas 2067 734 392 401 SoloPlay 0;
 #X obj 99 18 inlet;
-#X obj 99 409 outlet;
-#X obj 99 273 spigot;
-#X obj 195 14 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 99 308 outlet;
+#X obj 192 79 inlet;
+#X obj 132 65 != 1;
+#X obj 132 44 r instrument_touched-\$5;
+#X obj 132 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 195 252 t b b;
-#X obj 195 207 sel 0 1;
-#X floatatom 347 320 5 0 0 0 - - -;
-#X obj 33 210 print;
-#X obj 142 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X msg 172 318 0;
-#X obj 249 13 inlet;
-#X obj 339 15 r \$1-move;
-#X msg 359 123 1;
-#X obj 289 116 del 200;
-#X obj 314 63 t b b b;
-#X msg 321 88 stop;
-#X msg 289 140 0;
-#X obj 331 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 343 234 ||;
-#X obj 188 67 sel 0 1;
-#X msg 148 111 1;
-#X obj 326 195 spigot;
-#X obj 161 88 t b b;
-#X msg 179 137 0;
-#X obj 267 168 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X msg 210 121 1;
-#X obj 212 95 t b b;
-#X msg 248 127 0;
-#X msg 214 231 0;
-#X msg 231 321 1;
-#X obj 373 94 del 50;
-#X obj 229 292 del 210;
-#X obj 381 52 print;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 4 0 9 0;
-#X connect 4 1 31 0;
-#X connect 5 0 4 0;
-#X connect 5 1 28 0;
-#X connect 8 0 2 1;
-#X connect 9 0 1 0;
-#X connect 10 0 3 0;
-#X connect 10 0 19 0;
-#X connect 11 0 14 0;
-#X connect 12 0 17 0;
-#X connect 13 0 16 0;
-#X connect 14 0 13 0;
-#X connect 14 1 15 0;
-#X connect 14 2 30 0;
-#X connect 15 0 13 0;
-#X connect 16 0 17 0;
-#X connect 17 0 21 0;
-#X connect 19 0 22 0;
-#X connect 19 1 26 0;
-#X connect 20 0 8 0;
-#X connect 21 0 5 0;
-#X connect 22 0 20 0;
-#X connect 22 1 23 0;
-#X connect 23 0 24 0;
-#X connect 24 0 21 1;
-#X connect 25 0 24 0;
-#X connect 26 0 25 0;
-#X connect 26 1 27 0;
-#X connect 28 0 6 0;
-#X connect 28 0 8 0;
-#X connect 29 0 6 0;
-#X connect 29 0 8 0;
-#X connect 30 0 12 0;
-#X connect 31 0 29 0;
+#X obj 191 105 sel 0 1;
+#X msg 191 130 0, f 1;
+#X msg 210 136 1, f 1;
+#X obj 132 216 spigot;
+#X obj 99 281 spigot 1;
+#X connect 0 0 10 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 9 1;
+#X connect 8 0 9 1;
+#X connect 9 0 10 1;
+#X connect 10 0 1 0;
 #X restore 381 619 pd SoloPlay;
 #X obj 358 388 print;
 #X obj 464 582 tgl 15 1 \$1-SoloPlay-snd \$1-SoloPlay-rcv SoloPlay
@@ -251,6 +201,7 @@
 #X msg 447 467 0;
 #X obj 413 493 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X obj 390 520 r SoloOnOff-\$5;
 #X connect 1 0 2 0;
 #X connect 1 0 77 1;
 #X connect 1 1 3 0;
@@ -387,3 +338,4 @@
 #X connect 128 0 131 0;
 #X connect 129 0 130 0;
 #X connect 130 0 131 0;
+#X connect 132 0 126 0;
