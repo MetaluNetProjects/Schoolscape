@@ -168,7 +168,7 @@
 #X obj 17 340 set/manager;
 #X obj 192 289 s pageHead;
 #X obj 16 445 song/player;
-#N canvas 2036 1134 775 416 audioMaster 1;
+#N canvas 2036 1134 775 416 audioMaster 0;
 #X obj 211 163 catch~ Out-1;
 #X obj 80 278 *~;
 #X obj 96 255 z~ 64;
@@ -448,7 +448,7 @@
 #X connect 21 0 22 0;
 #X connect 23 0 24 0;
 #X connect 24 0 22 0;
-#X restore 135 485 pd cpu;
+#X restore 138 485 pd cpu;
 #X msg 164 149 open;
 #X obj 332 498 loadbang;
 #X msg 332 547 the patch is running!;
