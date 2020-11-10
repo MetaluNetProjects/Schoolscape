@@ -1,17 +1,17 @@
-#N canvas 741 234 736 892 10;
+#N canvas 1120 334 736 892 10;
 #X obj 140 651 outlet;
 #X obj 253 92 unpack f f;
 #X obj 247 122 maxlib/scale -260 260 0 1;
 #X obj 311 144 maxlib/scale 106 -106 0 1;
-#X obj 339 341 ndmetro 4 4;
-#X obj 302 300 r CLOCK;
+#X obj 376 346 ndmetro 4 4;
+#X obj 283 303 r CLOCK;
 #X msg 384 315 nd \$1 \$2;
 #X obj 255 186 i;
 #X obj 185 351 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 311 168 * 24;
 #X obj 231 269 i;
-#N canvas 2083 92 380 373 GR 0;
+#N canvas 2073 126 380 373 GR 0;
 #X obj 47 18 inlet;
 #X obj 47 51 unpack f f;
 #X obj 41 289 pack f f;
@@ -59,7 +59,7 @@
 #X obj 299 450 del 50;
 #X obj 359 451 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 210 659 print;
+#X obj 281 18 print;
 #X obj 303 365 spigot;
 #X obj 45 341 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -74,12 +74,12 @@
 #X obj 111 270 del 1000;
 #X msg 114 317 1, f 1;
 #X obj 112 297 del 500;
-#X obj 406 544 r CLOCK;
+#X obj 343 564 r CLOCK;
 #X obj 351 411 r \$1-rel;
 #X obj 123 212 r \$1-on;
-#X obj 370 664 s \$1-DefileSeq;
+#X obj 352 654 s \$1-DefileSeq;
 #X obj 597 458 s \$1-rel;
-#X obj 255 69 r \$1-move;
+#X obj 253 58 r \$1-move;
 #X obj 14 179 tabwrite seqx-\$1 32;
 #X obj 129 124 r \$1-DefileSeq;
 #X obj 185 148 r \$1-on;
@@ -156,7 +156,7 @@
 #X obj 609 619 loadbang;
 #X floatatom 295 657 5 0 0 0 - - -;
 #X floatatom 332 680 5 0 0 0 - - -;
-#X obj 371 642 ndmetro 128 8;
+#X obj 343 587 ndmetro 128 8;
 #X msg 290 262 2 0.5;
 #X msg 336 261 2 0.75;
 #X msg 401 259 2 1;
@@ -165,7 +165,92 @@
 #X msg 534 262 2 4;
 #X msg 592 268 2 8;
 #X obj 208 232 r \$1-mulCLOCK;
-#X obj 421 604 r \$1-mulCLOCK;
+#X obj 498 593 r \$1-mulCLOCK;
+#X obj 149 191 print;
+#N canvas 2312 1073 449 469 SoloPlay 1;
+#X obj 99 18 inlet;
+#X obj 99 409 outlet;
+#X obj 99 273 spigot;
+#X obj 195 14 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 195 252 t b b;
+#X obj 195 207 sel 0 1;
+#X floatatom 347 320 5 0 0 0 - - -;
+#X obj 33 210 print;
+#X obj 142 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 172 318 0;
+#X obj 249 13 inlet;
+#X obj 339 15 r \$1-move;
+#X msg 359 123 1;
+#X obj 289 116 del 200;
+#X obj 314 63 t b b b;
+#X msg 321 88 stop;
+#X msg 289 140 0;
+#X obj 331 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 343 234 ||;
+#X obj 188 67 sel 0 1;
+#X msg 148 111 1;
+#X obj 326 195 spigot;
+#X obj 161 88 t b b;
+#X msg 179 137 0;
+#X obj 267 168 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 210 121 1;
+#X obj 212 95 t b b;
+#X msg 248 127 0;
+#X msg 214 231 0;
+#X msg 231 321 1;
+#X obj 373 94 del 50;
+#X obj 229 292 del 210;
+#X obj 381 52 print;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 9 0;
+#X connect 4 1 31 0;
+#X connect 5 0 4 0;
+#X connect 5 1 28 0;
+#X connect 8 0 2 1;
+#X connect 9 0 1 0;
+#X connect 10 0 3 0;
+#X connect 10 0 19 0;
+#X connect 11 0 14 0;
+#X connect 12 0 17 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 14 1 15 0;
+#X connect 14 2 30 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 21 0;
+#X connect 19 0 22 0;
+#X connect 19 1 26 0;
+#X connect 20 0 8 0;
+#X connect 21 0 5 0;
+#X connect 22 0 20 0;
+#X connect 22 1 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 21 1;
+#X connect 25 0 24 0;
+#X connect 26 0 25 0;
+#X connect 26 1 27 0;
+#X connect 28 0 6 0;
+#X connect 28 0 8 0;
+#X connect 29 0 6 0;
+#X connect 29 0 8 0;
+#X connect 30 0 12 0;
+#X connect 31 0 29 0;
+#X restore 381 619 pd SoloPlay;
+#X obj 358 388 print;
+#X obj 464 582 tgl 15 1 \$1-SoloPlay-snd \$1-SoloPlay-rcv SoloPlay
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 435 412 sel 0;
+#X msg 417 442 1;
+#X obj 447 442 del 10;
+#X msg 447 467 0;
+#X obj 413 493 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X connect 1 0 2 0;
 #X connect 1 0 77 1;
 #X connect 1 1 3 0;
@@ -227,6 +312,7 @@
 #X connect 55 0 108 0;
 #X connect 58 0 109 0;
 #X connect 59 0 21 1;
+#X connect 59 0 127 0;
 #X connect 60 0 62 0;
 #X connect 61 0 63 0;
 #X connect 62 0 61 0;
@@ -285,7 +371,7 @@
 #X connect 109 1 2 0;
 #X connect 110 0 106 0;
 #X connect 110 0 104 0;
-#X connect 113 0 37 0;
+#X connect 113 0 124 0;
 #X connect 114 0 6 0;
 #X connect 115 0 6 0;
 #X connect 116 0 6 0;
@@ -294,3 +380,10 @@
 #X connect 119 0 6 0;
 #X connect 120 0 6 0;
 #X connect 121 0 4 0;
+#X connect 124 0 37 0;
+#X connect 126 0 124 1;
+#X connect 127 0 128 0;
+#X connect 127 0 129 0;
+#X connect 128 0 131 0;
+#X connect 129 0 130 0;
+#X connect 130 0 131 0;

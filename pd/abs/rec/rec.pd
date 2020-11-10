@@ -1,4 +1,4 @@
-#N canvas 658 282 737 673 10;
+#N canvas 658 234 737 673 10;
 #X obj 82 15 adc~ 1;
 #X obj 144 127 env~;
 #X obj 144 200 s rec-level;
@@ -240,7 +240,7 @@
 #X obj 275 418 del 100;
 #X msg 378 387 stop;
 #X obj 391 412 del 100;
-#X obj 518 566 Out~;
+#X obj 524 617 Out~;
 #X obj 426 46 b;
 #X obj 395 102 s rec-rec;
 #X msg 395 81 cancel;
@@ -252,6 +252,7 @@
 #X obj 412 603 s rec-maxtimeMS;
 #X msg 421 556 5000;
 #X msg 376 557 20000;
+#X obj 525 561 *~ 0.5;
 #X connect 0 0 29 0;
 #X connect 1 0 2 0;
 #X connect 5 0 4 0;
@@ -340,8 +341,7 @@
 #X connect 65 0 32 0;
 #X connect 66 0 77 0;
 #X connect 67 0 6 0;
-#X connect 68 0 80 0;
-#X connect 68 0 80 1;
+#X connect 68 0 91 0;
 #X connect 69 0 73 0;
 #X connect 70 0 69 0;
 #X connect 71 0 76 0;
@@ -360,3 +360,5 @@
 #X connect 86 0 37 0;
 #X connect 87 0 37 0;
 #X connect 90 0 88 0;
+#X connect 91 0 80 0;
+#X connect 91 0 80 1;
