@@ -1,4 +1,4 @@
-#N canvas 42 423 492 410 10;
+#N canvas 42 234 492 659 10;
 #X obj 116 19 loadbang;
 #X obj 189 18 r ADMIN;
 #X obj 37 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -26,7 +26,7 @@
 #X obj 260 300 list split 1;
 #X obj 260 320 != 35;
 #X obj 116 148 t b f;
-#X msg 143 77 clear \, read -c ParolesHomescape.txt;
+#X msg 143 77 clear \, read -c ParolesSchoolscape.txt;
 #X connect 0 0 3 0;
 #X connect 1 0 3 0;
 #X connect 2 0 15 0;

@@ -4,7 +4,7 @@ Nom # "ce mode s'appelle Véronique québecoise ! (par exemple)"
 
 ## Ouverture de l’application :
 
-Allumage #  “bienvenue sur Homescape”
+Allumage #  “bienvenue sur Schoolscape”
 
 ## Console :
 
@@ -48,25 +48,25 @@ OuvertureAbout # “Cette application a été réalisée par le Lieu multiple - 
 
 HelpBalance # “c'est ici que l'on peut choisir le perso qui vous suivra tout au long du jeu - charger ou enregistrer un set de son - et on peu aussi choisir une song - changer le tempo et les harmonies“ 
 
-RecLaveLinge # “allez-y- Tapez sur votre machine à laver”
+RecBureau # “allez-y- Tapez sur le bureau du proffesseur”
 
-RecCouverts # “allez-y- secouez votre plateau de couvert”
+RecCouverts # “allez-y- secouez un plateau de couvert”
 
-RecMicroOnde # “allez-y- claquez la porte de votre micro-onde”
+RecCasier # “allez-y- claquez la porte de votre casier”
 
-RecBidon # “allez-y- tapez sur un gros bidon”
+RecPlat # “allez-y- tapez sur un gros plat de cantine”
 
-RecGrille # “allez-y- frotter une grille de four avec une cuillere en bois”
+RecGrille # “allez-y- frotter une grille de votre école avec une règle”
 
-RecBaignoire # “Tapez sur votre baignoire”
+RecBecher # “Tapez sur un gros becher”
 
 RecRegle # “allez-y- faites vibrer une règle sur le bord d'une table”
 
-RecAspirateur # “allez-y- enregistrez votre aspirateur”
+RecSifflet # “allez-y- enregistrez coup de sifflet”
 
-RecVerre # “allez-y- faites tinter un verre à pied”
+RecVerre # “allez-y- faites tinter un verre de cantine”
 
-RecMixeur # “allez-y- jouez du mixeur”
+RecSonnerie # “allez-y- enregistrez la sonnerie de votre école”
 
 RelanceSon #  “je vous rappelle que vous devez enregistrer un son s’il vous plaît”
 

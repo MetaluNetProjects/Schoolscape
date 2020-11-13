@@ -1,4 +1,4 @@
-#N canvas 38 514 680 523 10;
+#N canvas 1196 496 680 523 10;
 #X obj 65 41 loadbang;
 #X obj 65 98 s set-instruments;
 #X obj 130 42 r set-reinit-instruments;
@@ -212,7 +212,7 @@
 #X connect 25 0 19 0;
 #X connect 27 0 23 0;
 #X restore 413 203 pd create;
-#N canvas 816 116 666 631 setName 1;
+#N canvas 816 116 666 631 setName 0;
 #X obj 120 49 r datadir;
 #X obj 75 71 pack s s;
 #X symbolatom 263 85 0 0 0 0 - - -;
@@ -398,11 +398,11 @@
 #X obj 66 458 table set-table-fx 30;
 #X msg 229 104 Kick Snare Hihat Tom Cymbale Basse Guitare Synthe Piano
 Chant;
-#X msg 65 62 LaveLinge Couverts MicroOnde Bidon Grille Baignoire Regle
-Aspirateur Verre Mixeur;
 #X obj 492 231 settings/autosave_xml set;
-#X connect 0 0 43 0;
-#X connect 2 0 43 0;
+#X msg 65 62 Bureau Couverts Casier Plat Grille Becher Regle Sifflet
+Verre Sonnerie;
+#X connect 0 0 44 0;
+#X connect 2 0 44 0;
 #X connect 17 0 18 1;
 #X connect 18 0 22 0;
 #X connect 19 0 17 0;
@@ -418,4 +418,4 @@ Aspirateur Verre Mixeur;
 #X connect 37 0 40 0;
 #X connect 38 0 37 0;
 #X connect 40 0 39 0;
-#X connect 43 0 1 0;
+#X connect 44 0 1 0;
