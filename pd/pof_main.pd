@@ -168,7 +168,7 @@
 #X obj 17 340 set/manager;
 #X obj 192 289 s pageHead;
 #X obj 16 445 song/player;
-#N canvas 2036 1134 775 416 audioMaster 0;
+#N canvas 2036 1019 775 416 audioMaster 1;
 #X obj 211 163 catch~ Out-1;
 #X obj 80 278 *~;
 #X obj 96 255 z~ 64;
@@ -233,7 +233,7 @@
 #X obj 713 67 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 602 223 mull~ 0.5 10;
-#X obj 543 67 adc~ 3 4;
+#X obj 537 31 adc~ 3 4;
 #X obj 509 308 dac~ 1 2 3 4;
 #X floatatom 649 47 5 0 0 0 - - -;
 #X obj 491 107 hip~ 112;
@@ -286,8 +286,6 @@
 #X connect 39 0 40 1;
 #X connect 40 0 42 1;
 #X connect 40 0 42 3;
-#X connect 41 0 44 0;
-#X connect 41 1 45 0;
 #X connect 43 0 44 1;
 #X connect 43 0 45 1;
 #X connect 44 0 38 0;
