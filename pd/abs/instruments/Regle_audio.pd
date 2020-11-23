@@ -1,4 +1,4 @@
-#N canvas 2150 698 664 462 10;
+#N canvas 536 698 664 462 10;
 #X obj 212 360 mknob 25 100 0 127 0 1 REG-0-Note_adjust-snd REG-0-Note_adjust-rcv
 REG-0-Note_adjust -2 -6 0 8 -257985 -1 -1 9900 1;
 #X obj 236 38 s all-note-off;
@@ -33,7 +33,7 @@ REG-0-Pitch -2 -6 0 8 -257985 -1 -1 4989 1;
 #X obj 21 393 mull~ 1 10;
 #X obj 49 352 r \$1-MessVeloce;
 #X obj 486 47 MulClock REG-0 \$1;
-#X obj 22 142 melotouch REG-0 200 /GAMME 48 \$1;
+#X obj 22 142 melotouch REG-0 200 /CHORD 48 \$1;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 5 0 15 0;
