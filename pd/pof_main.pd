@@ -1,4 +1,4 @@
-#N canvas 937 234 540 771 10;
+#N canvas 660 234 540 771 10;
 #X declare -path abs -path . -path img;
 #X declare -path abs -path . -path img;
 #X declare -path abs/extra/iemlib;
@@ -168,7 +168,7 @@
 #X obj 17 340 set/manager;
 #X obj 192 289 s pageHead;
 #X obj 16 445 song/player;
-#N canvas 2036 1019 775 416 audioMaster 1;
+#N canvas 2036 1019 775 416 audioMaster 0;
 #X obj 211 163 catch~ Out-1;
 #X obj 80 278 *~;
 #X obj 96 255 z~ 64;
@@ -295,7 +295,7 @@
 #X obj 184 437 song/listGui;
 #X obj 343 51 loadbang;
 #X msg 343 73 \; pd dsp 1;
-#N canvas 248 440 757 435 INIT 0;
+#N canvas 2027 1012 757 435 INIT 1;
 #X obj 190 118 s mode;
 #X obj 163 15 loadbang;
 #X obj 163 65 t b b;
@@ -335,7 +335,7 @@
 #X obj 53 264 s AllumageDecoupeurs;
 #X obj 72 227 del 200;
 #X msg 190 91 symbol AlainScape;
-#X msg 428 129 0;
+#X msg 428 129 1;
 #X connect 1 0 8 0;
 #X connect 2 0 6 0;
 #X connect 2 1 37 0;
@@ -390,7 +390,7 @@
 #X obj 19 6 declare -path abs -path . -path img;
 #X obj 14 29 declare -path abs -path . -path img;
 #X obj 432 285 mknob 50 100 0 1 0 0 VolMaster-snd VolMaster-rcv VolMaster
--2 -6 0 8 -258113 -1 -1 0 1;
+-2 -6 0 8 -258113 -1 -1 9900 1;
 #X obj 239 7 declare -path abs/extra/iemlib;
 #X obj 11 471 instruments/player;
 #N canvas 687 449 450 384 cpu 0;

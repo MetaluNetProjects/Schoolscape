@@ -1,11 +1,11 @@
-#N canvas 382 500 804 659 10;
+#N canvas 382 111 804 659 10;
 #X obj 51 267 unpack f f;
 #X obj 21 21 inlet note;
 #X obj 122 21 inlet round;
 #X obj 108 336 s \$0-round;
 #X obj 116 200 == 0;
 #X obj 110 174 t b f f;
-#X obj 208 330 s \$0-GAMME;
+#X obj 156 196 s \$0-GAMME;
 #X obj 110 154 change;
 #N canvas 322 237 503 581 find_1stUP 0;
 #X obj 161 55 inlet;
@@ -138,11 +138,11 @@
 #X obj 21 167 pack f \$2;
 #X obj 21 621 outlet;
 #X obj 21 223 list prepend 0;
-#X floatatom 164 154 5 0 0 0 - - -;
+#X floatatom 164 154 5 0 0 0 - - -, f 5;
 #X obj 45 139 t b f;
 #X obj 21 43 route float;
 #X obj 95 66 route round set;
-#N canvas 877 500 450 300 \$0-sub 0;
+#N canvas 5 74 450 300 \$0-sub 0;
 #X obj 50 50 r \$0-sub-rcv;
 #X obj 50 90 value /CHORD;
 #X obj 50 130 s \$0-sub-snd;
@@ -150,33 +150,25 @@
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 2 0;
-#X restore 393 25 pd \$0-sub;
-#X obj 367 249 s pd-\$0-sub;
-#X msg 335 102 symbol /GAMME;
-#X msg 472 250 clear;
-#X msg 460 101 symbol /BASS;
-#X obj 335 176 t b a;
-#X obj 335 154 list prepend $ 0;
-#X msg 367 198 clear \, obj 50 50 r \$1\$2-sub-rcv \, obj 50 90 value
+#X restore 333 25 pd \$0-sub;
+#X obj 307 249 s pd-\$0-sub;
+#X msg 275 102 symbol /GAMME;
+#X msg 412 250 clear;
+#X msg 400 101 symbol /BASS;
+#X obj 275 176 t b a;
+#X obj 275 154 list prepend $ 0;
+#X msg 307 198 clear \, obj 50 50 r \$1\$2-sub-rcv \, obj 50 90 value
 \$3 \, obj 50 130 s \$1\$2-sub-snd \, obj 150 90 r \$3 \, connect 0
 0 1 0 \, connect 1 0 2 0 \, connect 3 0 2 0;
 #X obj 110 125 r \$0-sub-snd;
-#X obj 316 306 s \$0-sub-rcv;
-#X msg 561 100 symbol /CHORD;
-#X obj 305 51 loadbang;
-#X obj 305 73 symbol \$1;
-#X obj 285 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 275 277 s \$0-sub-rcv;
+#X msg 501 100 symbol /CHORD;
+#X obj 245 51 loadbang;
+#X obj 245 73 symbol \$1;
+#X obj 225 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 21 245 route 1 0;
 #X obj 21 297 unpack;
-#X obj 195 304 print;
-#X floatatom 159 313 5 0 0 0 - - -;
-#X obj 212 18 inlet transpose;
-#X floatatom 235 66 5 0 0 0 - - -;
-#X obj 153 273 transpose 0;
-#X floatatom 170 233 5 0 0 0 - - -;
-#X obj 155 205 f;
-#X obj 209 225 t b f;
 #X connect 0 0 13 0;
 #X connect 0 1 20 0;
 #X connect 1 0 27 0;
@@ -184,7 +176,7 @@
 #X connect 4 0 24 1;
 #X connect 5 0 22 0;
 #X connect 5 1 4 0;
-#X connect 5 2 51 0;
+#X connect 5 2 6 0;
 #X connect 7 0 5 0;
 #X connect 8 0 12 0;
 #X connect 9 0 12 1;
@@ -230,11 +222,3 @@
 #X connect 43 0 44 0;
 #X connect 43 1 0 0;
 #X connect 44 0 23 0;
-#X connect 47 0 48 0;
-#X connect 47 0 52 0;
-#X connect 49 0 46 0;
-#X connect 49 0 6 0;
-#X connect 51 0 49 0;
-#X connect 51 0 50 0;
-#X connect 52 0 51 0;
-#X connect 52 1 49 1;

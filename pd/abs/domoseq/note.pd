@@ -1,5 +1,6 @@
-#N canvas 420 148 519 529 10;
-#X obj 128 52 r \$2;
+#N canvas 492 883 519 529 10;
+#X declare -path ./gammabs;
+#X obj 64 6 r \$2;
 #X obj 184 47 loadbang;
 #X obj 184 68 f \$1;
 #X msg 143 91 1 \$1;
@@ -20,7 +21,12 @@
 #X obj 128 158 != 0;
 #X obj 184 184 + 60;
 #X obj 130 370 throw~ OUT;
-#X connect 0 0 5 0;
+#X obj 265 29 declare -path ./gammabs;
+#X obj 64 59 transpose 0;
+#X obj 124 8 r TransposeAll;
+#X obj 64 33 f;
+#X obj 102 32 t b f;
+#X connect 0 0 23 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 0 18 0;
@@ -42,3 +48,8 @@
 #X connect 16 0 2 0;
 #X connect 17 0 6 0;
 #X connect 18 0 7 1;
+#X connect 21 0 5 0;
+#X connect 22 0 24 0;
+#X connect 23 0 21 0;
+#X connect 24 0 23 0;
+#X connect 24 1 21 1;
