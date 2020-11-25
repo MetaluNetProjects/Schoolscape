@@ -1,4 +1,4 @@
-#N canvas 786 360 532 499 10;
+#N canvas 511 1272 532 499 10;
 #X obj 66 222 pofcolor 1 1 1 1;
 #X obj 32 98 poftranslate -60;
 #X obj 100 193 unpack f f f;
@@ -19,7 +19,7 @@
 #X obj 296 184 <<;
 #X obj 77 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 304 212 5 0 0 0 - - -, f 5;
+#X floatatom 304 212 5 0 0 0 - - -;
 #X obj 240 210 &;
 #X obj 240 231 != 0;
 #X obj 100 145 sel 0 1;
@@ -49,6 +49,7 @@
 #X obj 182 21 loadbang;
 #X msg 182 42 0;
 #X obj 103 70 * 17;
+#X floatatom 383 231 5 0 0 0 - - -;
 #X connect 0 0 38 0;
 #X connect 1 0 36 0;
 #X connect 2 0 0 1;
