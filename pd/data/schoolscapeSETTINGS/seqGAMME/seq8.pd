@@ -9,7 +9,7 @@
 #X obj 64 670 s \$0-step;
 #X obj 51 55 seqstep \$0 0;
 #X obj 51 38 nbx 5 14 1 32 0 0 \$0-denum \$0-denum denum 0 -8 0 10
--262144 -1 -1 4 256;
+-262144 -1 -1 1 256;
 #X obj 122 330 r \$0-denum;
 #X obj 154 395 t b f;
 #X msg 16 39 1;
@@ -54,9 +54,9 @@
 #X obj 259 629 * 40;
 #X obj 769 495 r \$0-denum;
 #X obj 185 37 nbx 5 14 1 300 0 0 \$0-bpm \$0-bpm bpm 0 -8 0 10 -262144
--1 -1 54 256;
+-1 -1 1 256;
 #X obj 241 36 tgl 15 0 \$0-bpm_on \$0-bpm_on bpm_on 0 -8 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 784 515 r \$0-bpm;
 #X obj 849 514 r \$0-bpm_on;
 #X obj 710 465 + 32;
@@ -79,7 +79,7 @@
 #X obj 64 611 spigot;
 #X obj 457 569 s /BPM;
 #X obj 278 37 nbx 5 14 1 300 0 0 /BPM /BPM /BPM(current) 0 -8 0 10
--262144 -1 -1 140 256;
+-262144 -1 -1 116 256;
 #X obj 496 525 r \$0-bpm_on;
 #X msg 773 323 31;
 #N canvas 1 81 450 300 table 0;
@@ -95,14 +95,14 @@
 #X obj 313 582 r \$1-recall;
 #X obj 590 304 r \$1-store;
 #X msg 628 4 set \$1;
-#N canvas 234 96 894 321 \$0-file 1;
+#N canvas 234 81 568 321 \$0-file 0;
 #X obj 52 193 soundfiler;
 #X obj 219 134 list prepend \$0-table;
 #X obj 52 135 list prepend \$0-table;
 #X msg 52 158 read seq\$2.wav \$1;
 #X msg 219 155 write -bytes 4 -wave seq\$2.wav \$1;
-#X obj 52 66 hradio 15 1 0 12 \$1-load-snd \$1-load-rcv \$1-load 0
--8 0 10 -4034 -1 -1 10;
+#X obj 52 66 hradio 15 1 0 12 \$1-load \$1-load \$1-load 0 -8 0 10
+-4034 -1 -1 2;
 #X obj 299 68 hradio 15 1 0 12 \$1-save \$1-save \$1-save 0 -8 0 10
 -258113 -1 -1 2;
 #X obj 219 111 r \$1-save;

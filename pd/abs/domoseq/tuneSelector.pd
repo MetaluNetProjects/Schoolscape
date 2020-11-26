@@ -1,4 +1,4 @@
-#N canvas 914 204 450 543 10;
+#N canvas 2309 1131 450 543 10;
 #X obj 31 18 inlet;
 #X obj 31 82 s tuneSelHead;
 #X obj 292 45 s refreshTunes;
@@ -61,8 +61,8 @@
 #X obj 154 135 poftexts asimov 40 -1;
 #X obj 78 113 loadbang;
 #X obj 284 207 r ASK_LOAD;
-#X symbolatom 284 262 10 0 0 0 - - -, f 10;
-#X obj 284 382 s mainSeq-load;
+#X symbolatom 284 262 10 0 0 0 - - -;
+#X obj 284 417 s mainSeq-load;
 #X msg 113 357 0;
 #X obj 113 377 s mainSeq-recall;
 #X obj 76 411 s mainSeq-play;

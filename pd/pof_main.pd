@@ -295,7 +295,7 @@
 #X obj 184 437 song/listGui;
 #X obj 343 51 loadbang;
 #X msg 343 73 \; pd dsp 1;
-#N canvas 2027 1012 757 435 INIT 1;
+#N canvas 2027 1012 757 435 INIT 0;
 #X obj 190 118 s mode;
 #X obj 163 15 loadbang;
 #X obj 163 65 t b b;
@@ -451,7 +451,7 @@
 #X obj 332 498 loadbang;
 #X msg 332 547 the patch is running!;
 #X obj 316 275 mixtape/REC-lr;
-#N canvas 1345 612 298 397 instruments_pof 0;
+#N canvas 1345 939 298 397 instruments_pof 0;
 #X obj 42 162 instruments/Baignoire 5;
 #X obj 44 187 instruments/Regle 6;
 #X obj 44 211 instruments/Aspirateur 7;
@@ -479,7 +479,7 @@
 #X obj 332 575 print SCHOOLSCAPE_DEBUG;
 #X obj 412 490 r datadir;
 #X msg 412 511 datadir: \$1;
-#N canvas 2116 96 460 523 PopupMulClock 0;
+#N canvas 740 96 460 523 PopupMulClock 1;
 #X obj 44 14 inlet head;
 #X obj 167 71 instruments/PopupMulClock 0 Bureau;
 #X obj 139 118 instruments/PopupMulClock 2 Casiers;

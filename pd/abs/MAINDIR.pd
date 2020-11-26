@@ -1,0 +1,27 @@
+#N canvas 598 1322 450 505 10;
+#X obj 128 55 loadbang;
+#X obj 128 77 del 500;
+#X symbolatom 129 124 0 0 0 0 - - -;
+#X obj 97 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 133 161 s schoolscape_MAINDIR;
+#X obj 129 182 r schoolscape_MAINDIR;
+#X obj 129 228 s schoolscape_SETTINGSDIR;
+#X obj 128 261 r schoolscape_MAINDIR;
+#X obj 128 307 s schoolscape_DATASDIR;
+#X obj 128 99 getdir 3;
+#X symbolatom 38 398 0 0 0 0 - - -;
+#X symbolatom 84 348 0 0 0 0 - - -;
+#X msg 128 283 symbol \$1/pd/data/;
+#X msg 129 204 symbol \$1/pd/data/schoolscapeSETTINGS/;
+#X connect 0 0 1 0;
+#X connect 1 0 9 0;
+#X connect 2 0 4 0;
+#X connect 3 0 9 0;
+#X connect 5 0 13 0;
+#X connect 7 0 12 0;
+#X connect 9 0 2 0;
+#X connect 12 0 8 0;
+#X connect 12 0 11 0;
+#X connect 13 0 6 0;
+#X connect 13 0 10 0;

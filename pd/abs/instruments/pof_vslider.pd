@@ -1,4 +1,4 @@
-#N canvas 1116 318 526 413 12;
+#N canvas 478 339 644 413 12;
 #X floatatom 155 300 5 0 0 0 - - -;
 #X obj 220 243 pofcolor 0 0 0 1;
 #X msg 23 218 draw \$1;
@@ -23,7 +23,7 @@
 #X obj 343 66 t f b;
 #X obj 414 65 t f b;
 #X obj 323 219 f;
-#N canvas 885 582 450 300 vslider 0;
+#N canvas 750 582 450 300 vslider 1;
 #X obj 54 4 inlet;
 #X obj 52 36 route down move up;
 #X obj 51 67 unpack f f;
@@ -61,6 +61,9 @@
 #X obj 74 232 pofcolor \$6 \$7 \$8 \$9;
 #X obj 179 191 unpack f f f f;
 #X obj 476 30 inlet;
+#X obj 406 227 apf SONGschoolscape \$10;
+#X floatatom 180 79 5 0 0 0 - - -;
+#X floatatom 422 293 5 0 0 0 - - -;
 #X connect 0 0 4 0;
 #X connect 0 0 26 0;
 #X connect 1 0 25 0;
@@ -90,12 +93,14 @@
 #X connect 21 0 15 2;
 #X connect 21 1 11 0;
 #X connect 23 0 0 0;
+#X connect 23 0 34 0;
 #X connect 25 0 24 0;
 #X connect 26 0 28 0;
 #X connect 27 0 25 2;
 #X connect 28 0 27 0;
 #X connect 29 0 23 1;
 #X connect 29 1 15 0;
+#X connect 30 0 35 0;
 #X connect 30 0 23 1;
 #X connect 31 0 16 0;
 #X connect 32 0 31 1;
@@ -103,3 +108,5 @@
 #X connect 32 2 31 3;
 #X connect 32 3 31 4;
 #X connect 33 0 32 0;
+#X connect 34 0 23 1;
+#X connect 34 0 36 0;
