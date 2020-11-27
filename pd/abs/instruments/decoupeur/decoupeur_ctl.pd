@@ -1,11 +1,11 @@
-#N canvas 47 108 578 439 10;
-#X declare -path AutoPreset;
-#X obj 105 119 hsl 80 15 0 1 0 0 \$0-seuil-snd \$0-seuil-rcv seuil:1.2dB
-85 7 0 10 -257985 -1 -1 1080 1;
+#N canvas 47 108 976 439 10;
+#X declare -path ../AutoPreset;
+#X obj 105 119 hsl 80 15 0 1 0 0 \$0-seuil-snd \$0-seuil-rcv seuil:1.3dB
+85 7 0 10 -257985 -1 -1 1100 1;
 #X obj 105 136 hsl 80 15 0 1 0 0 \$0-lmin-snd \$0-lmin-rcv lmin:23.22ms
-85 7 0 10 -4032 -1 -1 1580 1;
-#X obj 105 153 hsl 80 15 0 1 0 0 \$0-hmin-snd \$0-hmin-rcv hmin:23.22ms
-85 7 0 10 -260097 -1 -1 1580 1;
+85 7 0 10 -4032 -1 -1 1400 1;
+#X obj 105 153 hsl 80 15 0 1 0 0 \$0-hmin-snd \$0-hmin-rcv hmin:11.61ms
+85 7 0 10 -260097 -1 -1 1100 1;
 #X obj 70 237 i;
 #X msg 70 292 label seuil:\$1dB;
 #X obj 219 195 r \$0-lmin-snd;
@@ -33,10 +33,10 @@
 #X obj 49 339 s \$1-thres;
 #X obj 185 377 s \$1-lmin;
 #X obj 329 375 s \$1-hmin;
-#X obj 34 7 declare -path AutoPreset;
 #X obj 34 30 apf \$2 \$1-Seuil \$0-seuil 2;
 #X obj 34 51 apf \$2 \$1-Lmin \$0-lmin 2;
 #X obj 34 72 apf \$2 \$1-Hmin \$0-hmin 2;
+#X obj 34 7 declare -path ../AutoPreset;
 #X connect 3 0 24 0;
 #X connect 4 0 22 0;
 #X connect 5 0 7 0;

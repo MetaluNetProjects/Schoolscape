@@ -1,5 +1,4 @@
 #N canvas 414 969 733 246 10;
-#X declare -path AutoPreset;
 #X declare -path decoupeur -path effects;
 #X declare -path absKEP;
 #X declare -path decoupeur;
@@ -10,6 +9,7 @@
 #X declare -path abs;
 #X declare -path absGAMME;
 #X declare -path gammabs;
+#X declare -path ./AutoPreset;
 #X obj 84 29 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
 #X obj 171 26 bng 15 250 50 0 empty empty save 17 7 0 10 -258113 -1
@@ -17,8 +17,7 @@
 #X obj 83 6 loadbang;
 #N canvas 750 575 450 300 DiversGuts 1;
 #X obj 148 12 apmaster DECSET;
-#N canvas 1200 1172 1003 300 declare 0;
-#X obj 22 27 declare -path AutoPreset;
+#N canvas 1200 1172 1003 300 declare 1;
 #X obj 22 6 declare -path decoupeur -path effects;
 #X obj 23 71 declare -path absKEP;
 #X obj 23 113 declare -path decoupeur;
@@ -29,6 +28,7 @@
 #X obj 23 92 declare -path abs;
 #X obj 19 146 declare -path absGAMME;
 #X obj 23 169 declare -path gammabs;
+#X obj 22 27 declare -path ./AutoPreset;
 #X restore 36 12 pd declare;
 #N canvas 1157 1172 763 719 loadbank 0;
 #X obj 21 17 loadbang;

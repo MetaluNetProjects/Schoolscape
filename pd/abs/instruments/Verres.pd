@@ -1,4 +1,4 @@
-#N canvas 2560 96 560 983 10;
+#N canvas 2560 909 560 983 10;
 #X floatatom 67 31 5 0 0 0 - - -;
 #X floatatom 112 30 5 0 0 0 - - -;
 #X floatatom 240 73 5 0 0 0 - - -;
@@ -135,7 +135,7 @@
 #X obj 27 150 poftranslate -25 15;
 #X obj 298 64 pofimage instruments/Glisse.png 80 50;
 #X obj 243 35 poftranslate 0 -170;
-#N canvas 925 582 618 405 Pitch 0;
+#N canvas 582 582 618 405 Pitch 0;
 #X obj 30 11 inlet;
 #X floatatom 264 120 5 0 0 0 - - -;
 #X floatatom 331 121 5 0 0 0 - - -;
@@ -197,6 +197,7 @@
 #X restore 516 229 pd double;
 #X msg 410 64 0.5;
 #X obj 76 92 poftranslate 0 85;
+#X obj 426 111 apf SONGschoolscape Pitch-\$1;
 #X connect 0 0 25 0;
 #X connect 1 0 12 1;
 #X connect 2 0 12 2;
@@ -212,6 +213,7 @@
 #X connect 11 0 21 0;
 #X connect 12 0 3 0;
 #X connect 12 0 11 0;
+#X connect 12 0 26 0;
 #X connect 12 1 4 0;
 #X connect 13 0 22 0;
 #X connect 14 0 16 0;
@@ -224,6 +226,8 @@
 #X connect 24 0 15 0;
 #X connect 25 0 20 0;
 #X connect 25 0 12 0;
+#X connect 26 0 12 3;
+#X connect 26 0 11 0;
 #X restore 35 640 pd Pitch;
 #X obj 27 49 poftranslate 0 -16;
 #X obj 27 524 poftranslate 2 180;
@@ -315,6 +319,7 @@
 #X connect 28 0 11 0;
 #X restore 46 831 pd BoutonSolo;
 #X obj 27 754 poftranslate 0 -116;
+#X obj 276 521 apf SONGschoolscape Just-\$1;
 #X connect 1 0 87 2;
 #X connect 2 0 4 2;
 #X connect 3 0 53 1;
@@ -384,6 +389,7 @@
 #X connect 66 0 63 0;
 #X connect 70 0 27 0;
 #X connect 70 0 35 0;
+#X connect 70 0 93 0;
 #X connect 70 1 28 0;
 #X connect 71 0 70 3;
 #X connect 72 0 73 0;
@@ -409,3 +415,5 @@
 #X connect 92 0 47 0;
 #X connect 92 0 75 0;
 #X connect 92 0 91 0;
+#X connect 93 0 70 3;
+#X connect 93 0 35 0;

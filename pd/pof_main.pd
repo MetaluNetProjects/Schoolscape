@@ -2,6 +2,7 @@
 #X declare -path abs -path . -path img;
 #X declare -path abs -path . -path img;
 #X declare -path abs/extra/iemlib;
+#X declare -path ./abs/instruments/AutoPreset;
 #X obj 18 178 pofwin;
 #X msg 30 145 build;
 #N canvas 751 378 307 150 bang_on_first_frame 0;
@@ -451,7 +452,7 @@
 #X obj 332 498 loadbang;
 #X msg 332 547 the patch is running!;
 #X obj 316 275 mixtape/REC-lr;
-#N canvas 1345 939 298 397 instruments_pof 0;
+#N canvas 1345 939 782 464 instruments_pof 1;
 #X obj 42 162 instruments/Baignoire 5;
 #X obj 44 187 instruments/Regle 6;
 #X obj 44 211 instruments/Aspirateur 7;
@@ -462,6 +463,7 @@
 #X obj 38 88 instruments/MicroOnde 2;
 #X obj 39 112 instruments/Bidon 3;
 #X obj 40 137 instruments/Grille 4;
+#X obj 111 14 declare -path ./abs/instruments/AutoPreset;
 #X restore 209 644 pd instruments_pof;
 #X obj 209 620 concert/instrument_panel;
 #X obj 17 386 mixtape/manager;
@@ -479,7 +481,7 @@
 #X obj 332 575 print SCHOOLSCAPE_DEBUG;
 #X obj 412 490 r datadir;
 #X msg 412 511 datadir: \$1;
-#N canvas 740 96 460 523 PopupMulClock 1;
+#N canvas 740 96 460 523 PopupMulClock 0;
 #X obj 44 14 inlet head;
 #X obj 167 71 instruments/PopupMulClock 0 Bureau;
 #X obj 139 118 instruments/PopupMulClock 2 Casiers;

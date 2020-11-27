@@ -1,4 +1,4 @@
-#N canvas 1331 234 589 946 10;
+#N canvas 1456 1008 589 946 10;
 #X floatatom 95 29 5 0 0 0 - - -;
 #X floatatom 144 31 5 0 0 0 - - -;
 #X floatatom 259 74 5 0 0 0 - - -;
@@ -12,17 +12,17 @@
 -1 -1;
 #X obj 259 200 route down;
 #X obj 259 219 b;
-#X floatatom 359 358 5 0 0 0 - - -;
+#X floatatom 463 368 5 0 0 0 - - -;
 #X floatatom 96 319 5 0 0 0 - - -;
 #X floatatom 138 319 5 0 0 0 - - -;
-#X obj 287 270 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 391 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 338 421 route down;
-#X obj 338 440 b;
-#X floatatom 466 359 5 0 0 0 - - -;
-#X obj 257 399 poftouch 36 36;
-#X msg 290 337 set BoutonMachineOn.png;
-#X msg 286 314 set BoutonMachineOff.png;
+#X obj 442 431 route down;
+#X obj 442 450 b;
+#X floatatom 570 369 5 0 0 0 - - -;
+#X obj 361 409 poftouch 36 36;
+#X msg 394 347 set BoutonMachineOn.png;
+#X msg 390 324 set BoutonMachineOff.png;
 #X obj 110 193 poftouch 621 294;
 #X obj 92 465 nbx 6 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 2 256;
@@ -42,7 +42,7 @@
 #X obj 57 485 poftranslate 2 200;
 #X obj 87 512 imageKnob380 instruments/Watt.png 0.53;
 #X obj 108 76 pofcolor 0.1 0.8 0.1 1;
-#X obj 257 377 pofimage BoutonMachineOff.png 35 35;
+#X obj 361 387 pofimage BoutonMachineOff.png 35 35;
 #X floatatom 94 563 5 0 0 0 - - -;
 #X floatatom 136 564 5 0 0 0 - - -;
 #X obj 215 680 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -68,13 +68,13 @@
 #X obj 86 535 s MIXwatt;
 #X obj 110 173 pofimage instruments/BolCreme.png 529 294;
 #X obj 57 245 poftranslate 0 0;
-#X obj 382 441 r concert-mute-\$1;
-#X obj 367 464 f;
-#X obj 367 485 == 0;
-#X obj 367 506 s concert-mute-\$1;
+#X obj 486 451 r concert-mute-\$1;
+#X obj 471 474 f;
+#X obj 471 495 == 0;
+#X obj 471 516 s concert-mute-\$1;
 #X obj 425 173 r MIXwattTouch;
-#X obj 287 249 r concert-instrument-isplaying-\$1;
-#X obj 287 290 sel 0 1;
+#X obj 391 259 r concert-instrument-isplaying-\$1;
+#X obj 391 300 sel 0 1;
 #X obj 403 197 multiOR, f 23;
 #X obj 403 221 s instrument_touched-\$1;
 #X obj 403 149 r MIX-0-on;
@@ -219,6 +219,7 @@
 #X connect 28 0 11 0;
 #X restore 78 731 pd BoutonSolo;
 #X obj 56 601 poftranslate 0 -116;
+#X obj 286 467 apf SONGschoolscape FX-\$1;
 #X connect 1 0 74 2;
 #X connect 2 0 4 2;
 #X connect 3 0 59 1;
@@ -256,6 +257,7 @@
 #X connect 34 0 73 0;
 #X connect 34 0 85 0;
 #X connect 35 0 58 0;
+#X connect 35 0 86 0;
 #X connect 35 1 27 0;
 #X connect 36 0 4 0;
 #X connect 37 0 18 0;
@@ -307,3 +309,5 @@
 #X connect 85 0 47 0;
 #X connect 85 0 71 0;
 #X connect 85 0 84 0;
+#X connect 86 0 35 3;
+#X connect 86 0 58 0;

@@ -1,4 +1,4 @@
-#N canvas 957 234 963 647 10;
+#N canvas 145 1033 963 647 10;
 #X floatatom 72 52 5 0 0 0 - - -;
 #X floatatom 120 59 5 0 0 0 - - -;
 #X floatatom 483 11 5 0 0 0 - - -;
@@ -250,7 +250,7 @@
 #X connect 79 0 52 0;
 #X connect 80 0 48 0;
 #X restore 25 543 pd LedsEssorage;
-#N canvas 1410 311 510 934 BoutonOptionRinçage&Depart 1;
+#N canvas 1410 909 510 934 BoutonOptionRinçage&Depart 0;
 #X obj 89 10 inlet head;
 #X floatatom 168 713 5 0 0 0 - - -;
 #X floatatom 118 660 5 0 0 0 - - -;
@@ -318,10 +318,12 @@
 #X obj 266 27 t b b;
 #X msg 249 61 1;
 #X msg 294 70 0;
-#X obj 235 122 s depart-light;
+#X obj 261 95 s depart-light;
+#X obj 223 122 api SONGschoolscape Ternaire-\$1;
 #X connect 0 0 2 0;
 #X connect 0 0 15 0;
 #X connect 1 0 6 0;
+#X connect 1 0 19 0;
 #X connect 2 0 3 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 1;
@@ -335,12 +337,12 @@
 #X connect 9 0 13 0;
 #X connect 10 0 13 0;
 #X connect 11 0 12 0;
-#X connect 12 0 1 0;
 #X connect 14 0 17 0;
 #X connect 15 0 16 0;
 #X connect 15 1 14 0;
 #X connect 16 0 18 0;
 #X connect 17 0 18 0;
+#X connect 19 0 1 0;
 #X restore 219 296 pd DivDepart;
 #X obj 80 812 outlet;
 #X obj 123 190 pofimage BoutonMachineUp.png 36 36;
@@ -349,7 +351,7 @@
 #X obj 124 222 poftouch 36 36;
 #X obj 99 569 poftouch 36 36;
 #X obj 109 770 poftouch 36 36;
-#N canvas 2689 96 431 510 DivOption 1;
+#N canvas 769 96 431 510 DivOption 0;
 #X obj 85 35 inlet;
 #X obj 85 122 hradio 15 1 0 3 nbDivOption-snd nbDivOption-rcv nbDivOption
 0 -8 0 10 -262144 -1 -1 0;
@@ -361,7 +363,7 @@
 #X msg 249 61 1;
 #X msg 294 70 0;
 #X msg 141 82 0;
-#X obj 235 122 s option-light;
+#X obj 291 94 s option-light;
 #X obj 85 147 sel 0 1 2;
 #X obj 77 87 mod 3;
 #X msg 39 172 1;
@@ -373,9 +375,11 @@
 #X floatatom 129 389 5 0 0 0 - - -;
 #X obj 116 233 r \$1-MessDecay;
 #X floatatom 214 290 5 0 0 0 - - -;
+#X obj 223 122 api SONGschoolscape Soft-\$1;
 #X connect 0 0 2 0;
 #X connect 0 0 6 0;
 #X connect 1 0 11 0;
+#X connect 1 0 22 0;
 #X connect 2 0 3 0;
 #X connect 2 0 12 0;
 #X connect 3 0 2 1;
@@ -399,11 +403,12 @@
 #X connect 18 0 19 0;
 #X connect 20 0 16 0;
 #X connect 20 0 21 0;
+#X connect 22 0 1 0;
 #X restore 212 615 pd DivOption;
-#N canvas 1489 1172 431 300 DivRinçage 0;
+#N canvas 2401 1522 431 300 DivRinçage 0;
 #X obj 85 35 inlet;
 #X obj 85 122 hradio 15 1 0 2 nbDivRinçage-snd nbDivRinçage-rcv nbDivRinçage
-0 -8 0 10 -262144 -1 -1 1;
+0 -8 0 10 -262144 -1 -1 0;
 #X obj 77 65 i;
 #X obj 108 65 + 1;
 #X obj 140 60 loadbang;
@@ -543,7 +548,7 @@
 #X connect 55 0 51 0;
 #X connect 55 0 54 0;
 #X restore 25 452 pd BoutonOptionRinçage&Depart;
-#N canvas 1171 368 553 600 BoutonEssorage&Pause 0;
+#N canvas 1419 1103 700 600 BoutonEssorage&Pause 0;
 #X obj 18 18 inlet head;
 #X floatatom 173 225 5 0 0 0 - - -;
 #X floatatom 51 53 5 0 0 0 - - -;
@@ -574,7 +579,7 @@
 ;
 #X obj 187 526 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 477 590 700 300 DivEssorage 0;
+#N canvas 243 518 774 300 DivEssorage 0;
 #X obj 85 35 inlet;
 #X obj 85 122 hradio 15 1 0 5 \$1-nbDivEssorage-snd \$1-nbDivEssorage-rcv
 \$1-nbDivEssorage 0 -8 0 10 -262144 -1 -1 0;
@@ -594,11 +599,13 @@
 #X obj 266 27 t b b;
 #X msg 249 61 1;
 #X msg 294 70 0;
-#X obj 235 122 s \$1-essorage-light;
+#X obj 341 100 s \$1-essorage-light;
 #X msg 141 82 1;
+#X obj 223 122 api SONGschoolscape Speed-\$1;
 #X connect 0 0 2 0;
 #X connect 0 0 15 0;
 #X connect 1 0 6 0;
+#X connect 1 0 20 0;
 #X connect 2 0 3 0;
 #X connect 2 0 7 0;
 #X connect 3 0 2 1;
@@ -620,6 +627,7 @@
 #X connect 16 0 18 0;
 #X connect 17 0 18 0;
 #X connect 19 0 1 0;
+#X connect 20 0 1 0;
 #X restore 219 532 pd DivEssorage;
 #X obj 56 246 pofimage BoutonMachineOff.png 35 35;
 #X obj 122 462 pofimage BoutonMachineUp.png 36 36;
@@ -721,7 +729,7 @@
 #X floatatom 134 235 5 0 0 0 - - -;
 #X floatatom 170 107 5 0 0 0 - - -;
 #X floatatom 223 103 5 0 0 0 - - -;
-#X obj 275 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 275 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 271 293 sel 0 1;
 #X obj 35 173 t b b;
@@ -751,7 +759,7 @@
 #X floatatom 184 635 5 0 0 0 - - -;
 #X floatatom 84 564 5 0 0 0 - - -;
 #X floatatom 129 561 5 0 0 0 - - -;
-#X obj 281 581 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 281 581 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 277 603 sel 0 1;
 #X floatatom 234 635 5 0 0 0 - - -;
@@ -1096,6 +1104,7 @@
 #X obj 583 155 pofimage instruments/Chronometre.png 50 50;
 #X obj 565 95 fixScale;
 #X obj 25 19 instrument_pof_common \$1 Bureau du prof;
+#X obj 423 367 apf SONGschoolscape Prog-\$1;
 #X connect 0 0 11 1;
 #X connect 1 0 11 2;
 #X connect 2 0 3 2;
@@ -1107,6 +1116,7 @@
 #X connect 8 0 10 1;
 #X connect 9 0 10 2;
 #X connect 10 0 23 0;
+#X connect 10 0 57 0;
 #X connect 10 1 24 0;
 #X connect 11 0 39 0;
 #X connect 12 0 18 1;
@@ -1152,3 +1162,5 @@
 #X connect 54 0 49 0;
 #X connect 55 0 53 0;
 #X connect 56 0 11 0;
+#X connect 57 0 10 3;
+#X connect 57 0 23 0;

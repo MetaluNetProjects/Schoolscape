@@ -1,4 +1,4 @@
-#N canvas 1337 234 583 904 10;
+#N canvas 1248 996 583 904 10;
 #X floatatom 76 29 5 0 0 0 - - -;
 #X floatatom 131 30 5 0 0 0 - - -;
 #X floatatom 249 73 5 0 0 0 - - -;
@@ -12,15 +12,15 @@
 -1 -1;
 #X obj 184 230 route down;
 #X obj 184 249 b;
-#X floatatom 319 369 5 0 0 0 - - -;
+#X floatatom 442 368 5 0 0 0 - - -;
 #X floatatom 75 315 5 0 0 0 - - -;
 #X floatatom 123 316 5 0 0 0 - - -;
 #X obj 315 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 406 450 route down;
-#X obj 406 469 b;
-#X floatatom 377 363 5 0 0 0 - - -;
-#X obj 322 427 poftouch 36 36;
+#X obj 455 451 route down;
+#X obj 455 470 b;
+#X floatatom 500 362 5 0 0 0 - - -;
+#X obj 371 428 poftouch 36 36;
 #X msg 318 310 set BoutonMachineOn.png;
 #X msg 314 287 set BoutonMachineOff.png;
 #X obj 91 208 poftouch 621 294;
@@ -42,7 +42,7 @@
 #X floatatom 300 613 5 0 0 0 - - -;
 #X obj 92 521 * 128;
 #X obj 87 76 pofcolor 0.1 0.8 0.1 1;
-#X obj 235 396 pofimage BoutonMachineOff.png 35 35;
+#X obj 358 395 pofimage BoutonMachineOff.png 35 35;
 #X floatatom 75 600 5 0 0 0 - - -;
 #X floatatom 110 610 5 0 0 0 - - -;
 #X obj 178 685 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -63,10 +63,10 @@
 #X obj 91 180 pofimage instruments/GrandeBaignoire.png 596 294;
 #X obj 275 635 s BAI-0-adjTouch;
 #X obj 216 841 s BAI-0-reset;
-#X obj 450 471 r concert-mute-\$1;
-#X obj 435 494 f;
-#X obj 435 515 == 0;
-#X obj 435 536 s concert-mute-\$1;
+#X obj 499 472 r concert-mute-\$1;
+#X obj 484 495 f;
+#X obj 484 516 == 0;
+#X obj 484 537 s concert-mute-\$1;
 #X obj 315 217 r concert-instrument-isplaying-\$1;
 #X obj 315 263 sel 0 1;
 #X obj 432 139 r BAI-0-on;
@@ -134,7 +134,7 @@
 #X obj 36 153 poftranslate -25 15;
 #X obj 332 67 pofimage instruments/Glisse.png 80 50;
 #X obj 277 38 poftranslate 0 -170;
-#N canvas 856 582 618 405 Pitch 0;
+#N canvas 582 582 618 405 Pitch 0;
 #X obj 30 11 inlet;
 #X floatatom 264 120 5 0 0 0 - - -;
 #X floatatom 331 121 5 0 0 0 - - -;
@@ -152,7 +152,7 @@
 #X floatatom 362 45 5 0 0 0 - - -;
 #X msg 409 85 out \$1;
 #X msg 338 72 incr \$1;
-#X obj 408 42 loadbang;
+#X obj 406 26 loadbang;
 #X floatatom 99 69 5 0 0 0 - - -;
 #X floatatom 136 68 5 0 0 0 - - -;
 #N canvas 0 582 450 300 text 0;
@@ -196,6 +196,7 @@
 #X restore 516 229 pd double;
 #X msg 410 64 0.5;
 #X obj 76 92 poftranslate 0 85;
+#X obj 426 111 apf SONGschoolscape Pitch-\$1;
 #X connect 0 0 25 0;
 #X connect 1 0 12 1;
 #X connect 2 0 12 2;
@@ -211,18 +212,20 @@
 #X connect 11 0 21 0;
 #X connect 12 0 3 0;
 #X connect 12 0 11 0;
+#X connect 12 0 26 0;
 #X connect 12 1 4 0;
 #X connect 13 0 22 0;
 #X connect 14 0 16 0;
 #X connect 15 0 12 3;
 #X connect 16 0 12 3;
-#X connect 17 0 24 0;
 #X connect 18 0 25 1;
 #X connect 19 0 25 2;
 #X connect 23 0 24 0;
 #X connect 24 0 15 0;
 #X connect 25 0 20 0;
 #X connect 25 0 12 0;
+#X connect 26 0 12 3;
+#X connect 26 0 11 0;
 #X restore 50 576 pd Pitch;
 #X obj 36 49 poftranslate 0 -16;
 #X obj 36 473 poftranslate 2 180;
@@ -315,6 +318,7 @@
 #X connect 28 0 16 0;
 #X connect 28 0 11 0;
 #X restore 297 812 pd BoutonSolo;
+#X obj 196 417 apf SONGschoolscape Just-\$1;
 #X connect 1 0 86 2;
 #X connect 2 0 4 2;
 #X connect 3 0 53 1;
@@ -380,6 +384,7 @@
 #X connect 63 0 64 0;
 #X connect 68 0 27 0;
 #X connect 68 0 35 0;
+#X connect 68 0 93 0;
 #X connect 68 1 28 0;
 #X connect 69 0 68 3;
 #X connect 70 0 71 0;
@@ -409,3 +414,5 @@
 #X connect 91 0 47 0;
 #X connect 91 0 73 0;
 #X connect 91 0 92 0;
+#X connect 93 0 68 3;
+#X connect 93 0 35 0;
