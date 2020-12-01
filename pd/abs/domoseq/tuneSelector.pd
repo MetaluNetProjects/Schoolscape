@@ -1,10 +1,10 @@
-#N canvas 2309 1131 450 543 10;
+#N canvas 1630 1144 450 543 10;
 #X obj 31 18 inlet;
 #X obj 31 82 s tuneSelHead;
 #X obj 292 45 s refreshTunes;
 #X obj 292 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 1 81 407 517 listTunes 0;
+#N canvas 1 126 407 517 listTunes 0;
 #X obj 33 70 pofutil;
 #X msg 33 47 getdir;
 #X obj 33 112 pofutil;
@@ -63,10 +63,10 @@
 #X obj 284 207 r ASK_LOAD;
 #X symbolatom 284 262 10 0 0 0 - - -;
 #X obj 284 417 s mainSeq-load;
-#X msg 113 357 0;
-#X obj 113 377 s mainSeq-recall;
-#X obj 76 411 s mainSeq-play;
-#X msg 76 391 1;
+#X msg 82 416 0;
+#X obj 82 436 s mainSeq-recall;
+#X obj 45 470 s mainSeq-play;
+#X msg 45 450 1;
 #X obj 284 338 overlay_confirm;
 #X msg 284 313 Woudiou layktou lod "\$1"?;
 #X obj 284 282 t s s;
@@ -78,6 +78,14 @@
 #X obj 154 93 poftranslate -88;
 #X obj 114 205 clone tuneSelItem 16 8;
 #X obj 31 59 poftranslate 0 48;
+#X obj 169 468 print;
+#X obj 116 315 symbol Basic;
+#X obj 98 237 loadbang;
+#X obj 98 269 t b b;
+#X obj 45 361 s mainSeq-recall;
+#X obj 28 240 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 74 302 0;
 #X connect 0 0 7 0;
 #X connect 3 0 2 0;
 #X connect 5 0 6 0;
@@ -100,3 +108,9 @@
 #X connect 25 0 23 1;
 #X connect 26 0 8 0;
 #X connect 28 0 1 0;
+#X connect 30 0 13 0;
+#X connect 31 0 32 0;
+#X connect 32 0 35 0;
+#X connect 32 1 30 0;
+#X connect 34 0 32 0;
+#X connect 35 0 33 0;
