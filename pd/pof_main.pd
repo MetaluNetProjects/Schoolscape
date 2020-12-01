@@ -391,7 +391,7 @@
 #X obj 19 6 declare -path abs -path . -path img;
 #X obj 14 29 declare -path abs -path . -path img;
 #X obj 432 285 mknob 50 100 0 1 0 0 VolMaster-snd VolMaster-rcv VolMaster
--2 -6 0 8 -258113 -1 -1 9900 1;
+-2 -6 0 8 -258113 -1 -1 0 1;
 #X obj 239 7 declare -path abs/extra/iemlib;
 #X obj 11 471 instruments/player;
 #N canvas 687 449 450 384 cpu 0;
@@ -452,7 +452,7 @@
 #X obj 332 498 loadbang;
 #X msg 332 547 the patch is running!;
 #X obj 316 275 mixtape/REC-lr;
-#N canvas 1345 939 782 464 instruments_pof 1;
+#N canvas 1345 939 782 464 instruments_pof 0;
 #X obj 42 162 instruments/Baignoire 5;
 #X obj 44 187 instruments/Regle 6;
 #X obj 44 211 instruments/Aspirateur 7;

@@ -1,4 +1,4 @@
-#N canvas 2245 909 664 932 10;
+#N canvas 214 443 664 932 10;
 #X floatatom 124 43 5 0 0 0 - - -;
 #X floatatom 242 86 5 0 0 0 - - -;
 #X floatatom 205 171 5 0 0 0 - - -;
@@ -199,7 +199,7 @@
 #X connect 8 0 9 0;
 #X restore 516 229 pd double;
 #X obj 76 92 poftranslate 0 85;
-#X obj 426 111 apf SONGschoolscape Pitch-\$1;
+#X obj 426 111 apf Inst-\$1 Pitch-\$1;
 #X connect 0 0 25 0;
 #X connect 1 0 12 1;
 #X connect 2 0 12 2;
@@ -321,7 +321,7 @@
 #X connect 28 0 11 0;
 #X restore 297 812 pd BoutonSolo;
 #X obj 31 656 poftranslate 0 -116;
-#X obj 448 570 apf SONGschoolscape Just-\$1;
+#X obj 448 570 apf Inst-\$1 Just-\$1;
 #X connect 0 0 88 2;
 #X connect 1 0 3 2;
 #X connect 2 0 54 1;

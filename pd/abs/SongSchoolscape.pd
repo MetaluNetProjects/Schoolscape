@@ -6,7 +6,7 @@
 ;
 #X obj 24 167 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 461 530 683 475 apmaster_autoload 1;
+#N canvas 461 530 683 475 apmaster_autoload 0;
 #X obj 84 34 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;
@@ -94,7 +94,7 @@
 #X msg 385 164 TestSetSamples2;
 #X msg 311 124 KEPsong1;
 #X symbolatom 163 228 10 0 0 0 - - -;
-#N canvas 394 318 721 490 getSong 0;
+#N canvas 394 318 721 490 getSong 1;
 #X obj 76 54 r SYNCER/r;
 #X obj 76 98 list split 1;
 #X obj 116 121 list trim;
@@ -158,6 +158,7 @@
 #X msg 454 216 Basic;
 #X obj 63 254 s SONGschoolscape-apmaster-rcv;
 #X obj 7 208 apmaster SONGschoolscape;
+#X obj 106 48 r All-SaveBut;
 #X connect 1 0 7 0;
 #X connect 2 0 25 0;
 #X connect 3 0 25 1;
@@ -188,4 +189,5 @@
 #X connect 22 0 4 0;
 #X connect 22 1 1 0;
 #X connect 23 0 4 0;
+#X connect 26 0 1 0;
 #X coords 0 -1 1 1 100 180 1 10 10;

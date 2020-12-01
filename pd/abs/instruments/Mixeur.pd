@@ -1,4 +1,4 @@
-#N canvas 1456 1008 589 946 10;
+#N canvas 263 513 589 946 10;
 #X floatatom 95 29 5 0 0 0 - - -;
 #X floatatom 144 31 5 0 0 0 - - -;
 #X floatatom 259 74 5 0 0 0 - - -;
@@ -219,7 +219,7 @@
 #X connect 28 0 11 0;
 #X restore 78 731 pd BoutonSolo;
 #X obj 56 601 poftranslate 0 -116;
-#X obj 286 467 apf SONGschoolscape FX-\$1;
+#X obj 286 467 apf Inst-\$1 FX-\$1;
 #X connect 1 0 74 2;
 #X connect 2 0 4 2;
 #X connect 3 0 59 1;

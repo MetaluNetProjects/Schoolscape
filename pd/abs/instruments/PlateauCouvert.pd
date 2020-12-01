@@ -1,4 +1,4 @@
-#N canvas 2167 909 824 942 10;
+#N canvas 214 537 824 942 10;
 #X floatatom 133 26 5 0 0 0 - - -;
 #X floatatom 531 84 5 0 0 0 - - -;
 #X floatatom 202 106 5 0 0 0 - - -;
@@ -334,7 +334,7 @@
 #X floatatom 141 145 5 0 0 0 - - -;
 #X floatatom 51 101 5 0 0 0 - - -;
 #X floatatom 96 98 5 0 0 0 - - -;
-#X obj 241 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 241 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 237 153 sel 0 1;
 #X floatatom 191 145 5 0 0 0 - - -;
@@ -436,7 +436,7 @@
 #X obj 38 100 poftranslate -59 16;
 #X obj 265 222 pofimage instruments/Appuye.png 100 80;
 #X obj 210 193 poftranslate 20 -145;
-#X obj 390 440 apf SONGschoolscape Minuteur-\$1;
+#X obj 390 440 apf Inst-\$1 Minuteur-\$1;
 #X connect 0 0 3 2;
 #X connect 1 0 4 2;
 #X connect 2 0 26 1;
