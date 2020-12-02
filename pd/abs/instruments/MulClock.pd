@@ -1,4 +1,4 @@
-#N canvas 2245 96 713 881 12;
+#N canvas 2245 909 713 881 12;
 #X obj 94 266 unpack f f f f f f f f, f 36;
 #X obj 268 355 r CLOCK;
 #X obj 268 378 unpack;
@@ -35,7 +35,7 @@
 #X floatatom 182 412 5 0 0 0 - - -;
 #X floatatom 388 417 5 0 0 0 - - -;
 #X obj 403 482 tgl 30 0 TempoMess-\$2-snd TempoMess-\$2-rcv TempoMess
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 326 593 r CLOCK;
 #X obj 401 555 != 1;
 #X floatatom 418 582 5 0 0 0 - - -;
@@ -43,7 +43,7 @@
 #X obj 326 620 spigot 1;
 #X obj 247 656 s \$1-mulCLOCK;
 #X obj 473 459 r \$2-OnOff;
-#N canvas 973 234 739 678 DecayVeloce 1;
+#N canvas 203 689 739 678 DecayVeloce 0;
 #X obj 94 266 unpack f f f f f f f f, f 36;
 #X obj 79 299 f;
 #X obj 109 299 f;
@@ -82,6 +82,7 @@
 #X msg 309 483 1;
 #X obj 145 31 8faders 20 1 Decay-\$2 1;
 #X obj 468 45 8faders 0.125 1.5 Veloce-\$2 0.6666;
+#X floatatom 181 487 5 0 0 0 - - -;
 #X connect 0 0 1 1;
 #X connect 0 1 2 1;
 #X connect 0 2 3 1;
@@ -96,6 +97,8 @@
 #X connect 4 0 28 0;
 #X connect 5 0 28 0;
 #X connect 6 0 28 0;
+#X connect 7 0 28 0;
+#X connect 8 0 28 0;
 #X connect 9 0 10 0;
 #X connect 9 0 26 0;
 #X connect 10 0 1 0;
@@ -136,6 +139,7 @@
 #X connect 24 0 25 0;
 #X connect 25 0 22 0;
 #X connect 28 0 27 0;
+#X connect 28 0 38 0;
 #X connect 29 0 32 0;
 #X connect 30 0 31 0;
 #X connect 30 0 35 0;
