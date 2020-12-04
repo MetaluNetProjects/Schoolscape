@@ -1,4 +1,4 @@
-#N canvas 214 443 664 932 10;
+#N canvas 1223 976 664 932 10;
 #X floatatom 124 43 5 0 0 0 - - -;
 #X floatatom 242 86 5 0 0 0 - - -;
 #X floatatom 205 171 5 0 0 0 - - -;
@@ -235,7 +235,7 @@
 #X obj 129 572 poftranslate 0 -27;
 #X obj 30 361 poftranslate 345 -160;
 #X obj 29 15 instrument_pof_common \$1 Plat de cantine;
-#N canvas 587 234 613 521 BoutonSolo 0;
+#N canvas 1459 1151 613 521 BoutonSolo 0;
 #X floatatom 173 225 5 0 0 0 - - -;
 #X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -322,6 +322,7 @@
 #X restore 297 812 pd BoutonSolo;
 #X obj 31 656 poftranslate 0 -116;
 #X obj 448 570 apf Inst-\$1 Just-\$1;
+#X floatatom 520 614 5 0 0 0 - - -;
 #X connect 0 0 88 2;
 #X connect 1 0 3 2;
 #X connect 2 0 54 1;
@@ -423,3 +424,4 @@
 #X connect 94 0 93 0;
 #X connect 95 0 36 3;
 #X connect 95 0 35 0;
+#X connect 95 0 96 0;
