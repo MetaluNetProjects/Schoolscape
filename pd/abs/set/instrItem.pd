@@ -1,4 +1,4 @@
-#N canvas 877 545 661 510 10;
+#N canvas 1370 1159 661 510 10;
 #X obj 37 22 inlet;
 #X obj 37 237 outlet;
 #X obj 94 21 r set-instruments;
@@ -23,7 +23,7 @@
 #X obj 243 308 list prepend \$1;
 #X obj 343 293 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 243 331 s \$2-instruments-touched;
+#X obj 172 453 s \$2-instruments-touched;
 #X obj 268 51 r \$2-instruments-select;
 #X obj 83 321 poftranslate 0 8;
 #X obj 115 299 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -209,6 +209,12 @@
 #X obj 162 168 pofcolor 1 1 1 1;
 #X obj 268 120 max 0.4;
 #X obj 278 142 max 0.7;
+#X msg 252 338 \$2 \$1;
+#X obj 252 359 route 1;
+#X obj 252 380 sel -1, f 11;
+#X msg 252 401 -1;
+#X obj 252 428 s concert-instrument-show;
+#X obj 315 358 r concert-instrument-show;
 #X connect 0 0 27 0;
 #X connect 2 0 3 0;
 #X connect 3 1 4 0;
@@ -233,6 +239,7 @@
 #X connect 17 0 20 0;
 #X connect 18 0 19 0;
 #X connect 18 0 20 0;
+#X connect 19 0 53 0;
 #X connect 19 0 21 0;
 #X connect 22 0 13 0;
 #X connect 23 0 29 0;
@@ -273,3 +280,9 @@
 #X connect 51 0 50 3;
 #X connect 51 0 52 0;
 #X connect 52 0 50 4;
+#X connect 53 0 54 0;
+#X connect 54 0 55 0;
+#X connect 55 0 56 0;
+#X connect 55 1 57 0;
+#X connect 56 0 57 0;
+#X connect 58 0 55 1;

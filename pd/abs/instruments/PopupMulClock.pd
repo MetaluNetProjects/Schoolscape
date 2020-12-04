@@ -82,7 +82,7 @@
 -1 -1;
 #X obj 167 64 r concert-MessClock-\$1;
 #X obj 42 159 pofvisible;
-#N canvas 2281 986 837 924 on-off 0;
+#N canvas 2281 986 837 924 on-off 1;
 #X floatatom 56 44 5 0 0 0 - - -;
 #X floatatom 95 43 5 0 0 0 - - -;
 #X obj 225 29 t b b;
@@ -175,7 +175,7 @@
 #X connect 5 0 7 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
-#X restore 198 501 pd text Save;
+#X restore 181 493 pd text Save;
 #X obj 253 816 b;
 #N canvas 0 96 450 300 Save 0;
 #X obj 97 38 inlet;
@@ -399,7 +399,7 @@
 #X restore 305 308 pd text Volume;
 #X msg 254 943 text ClockMess_\$1;
 #X obj 383 885 symbol \$2;
-#N canvas 1274 1181 450 428 SoloSubPattern 1;
+#N canvas 1274 1181 450 428 SoloSubPattern 0;
 #X msg 117 227 \$1 load \$2;
 #X obj 75 56 symbol Inst-\$1;
 #X symbolatom 15 130 10 0 0 0 - - -;

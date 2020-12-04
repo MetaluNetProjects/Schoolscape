@@ -1,4 +1,4 @@
-#N canvas 2078 106 921 837 10;
+#N canvas 1795 1005 921 875 10;
 #X obj 37 6 inlet;
 #X obj 37 586 outlet;
 #X msg 101 370 draw \$1;
@@ -115,10 +115,10 @@
 #X obj 114 219 poftouch 60 80 1;
 #X obj 16 757 * 1;
 #X msg 435 183 1;
-#X obj 260 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 260 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 44 668 == 0;
-#X obj 21 691 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 21 691 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 159 7 r concert-instrument-show;
 #X obj 159 28 sel -1 \$1;
@@ -183,6 +183,10 @@
 #X obj 632 358 pofimage instruments/Chronometre.png 45 45;
 #X obj 631 382 poftouch 45 45 1;
 #X obj 632 185 poftranslate 0 -324;
+#X floatatom 158 829 5 0 0 0 - - -;
+#X obj 224 833 s concert-fader-\$1;
+#X obj 215 755 inlet;
+#X obj 108 817 outlet;
 #X connect 0 0 69 0;
 #X connect 2 0 101 0;
 #X connect 3 0 2 0;
@@ -302,6 +306,7 @@
 #X connect 107 1 78 0;
 #X connect 108 0 27 0;
 #X connect 108 0 89 0;
+#X connect 108 0 174 0;
 #X connect 109 0 45 0;
 #X connect 111 0 86 0;
 #X connect 113 0 114 0;
@@ -366,3 +371,6 @@
 #X connect 168 0 169 0;
 #X connect 169 1 142 0;
 #X connect 170 0 136 0;
+#X connect 173 0 27 0;
+#X connect 173 0 172 0;
+#X connect 173 0 171 0;
