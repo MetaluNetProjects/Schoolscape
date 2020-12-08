@@ -1,4 +1,4 @@
-#N canvas 180 908 420 307 10;
+#N canvas 180 938 420 307 10;
 #X obj 11 11 cnv 15 99 122 empty empty MASTERS 5 12 1 14 -260097 -1
 0;
 #X obj 38 54 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
@@ -49,7 +49,7 @@
 #X connect 16 1 5 0;
 #X connect 17 0 19 0;
 #X connect 19 0 11 1;
-#X restore 152 69 pd apmaster_autoload;
+#X restore 235 69 pd apmaster_autoload;
 #N canvas 513 301 568 280 apmaster_symbol 0;
 #X obj 75 38 route loaded saved;
 #X obj 75 155 outlet;
@@ -61,14 +61,18 @@
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
 #X connect 4 1 1 0;
-#X restore 154 18 pd apmaster_symbol;
-#X symbolatom 154 43 0 0 0 0 - - -;
+#X restore 237 18 pd apmaster_symbol;
+#X symbolatom 237 43 0 0 0 0 - - -;
 #X msg 160 143 savein;
 #X obj 38 104 bng 15 250 50 0 empty empty reload 17 7 1 10 -4034 -1
 -1;
 #X msg 107 143 loadin;
 #X obj 160 166 s MASTERschoolscape-apmaster-rcv;
 #X obj 16 202 apmaster MASTERschoolscape;
+#X obj 153 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 124 33 r All-LoadMASTER;
+#X obj 181 103 r All-SaveMASTER;
 #X connect 1 0 7 0;
 #X connect 2 0 11 0;
 #X connect 3 0 11 1;
@@ -76,4 +80,7 @@
 #X connect 7 0 10 0;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
+#X connect 13 0 8 0;
+#X connect 14 0 12 0;
+#X connect 14 0 7 0;
 #X coords 0 -1 1 1 100 180 1 10 10;
