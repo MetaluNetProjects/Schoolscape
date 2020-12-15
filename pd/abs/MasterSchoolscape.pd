@@ -1,4 +1,4 @@
-#N canvas 180 938 420 307 10;
+#N canvas 288 1013 714 679 10;
 #X obj 11 11 cnv 15 99 122 empty empty MASTERS 5 12 1 14 -260097 -1
 0;
 #X obj 38 54 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
@@ -7,7 +7,7 @@
 ;
 #X obj 29 170 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 649 134 541 521 apmaster_autoload 0;
+#N canvas 639 126 541 521 apmaster_autoload 1;
 #X obj 84 34 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;
@@ -63,24 +63,99 @@
 #X connect 4 1 1 0;
 #X restore 237 18 pd apmaster_symbol;
 #X symbolatom 237 43 0 0 0 0 - - -;
-#X msg 160 143 savein;
 #X obj 38 104 bng 15 250 50 0 empty empty reload 17 7 1 10 -4034 -1
 -1;
-#X msg 107 143 loadin;
-#X obj 160 166 s MASTERschoolscape-apmaster-rcv;
 #X obj 16 202 apmaster MASTERschoolscape;
-#X obj 153 111 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 192 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 124 33 r All-LoadMASTER;
-#X obj 181 103 r All-SaveMASTER;
-#X connect 1 0 7 0;
-#X connect 2 0 11 0;
-#X connect 3 0 11 1;
+#X obj 159 157 r All-SaveMASTER;
+#X symbolatom 451 36 10 0 0 0 - - -;
+#X obj 453 10 r mainSeq-load;
+#X msg 67 371 savein;
+#X msg 14 371 loadin;
+#X obj 287 315 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -4034 -1
+-1 1;
+#X obj 156 317 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -258113
+-1 -1 4;
+#X msg 287 333 _all_ load \$1;
+#X msg 156 336 _all_ store \$1;
+#X obj 108 256 t b b;
+#X obj 44 255 t b b;
+#X obj 214 372 s MASTERschoolscape-pattern-snd;
+#X obj 67 394 s MASTERschoolscape-apmaster-rcv;
+#X obj 467 71 r set;
+#X symbolatom 468 100 0 0 0 0 - - -;
+#X symbolatom 529 433 10 0 0 0 - - -;
+#X symbolatom 330 523 0 0 0 0 - - -;
+#X obj 394 465 r setPropsFilename;
+#X symbolatom 430 329 10 0 0 0 - - -;
+#X obj 444 290 r list-sets-number;
+#X obj 505 365 r set-play-name;
+#X obj 323 111 r NomDuSetSelectionné;
+#X symbolatom 380 134 10 0 0 0 - - -;
+#X obj 640 283 print;
+#X obj 309 154 sel PREAC++ Homescape Schoolscape Velo Moto;
+#X msg 302 179 1;
+#X msg 361 178 2;
+#X msg 401 182 3;
+#X msg 460 181 4;
+#X msg 513 177 5;
+#X msg 564 175 0;
+#X obj 381 217 f;
+#X obj 381 239 change;
+#X floatatom 388 264 5 0 0 0 - - -;
+#X msg 187 221 set \$1;
+#X msg 133 278 1, f 4;
+#X msg 189 275 1, f 2;
+#X obj 140 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 190 249 t b a;
+#X connect 1 0 20 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 1;
 #X connect 5 0 6 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 13 0 8 0;
-#X connect 14 0 12 0;
-#X connect 14 0 7 0;
+#X connect 7 0 21 0;
+#X connect 10 0 7 0;
+#X connect 10 0 48 0;
+#X connect 11 0 9 0;
+#X connect 11 0 20 0;
+#X connect 13 0 12 0;
+#X connect 14 0 23 0;
+#X connect 15 0 23 0;
+#X connect 16 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 22 0;
+#X connect 19 0 22 0;
+#X connect 20 0 14 0;
+#X connect 20 1 46 0;
+#X connect 21 0 15 0;
+#X connect 21 1 47 0;
+#X connect 24 0 25 0;
+#X connect 28 0 27 0;
+#X connect 30 0 29 0;
+#X connect 31 0 26 0;
+#X connect 32 0 33 0;
+#X connect 32 0 35 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 0;
+#X connect 35 2 38 0;
+#X connect 35 3 39 0;
+#X connect 35 4 40 0;
+#X connect 35 5 41 0;
+#X connect 36 0 42 0;
+#X connect 37 0 42 0;
+#X connect 38 0 42 0;
+#X connect 39 0 42 0;
+#X connect 40 0 42 0;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 43 0 45 0;
+#X connect 45 0 49 0;
+#X connect 45 0 46 0;
+#X connect 46 0 17 0;
+#X connect 47 0 16 0;
+#X connect 49 0 47 0;
+#X connect 49 1 47 0;
 #X coords 0 -1 1 1 100 180 1 10 10;

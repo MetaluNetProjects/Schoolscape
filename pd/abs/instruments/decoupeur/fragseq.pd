@@ -1,4 +1,4 @@
-#N canvas 1028 234 892 679 10;
+#N canvas 207 678 892 679 10;
 #X obj 231 211 switch~;
 #X obj 231 186 != 0;
 #X obj 160 494 pow 2;
@@ -32,7 +32,7 @@
 #X obj 97 140 *;
 #X obj 46 168 *;
 #X obj 57 143 t b f;
-#N canvas 682 342 757 433 choice 0;
+#N canvas 443 342 757 433 choice 0;
 #X obj 115 225 i;
 #X obj 141 225 + 1;
 #X obj 352 218 t b f;
@@ -55,7 +55,7 @@
 #X obj 232 135 r \$0-nbfrag;
 #X obj 188 294 - 1;
 #X msg 443 185 0.2;
-#N canvas 644 152 773 562 PalinAlea 0;
+#N canvas 427 152 773 562 PalinAlea 0;
 #X obj 398 335 t b f;
 #X msg 398 360 0;
 #X obj 429 359 - 1;
@@ -405,6 +405,7 @@
 #X obj 115 248 list prepend 0;
 #X obj 115 271 route 0 1;
 #X obj 227 74 i;
+#X floatatom 252 246 5 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 0 0 35 0;
 #X connect 1 0 4 0;
@@ -427,6 +428,7 @@
 #X connect 19 0 20 0;
 #X connect 19 0 26 0;
 #X connect 19 0 27 0;
+#X connect 19 0 38 0;
 #X connect 20 0 12 1;
 #X connect 21 0 8 0;
 #X connect 22 0 13 0;
@@ -456,7 +458,7 @@
 #X connect 37 0 31 0;
 #X connect 37 0 34 1;
 #X restore 46 215 pd choice;
-#N canvas 96 550 720 473 clock 1;
+#N canvas 96 550 720 473 clock 0;
 #X obj 111 66 inlet;
 #X obj 111 203 == 1;
 #X text 56 50 stop / original /clocked;
@@ -530,7 +532,7 @@
 #X obj 189 120 t f f;
 #X obj 521 179 pack f 8;
 #X msg 306 307 1;
-#N canvas 979 272 381 495 clock 1;
+#N canvas 979 272 381 495 clock 0;
 #X obj 189 261 inlet;
 #X obj 100 389 inlet;
 #X obj 67 418 spigot;
@@ -914,6 +916,7 @@ pitch 0 -8 0 10 -261682 -1 -1 0 256;
 #X restore 160 434 pd DivVolume;
 #X obj 382 613 print;
 #X obj 363 570 r \$1-\$2-denum-rcv;
+#X floatatom 74 461 5 0 0 0 - - -;
 #X connect 1 0 0 0;
 #X connect 2 0 36 0;
 #X connect 3 0 51 0;
@@ -925,6 +928,7 @@ pitch 0 -8 0 10 -261682 -1 -1 0 256;
 #X connect 8 0 7 0;
 #X connect 8 1 7 1;
 #X connect 9 0 41 0;
+#X connect 9 0 86 0;
 #X connect 10 0 28 0;
 #X connect 11 0 6 0;
 #X connect 11 1 6 1;

@@ -1,4 +1,4 @@
-#N canvas 908 153 507 483 10;
+#N canvas 673 129 507 483 10;
 #X obj 58 15 r \$1-itemHead;
 #X obj 58 190 poftranslate;
 #X obj 237 13 r \$1-pos;
@@ -24,10 +24,10 @@
 #X obj 154 93 route visible;
 #X obj 154 71 t a a;
 #X obj 58 261 \$3 \$1;
-#X floatatom 176 144 5 0 0 0 - - -, f 5;
+#X floatatom 176 144 5 0 0 0 - - -;
 #X obj 264 103 - 1;
-#X floatatom 348 122 5 0 0 0 - - -, f 5;
-#X floatatom 361 31 5 0 0 0 - - -, f 5;
+#X floatatom 348 122 5 0 0 0 - - -;
+#X floatatom 361 31 5 0 0 0 - - -;
 #X obj 164 285 -;
 #X obj 237 37 t f f;
 #X obj 164 360 *;
@@ -37,10 +37,11 @@
 #X obj 164 427 >= 0;
 #X obj 71 143 &&;
 #X obj 84 119 t b f;
-#X floatatom 202 430 5 0 0 0 - - -, f 5;
+#X floatatom 202 430 5 0 0 0 - - -;
 #X obj 264 248 + 0.5;
 #X obj 205 312 + 0.5;
 #X obj 164 312 + 0.99;
+#X obj 61 339 print;
 #X connect 0 0 21 0;
 #X connect 1 0 24 0;
 #X connect 2 0 28 0;

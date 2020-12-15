@@ -1,4 +1,4 @@
-#N canvas 625 75 875 797 10;
+#N canvas 236 150 875 797 10;
 #X declare -path ../;
 #X obj 59 52 inlet head;
 #X obj 78 233 poftranslate;
@@ -9,7 +9,7 @@
 #X obj 222 167 * -1;
 #X obj 207 190 *;
 #X obj 268 39 hsl 128 15 0 20 0 0 list-\$1-pos list-\$1-pos list-pos
--2 -8 0 10 -262144 -1 -1 12700 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X msg 615 177 12;
 #X obj 413 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -72,9 +72,9 @@
 -1 -1;
 #X obj 388 520 pow 2;
 #X obj 342 608 min;
-#X floatatom 453 432 5 1 100 0 - - -, f 5;
+#X floatatom 453 432 5 1 100 0 - - -;
 #X obj 342 653 -;
-#N canvas 118 232 581 462 scroll 1;
+#N canvas 118 232 581 462 scroll 0;
 #X obj 149 27 inlet;
 #X obj 185 79 unpack f f;
 #X obj 255 78 unpack f f;
@@ -105,11 +105,11 @@
 #X obj 249 279 +;
 #X obj 300 278 f;
 #X obj 300 236 b;
-#X floatatom 301 177 5 0 0 0 - - -, f 5;
+#X floatatom 301 177 5 0 0 0 - - -;
 #X obj 316 125 abs;
 #X obj 121 216 outlet on;
 #X obj 406 326 s \$0-maxpos;
-#X floatatom 391 96 5 0 0 0 - - -, f 5;
+#X floatatom 391 96 5 0 0 0 - - -;
 #X obj 88 314 r list-\$1-setpos;
 #X msg 185 385 0;
 #X obj 316 145 moses 60;
@@ -209,8 +209,8 @@
 #X obj 234 174 poftranslate;
 #X obj 234 215 poftouch;
 #X obj 178 46 * 0.5;
-#X floatatom 317 145 5 0 0 0 - - -, f 5;
-#X floatatom 336 168 5 0 0 0 - - -, f 5;
+#X floatatom 317 145 5 0 0 0 - - -;
+#X floatatom 336 168 5 0 0 0 - - -;
 #X msg 92 113 draw \$1;
 #X obj 77 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
@@ -237,7 +237,7 @@
 #X connect 17 0 16 0;
 #X restore 78 317 pd touchMaskTopBottom;
 #X obj 59 285 t a a a;
-#N canvas 5 75 484 376 slider 1;
+#N canvas 5 75 484 376 slider 0;
 #X obj 155 44 r list-\$1-width;
 #X obj 265 52 r list-\$1-spacing;
 #X obj 59 176 poftranslate;
@@ -248,11 +248,11 @@
 #X obj 279 129 * -1;
 #X obj 155 66 * 0.5;
 #X msg 80 111 draw \$1;
-#X obj 79 89 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 79 89 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X floatatom 143 262 5 0 0 0 - - -, f 5;
-#X floatatom 193 240 5 0 0 0 - - -, f 5;
-#X floatatom 179 143 5 0 0 0 - - -, f 5;
+#X floatatom 143 262 5 0 0 0 - - -;
+#X floatatom 193 240 5 0 0 0 - - -;
+#X floatatom 179 143 5 0 0 0 - - -;
 #X obj 59 217 poftouch 180 1200;
 #X obj 155 88 - 90;
 #X obj 125 54 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -297,6 +297,8 @@
 #X obj 219 624 r list-\$1-number;
 #X obj 192 692 s list-\$1-scrollpos;
 #X obj 59 717 pofrect 20 50 10;
+#X obj 688 366 s list-\$1-props;
+#X msg 688 342 1 _show;
 #X connect 0 0 43 0;
 #X connect 1 0 25 0;
 #X connect 2 0 38 0;
@@ -416,3 +418,4 @@
 #X connect 116 0 106 0;
 #X connect 117 0 111 0;
 #X connect 118 0 117 1;
+#X connect 122 0 121 0;
