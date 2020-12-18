@@ -1,7 +1,7 @@
-#N canvas 1200 909 680 523 10;
-#X obj 65 41 loadbang;
-#X obj 65 98 s set-instruments;
-#X obj 130 42 r set-reinit-instruments;
+#N canvas 1200 557 680 523 10;
+#X obj 68 10 loadbang;
+#X obj 68 67 s set-instruments;
+#X obj 133 11 r set-reinit-instruments;
 #X obj 66 151 table set-table-0 441000;
 #X obj 66 172 table set-table-1 441000;
 #X obj 66 193 table set-table-2 441000;
@@ -76,7 +76,7 @@
 #X restore 310 152 pd saveSet;
 #X obj 66 409 table set-table-length 30;
 #X obj 66 428 table set-table-pitch 30;
-#N canvas 2081 1170 779 459 loadSet 1;
+#N canvas 2081 1170 779 459 loadSet 0;
 #X obj 122 54 symbol;
 #X msg 75 32 Test;
 #X obj 122 167 t f b;
@@ -396,13 +396,15 @@
 #X obj 299 495 s rec-playtab;
 #X msg 299 447 list set-table-10 \$1;
 #X obj 66 458 table set-table-fx 30;
-#X msg 229 104 Kick Snare Hihat Tom Cymbale Basse Guitare Synthe Piano
+#X msg 68 95 Kick Snare Hihat Tom Cymbale Basse Guitare Synthe Piano
 Chant;
 #X obj 492 231 settings/autosave_xml set;
-#X msg 65 62 Bureau Couverts Casier Plat Grille Becher Regle Sifflet
+#X msg 68 31 Bureau Couverts Casier Plat Grille Becher Regle Sifflet
 Verre Sonnerie;
 #X obj 399 469 r ModeSilence;
 #X obj 299 472 spigot;
+#X obj 496 21 MasterSetSchoolscape;
+#X obj 598 397 MAINDIR;
 #X connect 0 0 44 0;
 #X connect 2 0 44 0;
 #X connect 17 0 18 1;

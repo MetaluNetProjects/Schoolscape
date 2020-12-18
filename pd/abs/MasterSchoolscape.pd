@@ -1,4 +1,4 @@
-#N canvas 288 1013 714 679 10;
+#N canvas 1031 207 714 679 10;
 #X obj 11 11 cnv 15 99 122 empty empty MASTERS 5 12 1 14 -260097 -1
 0;
 #X obj 38 54 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
@@ -7,7 +7,7 @@
 ;
 #X obj 29 170 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 639 126 541 521 apmaster_autoload 1;
+#N canvas 639 126 541 521 apmaster_autoload 0;
 #X obj 84 34 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;
@@ -75,7 +75,7 @@
 #X msg 67 371 savein;
 #X msg 14 371 loadin;
 #X obj 287 315 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -4034 -1
--1 1;
+-1 0;
 #X obj 156 317 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -258113
 -1 -1 4;
 #X msg 287 333 _all_ load \$1;
@@ -106,8 +106,8 @@
 #X obj 381 239 change;
 #X floatatom 388 264 5 0 0 0 - - -;
 #X msg 187 221 set \$1;
-#X msg 133 278 1, f 4;
-#X msg 189 275 1, f 2;
+#X msg 133 278 2, f 4;
+#X msg 189 275 2, f 2;
 #X obj 140 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 190 249 t b a;
@@ -158,4 +158,4 @@
 #X connect 47 0 16 0;
 #X connect 49 0 47 0;
 #X connect 49 1 47 0;
-#X coords 0 -1 1 1 100 180 1 10 10;
+#X coords 0 -1 1 1 100 180 1 0 0;
