@@ -1,4 +1,4 @@
-#N canvas 1447 1438 680 523 10;
+#N canvas 1447 1397 680 523 10;
 #X obj 68 10 loadbang;
 #X obj 68 67 s set-instruments;
 #X obj 133 11 r set-reinit-instruments;
@@ -41,6 +41,8 @@
 #X msg 327 337 \; set-table-pitch write \$1/pitch.txt;
 #X obj 144 28 r set-save-as;
 #X msg 144 295 11;
+#X obj 225 550 s All-SaveMASTER;
+#X obj 226 526 del 500;
 #X connect 0 0 13 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -73,7 +75,8 @@
 #X connect 24 0 7 0;
 #X connect 26 0 0 0;
 #X connect 27 0 2 0;
-#X restore 310 152 pd saveSet;
+#X connect 29 0 28 0;
+#X restore 296 132 pd saveSet;
 #X obj 66 409 table set-table-length 30;
 #X obj 66 428 table set-table-pitch 30;
 #N canvas 2081 1170 779 459 loadSet 0;

@@ -1,4 +1,4 @@
-#N canvas 1246 244 577 542 10;
+#N canvas 623 244 577 542 10;
 #X declare -path ../;
 #X obj 63 27 inlet;
 #X obj 63 60 t a a a;
@@ -110,7 +110,7 @@
 -262144 -1 -1 -321 256;
 #X obj 244 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 72.57 256;
-#N canvas 788 185 987 895 set_load/save 1;
+#N canvas 73 737 987 895 set_load/save 1;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -166,7 +166,7 @@
 -262144 -1 -1 0 256;
 #X obj 636 356 poftranslate;
 #X obj 149 305 pofcolor 0 0 0 0.85;
-#N canvas 632 92 669 742 setname 0;
+#N canvas 531 96 669 831 setname 1;
 #X obj 195 68 t a a;
 #X floatatom 279 28 5 0 0 0 - - -;
 #X floatatom 349 29 5 0 0 0 - - -;
@@ -235,6 +235,11 @@
 #X obj 508 279 r set-saving;
 #X obj 508 299 sel 1;
 #X obj 509 348 b;
+#X symbolatom 409 731 0 0 0 0 - - -;
+#X msg 413 704 symbol \$1;
+#X obj 386 508 symbol;
+#X symbolatom 318 559 0 0 0 0 - - -;
+#X obj 390 543 s NomDuSetSelectionné;
 #X connect 0 0 7 0;
 #X connect 0 1 4 0;
 #X connect 1 0 32 1;
@@ -278,6 +283,7 @@
 #X connect 41 0 10 0;
 #X connect 43 0 49 1;
 #X connect 43 0 45 0;
+#X connect 43 0 68 0;
 #X connect 44 0 49 1;
 #X connect 45 0 46 0;
 #X connect 46 0 14 0;
@@ -301,6 +307,8 @@
 #X connect 65 0 44 0;
 #X connect 65 0 52 0;
 #X connect 65 0 60 0;
+#X connect 67 0 66 0;
+#X connect 68 0 69 0;
 #X restore 636 376 pd setname;
 #X obj 646 281 pofcolor 0 0 0 0.9;
 #X obj 284 438 poftranslate;
@@ -446,7 +454,7 @@
 #X obj 452 593 r set-saving-save-enabled;
 #X obj 472 616 r set-saving-name;
 #X obj 451 684 s setCreate;
-#N canvas 610 78 631 603 ADMIN 0;
+#N canvas 569 96 631 603 ADMIN 0;
 #X obj 23 19 inlet;
 #X obj 23 57 pofvisible;
 #X obj 69 15 r ADMIN;
@@ -600,6 +608,9 @@
 #X obj 40 156 t b;
 #X obj 265 214 s InterfaceModeOpened;
 #X obj 288 188 t b;
+#X symbolatom 668 808 10 0 0 0 - - -;
+#X obj 446 819 s All-SaveMASTER;
+#X obj 447 795 del 500;
 #X connect 0 0 127 0;
 #X connect 2 0 13 0;
 #X connect 3 0 32 0;
@@ -716,6 +727,7 @@
 #X connect 96 0 114 0;
 #X connect 96 1 106 0;
 #X connect 98 0 97 0;
+#X connect 98 0 135 0;
 #X connect 99 0 95 0;
 #X connect 100 0 98 1;
 #X connect 102 0 101 0;
@@ -726,6 +738,7 @@
 #X connect 105 0 79 0;
 #X connect 106 0 121 0;
 #X connect 106 0 122 0;
+#X connect 106 0 137 0;
 #X connect 106 1 99 0;
 #X connect 108 0 117 0;
 #X connect 109 0 110 0;
@@ -745,6 +758,7 @@
 #X connect 129 0 128 0;
 #X connect 132 0 131 0;
 #X connect 134 0 133 0;
+#X connect 137 0 136 0;
 #X restore 150 316 pd set_load/save;
 #X obj 291 345 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 73 256;
