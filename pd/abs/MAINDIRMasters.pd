@@ -1,0 +1,41 @@
+#N canvas 582 1197 450 505 10;
+#X obj 128 55 loadbang;
+#X obj 128 77 del 500;
+#X symbolatom 129 124 0 0 0 0 - - -;
+#X obj 97 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X symbolatom 246 69 0 0 0 0 - - -;
+#X obj 252 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 593 556 501 499 getdir 1;
+#X obj 175 16 inlet;
+#X obj 109 17 loadbang;
+#X obj 136 54 b;
+#X obj 134 110 pofutil;
+#X msg 134 86 getdir;
+#X obj 186 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 113 402 outlet;
+#X obj 24 357 print;
+#X msg 275 61 symbol;
+#X msg 129 144 symbol \$1;
+#X obj 128 171 splitpath;
+#X obj 136 202 splitpath;
+#X msg 136 231 symbol \$1/pd/set;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 6 0;
+#X restore 132 101 pd getdir;
+#X obj 133 161 s schoolscape_MAINDIR-SET;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 0 2 0;

@@ -1,4 +1,4 @@
-#N canvas 1200 557 680 523 10;
+#N canvas 1447 1438 680 523 10;
 #X obj 68 10 loadbang;
 #X obj 68 67 s set-instruments;
 #X obj 133 11 r set-reinit-instruments;
@@ -404,7 +404,7 @@ Verre Sonnerie;
 #X obj 399 469 r ModeSilence;
 #X obj 299 472 spigot;
 #X obj 496 21 MasterSetSchoolscape;
-#X obj 598 397 MAINDIR;
+#X obj 562 368 MAINDIRMasters;
 #X connect 0 0 44 0;
 #X connect 2 0 44 0;
 #X connect 17 0 18 1;

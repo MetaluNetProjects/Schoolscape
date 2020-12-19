@@ -1,4 +1,4 @@
-#N canvas 138 699 724 539 10;
+#N canvas 289 804 724 539 10;
 #X obj 11 11 cnv 15 99 122 empty empty SONG 5 12 1 14 -4032 -1 0;
 #X obj 33 75 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
 -1;
@@ -152,7 +152,7 @@
 #X connect 27 0 13 0;
 #X restore 153 159 pd getSong;
 #X msg 204 101 Basic;
-#X obj 67 394 s SONGschoolscape-apmaster-rcv;
+#X obj 63 428 s SONGschoolscape-apmaster-rcv;
 #X obj 7 208 apmaster SONGschoolscape;
 #X obj 172 359 s SONGschoolscape-pattern-snd;
 #X obj 147 307 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -4034 -1
