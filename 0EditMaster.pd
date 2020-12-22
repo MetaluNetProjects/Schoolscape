@@ -1,15 +1,16 @@
-#N canvas 168 450 397 380 10;
+#N canvas 168 298 397 380 10;
 #X declare -lib abl_link~ -path abl_link~;
 #X declare -lib cyclone/atan~ -lib cyclone/seq -lib cyclone/midiparse
 ;
 #X declare -stdpath zexy -lib zexy;
-#X declare -lib iemlib/filter~;
 #X declare -lib moonlib/mknob -lib moonlib/tabenv -lib moonlib/f2s
 -lib moonlib/ndmetro -lib moonlib/dispatch;
 #X declare -lib maxlib -path maxlib;
 #X declare -lib creb/fdn~ -lib creb/filterortho~ -lib creb/dist~ -lib
 creb;
 #X declare -lib pof;
+#X declare -lib iemlib/filter~ -lib iemlib1 -lib iemlib -path iemlib
+;
 #X obj 25 180 loadbang;
 #X msg 25 205 \; pd-pof_main.pd vis 1;
 #X obj 25 289 pofwin;
@@ -58,7 +59,6 @@ creb;
 #X obj 16 180 declare -lib cyclone/atan~ -lib cyclone/seq -lib cyclone/midiparse
 , f 67;
 #X obj 16 92 declare -stdpath zexy -lib zexy;
-#X obj 16 162 declare -lib iemlib/filter~;
 #X obj 17 134 declare -lib moonlib/mknob -lib moonlib/tabenv -lib moonlib/f2s
 -lib moonlib/ndmetro -lib moonlib/dispatch, f 109;
 #X obj 16 200 declare -lib maxlib -path maxlib;
@@ -70,6 +70,8 @@ envrms~], f 65;
 prefs., f 64;
 #X text 43 43 use only following declared externs:;
 #X obj 16 72 declare -lib pof;
+#X obj 16 162 declare -lib iemlib/filter~ -lib iemlib1 -lib iemlib
+-path iemlib, f 65;
 #X restore 26 61 pd declares;
 #X obj 31 144 pd/pof_main;
 #X obj 22 7 cnv 15 300 30 empty empty Schoolscape_EditMaster 10 15
