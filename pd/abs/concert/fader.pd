@@ -1,4 +1,4 @@
-#N canvas 1795 1005 921 875 10;
+#N canvas 1515 1045 921 875 10;
 #X obj 37 6 inlet;
 #X obj 37 586 outlet;
 #X msg 101 370 draw \$1;
@@ -115,10 +115,10 @@
 #X obj 114 219 poftouch 60 80 1;
 #X obj 16 757 * 1;
 #X msg 435 183 1;
-#X obj 260 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 260 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 44 668 == 0;
-#X obj 21 691 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 21 691 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 159 7 r concert-instrument-show;
 #X obj 159 28 sel -1 \$1;
@@ -148,17 +148,17 @@
 #X obj 630 313 pofcolor 1 1 1 1;
 #X obj 738 288 max 0.5;
 #X obj 694 255 f;
-#X obj 776 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 776 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 689 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 689 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 731 225 r TempoMess-isplaying-\$1;
+#X obj 751 206 r TempoMess-isplaying-\$1;
 #X obj 735 386 route up down;
 #X msg 735 413 0;
 #X msg 772 412 1;
 #X obj 775 439 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 775 463 s \$0-TempoMessTouched;
+#X obj 786 495 s \$0-TempoMessTouched;
 #X obj 671 210 r \$1-OnOff;
 #X obj 713 457 t;
 #X obj 736 487 sel 0 1;
@@ -187,6 +187,16 @@
 #X obj 224 833 s concert-fader-\$1;
 #X obj 215 755 inlet;
 #X obj 108 817 outlet;
+#X obj 825 230 outlet;
+#X obj 822 252 inlet;
+#X obj 832 406 t b f;
+#X msg 838 461 0, f 1;
+#X obj 833 432 del 10;
+#X obj 614 835 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 823 277 ddemux 0 1;
+#X obj 812 301 sel 0 1;
+#X obj 836 327 sel 0 1;
 #X connect 0 0 69 0;
 #X connect 2 0 101 0;
 #X connect 3 0 2 0;
@@ -338,6 +348,8 @@
 #X connect 138 0 136 3;
 #X connect 138 0 137 0;
 #X connect 138 0 139 0;
+#X connect 138 0 175 0;
+#X connect 138 0 181 1;
 #X connect 140 0 138 0;
 #X connect 141 0 138 0;
 #X connect 142 0 143 0;
@@ -374,3 +386,10 @@
 #X connect 173 0 27 0;
 #X connect 173 0 172 0;
 #X connect 173 0 171 0;
+#X connect 176 0 181 0;
+#X connect 177 0 179 0;
+#X connect 179 0 178 0;
+#X connect 181 0 182 0;
+#X connect 181 1 183 0;
+#X connect 182 1 143 0;
+#X connect 183 0 143 0;
