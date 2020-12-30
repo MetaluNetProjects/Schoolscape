@@ -1,26 +1,26 @@
-#N canvas 123 1033 1077 811 10;
-#X obj 9 492 r CLOCK;
-#X obj 64 589 ndmetro 4 4;
-#X floatatom 125 705 5 0 0 0 - - -;
-#X obj 64 304 r \$0-stepscumul;
-#X obj 64 329 route 7;
-#X floatatom 23 406 5 0 0 0 - - -;
-#X msg 64 563 nd \$1 \$2;
-#X obj 64 670 s \$0-step;
+#N canvas 1786 1037 1077 811 10;
+#X obj 9 512 r CLOCK;
+#X obj 64 609 ndmetro 4 4;
+#X floatatom 125 725 5 0 0 0 - - -;
+#X obj 64 324 r \$0-stepscumul;
+#X obj 64 349 route 7;
+#X floatatom 23 426 5 0 0 0 - - -;
+#X msg 64 583 nd \$1 \$2;
+#X obj 64 690 s \$0-step;
 #X obj 51 55 seqstep \$0 0;
 #X obj 51 38 nbx 5 14 1 32 0 0 \$0-denum \$0-denum denum 0 -8 0 10
--262144 -1 -1 32 256;
-#X obj 122 330 r \$0-denum;
-#X obj 154 395 t b f;
+-262144 -1 -1 4 256;
+#X obj 122 350 r \$0-denum;
+#X obj 154 415 t b f;
 #X msg 16 39 1;
-#X obj 154 373 / 4;
-#X obj 64 454 pack f 1;
-#X obj 274 322 r \$0-stepdata;
-#X obj 274 344 spigot 1;
-#X obj 274 366 unpack f f f;
-#X obj 257 531 s /GAMME;
-#X obj 297 509 s /CHORD;
-#X obj 338 489 s /BASS;
+#X obj 154 393 / 4;
+#X obj 64 474 pack f 1;
+#X obj 274 342 r \$0-stepdata;
+#X obj 274 364 spigot 1;
+#X obj 274 386 unpack f f f;
+#X obj 257 551 s /GAMME;
+#X obj 297 529 s /CHORD;
+#X obj 338 509 s /BASS;
 #X obj 255 55 seqstep \$0 2;
 #X obj 153 55 seqstep \$0 1;
 #X obj 357 55 seqstep \$0 3;
@@ -28,83 +28,83 @@
 #X obj 561 55 seqstep \$0 5;
 #X obj 663 55 seqstep \$0 6;
 #X obj 765 55 seqstep \$0 7;
-#X obj 613 396 s \$0-getdata;
-#X obj 730 412 r \$0-getdata-rcv;
-#X obj 730 434 list prepend;
-#X msg 836 381 list;
-#X obj 836 434 t a;
-#X msg 613 373 0 \, 1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7;
-#X obj 613 349 t b b;
-#X obj 672 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 613 416 s \$0-getdata;
+#X obj 730 432 r \$0-getdata-rcv;
+#X obj 730 454 list prepend;
+#X msg 836 401 list;
+#X obj 836 454 t a;
+#X msg 613 393 0 \, 1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7;
+#X obj 613 369 t b b;
+#X obj 672 453 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 590 473 list append;
-#X obj 590 326 t f b f;
-#X obj 590 601 s \$0-table;
-#X msg 658 324 0;
-#X msg 696 325 1;
-#X msg 221 557 0;
-#X msg 256 557 1;
-#X obj 259 671 s \$0-setdata;
-#X obj 590 417 + 1;
-#X msg 288 558 2;
-#X msg 320 559 3;
-#X floatatom 259 586 5 0 0 0 - - -;
-#X obj 259 607 + 1;
-#X obj 590 443 * 40;
-#X obj 259 629 * 40;
-#X obj 769 495 r \$0-denum;
-#X obj 185 37 nbx 5 14 1 300 0 0 \$0-bpm \$0-bpm bpm 0 -8 0 10 -262144
--1 -1 116 256;
-#X obj 241 36 tgl 15 0 \$0-bpm_on \$0-bpm_on bpm_on 0 -8 0 10 -262144
+#X obj 590 493 list append;
+#X obj 590 346 t f b f;
+#X obj 590 621 s \$0-table;
+#X msg 658 344 0;
+#X msg 696 345 1;
+#X msg 221 577 0;
+#X msg 256 577 1;
+#X obj 259 691 s \$0-setdata;
+#X obj 590 437 + 1;
+#X msg 288 578 2;
+#X msg 320 579 3;
+#X floatatom 259 606 5 0 0 0 - - -;
+#X obj 259 627 + 1;
+#X obj 590 463 * 40;
+#X obj 259 649 * 40;
+#X obj 769 515 r \$0-denum;
+#X obj 172 38 nbx 5 14 1 300 0 0 \$0-bpm \$0-bpm bpm 0 -8 0 10 -262144
+-1 -1 70 256;
+#X obj 231 37 tgl 15 0 \$0-bpm_on \$0-bpm_on bpm_on 0 -8 0 10 -262144
 -1 -1 1 1;
-#X obj 784 515 r \$0-bpm;
-#X obj 849 514 r \$0-bpm_on;
-#X obj 710 465 + 32;
-#X obj 751 517 f;
-#X obj 710 570 list append;
-#X obj 710 487 t f b;
-#X obj 422 323 r \$0-setdata;
-#X obj 422 345 list split 32;
-#X obj 259 649 array get \$0-table 0 40;
-#X obj 487 423 s \$0-bpm_on;
-#X obj 455 444 s \$0-bpm;
-#X obj 424 466 s \$0-denum;
-#X obj 122 352 sel 0;
-#X msg 731 324 2;
-#X obj 457 547 spigot;
-#X obj 457 505 r \$0-bpm;
-#X obj 363 37 tgl 15 0 \$1-play \$1-play \$1-play 0 -8 0 10 -262144
+#X obj 784 535 r \$0-bpm;
+#X obj 849 534 r \$0-bpm_on;
+#X obj 710 485 + 32;
+#X obj 751 537 f;
+#X obj 710 590 list append;
+#X obj 710 507 t f b;
+#X obj 422 343 r \$0-setdata;
+#X obj 422 365 list split 32;
+#X obj 259 669 array get \$0-table 0 40;
+#X obj 487 443 s \$0-bpm_on;
+#X obj 455 464 s \$0-bpm;
+#X obj 424 486 s \$0-denum;
+#X obj 122 372 sel 0;
+#X msg 731 344 2;
+#X obj 457 567 spigot;
+#X obj 457 525 r \$0-bpm;
+#X obj 359 37 tgl 15 0 \$1-play \$1-play \$1-play 0 -8 0 10 -262144
 -1 -1 1 1;
-#X obj 117 611 r \$1-play;
-#X obj 64 611 spigot;
-#X obj 457 569 s /BPM;
-#X obj 278 37 nbx 5 14 1 300 0 0 /BPM /BPM /BPM(current) 0 -8 0 10
--262144 -1 -1 116 256;
-#X obj 496 525 r \$0-bpm_on;
-#X msg 773 323 31;
+#X obj 117 631 r \$1-play;
+#X obj 64 631 spigot;
+#X obj 457 589 s /BPM;
+#X obj 274 38 nbx 5 14 1 300 0 0 /BPM /BPM /BPM(current) 0 -8 0 10
+-262144 -1 -1 70 256;
+#X obj 496 545 r \$0-bpm_on;
+#X msg 773 343 31;
 #N canvas 1 81 450 300 table 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-table 1320 float 2;
 #X coords 0 1 1320 -1 200 140 1 0 0;
 #X restore 36 102 graph;
-#X restore 843 305 pd table;
+#X restore 843 325 pd table;
 #X obj 494 25 hradio 15 1 0 12 \$1-recall \$1-recall \$1-recall 0 -8
 0 10 -4034 -1 -1 0;
 #X obj 684 25 hradio 15 1 0 12 \$1-store \$1-store \$1-store 0 -8 0
-10 -258113 -1 -1 11;
-#X obj 313 582 r \$1-recall;
-#X obj 590 304 r \$1-store;
+10 -258113 -1 -1 0;
+#X obj 313 602 r \$1-recall;
+#X obj 590 324 r \$1-store;
 #X msg 628 4 set \$1;
-#N canvas 234 96 894 321 \$0-file 0;
+#N canvas 2251 1244 689 321 \$0-file 0;
 #X obj 52 193 soundfiler;
 #X obj 219 134 list prepend \$0-table;
 #X obj 52 135 list prepend \$0-table;
 #X msg 52 158 read seq\$2.wav \$1;
 #X msg 219 155 write -bytes 4 -wave seq\$2.wav \$1;
 #X obj 52 66 hradio 15 1 0 12 \$1-load-snd \$1-load-rcv \$1-load 0
--8 0 10 -4034 -1 -1 10;
+-8 0 10 -4034 -1 -1 0;
 #X obj 299 68 hradio 15 1 0 12 \$1-save \$1-save \$1-save 0 -8 0 10
--258113 -1 -1 2;
+-258113 -1 -1 0;
 #X obj 219 111 r \$1-save;
 #X obj 52 113 r \$1-load;
 #X msg 196 21 set \$1;
@@ -138,6 +138,8 @@
 #X obj 406 266 s mainSeq-save;
 #X obj 406 181 bng 15 250 50 0 empty empty saveSong 17 7 0 10 -258113
 -1 -1;
+#X obj 299 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
@@ -150,24 +152,25 @@
 #X connect 34 0 35 0;
 #X connect 35 0 36 0;
 #X connect 37 0 34 0;
+#X connect 38 0 1 0;
 #X restore 931 132 pd \$0-file;
 #X obj 826 10 bng 15 250 50 0 empty empty file 17 7 0 10 -257985 -1
 -1;
 #X msg 946 63 vis 0 \, vis 1;
 #X obj 946 85 s pd-\$0-file;
-#X obj 111 37 nbx 5 14 0 1e+06 0 0 \$0-loop \$0-loop loop 0 -8 0 10
+#X obj 111 38 nbx 5 14 0 1e+06 0 0 \$0-loop \$0-loop loop 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 64 635 mod 4;
-#X obj 64 351 t f f;
-#X obj 64 492 list prepend 0;
-#X obj 201 375 r \$0-loop;
-#X obj 201 395 t b f;
-#X obj 64 514 route 0;
-#X msg 133 563 nd \$1 \$3;
-#X obj 751 540 pack f f f f, f 21;
-#X obj 933 513 r \$0-loop;
-#X obj 424 376 unpack f f f f;
-#X obj 505 399 s \$0-loop;
+#X obj 64 655 mod 4;
+#X obj 64 371 t f f;
+#X obj 64 512 list prepend 0;
+#X obj 201 395 r \$0-loop;
+#X obj 201 415 t b f;
+#X obj 64 534 route 0;
+#X msg 133 583 nd \$1 \$3;
+#X obj 751 560 pack f f f f, f 21;
+#X obj 933 533 r \$0-loop;
+#X obj 424 396 unpack f f f f;
+#X obj 505 419 s \$0-loop;
 #X text 493 40 1;
 #X text 510 40 2;
 #X text 524 40 3;
@@ -213,7 +216,7 @@
 #X connect 7 0 8 0;
 #X connect 8 0 2 0;
 #X connect 9 0 2 0;
-#X restore 279 401 pd Transpose/GAMME;
+#X restore 279 421 pd Transpose/GAMME;
 #N canvas 0 96 450 300 Transpose/BASS 0;
 #X obj 101 27 inlet;
 #X obj 113 211 outlet;
@@ -235,7 +238,7 @@
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
 #X connect 9 0 2 0;
-#X restore 306 458 pd Transpose/BASS;
+#X restore 306 478 pd Transpose/BASS;
 #N canvas 0 96 450 300 Transpose/CHORD 0;
 #X obj 101 27 inlet;
 #X obj 113 211 outlet;
@@ -257,7 +260,9 @@
 #X connect 7 0 8 0;
 #X connect 8 0 2 0;
 #X connect 9 0 2 0;
-#X restore 295 431 pd Transpose/CHORD;
+#X restore 295 451 pd Transpose/CHORD;
+#X obj 383 2 r mainSeq-load;
+#X symbolatom 383 34 0 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 1 0 72 0;
 #X connect 1 0 2 0;
@@ -344,4 +349,5 @@
 #X connect 123 0 18 0;
 #X connect 124 0 20 0;
 #X connect 125 0 19 0;
-#X coords 0 -1 1 1 820 265 1 50 10;
+#X connect 126 0 127 0;
+#X coords 0 -1 1 1 820 305 1 50 10;
