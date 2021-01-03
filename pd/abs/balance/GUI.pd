@@ -1,5 +1,6 @@
 #N canvas 623 244 577 542 10;
 #X declare -path ../;
+#X declare -path ../instruments/rj;
 #X obj 63 27 inlet;
 #X obj 63 60 t a a a;
 #X msg 115 82 draw 1;
@@ -959,6 +960,7 @@
 #X obj 257 460 pofscale 0.5 1;
 #X obj 259 367 poftranslate 0 8;
 #X obj 257 488 domoseq/0main;
+#X obj 185 85 declare -path ../instruments/rj;
 #X connect 0 0 1 0;
 #X connect 1 0 13 0;
 #X connect 1 0 35 0;

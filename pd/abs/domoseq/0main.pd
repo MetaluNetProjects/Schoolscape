@@ -1,3 +1,19 @@
+#N struct 6366-symarray float x array symbols 6366-sym;
+#N struct 6366-sym symbol name float on;
+#N struct 6815-symarray float x array symbols 6815-sym;
+#N struct 6815-sym symbol name float on;
+#N struct 6835-symarray float x array symbols 6835-sym;
+#N struct 6835-sym symbol name float on;
+#N struct 6855-symarray float x array symbols 6855-sym;
+#N struct 6855-sym symbol name float on;
+#N struct 6875-symarray float x array symbols 6875-sym;
+#N struct 6875-sym symbol name float on;
+#N struct 6895-symarray float x array symbols 6895-sym;
+#N struct 6895-sym symbol name float on;
+#N struct 6915-symarray float x array symbols 6915-sym;
+#N struct 6915-sym symbol name float on;
+#N struct 6935-symarray float x array symbols 6935-sym;
+#N struct 6935-sym symbol name float on;
 #N canvas 209 1109 811 453 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
@@ -2063,9 +2079,9 @@
 #X msg 481 440 -2;
 #X msg 480 330 3;
 #X msg 483 466 -3;
-#X obj 89 401 mknob 25 100 -11 11 0 0 empty empty empty -2 -6 0 8 -262144
--1 -1 0 1;
-#X floatatom 90 458 5 0 0 0 - - -;
+#X obj 108 429 mknob 25 100 -11 11 0 0 empty empty empty -2 -6 0 8
+-262144 -1 -1 0 1;
+#X floatatom 109 486 5 0 0 0 - - -;
 #X obj 252 503 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 241 459 r transpose-r;
@@ -2079,6 +2095,8 @@
 #X msg 734 344 3;
 #X msg 737 480 -3;
 #X obj 321 395 s TransposeGammes;
+#X obj 34 363 m_minorscale-help;
+#X obj 41 392 m_majorscale-help;
 #X connect 1 0 21 0;
 #X connect 2 0 21 0;
 #X connect 3 0 21 0;
