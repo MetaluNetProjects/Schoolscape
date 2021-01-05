@@ -1,3 +1,7 @@
+#N struct 6505-symarray float x array symbols 6505-sym;
+#N struct 6505-sym symbol name float on;
+#N struct 6516-symarray float x array symbols 6516-sym;
+#N struct 6516-sym symbol name float on;
 #N canvas 623 244 577 542 10;
 #X declare -path ../;
 #X declare -path ../instruments/rj;
@@ -959,8 +963,10 @@
 -1 -1 2800 1;
 #X obj 257 460 pofscale 0.5 1;
 #X obj 259 367 poftranslate 0 8;
-#X obj 257 488 domoseq/0main;
 #X obj 185 85 declare -path ../instruments/rj;
+#X obj 250 480 cnv 15 100 40 empty empty empty 20 12 0 14 -4032 -66577
+0;
+#X obj 257 488 domoseq/0main;
 #X connect 0 0 1 0;
 #X connect 1 0 13 0;
 #X connect 1 0 35 0;
@@ -995,5 +1001,5 @@
 #X connect 40 0 43 2;
 #X connect 41 0 39 0;
 #X connect 42 0 40 0;
-#X connect 43 0 45 0;
+#X connect 43 0 47 0;
 #X connect 44 0 43 0;
