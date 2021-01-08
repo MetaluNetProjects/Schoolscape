@@ -2,7 +2,7 @@
 #N struct 1688-sym symbol name float on;
 #N struct 1699-symarray float x array symbols 1699-sym;
 #N struct 1699-sym symbol name float on;
-#N canvas 773 266 540 771 10;
+#N canvas 777 266 540 771 10;
 #X declare -path abs -path . -path img;
 #X declare -path abs -path . -path img;
 #X declare -path abs/extra/iemlib;

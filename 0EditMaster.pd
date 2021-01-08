@@ -1,4 +1,4 @@
-#N canvas 159 651 397 380 10;
+#N canvas 159 675 397 380 10;
 #X declare -lib abl_link~ -path abl_link~;
 #X declare -lib cyclone/atan~ -lib cyclone/seq -lib cyclone/midiparse
 ;
@@ -78,7 +78,6 @@ prefs., f 64;
 #X obj 22 7 cnv 15 300 30 empty empty Schoolscape_EditMaster 10 15
 2 26 -233017 -66577 0;
 #X obj 28 144 pd/pof_main;
-#X connect 0 0 1 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
 #X connect 6 0 2 0;
