@@ -1,4 +1,4 @@
-#N canvas 168 298 397 380 10;
+#N canvas 159 651 397 380 10;
 #X declare -lib abl_link~ -path abl_link~;
 #X declare -lib cyclone/atan~ -lib cyclone/seq -lib cyclone/midiparse
 ;
@@ -28,7 +28,7 @@ creb;
 #X floatatom 26 338 5 0 0 0 - - -;
 #X msg 25 268 window 800 550 0 \, framerate 25 \, background 0 0 0
 ;
-#N canvas 436 755 450 300 strings&paths 0;
+#N canvas 268 755 450 300 strings&paths 0;
 #X obj 162 206 pofutil;
 #X msg 162 180 setstring data .;
 #X obj 223 208 s datadir;
@@ -40,6 +40,7 @@ creb;
 #X obj 212 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 162 151 symbol \$1/pd/data;
+#X obj 253 25 r getPaths;
 #X connect 1 0 0 0;
 #X connect 3 0 5 0;
 #X connect 4 0 5 0;
@@ -49,6 +50,7 @@ creb;
 #X connect 8 0 5 0;
 #X connect 9 0 1 0;
 #X connect 9 0 2 0;
+#X connect 10 0 5 0;
 #X restore 26 103 pd strings&paths;
 #X obj 26 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -73,9 +75,9 @@ prefs., f 64;
 #X obj 16 162 declare -lib iemlib/filter~ -lib iemlib1 -lib iemlib
 -path iemlib, f 65;
 #X restore 26 61 pd declares;
-#X obj 31 144 pd/pof_main;
 #X obj 22 7 cnv 15 300 30 empty empty Schoolscape_EditMaster 10 15
 2 26 -233017 -66577 0;
+#X obj 28 144 pd/pof_main;
 #X connect 0 0 1 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
