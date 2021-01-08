@@ -1,7 +1,7 @@
-#N struct 1688-symarray float x array symbols 1688-sym;
-#N struct 1688-sym symbol name float on;
-#N struct 1699-symarray float x array symbols 1699-sym;
-#N struct 1699-sym symbol name float on;
+#N struct 3798-symarray float x array symbols 3798-sym;
+#N struct 3798-sym symbol name float on;
+#N struct 3809-symarray float x array symbols 3809-sym;
+#N struct 3809-sym symbol name float on;
 #N canvas 623 244 577 542 10;
 #X declare -path ../;
 #X declare -path ../instruments/rj;
@@ -13,7 +13,7 @@
 #X floatatom 222 163 5 0 0 0 - - -;
 #X floatatom 356 160 5 0 0 0 - - -;
 #X floatatom 188 162 5 0 0 0 - - -;
-#N canvas 336 537 468 347 mode 1;
+#N canvas 336 537 468 347 mode 0;
 #X obj 113 20 inlet;
 #X obj 360 125 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -85,7 +85,7 @@
 #X obj 95 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -317 256;
 #X obj 157 237 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -78 256;
+-262144 -1 -1 1 256;
 #X obj 63 212 t a a a;
 #X obj 82 392 set/instrBar balance;
 #X text 177 21 BALANCE;
@@ -114,7 +114,7 @@
 #X obj 182 272 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -321 256;
 #X obj 244 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 72.57 256;
+-262144 -1 -1 137.57 256;
 #N canvas 213 586 987 895 set_load/save 0;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -970,9 +970,9 @@
 #X obj 2 348 updating/updating;
 #X obj 2 325 poftranslate 0 8;
 #X obj 34 303 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -317 256;
+-262144 -1 -1 -315 256;
 #X obj 90 303 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 225 256;
+-262144 -1 -1 252 256;
 #X connect 0 0 1 0;
 #X connect 1 0 13 0;
 #X connect 1 0 35 0;

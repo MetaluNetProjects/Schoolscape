@@ -1,6 +1,6 @@
-#N struct 3816-symarray float x array symbols 3816-sym;
-#N struct 3816-sym symbol name float on;
-#N canvas 2287 962 558 575 10;
+#N struct 3809-symarray float x array symbols 3809-sym;
+#N struct 3809-sym symbol name float on;
+#N canvas 1801 920 767 566 10;
 #X obj 1 17 cnv 11 89 42 empty \$0-canvas empty 34 12 1 14 -261234
 -16662 0;
 #X obj 1 40 vsl 11 16 0 127 0 0 \$0-s0-snd \$0-s0-rcv empty 0 -9 0
@@ -33,9 +33,9 @@
 #X msg 400 45 donecanvasdialog 1 -1 1 \, donecanvasdialog 1 -1 0 \,
 dirty 0;
 #X obj 144 93 _GAMME_COMMON \$1 \$0 \$2;
-#X obj 234 315 route list;
+#X obj 257 304 route list;
 #X symbolatom 1 61 0 0 0 0 - #0-TypeM-rcv #0-TypeM-snd;
-#X obj 245 383 print dump;
+#X obj 264 379 print dump;
 #X msg 248 257 dump;
 #X msg 285 261 print;
 #X msg 288 140 28;
@@ -77,7 +77,7 @@ dirty 0;
 #X obj 79 210 + 1;
 #X obj 141 215 - 1;
 #X obj 171 291 m_modedict2;
-#X obj 293 339 s \$0-TypeM-rcv;
+#X obj 286 355 s \$0-TypeM-rcv;
 #X obj 71 308 mod 25;
 #X msg 286 85 0;
 #X text 310 86 Ionian;
@@ -90,17 +90,31 @@ dirty 0;
 #X obj 82 107 r +Mode;
 #X obj 11 110 r -Mode;
 #X obj 404 101 r nMode-TypeLoad;
-#X obj 320 368 list trim;
-#X msg 320 391 set \$1 \$2;
+#X obj 405 364 list trim;
+#X msg 415 176 set \$1 \$2;
 #X obj 349 228 loadbang;
 #X floatatom 153 454 5 0 0 0 - - -;
-#X obj 320 414 sarray enumModeSym 25;
+#X msg 460 200 24 Pentatonic;
+#X symbolatom 336 304 10 0 0 0 - - -;
+#X obj 343 396 print;
+#X obj 470 458 text define -k enumModeSym;
+#A set 0 Ionian \; 1 AscendingMelodicMinorAmm \; 2 HarmonicMinorHmin
+\; 3 HarmonicMajorHmaj \; 4 WnnWnn \; 5 HungarianMajor1 \; 6 NeapolitanMajorNmaj
+\; 7 DoubleHarmonic1Dh1 \; 8 HungarianMinor1Dh2 \; 9 DoubleHarmonic3Dh3
+\; 10 DoubleHarmonic4Dh4 \; 11 PersianDh5 \; 12 DoubleHarmonic6Dh6
+\; 13 E1e1 \; 14 E2e2 \; 15 NeapolitanMinorE3 \; 16 E4e4 \; 17 E5e5
+\; 18 E6e6 \; 19 E7e7 \; 20 E8e8 \; 21 E9e9 \; 22 E10e10 \; 23 E11e11
+\; 24 Pentatonic \;;
+#X msg 483 417 read enumModeSym.txt;
+#X obj 565 379 loadbang;
+#X msg 424 424 clear;
 #X connect 13 0 16 0;
 #X connect 16 0 14 0;
-#X connect 18 0 20 0;
 #X connect 18 0 72 0;
+#X connect 18 0 20 0;
 #X connect 18 1 59 0;
 #X connect 18 1 67 0;
+#X connect 18 1 77 0;
 #X connect 21 0 58 1;
 #X connect 22 0 58 1;
 #X connect 23 0 32 0;
@@ -146,7 +160,9 @@ dirty 0;
 #X connect 69 0 46 0;
 #X connect 70 0 45 0;
 #X connect 71 0 32 0;
-#X connect 72 0 73 0;
 #X connect 73 0 76 0;
 #X connect 74 0 21 0;
+#X connect 80 0 79 0;
+#X connect 81 0 80 0;
+#X connect 82 0 79 0;
 #X coords 0 -1 1 1 220 80 1 0 0;
