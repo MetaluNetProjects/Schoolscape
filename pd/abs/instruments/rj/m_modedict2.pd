@@ -1,32 +1,32 @@
-#N struct 3822-symarray float x array symbols 3822-sym;
-#N struct 3822-sym symbol name float on;
-#N canvas 176 876 896 414 10;
+#N struct 3808-symarray float x array symbols 3808-sym;
+#N struct 3808-sym symbol name float on;
+#N canvas 161 1418 896 414 10;
 #N canvas 21 609 544 783 \$0-tables 0;
-#X obj 100 0 table 3821-Ionian 12;
-#X obj 100 25 table 3821-AscendingMelodicMinorAmm 12;
-#X obj 100 50 table 3821-HarmonicMinorHmin 12;
-#X obj 100 75 table 3821-HarmonicMajorHmaj 12;
-#X obj 100 100 table 3821-WnnWnn 12;
-#X obj 100 125 table 3821-HungarianMajor1 12;
-#X obj 100 150 table 3821-NeapolitanMajorNmaj 12;
-#X obj 100 175 table 3821-DoubleHarmonic1Dh1 12;
-#X obj 100 200 table 3821-HungarianMinor1Dh2 12;
-#X obj 100 225 table 3821-DoubleHarmonic3Dh3 12;
-#X obj 100 250 table 3821-DoubleHarmonic4Dh4 12;
-#X obj 100 275 table 3821-PersianDh5 12;
-#X obj 100 300 table 3821-DoubleHarmonic6Dh6 12;
-#X obj 100 325 table 3821-E1e1 12;
-#X obj 100 350 table 3821-E2e2 12;
-#X obj 100 375 table 3821-NeapolitanMinorE3 12;
-#X obj 100 400 table 3821-E4e4 12;
-#X obj 100 425 table 3821-E5e5 12;
-#X obj 100 450 table 3821-E6e6 12;
-#X obj 100 475 table 3821-E7e7 12;
-#X obj 100 500 table 3821-E8e8 12;
-#X obj 100 525 table 3821-E9e9 12;
-#X obj 100 550 table 3821-E10e10 12;
-#X obj 100 575 table 3821-E11e11 12;
-#X obj 100 600 table 3821-EnigmaticE12 12;
+#X obj 100 0 table 3807-Ionian 12;
+#X obj 100 25 table 3807-AscendingMelodicMinorAmm 12;
+#X obj 100 50 table 3807-HarmonicMinorHmin 12;
+#X obj 100 75 table 3807-HarmonicMajorHmaj 12;
+#X obj 100 100 table 3807-WnnWnn 12;
+#X obj 100 125 table 3807-HungarianMajor1 12;
+#X obj 100 150 table 3807-NeapolitanMajorNmaj 12;
+#X obj 100 175 table 3807-DoubleHarmonic1Dh1 12;
+#X obj 100 200 table 3807-HungarianMinor1Dh2 12;
+#X obj 100 225 table 3807-DoubleHarmonic3Dh3 12;
+#X obj 100 250 table 3807-DoubleHarmonic4Dh4 12;
+#X obj 100 275 table 3807-PersianDh5 12;
+#X obj 100 300 table 3807-DoubleHarmonic6Dh6 12;
+#X obj 100 325 table 3807-E1e1 12;
+#X obj 100 350 table 3807-E2e2 12;
+#X obj 100 375 table 3807-NeapolitanMinorE3 12;
+#X obj 100 400 table 3807-E4e4 12;
+#X obj 100 425 table 3807-E5e5 12;
+#X obj 100 450 table 3807-E6e6 12;
+#X obj 100 475 table 3807-E7e7 12;
+#X obj 100 500 table 3807-E8e8 12;
+#X obj 100 525 table 3807-E9e9 12;
+#X obj 100 550 table 3807-E10e10 12;
+#X obj 100 575 table 3807-E11e11 12;
+#X obj 100 600 table 3807-Pentatonic 12;
 #X restore 573 34 pd \$0-tables;
 #X msg 131 104 maj;
 #X msg 168 105 -;
@@ -145,7 +145,7 @@ and fills it from the list of 3 character intervals;
 #X connect 16 1 6 1;
 #X connect 18 0 12 1;
 #X restore 437 160 pd make-tables;
-#N canvas 0 96 1200 1824 3-char-chords 0;
+#N canvas 172 471 900 853 3-char-chords 1;
 #X obj 177 40 inlet;
 #X obj 177 73 u_cocollect;
 #X obj 153 1127 outlet;
@@ -200,7 +200,7 @@ b 3 - - 5 - b 7 - - 9 - # 11 - 13 \, 76 13#11#9 - - 3 - - 5 - - 7 -
 # 9 - # 11 - 13 \, 77 majadd9 - - 3 - - 5 - - 9 \, 78 -add9 - b 3 -
 - 5 - - 9 \,;
 #X text 688 110 orig;
-#X msg 126 202 0 Ionian - - - 2 - - 3 - - 4 - - 5 - - 6 - - 7 \, 1
+#X msg 132 114 0 Ionian - - - 2 - - 3 - - 4 - - 5 - - 6 - - 7 \, 1
 AscendingMelodicMinorAmm - - - 2 - b 3 - - 4 - - 5 - \, 2 HarmonicMinorHmin
 - - - 2 - b 3 - - 4 - - 5 - b 6 - - 7 \, 3 HarmonicMajorHmaj - - -
 2 - - 3 - - 4 - - 5 - b 6 - - 7 \, 4 WnnWnn - - - 2 - b 3 - - 4 - b
@@ -219,8 +219,8 @@ E6e6 - - - 2 - # 3 # # 4 - # 5 - - 6 - - 7 \, 19 E7e7 - - # 2 - # 3
 # # 4 - # 5 - - 6 - - 7 \, 20 E8e8 - - - 2 - - 3 - - 4 - b 5 - b 6
 - - 7 \, 21 E9e9 - - - 2 - b 3 - b 4 - b 5 - - 6 - - 7 \, 22 E10e10
 - - - 2 - b 3 - b 4 - - 5 - - 6 - - 7 \, 23 E11e11 - - - 2 - - 3 -
-- 4 - b 5 - - 6 - - 7 \, 24 EnigmaticE12 - - # 2 - - 3 - # 4 - # 5
-- # 6 - - 7 \,;
+- 4 - b 5 - - 6 - - 7 \, 24 Pentatonic - - # 2 - # 3 # # 4 - - 5 -
+# 6 - - \,;
 #X connect 0 0 1 0;
 #X connect 1 0 15 0;
 #X connect 4 0 5 0;
