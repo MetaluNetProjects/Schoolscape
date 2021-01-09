@@ -1,4 +1,4 @@
-#N canvas 159 675 397 380 10;
+#N canvas 159 495 397 380 10;
 #X declare -lib abl_link~ -path abl_link~;
 #X declare -lib cyclone/atan~ -lib cyclone/seq -lib cyclone/midiparse
 ;
@@ -28,7 +28,7 @@ creb;
 #X floatatom 26 338 5 0 0 0 - - -;
 #X msg 25 268 window 800 550 0 \, framerate 25 \, background 0 0 0
 ;
-#N canvas 268 755 450 300 strings&paths 0;
+#N canvas 304 410 450 300 strings&paths 0;
 #X obj 162 206 pofutil;
 #X msg 162 180 setstring data .;
 #X obj 223 208 s datadir;
@@ -41,16 +41,21 @@ creb;
 -1;
 #X msg 162 151 symbol \$1/pd/data;
 #X obj 253 25 r getPaths;
+#X obj 52 247 s APP_EDITON_MODE;
+#X text 162 248 only for edit-on-desktop;
+#X msg 52 225 1;
 #X connect 1 0 0 0;
 #X connect 3 0 5 0;
 #X connect 4 0 5 0;
 #X connect 5 0 7 0;
+#X connect 5 0 13 0;
 #X connect 6 0 9 0;
 #X connect 7 0 6 0;
 #X connect 8 0 5 0;
 #X connect 9 0 1 0;
 #X connect 9 0 2 0;
 #X connect 10 0 5 0;
+#X connect 13 0 11 0;
 #X restore 26 103 pd strings&paths;
 #X obj 26 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;

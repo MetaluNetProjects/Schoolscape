@@ -2,7 +2,7 @@
 #X obj 36 140 t a a;
 #X obj 63 222 pofcolor 1 1 1 0.5;
 #X obj 36 169 pofcolor 0 0 0 1;
-#X msg 237 115 draw 1;
+#X msg 366 111 draw 1;
 #X msg 144 334 0;
 #X msg 179 334 1;
 #X obj 144 361 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -10,18 +10,20 @@
 #X obj 186 222 max 0.5;
 #X obj 144 268 route up down move;
 #X obj 234 355 b;
-#X obj 89 30 loadbang;
+#X obj 218 26 loadbang;
 #X obj 234 376 outlet;
 #X obj 36 25 inlet;
 #X obj 36 192 poftexts \$3 \$4;
-#X obj 89 74 pofutil;
-#X msg 89 53 dollarg;
-#X obj 123 116 list prepend text;
-#X obj 123 137 list trim;
+#X obj 218 70 pofutil;
+#X msg 218 49 dollarg;
+#X obj 252 112 list prepend text;
+#X obj 252 133 list trim;
 #X obj 63 247 poftouch \$1 \$2;
 #X obj 219 290 isInside \$1 \$2;
 #X obj 234 334 isInside \$1 \$2;
-#X obj 89 95 list split 5;
+#X obj 218 91 list split 5;
+#X obj 36 48 route edit;
+#X obj 96 78 route label;
 #X connect 0 0 2 0;
 #X connect 0 1 1 0;
 #X connect 1 0 18 0;
@@ -38,7 +40,7 @@
 #X connect 9 0 11 0;
 #X connect 10 0 3 0;
 #X connect 10 0 15 0;
-#X connect 12 0 0 0;
+#X connect 12 0 22 0;
 #X connect 14 0 21 0;
 #X connect 15 0 14 0;
 #X connect 16 0 17 0;
@@ -48,3 +50,6 @@
 #X connect 19 1 4 0;
 #X connect 20 0 9 0;
 #X connect 21 1 16 0;
+#X connect 22 0 23 0;
+#X connect 22 1 0 0;
+#X connect 23 0 16 0;
