@@ -1,0 +1,9 @@
+#N canvas 926 198 450 300 10;
+#X msg 212 135 scale \$1;
+#X floatatom 212 115 5 0 0 0 - - -;
+#X obj 42 43 poffonts vera ../font/vera.ttf;
+#X obj 42 65 poffonts impact ../font/Impact.ttf;
+#X obj 198 158 poffonts -typo ../font/Schoolbell.ttf;
+#X obj 42 87 poffonts typo ../font/Typoster_demo.otf;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
