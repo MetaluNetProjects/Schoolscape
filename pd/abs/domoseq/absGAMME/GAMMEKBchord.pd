@@ -1,6 +1,6 @@
-#N struct 3798-symarray float x array symbols 3798-sym;
-#N struct 3798-sym symbol name float on;
-#N canvas 1483 1122 825 656 10;
+#N struct 3789-symarray float x array symbols 3789-sym;
+#N struct 3789-sym symbol name float on;
+#N canvas 171 639 825 656 10;
 #X obj 1 17 cnv 11 89 42 empty \$0-canvas empty 34 12 1 14 -261234
 -16662 0;
 #X obj 1 40 vsl 11 16 0 127 0 0 \$0-s0-snd \$0-s0-rcv empty 0 -9 0
@@ -115,7 +115,6 @@ min11 \; 67 maj9#11 \; 68 9#11 \; 69 13 \; 70 min13 \; 71 11/13 \;
 #X msg 491 384 read enumChordSym.txt;
 #X connect 13 0 16 0;
 #X connect 16 0 14 0;
-#X connect 18 0 20 0;
 #X connect 18 0 74 0;
 #X connect 18 1 50 0;
 #X connect 18 1 65 0;

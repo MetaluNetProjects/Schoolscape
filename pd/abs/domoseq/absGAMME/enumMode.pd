@@ -267,7 +267,7 @@
 #X obj 234 581 change;
 #X obj 210 542 f;
 #X obj 198 470 t b;
-#N canvas 2190 1305 393 486 double 0;
+#N canvas 2190 1365 393 486 double 1;
 #X obj 49 17 inlet;
 #X floatatom 223 171 5 0 0 0 - - -;
 #X obj 226 257 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -284,7 +284,7 @@
 #X obj 57 222 t b f;
 #X obj 52 359 pack f f;
 #X obj 5 309 tabwrite enumMode;
-#X obj 290 277 print Modepass;
+#X obj 286 303 print Modepass;
 #X obj 68 433 print Modewrite;
 #X obj 220 135 tabread enumMode;
 #X connect 0 0 6 0;
@@ -292,7 +292,6 @@
 #X connect 3 0 2 0;
 #X connect 3 0 10 0;
 #X connect 3 1 5 0;
-#X connect 4 0 14 0;
 #X connect 5 0 4 0;
 #X connect 6 0 8 0;
 #X connect 6 1 7 1;
@@ -306,7 +305,6 @@
 #X connect 11 0 7 0;
 #X connect 11 1 12 0;
 #X connect 11 1 13 1;
-#X connect 12 0 15 0;
 #X connect 16 0 1 0;
 #X restore 55 735 pd double;
 #X obj 298 355 t b f;

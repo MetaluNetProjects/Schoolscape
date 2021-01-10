@@ -1,4 +1,4 @@
-#N canvas 1616 986 1083 596 10;
+#N canvas 1392 1197 1083 596 10;
 #X obj 51 67 cnv 15 100 290 empty \$0-canvas empty 20 12 0 14 -166441
 -166441 0;
 #X obj 55 291 GAMMEKB \$0B 1;
@@ -43,7 +43,7 @@
 #X obj 289 362 r \$0-steps;
 #X obj 219 391 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 257 412 sel 0 1;
+#X obj 257 410 sel 0 1;
 #X obj 257 470 s \$0-canvas;
 #X obj 257 390 change -1;
 #X msg 257 434 color 1 1 1;
@@ -91,7 +91,7 @@
 #X obj 545 352 t b f;
 #X obj 588 352 t b f;
 #X obj 488 391 spigot;
-#N canvas 179 779 436 829 GammeType 1;
+#N canvas 92 1081 436 829 GammeType 0;
 #X obj 26 18 r \$0B;
 #X obj 62 746 s \$0G;
 #X obj 285 756 s \$0C;
@@ -206,7 +206,7 @@
 #X connect 14 0 12 0;
 #X connect 15 0 14 0;
 #X restore 273 238 pd NotesSymbol;
-#N canvas 676 547 490 974 Chords 1;
+#N canvas 676 547 490 974 Chords 0;
 #X obj 231 245 outlet;
 #X obj 53 523 s \$0-Chord-Type-rcv;
 #X obj 53 666 s \$0-nChord-Type-rcv;
@@ -426,7 +426,7 @@
 #X obj 212 632 r \$0-NoTransGamme-snd;
 #X obj 185 409 f;
 #X obj 215 409 f;
-#N canvas 44 588 607 991 Modes 1;
+#N canvas 44 588 607 991 Modes 0;
 #X obj 231 245 outlet;
 #X obj 53 499 spigot 0;
 #X obj 53 608 spigot 0;
@@ -653,10 +653,10 @@
 #X connect 84 1 80 0;
 #X restore 185 344 pd Modes;
 #X obj 279 286 r \$0-NoChangeGamme-snd;
-#X obj 100 36 sel 5;
-#X obj 100 15 r \$0-GammeType;
-#X msg 100 57 0, f 1;
-#X msg 127 57 1, f 1;
+#X obj 140 30 sel 5;
+#X obj 140 9 r \$0-GammeType;
+#X msg 140 51 0, f 1;
+#X msg 167 51 1, f 1;
 #X obj 26 62 spigot 1;
 #X text 246 53 max 4095;
 #X obj 62 704 change;
@@ -681,6 +681,14 @@
 #X obj 190 709 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 97 656 spigot 0;
+#X obj 77 5 r \$0Bload;
+#X obj 360 508 r \$0Cload;
+#X obj 36 545 r \$0Gload;
+#X floatatom 103 39 5 0 0 0 - - -;
+#X floatatom 247 187 5 0 0 0 - - -;
+#X obj 64 37 s \$0B;
+#X obj 368 540 s \$0C;
+#X obj 34 578 s \$0G;
 #X connect 0 0 19 0;
 #X connect 3 0 55 0;
 #X connect 4 0 63 0;
@@ -770,6 +778,7 @@
 #X connect 63 0 42 1;
 #X connect 63 0 32 0;
 #X connect 63 0 64 0;
+#X connect 63 0 79 0;
 #X connect 64 0 25 0;
 #X connect 64 1 24 0;
 #X connect 65 0 59 0;
@@ -782,6 +791,10 @@
 #X connect 68 1 42 0;
 #X connect 68 2 41 1;
 #X connect 74 0 3 0;
+#X connect 75 0 78 0;
+#X connect 75 0 80 0;
+#X connect 76 0 81 0;
+#X connect 77 0 82 0;
 #X restore 58 412 pd GammeType;
 #X obj 51 358 cnv 15 100 43 empty empty Gammes 2 6 0 8 -4032 -260097
 0;
@@ -793,7 +806,7 @@
 #X text 142 386 0;
 #X obj 50 204 cnv 15 100 20 empty empty empty 20 12 0 14 -204800 -66577
 0;
-#X symbolatom 73 206 0 0 0 0 - #0-Chord-Type-rcv #0-Chord-Type-snd
+#X symbolatom 949 81 0 0 0 0 - #0-Chord-Type-rcv #0-Chord-Type-snd
 ;
 #X floatatom 106 207 2 0 0 0 - #0-nChord-Type-rcv #0-nChord-Type-snd
 ;
@@ -814,37 +827,113 @@
 0;
 #X symbolatom 50 272 0 0 0 0 - #0-Note-Type-rcv #0-Note-Type-snd;
 #X text 102 386 M7;
-#X obj 105 105 tgl 15 0 \$0-NoTransGamme-snd \$0-NoTransGamme-rcv TrGam
-15 8 0 10 -262144 -1 -1 0 1;
+#X obj 105 105 tgl 15 1 \$0-NoTransGamme-snd \$0-NoTransGamme-rcv TrGam
+15 8 0 10 -262144 -1 -1 1 1;
 #X text 119 386 m7;
 #X obj 50 104 tgl 15 1 \$0-NoChangeGamme-snd \$0-NoChangeGamme-rcv
 ChGam 15 8 0 10 -262144 -1 -1 1 1;
-#X symbolatom 51 206 0 0 0 0 - #0-Note-Chord-Type-rcv #0-NoteChord-Type-snd
+#X symbolatom 926 81 0 0 0 0 - #0-Note-Chord-Type-rcv #0-NoteChord-Type-snd
 ;
 #X symbolatom 51 123 0 0 0 0 - #0-Note-Mode-Type-rcv #0-Note-Mode-Type-snd
 ;
 #X floatatom 255 15 5 0 0 0 - - -;
-#X obj 15 440 loadbang;
+#X obj 12 483 loadbang;
 #X obj 15 354 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 15 477 del 5000;
-#X obj 643 333 r \$0-Note-Type-snd;
-#X obj 650 389 spigot;
+#X obj 12 520 del 5000;
+#X obj 922 359 r \$0-Note-Type-snd;
+#X obj 654 390 spigot;
 #X obj 650 414 symbol;
 #X obj 648 360 t b s;
-#X obj 650 463 s \$1-stepdata;
-#X obj 650 441 pack s s s s s;
-#X obj 804 273 t b s;
-#X obj 799 246 r \$0-NoteChord-Type-snd;
-#X obj 955 269 t b s;
-#X obj 826 373 makefilename;
-#X obj 797 337 symbol;
-#X symbolatom 837 419 10 0 0 0 - - -;
-#X symbolatom 988 322 10 0 0 0 - - -;
-#X obj 950 242 r \$0-Chord-Type-rcv;
-#X obj 822 304 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X symbolatom 51 206 0 0 0 0 - #0-Chord-Note+Type-rcv #0-Chord-Note+Type-snd
+;
+#X symbolatom 905 143 0 0 0 0 - #0-Mode-Note+Type-rcv #0-Mode-Note+Type-snd
+;
+#N canvas 0 96 450 300 glue 0;
+#X obj 79 68 r \$0-Chord-Type-rcv;
+#X obj 79 89 makefilename %%s-%s;
+#X msg 79 110 set \$1;
+#X obj 106 152 makefilename;
+#X obj 56 48 r \$0-NoteChord-Type-snd;
+#X obj 79 131 t b a;
+#X obj 53 153 symbol;
+#X obj 133 183 s \$0-Chord-Note+Type-rcv;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 5 1 3 0;
+#X connect 6 0 3 0;
+#X restore 910 55 pd glue chord;
+#N canvas 0 96 450 300 glue 0;
+#X obj 124 112 makefilename %%s-%s;
+#X msg 124 133 set \$1;
+#X obj 151 175 makefilename;
+#X obj 124 154 t b a;
+#X obj 98 176 symbol;
+#X obj 124 91 r \$0-Mode-Type-rcv;
+#X obj 178 206 s \$0-Mode-Note+Type-rcv;
+#X obj 101 70 r \$0-Note-Mode-Type-snd;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 3 1 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 7 0 4 0;
+#X restore 905 120 pd glue mode;
+#X obj 762 391 t b s;
+#X obj 757 364 r \$0-Chord-Note+Type-snd;
+#X obj 896 389 t b s;
+#X obj 647 335 r \$0-Mode-Note+Type-snd;
+#X obj 650 463 s \$1-stepdataSym;
+#X obj 651 441 pack s s s, f 51;
+#X obj 71 495 spigot;
+#X obj 137 489 spigot;
+#X obj 196 485 spigot;
+#X obj 71 518 s \$0Bload;
+#X obj 131 516 s \$0Cload;
+#X obj 196 515 s \$0Gload;
+#X obj 70 544 change;
+#X obj 130 542 change;
+#X obj 195 541 change;
+#X obj 25 412 f;
+#X obj 301 511 t b;
+#X obj 300 535 del 10;
+#X floatatom 30 453 5 0 0 0 - - -;
+#X obj 304 556 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 857 303 set \$1 %c;
+#X obj 7 299 t b f;
+#X obj 71 449 r /BASSt;
+#X obj 131 447 r /CHORDt;
+#X obj 196 446 r /GAMMEt;
+#N canvas 573 731 450 300 ctl 1;
+#X obj 92 16 inlet;
+#X obj 28 139 spigot;
+#X obj 28 100 r Gfavoris;
+#X obj 29 162 t b f;
+#X obj 124 136 spigot;
+#X obj 215 134 spigot;
+#X obj 124 97 r Gtranspose;
+#X obj 215 95 r Gchange;
+#X obj 219 205 s \$0-NoTransGamme-rcv;
+#X obj 32 210 s \$0-GammeType;
+#X obj 134 244 s \$0-NoChangeGamme-rcv;
+#X connect 0 0 1 1;
+#X connect 0 0 4 1;
+#X connect 0 0 5 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 9 0;
+#X connect 3 1 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 8 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X restore 165 323 pd ctl;
 #X connect 6 0 7 1;
 #X connect 6 0 111 0;
 #X connect 7 0 16 0;
@@ -877,10 +966,15 @@ ChGam 15 8 0 10 -262144 -1 -1 1 1;
 #X connect 38 0 41 0;
 #X connect 38 1 42 0;
 #X connect 38 1 46 0;
+#X connect 38 1 117 0;
 #X connect 40 0 38 0;
 #X connect 40 0 37 0;
 #X connect 40 0 85 1;
 #X connect 40 0 116 1;
+#X connect 40 0 129 1;
+#X connect 40 0 130 1;
+#X connect 40 0 131 1;
+#X connect 40 0 147 0;
 #X connect 41 0 39 0;
 #X connect 42 0 39 0;
 #X connect 43 0 44 0;
@@ -916,6 +1010,7 @@ ChGam 15 8 0 10 -262144 -1 -1 1 1;
 #X connect 77 0 80 0;
 #X connect 78 0 46 0;
 #X connect 78 0 81 0;
+#X connect 78 0 117 0;
 #X connect 78 1 77 0;
 #X connect 80 0 79 0;
 #X connect 81 0 40 0;
@@ -926,23 +1021,34 @@ ChGam 15 8 0 10 -262144 -1 -1 1 1;
 #X connect 84 0 85 0;
 #X connect 84 1 49 2;
 #X connect 85 0 46 0;
+#X connect 88 0 138 1;
 #X connect 112 0 114 0;
 #X connect 113 0 88 0;
 #X connect 114 0 113 0;
-#X connect 115 0 118 0;
+#X connect 115 0 125 0;
 #X connect 116 0 117 0;
-#X connect 117 0 120 0;
+#X connect 117 0 128 0;
 #X connect 118 0 116 0;
 #X connect 118 1 117 1;
-#X connect 120 0 119 0;
-#X connect 121 0 125 0;
-#X connect 121 1 130 0;
-#X connect 122 0 121 0;
-#X connect 123 1 127 0;
-#X connect 123 1 125 1;
-#X connect 124 0 126 0;
-#X connect 125 0 124 0;
-#X connect 128 0 123 0;
-#X connect 129 0 125 0;
-#X connect 130 0 124 0;
+#X connect 123 0 116 0;
+#X connect 123 1 128 1;
+#X connect 124 0 123 0;
+#X connect 125 0 116 0;
+#X connect 125 1 128 2;
+#X connect 126 0 118 0;
+#X connect 128 0 127 0;
+#X connect 129 0 132 0;
+#X connect 129 0 139 0;
+#X connect 130 0 133 0;
+#X connect 130 0 139 0;
+#X connect 131 0 134 0;
+#X connect 131 0 139 0;
+#X connect 138 0 141 0;
+#X connect 138 0 143 0;
+#X connect 139 0 140 0;
+#X connect 140 0 138 0;
+#X connect 140 0 142 0;
+#X connect 144 0 129 0;
+#X connect 145 0 130 0;
+#X connect 146 0 131 0;
 #X coords 0 -1 1 1 102 352 1 50 50;
