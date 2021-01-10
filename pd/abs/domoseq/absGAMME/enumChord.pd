@@ -276,7 +276,7 @@
 #X obj 234 581 change;
 #X obj 210 542 f;
 #X obj 198 470 t b;
-#N canvas 2190 1155 393 486 double 1;
+#N canvas 2190 1185 393 486 double 1;
 #X obj 49 17 inlet;
 #X obj 220 135 tabread enumChord;
 #X floatatom 223 171 5 0 0 0 - - -;
@@ -302,7 +302,6 @@
 #X connect 4 0 3 0;
 #X connect 4 0 12 0;
 #X connect 4 1 6 0;
-#X connect 5 0 14 0;
 #X connect 6 0 5 0;
 #X connect 8 0 10 0;
 #X connect 8 1 9 1;
@@ -316,7 +315,6 @@
 #X connect 13 0 9 0;
 #X connect 13 1 7 1;
 #X connect 13 1 15 0;
-#X connect 15 0 16 0;
 #X restore 55 735 pd double;
 #X obj 298 355 t b f;
 #X obj 53 40 t b b;

@@ -1,5 +1,5 @@
-#N struct 3809-symarray float x array symbols 3809-sym;
-#N struct 3809-sym symbol name float on;
+#N struct 3800-symarray float x array symbols 3800-sym;
+#N struct 3800-sym symbol name float on;
 #N canvas 1801 920 767 566 10;
 #X obj 1 17 cnv 11 89 42 empty \$0-canvas empty 34 12 1 14 -261234
 -16662 0;
@@ -111,7 +111,6 @@ dirty 0;
 #X connect 13 0 16 0;
 #X connect 16 0 14 0;
 #X connect 18 0 72 0;
-#X connect 18 0 20 0;
 #X connect 18 1 59 0;
 #X connect 18 1 67 0;
 #X connect 18 1 77 0;
