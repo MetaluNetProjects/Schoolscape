@@ -1,9 +1,9 @@
-#N canvas 148 930 593 379 10;
+#N canvas 148 676 593 379 10;
 #X obj 93 119 pofxml modes;
 #X symbolatom 63 45 0 0 0 0 - - -;
-#N canvas 251 353 552 504 create 0;
+#N canvas 580 461 552 504 create 1;
 #X obj 89 127 pofutil;
-#X msg 89 87 time %Y-%B-%d-%Hh-%Mmn-%Ss;
+#X msg 89 104 time %Y-%B-%d-%Hh-%Mmn-%Ss;
 #X obj 89 263 pofutil;
 #X msg 89 149 symbol \$1;
 #X obj 89 202 pack s s;
@@ -12,7 +12,7 @@
 #X obj 89 176 t s s;
 #X obj 116 377 symbol;
 #X obj 89 309 route done;
-#X obj 60 55 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+#X obj 24 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
 -1;
 #X obj 49 360 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -22,7 +22,7 @@
 #X obj 211 452 s mode;
 #X obj 89 355 t b b;
 #X obj 89 452 s modeSetName;
-#X obj 89 52 t b a;
+#X obj 89 83 t b a;
 #X obj 89 426 list;
 #X obj 230 416 pofxml modes;
 #X obj 211 280 t s s b;
@@ -32,6 +32,10 @@
 #X msg 230 392 setattr / mode[\$2] file \$1;
 #X obj 250 346 - 1;
 #X floatatom 304 354 5 0 0 0 - - -;
+#X obj 89 53 sel symbol;
+#X obj 159 31 loadbang;
+#X obj 159 52 symbol;
+#X obj 89 31 symbol;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 13 0;
@@ -46,7 +50,7 @@
 #X connect 12 0 11 0;
 #X connect 12 0 16 0;
 #X connect 13 0 9 0;
-#X connect 14 0 18 0;
+#X connect 14 0 31 0;
 #X connect 16 0 19 0;
 #X connect 16 1 8 0;
 #X connect 18 0 1 0;
@@ -61,6 +65,10 @@
 #X connect 24 0 25 0;
 #X connect 25 0 20 0;
 #X connect 26 0 24 1;
+#X connect 28 1 18 0;
+#X connect 29 0 30 0;
+#X connect 30 0 28 1;
+#X connect 31 0 28 0;
 #X restore 28 150 pd create;
 #X obj 30 76 symbol;
 #X obj 34 24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -421,7 +429,7 @@
 #X obj 201 154 s ModeSilence;
 #X msg 166 91 0;
 #X msg 221 87 1;
-#X obj 200 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 200 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 403 249 say 1 Allumage;
 #X connect 1 0 3 1;

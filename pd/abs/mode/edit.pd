@@ -84,7 +84,7 @@
 #X obj 57 411 r parole;
 #X obj 87 454 del 0;
 #X obj 57 433 t b b;
-#N canvas 624 75 669 719 modename 0;
+#N canvas 614 82 669 785 modename 1;
 #X obj 137 111 t a a;
 #X floatatom 221 71 5 0 0 0 - - -;
 #X floatatom 291 72 5 0 0 0 - - -;
@@ -105,13 +105,13 @@
 #X msg 168 450 text fred énervé;
 #X obj 140 529 route up;
 #X obj 140 553 isInside 250 50;
-#X obj 140 628 poftextbox;
-#X obj 140 648 route out;
-#X obj 197 691 s modeSetName;
+#X obj 184 638 poftextbox;
+#X obj 184 658 route out;
+#X obj 241 701 s modeSetName;
 #X obj 420 309 pofxml modes;
 #X obj 420 249 r mode;
-#X obj 420 355 list prepend text;
-#X obj 420 376 list trim;
+#X obj 420 363 list prepend text;
+#X obj 420 384 list trim;
 #X obj 505 316 r modeSetName;
 #X obj 53 378 t a a a;
 #X obj 72 402 pofcolor 0.6 0.85 1 1;
@@ -144,12 +144,17 @@
 #X msg 459 566 out;
 #X obj 440 642 route bang;
 #X msg 493 567 out truc;
-#X obj 140 669 route bang;
+#X obj 184 679 route bang;
 #X obj 140 580 symbol;
-#X msg 140 606 question Nouveau nom du mode \, show \$1;
+#X msg 184 616 question Nouveau nom du mode \, show \$1;
 #X msg 420 281 gets /mode[@file=\$1][@name];
 #X obj 420 334 route gets;
 #X obj 189 580 symbol;
+#X obj 140 726 pofkb/gettext Nouveau nom du mode:;
+#X obj 140 749 s modeSetName;
+#X obj 114 599 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 72 755 print;
 #X connect 0 0 7 0;
 #X connect 0 1 4 0;
 #X connect 1 0 42 1;
@@ -179,6 +184,7 @@
 #X connect 25 0 26 0;
 #X connect 26 0 14 0;
 #X connect 27 0 25 0;
+#X connect 27 0 61 0;
 #X connect 28 0 15 0;
 #X connect 28 1 29 0;
 #X connect 28 2 30 0;
@@ -205,12 +211,14 @@
 #X connect 54 1 52 0;
 #X connect 55 0 49 0;
 #X connect 56 1 22 0;
-#X connect 57 0 58 0;
+#X connect 57 0 62 0;
+#X connect 57 0 64 0;
 #X connect 58 0 20 0;
 #X connect 59 0 23 0;
 #X connect 60 0 25 0;
 #X connect 60 0 61 0;
 #X connect 61 0 57 1;
+#X connect 62 0 63 0;
 #X restore 154 188 pd modename;
 #N canvas 767 158 669 698 parolename 0;
 #X obj 137 111 t a a;
@@ -306,7 +314,7 @@
 #X obj 253 225 poftranslate 163 -130;
 #X obj 495 497 s mode-editing;
 #X obj 480 266 s list-paroles-setpos;
-#N canvas 1155 366 457 522 PLAY/REC 1;
+#N canvas 1155 366 457 522 PLAY/REC 0;
 #X obj 308 116 r parole-play;
 #X obj 220 118 r parole-rec;
 #X obj 220 142 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

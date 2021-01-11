@@ -66,7 +66,7 @@
 #X obj 360 383 t f b;
 #X obj 362 513 hradio 15 1 0 11 empty empty empty 0 -8 0 10 -262144
 -1 -1 2;
-#X floatatom 362 560 8 0 0 0 - - -, f 8;
+#X floatatom 362 560 8 0 0 0 - - -;
 #X obj 445 148 t b b;
 #X obj 383 22 loadbang;
 #X obj 445 191 pack s 441000;
@@ -153,13 +153,13 @@
 #X obj 69 15 r ADMIN;
 #X obj 68 34 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X floatatom 99 77 5 0 0 0 - - -, f 5;
+#X floatatom 99 77 5 0 0 0 - - -;
 #X obj 256 138 t a a a;
 #X obj 403 226 pofcolor 0 0 0 1;
-#X floatatom 51 82 5 0 0 0 - - -, f 5;
+#X floatatom 51 82 5 0 0 0 - - -;
 #X obj 275 228 pofcolor 1 0 0 1;
 #X obj 256 362 poftexts typo 33;
-#X floatatom 396 282 5 0 0 0 - - -, f 5;
+#X floatatom 396 282 5 0 0 0 - - -;
 #X obj 275 251 pofrect 270 30 4;
 #X obj 403 251 pofrect 280 40 6;
 #X msg 286 329 text REMPLACER !;
@@ -188,7 +188,7 @@
 #X msg 95 228 draw \$1;
 #X obj 94 208 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X symbolatom 514 472 10 0 0 0 - - -, f 10;
+#X symbolatom 514 472 10 0 0 0 - - -;
 #X obj 438 405 route gets;
 #X obj 438 425 symbol;
 #X obj 398 445 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -275,52 +275,52 @@
 #X obj 397 218 mode/say 1 OuvertureSaveMixtape;
 #X obj 219 216 s mixtape-saving;
 #X obj 49 526 r mixtape-saving-save-enabled;
-#N canvas 451 1548 701 742 mixtapename 0;
+#N canvas 441 313 701 742 mixtapename 1;
 #X obj 195 68 t a a;
-#X floatatom 279 28 5 0 0 0 - - -, f 5;
-#X floatatom 349 29 5 0 0 0 - - -, f 5;
-#X floatatom 308 24 5 0 0 0 - - -, f 5;
+#X floatatom 279 28 5 0 0 0 - - -;
+#X floatatom 349 29 5 0 0 0 - - -;
+#X floatatom 308 24 5 0 0 0 - - -;
 #X obj 238 82 pofcolor 0 0 0 1;
 #X obj 96 79 t a a;
 #X obj 96 39 inlet;
 #X obj 195 129 pofcolor 1 1 1 14;
-#X floatatom 324 139 5 0 0 0 - - -, f 5;
+#X floatatom 324 139 5 0 0 0 - - -;
 #X obj 136 174 pofcolor 0 0 0 1;
 #X obj 96 280 poftexts typo 31;
 #X obj 219 233 loadbang;
-#X floatatom 157 235 5 0 0 0 - - -, f 5;
-#X floatatom 117 339 5 0 0 0 - - -, f 5;
+#X floatatom 157 235 5 0 0 0 - - -;
+#X floatatom 117 339 5 0 0 0 - - -;
 #X obj 53 478 poftexts typo 23;
 #X obj 53 448 pofcolor 0 0.5 0 1;
 #X msg 170 468 text fred là j'abuse un peu sur la longueur;
 #X msg 171 446 text fred énervé;
 #X obj 140 529 route up;
 #X obj 140 553 isInside 250 50;
-#X obj 140 649 poftextbox;
-#X obj 140 669 route out;
+#X obj 34 650 poftextbox;
+#X obj 34 670 route out;
 #X obj 53 378 t a a a;
 #X obj 72 402 pofcolor 0.6 0.85 1 1;
 #X obj 219 400 pofcolor 0 0 0 1;
 #X obj 175 308 loadbang;
-#X floatatom 258 186 5 0 0 0 - - -, f 5;
-#X floatatom 74 334 5 0 0 0 - - -, f 5;
-#X floatatom 179 363 5 0 0 0 - - -, f 5;
-#X floatatom 219 357 5 0 0 0 - - -, f 5;
-#X floatatom 116 234 5 0 0 0 - - -, f 5;
+#X floatatom 258 186 5 0 0 0 - - -;
+#X floatatom 74 334 5 0 0 0 - - -;
+#X floatatom 179 363 5 0 0 0 - - -;
+#X floatatom 219 357 5 0 0 0 - - -;
+#X floatatom 116 234 5 0 0 0 - - -;
 #X obj 195 154 pofrect 655 40 6;
 #X obj 238 107 pofrect 664 50 10;
 #X obj 54 507 poftouch 422 30;
 #X msg 55 555 draw \$1;
 #X obj 76 531 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 140 690 route bang;
+#X obj 34 691 route bang;
 #X obj 73 426 pofrect 400 60 4;
 #X obj 219 425 pofrect 410 70 6;
 #X obj 53 356 poftranslate 0 23;
 #X obj 97 252 poftranslate 0 -35;
 #X obj 388 398 list prepend text;
 #X obj 388 419 list trim;
-#X obj 220 648 loadbang;
+#X obj 114 649 loadbang;
 #X msg 140 574 show;
 #X obj 140 618 list trim;
 #X obj 486 369 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -338,12 +338,14 @@
 #X obj 508 279 r mixtape-saving;
 #X obj 507 481 r mixtape-saving-name;
 #X msg 440 592 text Entrez le nom de votre mixtape;
-#X obj 197 715 s mixtape-saving-name;
+#X obj 91 716 s mixtape-saving-name;
 #X obj 352 364 r mixtape-saving-name;
 #X obj 140 595 list append NouveauMixtape;
 #X msg 219 254 text Nom de la mixtape : \, spacing -0.5;
-#X msg 220 671 question Nom de la mixtape;
+#X msg 114 672 question Nom de la mixtape;
 #X msg 507 368 symbol NouveauMixtape;
+#X obj 310 684 pofkb/gettext Nom de la mixtape:;
+#X obj 310 662 route show;
 #X connect 0 0 7 0;
 #X connect 0 1 4 0;
 #X connect 1 0 32 1;
@@ -388,7 +390,7 @@
 #X connect 42 0 14 0;
 #X connect 43 0 64 0;
 #X connect 44 0 62 0;
-#X connect 45 0 20 0;
+#X connect 45 0 67 0;
 #X connect 46 0 41 0;
 #X connect 47 0 14 0;
 #X connect 48 0 59 0;
@@ -410,6 +412,8 @@
 #X connect 63 0 10 0;
 #X connect 64 0 20 0;
 #X connect 65 0 62 1;
+#X connect 66 0 60 0;
+#X connect 67 0 66 0;
 #X restore 554 349 pd mixtapename;
 #X obj 507 917 mode/say 1 ConfirmMixtape;
 #X obj 581 597 mode/say 1 finOuvertureSaveMixtape;

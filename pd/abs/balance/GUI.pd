@@ -1,7 +1,7 @@
-#N struct 3798-symarray float x array symbols 3798-sym;
-#N struct 3798-sym symbol name float on;
-#N struct 3809-symarray float x array symbols 3809-sym;
-#N struct 3809-sym symbol name float on;
+#N struct 1680-symarray float x array symbols 1680-sym;
+#N struct 1680-sym symbol name float on;
+#N struct 1691-symarray float x array symbols 1691-sym;
+#N struct 1691-sym symbol name float on;
 #N canvas 623 244 577 542 10;
 #X declare -path ../;
 #X declare -path ../instruments/rj;
@@ -13,7 +13,7 @@
 #X floatatom 222 163 5 0 0 0 - - -;
 #X floatatom 356 160 5 0 0 0 - - -;
 #X floatatom 188 162 5 0 0 0 - - -;
-#N canvas 336 537 468 347 mode 0;
+#N canvas 336 537 468 347 mode 1;
 #X obj 113 20 inlet;
 #X obj 360 125 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -170,7 +170,7 @@
 -262144 -1 -1 0 256;
 #X obj 636 356 poftranslate;
 #X obj 149 305 pofcolor 0 0 0 0.85;
-#N canvas 531 96 669 831 setname 0;
+#N canvas 521 86 669 831 setname 1;
 #X obj 195 68 t a a;
 #X floatatom 279 28 5 0 0 0 - - -;
 #X floatatom 349 29 5 0 0 0 - - -;
@@ -191,8 +191,8 @@
 #X msg 171 446 text fred énervé;
 #X obj 140 529 route up;
 #X obj 140 553 isInside 250 50;
-#X obj 140 649 poftextbox;
-#X obj 140 669 route out;
+#X obj 41 686 poftextbox;
+#X obj 41 706 route out;
 #X obj 53 378 t a a a;
 #X obj 72 402 pofcolor 0.6 0.85 1 1;
 #X obj 219 400 pofcolor 0 0 0 1;
@@ -208,13 +208,13 @@
 #X msg 55 555 draw \$1;
 #X obj 76 531 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 140 690 route bang;
+#X obj 41 727 route bang;
 #X msg 219 254 text Nom du set : \, spacing -0.5;
 #X obj 73 426 pofrect 400 60 4;
 #X obj 219 425 pofrect 410 70 6;
 #X obj 53 356 poftranslate 0 23;
 #X obj 97 252 poftranslate 0 -35;
-#X obj 197 715 s set-saving-name;
+#X obj 140 756 s set-saving-name;
 #X obj 373 367 r set-saving-name;
 #X msg 507 368 symbol NouveauSet;
 #X obj 388 398 list prepend text;
@@ -239,11 +239,11 @@
 #X obj 508 279 r set-saving;
 #X obj 508 299 sel 1;
 #X obj 509 348 b;
-#X symbolatom 409 731 0 0 0 0 - - -;
-#X msg 413 704 symbol \$1;
 #X obj 386 508 symbol;
 #X symbolatom 318 559 0 0 0 0 - - -;
 #X obj 390 543 s NomDuSetSelectionné;
+#X obj 140 662 pofkb/gettext Nom du set:;
+#X obj 140 639 route show;
 #X connect 0 0 7 0;
 #X connect 0 1 4 0;
 #X connect 1 0 32 1;
@@ -287,7 +287,7 @@
 #X connect 41 0 10 0;
 #X connect 43 0 49 1;
 #X connect 43 0 45 0;
-#X connect 43 0 68 0;
+#X connect 43 0 66 0;
 #X connect 44 0 49 1;
 #X connect 45 0 46 0;
 #X connect 46 0 14 0;
@@ -295,7 +295,7 @@
 #X connect 48 0 47 0;
 #X connect 49 0 51 0;
 #X connect 50 0 49 0;
-#X connect 51 0 20 0;
+#X connect 51 0 70 0;
 #X connect 52 0 45 0;
 #X connect 53 0 14 0;
 #X connect 54 0 55 0;
@@ -311,8 +311,9 @@
 #X connect 65 0 44 0;
 #X connect 65 0 52 0;
 #X connect 65 0 60 0;
-#X connect 67 0 66 0;
-#X connect 68 0 69 0;
+#X connect 66 0 67 0;
+#X connect 69 0 42 0;
+#X connect 70 0 69 0;
 #X restore 636 376 pd setname;
 #X obj 646 281 pofcolor 0 0 0 0.9;
 #X obj 284 438 poftranslate;
