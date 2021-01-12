@@ -1,4 +1,4 @@
-#N canvas 1673 929 763 979 12;
+#N canvas 260 341 763 979 12;
 #X declare -path AutoPreset;
 #X obj 44 14 inlet head;
 #X obj 42 288 t a a;
@@ -80,9 +80,9 @@
 #X obj 419 207 poftranslate 400 -242;
 #X obj 298 863 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 167 64 r concert-MessClock-\$1;
+#X obj 168 52 r concert-MessClock-\$1;
 #X obj 42 159 pofvisible;
-#N canvas 2281 986 837 924 on-off 1;
+#N canvas 2281 986 837 924 on-off 0;
 #X floatatom 56 44 5 0 0 0 - - -;
 #X floatatom 95 43 5 0 0 0 - - -;
 #X obj 225 29 t b b;
@@ -109,10 +109,10 @@
 #X connect 6 0 1 0;
 #X restore 76 133 pd text on/off;
 #X obj 12 13 inlet;
-#X obj 214 421 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 214 421 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 234 417 s \$1-OnOff;
-#X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 193 175 set BoutonMachineOff.png;
 #X msg 212 197 set BoutonMachineOn.png;
@@ -514,8 +514,8 @@
 #X connect 66 0 77 0;
 #X connect 66 0 84 0;
 #X connect 67 0 87 0;
-#X connect 68 0 17 0;
 #X connect 68 0 48 0;
+#X connect 68 0 17 0;
 #X connect 69 0 12 0;
 #X connect 70 0 82 0;
 #X connect 71 1 13 0;

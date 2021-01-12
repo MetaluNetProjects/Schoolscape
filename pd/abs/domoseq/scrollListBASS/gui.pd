@@ -299,8 +299,6 @@
 #X obj 59 717 pofrect 20 50 10;
 #X obj 688 366 s list-\$1-props;
 #X msg 688 342 1 _show;
-#X floatatom 712 49 5 0 0 0 - - -;
-#X floatatom 794 58 5 0 0 0 - - -;
 #X connect 0 0 43 0;
 #X connect 1 0 25 0;
 #X connect 2 0 38 0;
@@ -421,5 +419,3 @@
 #X connect 117 0 111 0;
 #X connect 118 0 117 1;
 #X connect 122 0 121 0;
-#X connect 123 0 28 0;
-#X connect 124 0 29 0;

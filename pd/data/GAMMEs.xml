@@ -1,0 +1,27 @@
+<root>
+	<GAMME file="Ionian"/>
+	<GAMME file="AscendingMelodicMinorAmm"/>
+	<GAMME file="HarmonicMinorHmin"/>
+	<GAMME file="HarmonicMajorHmaj"/>
+	<GAMME file="WnnWnn"/>
+	<GAMME file="HungarianMajor1"/>
+	<GAMME file="NeapolitanMajorNmaj"/>
+	<GAMME file="DoubleHarmonic1Dh1"/>
+	<GAMME file="HungarianMinor1Dh2"/>
+	<GAMME file="DoubleHarmonic3Dh3"/>
+	<GAMME file="DoubleHarmonic4Dh4"/>
+	<GAMME file="PersianDh5"/>
+	<GAMME file="DoubleHarmonic6Dh6"/>
+	<GAMME file="E1e1"/>
+	<GAMME file="E2e2"/>
+	<GAMME file="NeapolitanMinorE3"/>
+	<GAMME file="E4e4"/>
+	<GAMME file="E5e5"/>
+	<GAMME file="E6e6"/>
+	<GAMME file="E7e7"/>
+	<GAMME file="E8e8"/>
+	<GAMME file="E9e9"/>
+	<GAMME file="E10e10"/>
+	<GAMME file="E11e11"/>
+	<GAMME file="Pentatonic"/>
+	</root>

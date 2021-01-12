@@ -1,7 +1,7 @@
-#N struct 1680-symarray float x array symbols 1680-sym;
-#N struct 1680-sym symbol name float on;
-#N struct 1691-symarray float x array symbols 1691-sym;
-#N struct 1691-sym symbol name float on;
+#N struct 3889-symarray float x array symbols 3889-sym;
+#N struct 3889-sym symbol name float on;
+#N struct 3900-symarray float x array symbols 3900-sym;
+#N struct 3900-sym symbol name float on;
 #N canvas 623 244 577 542 10;
 #X declare -path ../;
 #X declare -path ../instruments/rj;
@@ -13,7 +13,7 @@
 #X floatatom 222 163 5 0 0 0 - - -;
 #X floatatom 356 160 5 0 0 0 - - -;
 #X floatatom 188 162 5 0 0 0 - - -;
-#N canvas 336 537 468 347 mode 1;
+#N canvas 336 537 468 347 mode 0;
 #X obj 113 20 inlet;
 #X obj 360 125 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -170,7 +170,7 @@
 -262144 -1 -1 0 256;
 #X obj 636 356 poftranslate;
 #X obj 149 305 pofcolor 0 0 0 0.85;
-#N canvas 521 86 669 831 setname 1;
+#N canvas 521 86 669 831 setname 0;
 #X obj 195 68 t a a;
 #X floatatom 279 28 5 0 0 0 - - -;
 #X floatatom 349 29 5 0 0 0 - - -;

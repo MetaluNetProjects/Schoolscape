@@ -1,7 +1,7 @@
-#N struct 3798-symarray float x array symbols 3798-sym;
-#N struct 3798-sym symbol name float on;
-#N struct 3809-symarray float x array symbols 3809-sym;
-#N struct 3809-sym symbol name float on;
+#N struct 3857-symarray float x array symbols 3857-sym;
+#N struct 3857-sym symbol name float on;
+#N struct 3868-symarray float x array symbols 3868-sym;
+#N struct 3868-sym symbol name float on;
 #N canvas 1287 1077 1142 843 10;
 #X obj 9 605 r CLOCK;
 #X obj 64 702 ndmetro 4 4;
@@ -271,7 +271,7 @@
 ;
 #X obj 825 105 GAMMEKBchord Type-Chord;
 #X obj 827 187 GAMMEKBmode Type-Mode;
-#N canvas 110 676 845 506 enumChord 0;
+#N canvas 110 676 845 506 enumChord 1;
 #X obj 81 415 r enumChord;
 #X obj 448 197 tabread enumChord;
 #X floatatom 448 242 5 0 0 0 - - -;
@@ -384,7 +384,7 @@
 #X connect 41 0 9 0;
 #X connect 42 0 43 0;
 #X restore 930 303 pd enumChord;
-#N canvas 1200 973 845 506 enumMode 0;
+#N canvas 1200 973 845 506 enumMode 1;
 #X floatatom 448 242 5 0 0 0 - - -;
 #X floatatom 505 167 5 0 0 0 - - -;
 #X floatatom 390 318 5 0 0 0 - - -;
@@ -460,7 +460,7 @@
 #X msg 496 69 2741;
 #X msg 538 68 1387;
 #X msg 435 65 173;
-#X msg 461 31 1229;
+#X msg 461 31 2741;
 #X connect 0 0 42 0;
 #X connect 1 0 37 0;
 #X connect 4 0 39 0;
