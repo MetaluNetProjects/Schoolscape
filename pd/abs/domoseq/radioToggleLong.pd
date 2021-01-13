@@ -24,7 +24,7 @@
 #X symbolatom 317 191 10 0 0 0 - - -;
 #X obj 212 363 s \$1-r;
 #X obj 85 281 poftexts asimov 25;
-#X obj 111 222 poftouch 58 58;
+#X obj 111 222 poftouch 140 40;
 #X connect 0 0 1 0;
 #X connect 0 0 7 0;
 #X connect 0 0 17 0;
