@@ -1,8 +1,8 @@
-#N struct 3938-symarray float x array symbols 3938-sym;
-#N struct 3938-sym symbol name float on;
-#N struct 3949-symarray float x array symbols 3949-sym;
-#N struct 3949-sym symbol name float on;
-#N canvas 1287 1077 1142 843 10;
+#N struct 4361-symarray float x array symbols 4361-sym;
+#N struct 4361-sym symbol name float on;
+#N struct 4372-symarray float x array symbols 4372-sym;
+#N struct 4372-sym symbol name float on;
+#N canvas 1524 1024 1142 843 10;
 #X obj 9 605 r CLOCK;
 #X obj 64 702 ndmetro 4 4;
 #X floatatom 19 730 5 0 0 0 - - -;
@@ -13,7 +13,7 @@
 #X obj 64 783 s \$0-step;
 #X obj 1 54 seqstep \$0 0;
 #X obj 1 38 nbx 5 14 1 32 0 0 \$0-denum \$0-denum denum 0 -8 0 10 -262144
--1 -1 32 256;
+-1 -1 24 256;
 #X obj 122 443 r \$0-denum;
 #X obj 154 508 t b f;
 #X msg 36 12 1;
@@ -78,7 +78,7 @@
 #X obj 457 637 spigot;
 #X obj 457 595 r \$0-bpm;
 #X obj 309 37 tgl 15 0 \$1-play \$1-play \$1-play 0 -8 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 117 724 r \$1-play;
 #X obj 64 724 spigot;
 #X obj 457 659 s /BPM;
@@ -93,14 +93,14 @@
 #X restore 36 102 graph;
 #X restore 831 77 pd table;
 #X obj 444 25 hradio 15 1 0 12 \$1-recall \$1-recall \$1-recall 0 -8
-0 10 -4034 -1 -1 4;
+0 10 -4034 -1 -1 1;
 #X obj 634 25 hradio 15 1 0 12 \$1-store \$1-store \$1-store 0 -8 0
-10 -258113 -1 -1 10;
+10 -258113 -1 -1 6;
 #X obj 313 672 r \$1-recall;
 #X obj 590 414 r \$1-store;
 #X msg 578 4 set \$1;
-#N canvas 2251 1244 689 321 \$0-file 0;
-#X obj 52 193 soundfiler;
+#N canvas 2093 1449 958 321 \$0-file 1;
+#X obj 81 270 soundfiler;
 #X obj 219 134 list prepend \$0-table;
 #X obj 52 135 list prepend \$0-table;
 #X msg 52 158 read seq\$2.wav \$1;
@@ -144,6 +144,14 @@
 -1 -1;
 #X obj 299 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 656 32 r \$1-load;
+#X obj 664 93 print ms;
+#X obj 793 98 s \$1-load;
+#X msg 792 31 Basic;
+#X obj 801 67 symbol;
+#X msg 847 28 Siberien;
+#X msg 633 166 print;
+#X obj 633 189 pofxml tunes;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
@@ -157,13 +165,18 @@
 #X connect 35 0 36 0;
 #X connect 37 0 34 0;
 #X connect 38 0 1 0;
+#X connect 39 0 40 0;
+#X connect 42 0 43 0;
+#X connect 43 0 41 0;
+#X connect 44 0 43 0;
+#X connect 45 0 46 0;
 #X restore 872 7 pd \$0-file;
 #X obj 776 10 bng 15 250 50 0 empty empty file 17 7 0 10 -257985 -1
 -1;
 #X msg 896 63 vis 0 \, vis 1;
 #X obj 896 85 s pd-\$0-file;
 #X obj 61 38 nbx 5 14 0 1e+06 0 0 \$0-loop \$0-loop loop 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 24 256;
 #X obj 64 748 mod 4;
 #X obj 64 464 t f f;
 #X obj 64 605 list prepend 0;
@@ -554,6 +567,62 @@
 #X obj 963 541 s /GAMMEsym;
 #X obj 972 428 r \$0-stepdataSym;
 #X obj 13 494 s PofStepCumul;
+#N canvas 1589 1237 956 269 remotePof 0;
+#X obj 45 93 s \$0-denum;
+#X obj 48 128 r \$0-denum;
+#X obj 45 68 r seq-PofDenumerator-s;
+#X obj 48 154 s seq-PofDenumerator-r;
+#X floatatom 141 111 5 0 0 0 - - -;
+#X floatatom 342 94 5 0 0 0 - - -;
+#X obj 246 76 s \$0-bpm;
+#X obj 249 111 r \$0-bpm;
+#X obj 246 51 r bpmPart-r;
+#X obj 250 172 s bpmPart-s;
+#X floatatom 337 159 5 0 0 0 - - -;
+#X floatatom 539 91 5 0 0 0 - - -;
+#X obj 443 73 s \$0-bpm_on;
+#X obj 446 108 r \$0-bpm_on;
+#X obj 429 30 r PofBpmPart_on-s;
+#X obj 440 186 s PofBpmPart_on-r;
+#X floatatom 477 145 5 0 0 0 - - -;
+#X obj 593 139 r \$1-recall;
+#X floatatom 631 164 5 0 0 0 - - -;
+#X obj 608 204 s PofPartRecall-r;
+#X obj 597 168 + 1;
+#X obj 594 96 s \$1-recall;
+#X obj 585 48 r PofPartRecall-s;
+#X obj 593 73 - 1;
+#X floatatom 784 157 5 0 0 0 - - -;
+#X obj 750 161 + 1;
+#X obj 746 66 - 1;
+#X obj 738 41 r PofPartStore-s;
+#X obj 761 197 s PofPartStore-r;
+#X obj 747 89 s \$1-store;
+#X obj 746 132 r \$1-store;
+#X floatatom 827 75 5 0 0 0 - - -;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 2 0 4 0;
+#X connect 7 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 13 0 16 0;
+#X connect 13 0 15 0;
+#X connect 14 0 11 0;
+#X connect 14 0 12 0;
+#X connect 17 0 18 0;
+#X connect 17 0 20 0;
+#X connect 20 0 19 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 25 0 28 0;
+#X connect 26 0 29 0;
+#X connect 27 0 26 0;
+#X connect 27 0 31 0;
+#X connect 30 0 24 0;
+#X connect 30 0 25 0;
+#X restore 992 104 pd remotePof;
 #X connect 0 0 1 0;
 #X connect 1 0 72 0;
 #X connect 1 0 2 0;
