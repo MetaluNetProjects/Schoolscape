@@ -1,4 +1,4 @@
-#N canvas 743 241 519 419 10;
+#N canvas 681 241 519 419 10;
 #X obj 95 137 poftranslate, f 21;
 #X obj 95 243 pofcolor 0 1 0 1;
 #X obj 212 23 loadbang;
@@ -17,7 +17,7 @@
 #X msg 268 163 text \$1;
 #X msg 298 127 12;
 #X obj 136 74 t f f;
-#X floatatom 297 66 5 0 0 0 - - -, f 5;
+#X floatatom 297 66 5 0 0 0 - - -;
 #X obj 136 97 mod \$2;
 #X obj 179 96 div \$2;
 #X obj 359 90 r PART_RECALL;
@@ -34,11 +34,12 @@
 #X obj 179 117 * 60;
 #X obj 383 44 r mainSeq-load;
 #X msg 383 65 0;
+#X obj 256 104 + 1;
 #X connect 0 0 4 0;
 #X connect 1 0 29 0;
 #X connect 2 0 3 0;
-#X connect 3 0 14 0;
 #X connect 3 0 16 0;
+#X connect 3 0 34 0;
 #X connect 4 0 1 0;
 #X connect 4 1 5 0;
 #X connect 5 0 27 0;
@@ -72,3 +73,4 @@
 #X connect 31 0 0 2;
 #X connect 32 0 33 0;
 #X connect 33 0 22 0;
+#X connect 34 0 14 0;

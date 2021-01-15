@@ -1,4 +1,4 @@
-#N canvas 236 150 875 797 10;
+#N canvas 285 792 875 797 10;
 #X declare -path ../;
 #X obj 59 52 inlet head;
 #X obj 78 233 poftranslate;
@@ -9,7 +9,7 @@
 #X obj 222 167 * -1;
 #X obj 207 190 *;
 #X obj 268 39 hsl 128 15 0 20 0 0 list-\$1-pos list-\$1-pos list-pos
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 5080 1;
 #X msg 615 177 12;
 #X obj 413 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -74,7 +74,7 @@
 #X obj 342 608 min;
 #X floatatom 453 432 5 1 100 0 - - -;
 #X obj 342 653 -;
-#N canvas 118 232 581 462 scroll 0;
+#N canvas 335 990 581 462 scroll 1;
 #X obj 149 27 inlet;
 #X obj 185 79 unpack f f;
 #X obj 255 78 unpack f f;
@@ -301,6 +301,8 @@
 #X msg 688 342 1 _show;
 #X floatatom 712 49 5 0 0 0 - - -;
 #X floatatom 794 58 5 0 0 0 - - -;
+#X floatatom 337 238 5 0 0 0 - - -;
+#X floatatom 412 258 5 0 0 0 - - -;
 #X connect 0 0 43 0;
 #X connect 1 0 25 0;
 #X connect 2 0 38 0;
@@ -322,7 +324,9 @@
 #X connect 28 0 18 0;
 #X connect 29 0 16 0;
 #X connect 30 0 32 2;
+#X connect 30 0 126 0;
 #X connect 31 0 32 1;
+#X connect 31 0 125 0;
 #X connect 32 1 66 0;
 #X connect 33 0 32 0;
 #X connect 34 0 33 0;
@@ -330,9 +334,9 @@
 #X connect 37 0 19 0;
 #X connect 37 1 38 0;
 #X connect 38 0 4 0;
-#X connect 38 1 8 0;
 #X connect 38 1 27 0;
 #X connect 38 1 28 0;
+#X connect 38 1 8 0;
 #X connect 38 2 29 0;
 #X connect 39 0 37 0;
 #X connect 41 0 40 0;

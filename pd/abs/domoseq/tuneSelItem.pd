@@ -1,4 +1,4 @@
-#N canvas 706 406 611 411 10;
+#N canvas 589 406 611 411 10;
 #X obj 95 40 r tuneSelHead;
 #X obj 253 33 r Tunes;
 #X obj 253 54 list split \$1;

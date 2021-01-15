@@ -1,4 +1,4 @@
-#N canvas 1492 993 780 899 10;
+#N canvas 20 772 780 899 10;
 #X obj 127 609 loadbang;
 #X obj 87 701 pofcolor 0 0 0 1;
 #X text 172 7 radioToggle channel num text;
