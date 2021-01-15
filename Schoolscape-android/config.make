@@ -4,7 +4,7 @@
 ################################################################################
 #MAKEFILE_DEBUG = yes
 
-ABIS_TO_COMPILE_RELEASE = neon armv7
+#ABIS_TO_COMPILE_RELEASE = neon armv7
 #ABIS_TO_COMPILE_RELEASE = armv7 neon x86
 #ABIS_TO_COMPILE_RELEASE = armv7
 ################################################################################
@@ -108,7 +108,7 @@ PROJECT_EXTERNAL_SOURCE_PATHS = ../externals
 #
 #   Note: Leave a leading space when adding list items with the += operator
 ################################################################################
-PROJECT_CFLAGS = -DLINK_PLATFORM_LINUX=1 -std=c++11 -Wno-multichar -DABL_LINK_OFFSET_MS=0
+PROJECT_CFLAGS = -I$(OF_ROOT)/addons/ofxPd/libs/libpd/pure-data/src -DHAVE_UNISTD_H -DUSEAPI_DUMMY -DPD -DLIBPD_EXTRA -DLINK_PLATFORM_LINUX=1 -std=c++11 -Wno-multichar -DABL_LINK_OFFSET_MS=0
 
 ################################################################################
 # PROJECT OPTIMIZATION CFLAGS

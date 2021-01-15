@@ -7,7 +7,8 @@
 #include "testApp.h"
 #include "pofBase.h"
 #include "ofxAccelerometer.h"
-#include "abl_link~.hpp"
+#include "abl_link/abl_link~.hpp"
+#include "EventDispatcher.h"
 
 using namespace std;
 
@@ -35,7 +36,7 @@ extern "C" {
 }
 
 
-const char Tag[]="Homescape";
+const char Tag[]="Schoolscape";
 
 //--------------------------------------------------------------
 void testApp::setup() {
@@ -56,6 +57,10 @@ void testApp::setup() {
 	//ofSetVerticalSync(true);
 
 	ofLogNotice(Tag, "init sound");
+//     Ask for permission to record audio,
+//     not needed if no in channels used
+    ofxAndroidRequestPermission(OFX_ANDROID_PERMISSION_RECORD_AUDIO);
+    ofxAndroidRequestPermission(OFX_ANDROID_PERMISSION_WRITE_EXTERNAL_STORAGE);
 	// setup OF sound stream
 	//ofSoundStreamSetup(2, numInputs, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
 	os = NULL;
@@ -221,7 +226,13 @@ void testApp::receiveList(const std::string& dest, const List& list) {
 
 void testApp::receiveMessage(const std::string& dest, const std::string& msg, const List& list) {
 	ofLogNotice(Tag) << "message: " << dest << ": " << msg << " " << list.toString() << list.types() << endl;
-	if(msg == "quit") std::exit(0); //testApp::exit(); //exit();
+	if(msg == "quit") {
+		//puda.stop();
+		//if(os) opensl_close(os);
+		pofBase::dispatcher.waitForThread(true);
+		clock_unset(pofBase::queueClock);
+		std::exit(0); //testApp::exit(); //exit();
+	}
 }
 
 //--------------------------------------------------------------

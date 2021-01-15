@@ -19,6 +19,21 @@ int main(){
 }
 
 #ifdef TARGET_ANDROID
+void ofAndroidApplicationInit()
+{
+    //application scope init
+}
+
+void ofAndroidActivityInit()
+{
+	//activity scope init
+	main();
+}
+#endif
+
+/*
+
+#ifdef TARGET_ANDROID
 #include <jni.h>
 
 //========================================================================
@@ -27,4 +42,4 @@ extern "C"{
 		main();
 	}
 }
-#endif
+#endif*/

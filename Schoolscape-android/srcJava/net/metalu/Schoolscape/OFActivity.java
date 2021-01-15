@@ -13,16 +13,16 @@ public class OFActivity extends cc.openframeworks.OFActivity{
     public void onCreate(Bundle savedInstanceState)
     { 
         super.onCreate(savedInstanceState);
-        String packageName = getPackageName();
+        //String packageName = getPackageName();
 
-        ofApp = new OFAndroid(packageName,this);
+        //ofApp = new OFAndroid(packageName,this);
     }
 	
 	@Override
 	public void onDetachedFromWindow() {
 	}
 	
-    @Override
+    /*@Override
     protected void onPause() {
         super.onPause();
         ofApp.pause();
@@ -32,7 +32,7 @@ public class OFActivity extends cc.openframeworks.OFActivity{
     protected void onResume() {
         super.onResume();
         ofApp.resume();
-    }
+    }*/
     
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -56,7 +56,7 @@ public class OFActivity extends cc.openframeworks.OFActivity{
 	public void onBackPressed(){
 		
 	}*/
-	OFAndroid ofApp;
+	//OFAndroid ofApp;
     
 	
 	

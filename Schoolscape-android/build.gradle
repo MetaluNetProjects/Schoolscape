@@ -1,89 +1,168 @@
-/*buildscript {
-    
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
+def ofRoot(){ return '../../../' }
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
-    }
-}*/
+// Load common functions
+apply from: ofRoot()+"libs/openFrameworksCompiled/project/android/common-functions.gradle"
 
 buildscript {
+    apply from: "../../../libs/openFrameworksCompiled/project/android/ndk-verify.gradle"
+
     repositories {
-        mavenCentral()
+        // Gradle 4.1 and higher include support for Google's Maven repo using
+        // the google() method. And you need to include this repo to download
+        // Android Gradle plugin 3.0.0 or higher
+        // google()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        //classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle-experimental:0.9.3'
     }
 }
 
 allprojects {
     repositories {
-        mavenCentral()
+        jcenter()
+        maven{ url "https://maven.google.com" }
     }
 }
 
+apply plugin: 'com.android.model.application'
 
-apply plugin: 'com.android.application'
+model {
+    android {
+        // openFrameworks currently only supports compiling against SDK 19 or nweer
+        compileSdkVersion = 30
+        buildToolsVersion = "30.0.0-rc4"
 
+        defaultConfig {
+            minSdkVersion.apiLevel    = 19
+            targetSdkVersion.apiLevel = 30
+            versionCode     =  1
+            versionName     = "1.0"
+            externalNativeBuild {
+                ndkBuild {
+                    // Sets an optional flag for the C compiler.
+                    //cFlags "-DHAVE_UNISTD_H", "-DUSEAPI_DUMMY", "-DPD", "-DLIBPD_EXTRA", "-DLIBPD_USE_STD_MUTEX"
+                    //cppFlags "-DPD"
+                }
+            }
+        }        
 
-
-android {
-    compileSdkVersion 22
-    buildToolsVersion '23.0.1'
-
-    lintOptions {
-      abortOnError false
+        //defaultConfig.with {
+        //    minSdkVersion.apiLevel    = 19
+        //    targetSdkVersion.apiLevel = 30
+        //    versionCode     =  1
+        //    versionName     = "1.0"
+        //}
     }
-    
-    defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 22
-    }
-    
 
-    // Configure source folders like Eclipse
-    sourceSets {
+    android.ndk {
+        moduleName = ofAppModuleName()
+        toolchain  = buildToolchain()
+        stl        = compilerStl()
+        platformVersion = "21"
+    }
+
+    android.sources {
         main {
-            manifest.srcFile 'AndroidManifest.xml'
-            jni.srcDirs = []
-            java.srcDirs = ['srcJava']
-            resources.srcDirs = ['srcJava']
-            aidl.srcDirs = ['srcJava']
-            renderscript.srcDirs = ['srcJava']
-            res.srcDirs = ['res']
-            assets.srcDirs = ['assets']
-            jniLibs.srcDirs = ['libs']
+            jni {
+                source {
+                    srcDirs= appSrcDirs(ofRoot())
+
+                    includes = srcIncludes(ofRoot())
+                    excludes = srcExcludes(ofRoot())
+                }
+
+                // Link to openFrameworks
+                dependencies {
+                    project ":openFrameworksProject"  linkage "static"
+                }
+            }
+
+            manifest {
+                source {
+                    srcDirs = [ "." ]
+                }
+            }
+            res {
+                source {
+                    srcDirs = [ "res" ]
+                }
+            }
+            java {
+                source {
+                    srcDirs = [ "srcJava" ]
+                }
+            }
+            aidl {
+                source{
+                    srcDirs = ['srcJava']
+                }
+            }
+            renderscript{
+                source{
+                    srcDirs = ['srcJava']
+                }
+            }
+            jniLibs {
+                source {
+                    srcDirs = ['libs']
+                }
+            }
+            assets {
+                source {
+                    srcDirs = ['bin/data'] + addonData(ofRoot())
+                }
+            }
+        }
+    }
+
+    android.lintOptions {
+        abortOnError  = false
+    }
+
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+        }
+    }
+
+    // Setup the different types of flavors (arm / x86),
+    // and add linker flags based on that
+    android.productFlavors {
+        getAbis().each { abi ->
+            create(getFlavorName(abi)) {
+                ndk {
+                    abiFilters.add(abi)
+
+                    cppFlags.addAll(coreCppFlags(abi, ofRoot()))
+                    cppFlags.addAll(addonCppFlags(abi, ofRoot()))
+                    CFlags.addAll(addonCppFlags(abi, ofRoot()))
+                    cppFlags.addAll("-DLINK_PLATFORM_LINUX=1", "-Wno-multichar", "-DABL_LINK_OFFSET_MS=0", "-std=c++11")
+                    //CFlags.addAll("-I\$(PROJECT_ROOT)/src/abl_link/link/include")
+                    //CFlags.addAll("-I\$(PROJECT_ROOT)/src/abl_link/link/modules/asio-standalone/asio/include")
+                    // , "-std=c++11"
+                    //cppFlags.addAll("-std=c++11")
+                    CFlags.addAll("-I" + projectDir + "/src/externals/cyclone/shared/")
+
+
+                    ldFlags.addAll(addonLdFlags(abi, ofRoot()))
+                    ldFlags.addAll(coreLdFlags(abi, ofRoot()))
+
+                    ldLibs.addAll(addonLdLibs(abi, ofRoot()))
+                    ldLibs.addAll(coreLdLibs(abi, ofRoot()))
+
+                    //cppFlags.add("-DPD -DHAVE_UNISTD_H -DUSEAPI_DUMMY -DLIBPD_EXTRA")
+                    //cppFlags.add("-DPD")
+                }
+            }
         }
     }
 }
 
-if(project.hasProperty("AA.signing")
- && new File(project.property("AA.signing")).exists()) {
-    apply from: project.property("AA.signing");
-}
-
-
 dependencies {
-    compile project(':ofAndroidLib')
+    addonJavaDependencies(ofRoot()).each { dep ->
+        compile(project(path: dep[1] ))
+    }
+    compile project(path: ':ofAndroidLib')
 }
-
-clean.dependsOn(":openFrameworksProject:clean")
-
-assembleDebug.dependsOn(":openFrameworksProject:compileDebugOF")
-
-assembleRelease.dependsOn(":openFrameworksProject:compileReleaseOF")
-
-
