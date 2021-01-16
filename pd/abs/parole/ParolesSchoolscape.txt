@@ -30,15 +30,38 @@ RelanceRecNomMixtape # “vous devez dire le nom de votre mixtape s’il vous pl
 
 ConfirmMixtape # “Merci d’avoir enregistré votre mixtape”
 
+NomMixtape # “donnez un nom à votre mixtape"
+
+SaveMixtape # “Votre Mixtape est sauvée vous pourrez la réécouter plus tard et même l’envoyer par mail en appuyant sur MixTape”
+## PopUpchoixSong :
+
+#ChoixSong # “choisissez un morceau enregistré à écouter et confirmer”
+
+#ChoixSongRappel # “je vous rappelle que vous devez choisir un morceau s’il vous plaît”
+
+## PopUpchoixSong :
+
+ChoixSong # “selectionner une Song à écouter et confirmer - ou appuyez sur + pour en créer une nouvelle"
+
+ChoixSongRappel # “je vous rappelle que vous devez choisir une Song s’il vous plaît"
+
+OuvertureSaveSong # “écrivez le nom de votre Song et décrivez la oralement - puis confirmez”
+
+RelanceNomSong # “je vous rappelle que vous devez écrire le nom de votre Song”
+
+RelanceRecNomSong # “vous devez dire le nom de votre Song s’il vous plaît”
+
+ConfirmSong # “Merci d’avoir enregistré votre Song”
+
 #MailMixTape # “indiquez l'adresse email à laquelle vous voulez envoyer la MixTape selectionée”
 
 ## PopUpRecMixtape :
 
 #OuvertureRecMixtape # “si vous voulez sauver votre enregistrement appuyez sur Save - vous pouvez d'abord le réécouter en appuyant sur play"
 
-NomMixtape # “donnez un nom à votre mixtape"
+NomSong # “donnez un nom à votre Song"
 
-SaveMixtape # “Votre Mixtape est sauvée vous pourrez la réécouter plus tard et même l’envoyer par mail en appuyant sur MixTape”
+SaveSong # “Votre Song est sauvée vous pourrez la réécouter plus tard ”
 
 # PopUpAbout :
 

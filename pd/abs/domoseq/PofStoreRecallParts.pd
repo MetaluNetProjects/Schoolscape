@@ -50,7 +50,7 @@
 #X obj 42 511 t a a;
 #X obj 33 190 pofvisible;
 #X obj 506 241 npPartSelector;
-#N canvas 657 418 525 1132 Part 0;
+#N canvas 657 418 525 1132 Part 1;
 #X obj 102 189 inlet;
 #X obj 224 742 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -95,7 +95,7 @@
 -1 -1 0 1;
 #X floatatom 352 137 5 0 0 0 - - -;
 #X obj 123 684 pofcolor 1 1 1 1;
-#N canvas 410 261 450 621 TouchLong 1;
+#N canvas 410 261 450 621 TouchLong 0;
 #X obj 172 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 85 42 route up down;
@@ -210,8 +210,10 @@
 #X obj 144 215 pofcolor 0 0.5 0 1, f 40;
 #X msg 358 638 1 1 1;
 #X msg 50 621 text Part : \, width 120 \, center 1;
-#X obj 166 476 t b;
-#X msg 162 522 1;
+#X obj 261 511 t b;
+#X msg 257 557 1;
+#X msg 423 108 0.5;
+#X msg 432 137 0;
 #X connect 0 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -251,9 +253,9 @@
 #X connect 38 0 22 0;
 #X connect 39 0 29 0;
 #X connect 39 0 40 0;
-#X connect 39 0 78 0;
-#X connect 39 1 3 0;
+#X connect 39 0 41 0;
 #X connect 39 1 45 0;
+#X connect 39 1 78 0;
 #X connect 41 0 42 0;
 #X connect 41 0 43 0;
 #X connect 42 0 44 0;
@@ -312,6 +314,9 @@
 #X obj 125 321 poftranslate 0 -82;
 #X obj 118 553 poftranslate 0 -82;
 #X obj 31 13 inlet head;
+#X obj 258 136 s nbPart-Recall;
+#X obj 266 103 f;
+#X obj 261 61 r nbPart-Recall;
 #X connect 0 0 43 0;
 #X connect 1 0 42 1;
 #X connect 2 0 42 2;
@@ -345,6 +350,7 @@
 #X connect 27 0 31 2;
 #X connect 30 0 44 0;
 #X connect 31 0 9 0;
+#X connect 32 0 54 0;
 #X connect 33 0 43 1;
 #X connect 34 0 43 2;
 #X connect 35 0 40 0;
@@ -365,3 +371,5 @@
 #X connect 50 0 13 0;
 #X connect 51 0 45 0;
 #X connect 52 0 24 0;
+#X connect 54 0 53 0;
+#X connect 55 0 54 1;

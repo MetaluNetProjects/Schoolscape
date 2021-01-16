@@ -633,12 +633,12 @@
 #X msg 361 375 1;
 #X obj 381 296 loadbang;
 #X obj 381 317 t b b b;
-#N canvas 191 984 814 855 EDIT_SCREEN 0;
+#N canvas 191 984 814 855 EDIT_SCREEN 1;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
 #X obj 112 72 change;
-#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 22 9 inlet;
 #X obj 45 298 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -1996,7 +1996,6 @@
 #X connect 28 0 30 0;
 #X connect 29 0 0 0;
 #X restore 586 287 pd steps;
-#X obj 22 98 pofvisible;
 #X obj 600 235 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -136 256;
 #X obj 638 216 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -2087,7 +2086,7 @@
 #X obj 699 492 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 17 256;
 #X obj 647 532 poftranslate;
-#N canvas 318 1156 713 507 Songs 0;
+#N canvas 318 1156 713 507 Songs 1;
 #X obj 113 20 inlet;
 #X obj 362 215 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -2117,15 +2116,13 @@
 -262144 -1 -1 0 256;
 #X obj 208 130 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 1 256;
-#X obj 366 53 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -56 256;
-#X obj 425 53 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
-#X obj 343 73 poftranslate, f 21;
-#X msg 356 114 text SONGS;
+#X obj 471 17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -45 256;
+#X obj 530 17 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -27 256;
+#X obj 448 37 poftranslate, f 21;
 #X obj 155 46 pofcolor 0 0.5 0 1;
-#X obj 484 83 loadbang;
-#X obj 536 266 r tune;
+#X obj 589 47 loadbang;
 #X obj 545 313 print;
 #X obj 6 290 s InterfaceTuneOpened;
 #X obj 155 68 cadreVec 120 101;
@@ -2140,59 +2137,80 @@
 #X floatatom 318 200 5 0 0 0 - - -;
 #X obj 113 181 pofscale 1 1.6;
 #X obj 79 132 t a a;
-#X obj 343 138 poftexts vera 36 -1;
 #X obj 105 381 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -293 256;
 #X obj 164 381 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -160 256;
 #X obj 82 401 poftranslate, f 21;
-#X obj 114 100 fixScaleX;
 #X obj 73 447 l domoseq/listGuiSong;
+#X obj 27 325 s tune-choix-open;
+#X obj 450 93 poftexts vera 30 -1;
+#X msg 463 69 text TUNE:;
+#X obj 525 126 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 584 126 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 41 256;
+#X obj 502 146 poftranslate, f 21;
+#X obj 643 156 loadbang;
+#X obj 504 202 poftexts vera 30 -1;
+#X msg 517 178 text \$1;
+#X msg 643 193 Basic;
+#X obj 114 100 fixScaleX;
+#X obj 576 256 r PofTuneName;
 #X connect 0 0 19 0;
 #X connect 1 0 18 1;
 #X connect 2 0 18 2;
 #X connect 3 0 1 0;
 #X connect 3 0 2 0;
-#X connect 4 0 33 1;
+#X connect 4 0 31 1;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 45 0;
+#X connect 8 0 42 0;
 #X connect 8 1 16 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 7 0;
 #X connect 12 0 13 0;
-#X connect 13 0 7 0;
+#X connect 12 0 44 0;
 #X connect 14 0 9 0;
 #X connect 15 0 14 0;
 #X connect 16 0 9 0;
 #X connect 17 0 11 0;
-#X connect 19 0 46 0;
-#X connect 19 1 27 0;
-#X connect 20 0 31 0;
-#X connect 21 0 35 1;
-#X connect 22 0 35 2;
+#X connect 19 0 54 0;
+#X connect 19 1 26 0;
+#X connect 20 0 29 0;
+#X connect 21 0 33 1;
+#X connect 22 0 33 2;
 #X connect 23 0 25 1;
 #X connect 24 0 25 2;
-#X connect 25 0 42 0;
-#X connect 26 0 42 0;
-#X connect 27 0 32 0;
-#X connect 28 0 26 0;
-#X connect 33 0 5 0;
-#X connect 33 0 12 0;
-#X connect 33 0 20 0;
-#X connect 34 0 33 0;
-#X connect 35 0 40 0;
+#X connect 25 0 45 0;
+#X connect 25 0 49 0;
+#X connect 26 0 30 0;
+#X connect 27 0 46 0;
+#X connect 31 0 5 0;
+#X connect 31 0 12 0;
+#X connect 31 0 20 0;
+#X connect 32 0 31 0;
+#X connect 33 0 38 0;
+#X connect 34 0 35 0;
+#X connect 35 0 38 1;
 #X connect 36 0 37 0;
-#X connect 37 0 40 1;
-#X connect 38 0 39 0;
-#X connect 39 0 40 2;
-#X connect 40 0 34 0;
-#X connect 41 0 25 0;
-#X connect 41 1 35 0;
-#X connect 43 0 45 1;
-#X connect 44 0 45 2;
-#X connect 46 0 41 0;
+#X connect 37 0 38 2;
+#X connect 38 0 32 0;
+#X connect 39 0 25 0;
+#X connect 39 1 33 0;
+#X connect 40 0 42 1;
+#X connect 41 0 42 2;
+#X connect 46 0 45 0;
+#X connect 47 0 49 1;
+#X connect 48 0 49 2;
+#X connect 49 0 51 0;
+#X connect 50 0 52 0;
+#X connect 50 0 53 0;
+#X connect 52 0 51 0;
+#X connect 53 0 52 0;
+#X connect 54 0 39 0;
+#X connect 55 0 52 0;
 #X restore 649 558 pd Songs;
 #N canvas 1473 909 978 1011 sus-tonic 0;
 #X floatatom 399 85 5 0 0 0 - - -;
@@ -2585,12 +2603,13 @@
 #X connect 90 0 84 0;
 #X restore 77 625 pd sus-tonic;
 #X obj 569 441 poftranslate;
+#X obj 22 98 pofvisible;
 #X connect 0 0 56 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 3 0 100 0;
-#X connect 5 0 100 0;
+#X connect 3 0 122 0;
+#X connect 5 0 122 0;
 #X connect 6 0 8 1;
 #X connect 7 0 8 2;
 #X connect 8 0 11 0;
@@ -2641,8 +2660,8 @@
 #X connect 43 2 59 0;
 #X connect 43 2 74 0;
 #X connect 44 0 34 1;
-#X connect 45 0 116 1;
-#X connect 46 0 116 2;
+#X connect 45 0 115 1;
+#X connect 46 0 115 2;
 #X connect 47 0 48 0;
 #X connect 48 0 49 0;
 #X connect 49 0 51 0;
@@ -2672,50 +2691,51 @@
 #X connect 85 0 22 0;
 #X connect 86 0 85 2;
 #X connect 91 0 85 0;
-#X connect 91 0 116 0;
+#X connect 91 0 115 0;
 #X connect 94 0 96 1;
 #X connect 95 0 96 2;
 #X connect 96 0 93 0;
 #X connect 97 0 88 0;
-#X connect 98 0 121 0;
-#X connect 99 0 110 0;
-#X connect 100 0 8 0;
-#X connect 100 0 83 0;
-#X connect 100 0 91 0;
-#X connect 101 0 103 1;
-#X connect 102 0 103 2;
-#X connect 103 0 99 0;
-#X connect 104 0 122 1;
-#X connect 105 0 122 2;
-#X connect 107 0 110 1;
-#X connect 108 0 110 2;
-#X connect 110 0 109 0;
-#X connect 112 0 115 1;
-#X connect 113 0 115 2;
+#X connect 98 0 120 0;
+#X connect 99 0 109 0;
+#X connect 100 0 102 1;
+#X connect 101 0 102 2;
+#X connect 102 0 99 0;
+#X connect 103 0 121 1;
+#X connect 104 0 121 2;
+#X connect 106 0 109 1;
+#X connect 107 0 109 2;
+#X connect 109 0 108 0;
+#X connect 111 0 114 1;
+#X connect 112 0 114 2;
+#X connect 114 0 113 0;
+#X connect 115 0 75 0;
+#X connect 115 0 80 0;
+#X connect 115 0 96 0;
+#X connect 115 0 97 0;
+#X connect 115 0 98 0;
+#X connect 115 0 90 0;
+#X connect 115 0 102 0;
 #X connect 115 0 114 0;
-#X connect 116 0 75 0;
-#X connect 116 0 80 0;
-#X connect 116 0 96 0;
-#X connect 116 0 97 0;
-#X connect 116 0 98 0;
-#X connect 116 0 90 0;
-#X connect 116 0 103 0;
-#X connect 116 0 115 0;
-#X connect 116 0 122 0;
-#X connect 117 0 119 1;
-#X connect 118 0 119 2;
-#X connect 119 0 120 0;
-#X connect 122 0 106 0;
+#X connect 115 0 121 0;
+#X connect 115 0 118 0;
+#X connect 116 0 118 1;
+#X connect 117 0 118 2;
+#X connect 118 0 119 0;
+#X connect 121 0 105 0;
+#X connect 122 0 8 0;
+#X connect 122 0 83 0;
+#X connect 122 0 91 0;
 #X restore 124 138 pd EDIT_SCREEN;
 #X obj 260 134 s SCREEN;
 #X msg 260 107 edit;
 #X msg 296 106 play;
-#N canvas 283 1061 612 524 PLAY_SCREEN 1;
+#N canvas 283 1061 612 524 PLAY_SCREEN 0;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
 #X obj 112 72 change;
-#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 22 17 inlet;
 #X obj 112 30 route play;
@@ -3984,7 +4004,7 @@
 #X msg 380 243 2;
 #X obj 479 267 cnv 15 100 40 empty empty empty 20 12 0 14 -4032 -66577
 0;
-#N canvas 1623 1494 854 426 gammeSeq 0;
+#N canvas 1623 1494 854 426 gammeSeq 1;
 #X obj 15 12 seqGAMME/seq8 mainSeq;
 #X restore 493 278 pd gammeSeq;
 #X obj 67 38 pofrotate 0;
