@@ -4,7 +4,7 @@
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 363 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 518 408 602 379 getprop 1;
+#N canvas 411 208 602 465 getprop 1;
 #X obj 156 56 unpack f f;
 #X msg 232 107 getnum /;
 #X floatatom 311 172 5 0 0 0 - - -;
@@ -35,6 +35,7 @@
 #X obj 143 310 r set;
 #X obj 232 132 pofxml sets;
 #X obj 240 285 s list-sets-props;
+#X symbolatom 172 406 0 0 0 0 - - -;
 #X connect 0 1 3 0;
 #X connect 1 0 27 0;
 #X connect 3 0 5 0;
@@ -66,6 +67,7 @@
 #X connect 25 0 16 0;
 #X connect 25 1 17 0;
 #X connect 26 0 25 1;
+#X connect 26 0 29 0;
 #X connect 27 0 6 1;
 #X connect 27 0 2 0;
 #X restore 236 210 pd getprop;

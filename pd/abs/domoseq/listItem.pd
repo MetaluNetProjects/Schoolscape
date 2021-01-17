@@ -109,6 +109,9 @@
 #X obj 359 423 s tune;
 #X obj 425 424 s tune-load;
 #X obj 518 424 s tune-play-name;
+#X obj 532 354 s tunes-update-all;
+#X obj 532 312 del 10;
+#X symbolatom 320 494 0 0 0 0 - - -;
 #X connect 0 0 53 0;
 #X connect 1 0 44 0;
 #X connect 1 1 2 0;
@@ -157,7 +160,9 @@
 #X connect 39 0 59 0;
 #X connect 39 0 60 0;
 #X connect 39 0 61 0;
+#X connect 39 0 64 0;
 #X connect 40 0 39 0;
+#X connect 40 0 63 0;
 #X connect 41 0 2 1;
 #X connect 41 1 2 2;
 #X connect 41 2 2 3;
@@ -180,3 +185,4 @@
 #X connect 56 0 53 0;
 #X connect 57 0 53 0;
 #X connect 58 0 54 0;
+#X connect 63 0 62 0;

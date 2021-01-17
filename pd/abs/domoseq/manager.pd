@@ -188,8 +188,8 @@
 #X connect 77 2 7 0;
 #X connect 78 0 79 0;
 #X restore 413 203 pd create;
-#N canvas 1486 1119 666 631 setName 0;
-#X obj 120 49 r datadir;
+#N canvas 389 1008 666 631 setName 1;
+#X obj 153 15 r datadir;
 #X obj 75 71 pack s s;
 #X symbolatom 263 85 0 0 0 0 - - -;
 #X obj 75 128 symbol;
@@ -198,7 +198,7 @@
 #X msg 414 191 nono;
 #X msg 24 400 print;
 #X msg 451 190 doudou;
-#X symbolatom 276 191 20 0 0 0 - - -;
+#X symbolatom 287 150 20 0 0 0 - - -;
 #X obj 106 424 route error_loading;
 #X msg 106 444 clear;
 #X obj 100 256 symbol;
@@ -231,7 +231,10 @@
 #X msg 100 279 clear;
 #X obj 169 567 symbol;
 #X symbolatom 171 593 0 0 0 0 - - -;
+#X symbolatom 157 44 0 0 0 0 - - -;
+#X symbolatom 21 61 0 0 0 0 - - -;
 #X connect 0 0 1 1;
+#X connect 0 0 40 0;
 #X connect 1 0 23 0;
 #X connect 3 0 24 0;
 #X connect 4 0 3 0;
@@ -264,6 +267,7 @@
 #X connect 28 0 38 0;
 #X connect 30 0 2 0;
 #X connect 31 0 1 0;
+#X connect 31 0 41 0;
 #X connect 32 0 33 0;
 #X connect 33 0 18 1;
 #X connect 35 0 17 0;
@@ -524,7 +528,7 @@
 #X obj 424 615 mull~ 1 10;
 #X obj 68 538 mull~ 0.5 10;
 #X obj 505 95 settings/autosave_xml tune;
-#N canvas 80 495 894 698 savetune 1;
+#N canvas 80 495 894 698 savetune 0;
 #X obj 144 53 symbol;
 #X obj 101 590 soundfiler;
 #X obj 142 491 list prepend;
@@ -643,7 +647,9 @@ tune-table-1, f 78;
 #X msg 460 192 2;
 #X msg 460 331 read \$1/comment.wav tune-table-2;
 #X msg 122 284 read \$1/tune.wav tune-table-0 tune-table-1;
+#X floatatom 61 149 0 0 0 0 - - -;
 #X connect 0 0 4 0;
+#X connect 0 0 30 0;
 #X connect 1 0 7 0;
 #X connect 1 0 17 0;
 #X connect 2 0 29 0;

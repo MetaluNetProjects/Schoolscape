@@ -1,4 +1,4 @@
-#N canvas 2201 1214 706 541 10;
+#N canvas 166 872 706 541 10;
 #X msg 203 435 text Hello;
 #X obj 58 89 t a a;
 #X obj 85 114 pofcolor 0 0 0 0.9;
@@ -7,7 +7,7 @@
 #X msg 32 466 text Hello;
 #X obj 354 210 list prepend text;
 #X obj 354 231 list trim;
-#X floatatom 90 390 5 0 0 0 - - -, f 5;
+#X floatatom 90 390 5 0 0 0 - - -;
 #X obj 18 442 poftranslate -130 12;
 #X obj 83 230 r \$1-width;
 #X obj 83 252 * -0.5;
@@ -109,6 +109,9 @@
 #X obj 359 423 s mixtape;
 #X obj 425 424 s mixtape-load;
 #X obj 518 424 s mixtape-play-name;
+#X obj 533 299 del 10;
+#X obj 533 341 s mixtapes-update-all;
+#X symbolatom 272 501 0 0 0 0 - - -;
 #X connect 0 0 53 0;
 #X connect 1 0 44 0;
 #X connect 1 1 2 0;
@@ -157,7 +160,9 @@
 #X connect 39 0 59 0;
 #X connect 39 0 60 0;
 #X connect 39 0 61 0;
+#X connect 39 0 64 0;
 #X connect 40 0 39 0;
+#X connect 40 0 62 0;
 #X connect 41 0 2 1;
 #X connect 41 1 2 2;
 #X connect 41 2 2 3;
@@ -179,4 +184,6 @@
 #X connect 55 0 58 0;
 #X connect 56 0 53 0;
 #X connect 57 0 53 0;
+#X connect 57 0 43 0;
 #X connect 58 0 54 0;
+#X connect 62 0 63 0;
