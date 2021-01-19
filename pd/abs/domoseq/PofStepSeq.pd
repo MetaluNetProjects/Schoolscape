@@ -335,7 +335,7 @@
 #X obj 132 1138 poftexts asimov 30;
 #X msg 59 1054 text \$1 \, width 80 \, center 1;
 #X obj 102 269 fixScaleX;
-#X msg 50 788 text cumul \, width 80 \, center 1;
+#X msg 57 792 text cumul \, width 80 \, center 1;
 #X obj 123 872 poftexts asimov 25;
 #X obj 155 552 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
@@ -347,7 +347,7 @@
 #X msg 91 577 text Play \, width 80 \, center 1;
 #X obj 37 430 poftranslate;
 #X obj 164 661 poftexts asimov 40;
-#N canvas 624 1184 375 246 on-off 1;
+#N canvas 624 1184 375 246 on-off 0;
 #X obj 90 21 inlet;
 #X obj 101 81 t b;
 #X obj 112 111 i;

@@ -99,7 +99,7 @@
 #X obj 313 672 r \$1-recall;
 #X obj 590 414 r \$1-store;
 #X msg 578 4 set \$1;
-#N canvas 4 683 1156 899 \$0-file 1;
+#N canvas 117 735 1156 899 \$0-file 1;
 #X obj 81 270 soundfiler;
 #X obj 190 183 list prepend \$0-table;
 #X obj 52 135 list prepend \$0-table;
@@ -245,7 +245,7 @@
 #X symbolatom 153 420 0 0 0 0 - - -;
 #X obj 380 520 symbol;
 #X symbolatom 382 546 0 0 0 0 - - -;
-#N canvas 501 327 543 729 BuildPofTuneDir 1;
+#N canvas 501 327 543 729 BuildPofTuneDir 0;
 #X obj 94 8 r tunePropsFilename;
 #X symbolatom 170 123 0 0 0 0 - - -;
 #X msg 61 247 load \$1;
@@ -270,6 +270,8 @@
 #X connect 9 0 3 0;
 #X connect 10 0 9 0;
 #X restore 1003 85 pd BuildPofTuneDir;
+#X obj 595 146 r PofTuneName;
+#X obj 594 199 s mainSeq-load;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 2 0 79 0;
@@ -367,6 +369,7 @@
 #X connect 134 0 133 0;
 #X connect 136 0 137 0;
 #X connect 138 0 139 0;
+#X connect 141 0 142 0;
 #X restore 872 7 pd \$0-file;
 #X obj 776 10 bng 15 250 50 0 empty empty file 17 7 0 10 -257985 -1
 -1;

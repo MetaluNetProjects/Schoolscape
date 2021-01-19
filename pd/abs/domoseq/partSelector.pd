@@ -15,6 +15,8 @@
 #X msg 267 38 0;
 #X obj 265 14 loadbang;
 #X obj 31 59 poftranslate 0 40;
+#X obj 328 134 r nbPart-Recall;
+#X obj 328 175 s PART_RECALL;
 #X connect 0 0 1 0;
 #X connect 1 0 15 0;
 #X connect 1 1 11 0;

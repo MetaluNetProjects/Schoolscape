@@ -1,7 +1,7 @@
 #N canvas 242 627 645 765 10;
 #X obj 31 9 inlet head;
 #X obj 362 178 hsl 128 15 0 20 0 0 list-tunes-pos list-tunes-pos list-pos
--2 -8 0 10 -262144 -1 -1 6894 1;
+-2 -8 0 10 -262144 -1 -1 5624 1;
 #X obj 339 542 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 2388 1046 602 869 getprop 1;
@@ -58,7 +58,6 @@
 #X connect 5 0 35 0;
 #X connect 5 0 23 0;
 #X connect 5 0 27 0;
-#X connect 5 0 37 0;
 #X connect 5 1 6 0;
 #X connect 6 0 11 0;
 #X connect 7 0 4 0;
