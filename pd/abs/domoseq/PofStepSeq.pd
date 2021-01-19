@@ -1,4 +1,4 @@
-#N canvas 1771 969 767 887 12;
+#N canvas 1936 1029 767 887 12;
 #X obj 41 478 t a a;
 #X floatatom 165 527 5 0 0 0 - - -;
 #X floatatom 213 534 5 0 0 0 - - -;
@@ -161,7 +161,7 @@
 #X obj 98 223 poftranslate 0 0;
 #X obj 98 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 280 178 s BangPofStep-\$1;
+#X obj 400 292 s BangPofStep-\$1;
 #X obj 500 113 poftexts vera 35 -1;
 #X floatatom 524 33 5 0 0 0 - - -;
 #X floatatom 561 31 5 0 0 0 - - -;
@@ -182,10 +182,7 @@
 #X obj 112 390 poftouch 530 380;
 #X obj 119 795 pofrect 525 375 0 0 0 0;
 #X obj 506 241 nbDenumeratorSelector \$1;
-#X obj 263 101 s mainSeq-play;
-#X msg 264 74 1, f 1;
-#X msg 243 74 0, f 1;
-#N canvas 0 441 624 1215 StepSeq 1;
+#N canvas 514 415 624 1215 StepSeq 1;
 #X obj 102 189 inlet;
 #X obj 360 710 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -350,7 +347,7 @@
 #X msg 91 577 text Play \, width 80 \, center 1;
 #X obj 37 430 poftranslate;
 #X obj 164 661 poftexts asimov 40;
-#N canvas 669 945 375 246 on-off 0;
+#N canvas 624 1184 375 246 on-off 1;
 #X obj 90 21 inlet;
 #X obj 101 81 t b;
 #X obj 112 111 i;
@@ -375,6 +372,8 @@
 #X obj 480 70 t b;
 #X obj 500 165 del 250;
 #X obj 143 506 loadbang;
+#X obj 512 6 r mainSeq-play;
+#X floatatom 534 49 5 0 0 0 - - -;
 #X connect 0 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -463,7 +462,6 @@
 #X connect 79 0 45 0;
 #X connect 79 0 75 0;
 #X connect 81 0 27 0;
-#X connect 81 0 82 1;
 #X connect 82 0 86 0;
 #X connect 83 0 82 0;
 #X connect 84 0 51 0;
@@ -472,7 +470,15 @@
 #X connect 86 0 87 0;
 #X connect 87 0 84 0;
 #X connect 88 0 78 0;
+#X connect 89 0 82 1;
+#X connect 89 0 90 0;
 #X restore 87 62 pd StepSeq;
+#X obj 259 92 r mainSeq-play;
+#X obj 259 112 == 0;
+#X obj 232 94 b;
+#X obj 228 187 s mainSeq-play;
+#X obj 232 132 f 1, f 5;
+#X floatatom 295 151 5 0 0 0 - - -;
 #X connect 0 0 4 0;
 #X connect 0 1 28 0;
 #X connect 1 0 28 1;
@@ -503,7 +509,7 @@
 #X connect 25 0 23 0;
 #X connect 26 0 23 0;
 #X connect 27 0 48 0;
-#X connect 27 1 72 0;
+#X connect 27 1 69 0;
 #X connect 28 0 33 0;
 #X connect 29 0 66 0;
 #X connect 31 0 49 1;
@@ -537,9 +543,12 @@
 #X connect 63 0 62 2;
 #X connect 64 0 63 0;
 #X connect 65 0 62 0;
-#X connect 70 0 69 0;
-#X connect 71 0 69 0;
-#X connect 72 0 46 0;
-#X connect 72 0 50 0;
-#X connect 72 0 69 0;
-#X connect 72 1 49 0;
+#X connect 69 0 46 0;
+#X connect 69 0 50 0;
+#X connect 69 0 72 0;
+#X connect 69 1 49 0;
+#X connect 70 0 71 0;
+#X connect 71 0 74 1;
+#X connect 72 0 74 0;
+#X connect 74 0 73 0;
+#X connect 74 0 75 0;
