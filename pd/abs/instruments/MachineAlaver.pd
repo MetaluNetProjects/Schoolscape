@@ -1,4 +1,4 @@
-#N canvas 2072 986 849 638 10;
+#N canvas 119 1047 849 638 10;
 #X floatatom 72 52 5 0 0 0 - - -;
 #X floatatom 120 59 5 0 0 0 - - -;
 #X floatatom 483 11 5 0 0 0 - - -;
@@ -1190,6 +1190,8 @@
 #X connect 28 0 16 0;
 #X connect 28 0 11 0;
 #X restore 28 586 pd BoutonSolo;
+#X obj 588 439 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 11 1;
 #X connect 1 0 11 2;
 #X connect 2 0 3 2;
@@ -1250,3 +1252,4 @@
 #X connect 56 0 11 0;
 #X connect 57 0 10 3;
 #X connect 57 0 23 0;
+#X connect 57 0 59 0;

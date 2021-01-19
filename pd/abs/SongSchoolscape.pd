@@ -6,7 +6,7 @@
 ;
 #X obj 24 167 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 461 530 683 475 apmaster_autoload 1;
+#N canvas 461 530 683 475 apmaster_autoload 0;
 #X obj 84 34 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;

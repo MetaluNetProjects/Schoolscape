@@ -399,7 +399,7 @@
 #X restore 305 308 pd text Volume;
 #X msg 254 943 text ClockMess_\$1;
 #X obj 383 885 symbol \$2;
-#N canvas 1274 1181 450 428 SoloSubPattern 0;
+#N canvas 684 1237 450 428 SoloSubPattern 1;
 #X msg 117 227 \$1 load \$2;
 #X obj 75 56 symbol Inst-\$1;
 #X symbolatom 15 130 10 0 0 0 - - -;
@@ -411,7 +411,7 @@
 #X obj 220 64 sel 0;
 #X obj 199 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 231 34 r SoloOnOff-\$1;
+#X obj 245 7 r SoloOnOff-\$1;
 #X floatatom 273 132 5 0 1 0 - - -;
 #X obj 47 270 print;
 #X msg 137 82 0;
@@ -425,7 +425,11 @@
 #X msg 179 301 _all_ load \$1;
 #X msg 301 302 _all_ store \$1;
 #X msg 228 193 Inst-3 load \$1;
+#X obj 65 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 222 35 change;
 #X connect 0 0 6 0;
+#X connect 0 0 21 0;
 #X connect 1 0 2 0;
 #X connect 1 0 4 0;
 #X connect 3 0 1 0;
@@ -434,7 +438,7 @@
 #X connect 5 1 4 1;
 #X connect 7 0 12 0;
 #X connect 8 0 12 0;
-#X connect 9 0 7 0;
+#X connect 9 0 22 0;
 #X connect 10 0 5 0;
 #X connect 12 0 5 0;
 #X connect 13 0 20 0;
@@ -442,6 +446,7 @@
 #X connect 16 0 18 0;
 #X connect 17 0 19 0;
 #X connect 18 0 6 0;
+#X connect 22 0 7 0;
 #X restore 602 384 pd SoloSubPattern;
 #X connect 0 0 69 0;
 #X connect 1 0 5 0;
