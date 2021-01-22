@@ -9,6 +9,7 @@
 #include "ofxAccelerometer.h"
 #include "abl_link/abl_link~.hpp"
 #include "EventDispatcher.h"
+#include "javapdComm.h"
 
 using namespace std;
 
@@ -41,6 +42,7 @@ const char Tag[]="Schoolscape";
 //--------------------------------------------------------------
 void testApp::setup() {
 
+	setupJava();
 	// the number of libpd ticks per buffer,
 	// used to compute the audio buffer len: tpb * blocksize (always 64)
 	//#ifdef TARGET_LINUX_ARM
@@ -121,6 +123,7 @@ void testApp::setup() {
 //--------------------------------------------------------------
 void testApp::update() {
 	pofBase::updateAll();
+	while(dequeueToJava()>0);
 }
 
 //--------------------------------------------------------------
@@ -233,6 +236,18 @@ void testApp::receiveMessage(const std::string& dest, const std::string& msg, co
 		clock_unset(pofBase::queueClock);
 		std::exit(0); //testApp::exit(); //exit();
 	}
+
+	List *newlist = new List();
+	*newlist << dest << msg;
+	
+	for(unsigned int i = 0; i < list.len(); ++i) {
+		if(list.isFloat(i))
+			*newlist << list.getFloat(i);
+		else if(list.isSymbol(i))
+			*newlist << list.getSymbol(i);
+	}
+
+	queueToJava(*newlist);
 }
 
 //--------------------------------------------------------------
