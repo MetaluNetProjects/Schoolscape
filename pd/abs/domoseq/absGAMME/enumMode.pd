@@ -266,7 +266,7 @@
 #X obj 234 581 change;
 #X obj 210 542 f;
 #X obj 198 470 t b;
-#N canvas 2190 1395 393 486 double 1;
+#N canvas 2190 1395 393 486 double 0;
 #X obj 49 17 inlet;
 #X floatatom 223 171 5 0 0 0 - - -;
 #X obj 226 257 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -308,7 +308,7 @@
 #X restore 55 735 pd double;
 #X obj 298 355 t b f;
 #X obj 53 40 t b b;
-#N canvas 1414 1444 1639 372 InitDoublons 0;
+#N canvas 1414 1444 1639 372 InitDoublons 1;
 #X obj 103 17 inlet;
 #X obj 176 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -426,7 +426,6 @@ b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b, f
 #X restore 1340 276 pd pentatonique;
 #X connect 0 0 52 0;
 #X connect 2 0 5 0;
-#X connect 2 0 7 0;
 #X connect 4 0 6 0;
 #X connect 8 0 6 0;
 #X connect 9 0 6 0;
