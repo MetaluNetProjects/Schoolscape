@@ -11,7 +11,8 @@ import android.view.MenuItem;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.LinkedBlockingQueue;
+import net.metalu.tools.AudioArchive;
+import net.metalu.tools.AudioExtract;
 
 import cc.openframeworks.OFAndroid;
 
@@ -125,20 +126,49 @@ public class OFActivity extends cc.openframeworks.OFActivity{
 				}
 			}
 	}
+
 	public void archive(Object... args) {
 		if((args.length>1) && args[0].getClass().equals(String.class) && args[1].getClass().equals(String.class)) {
 			File directory = new File(args[0].toString());
 			File zipfile = new File(args[1].toString());
-			Log.i(TAG,"rcvd archive message: " + directory.getName() + " " + zipfile.getName());
-			sendToPdAsync("archive", zipfile.getName(), "ok");
-			// have to use LinkedBlockingQueue
-			//LinkedBlockingQueue q;
-			List<File> wavs = new ArrayList<File>();
-			findByExtension(".wav", directory, wavs);
-			Log.i(TAG,"wavs: " + wavs.toString());
+			new AudioArchive(){
+				public void progress(int i) {
+					//Log.i(TAG,"archive " + zipfile.getName() + " progress " + i + "%");
+                    sendToPdAsync("archive", zipfile.getName(), "progress", (float)i);
+				}
+				public void failure(String errstring) {
+					//Log.i(TAG,"archive " + zipfile.getName() + " failure: " + errstring);
+					sendToPdAsync("archive", zipfile.getName(), "failure", errstring);
+				}
+				public void success() {
+					//Log.i(TAG,"archive " + zipfile.getName() + " success");
+					sendToPdAsync("archive", zipfile.getName(), "success");
+				}
+			}.archive(directory, zipfile);
 		}
 	}
 
+	public void extract(Object... args) {
+		if((args.length>1) && args[0].getClass().equals(String.class) && args[1].getClass().equals(String.class)) {
+			File zipfile = new File(args[0].toString());
+			File directory = new File(args[1].toString());
+			new AudioExtract(){
+				public void progress(int i) {
+					//Log.i(TAG,"extract " + zipfile.getName() + " progress " + i + "%");
+                    sendToPdAsync("extract", zipfile.getName(), "progress", (float)i);
+				}
+				public void failure(String errstring) {
+					//Log.i(TAG,"extract " + zipfile.getName() + " failure " + errstring);
+					sendToPdAsync("extract", zipfile.getName(), "failure", errstring);
+				}
+				public void success() {
+					//Log.i(TAG,"extract " + zipfile.getName() + " success");
+					sendToPdAsync("extract", zipfile.getName(), "success");
+				}
+
+			}.extract(zipfile, directory);
+		}
+	}
 	public void quit(){
 		finish();
 		System.exit(0);
@@ -164,6 +194,9 @@ public class OFActivity extends cc.openframeworks.OFActivity{
 		}
 		else if((args.length >= 3) && args[0].getClass().equals(String.class) && args[0].equals("archive")) {
 			archive(java.util.Arrays.copyOfRange(args, 1, args.length));
+		}
+		else if((args.length >= 3) && args[0].getClass().equals(String.class) && args[0].equals("extract")) {
+			extract(java.util.Arrays.copyOfRange(args, 1, args.length));
 		}
 		/*else if((args.length>0) && args[0].getClass().equals(String.class) && args[0].equals("closeSplash")) {
 			Log.i(TAG,"rcvd closeSplash message.");
