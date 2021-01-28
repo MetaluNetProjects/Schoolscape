@@ -1,4 +1,4 @@
-#N canvas 2210 801 785 516 10;
+#N canvas 2210 331 785 516 10;
 #X obj 297 278 mknob 25 100 0 127 0 1 ASP-0-Note_adjust-snd ASP-0-Note_adjust-rcv
 ASP-0-Note_adjust -2 -6 0 8 -257985 -1 -1 9900 1;
 #X obj 38 105 s all-note-off;
@@ -29,7 +29,7 @@ ASP-0-Pitch -2 -6 0 8 -257985 -1 -1 4989 1;
 #X obj 513 31 MulClock ASP-0 \$1;
 #X obj 22 262 mull~ 1 10;
 #X obj 50 221 r \$1-MessVeloce;
-#X obj 23 138 melotouchLent ASP-0 200 /CHORD 48 \$1;
+#X obj 23 138 melotouch ASP-0 200 /CHORD 48 \$1;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 5 0 9 0;

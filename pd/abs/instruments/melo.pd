@@ -1,4 +1,4 @@
-#N canvas 1210 453 710 627 10;
+#N canvas 1210 582 710 627 10;
 #X obj 157 29 poly 5 1;
 #X obj 179 164 mtof;
 #X obj 179 57 t f b;
@@ -24,7 +24,10 @@
 #X obj 264 16 r song-midi-melo-\$1;
 #X obj 157 5 inlet;
 #X obj 133 396 outlet~;
-#X obj 134 366 *~ 1;
+#X obj 254 449 r VolVox-\$1;
+#X floatatom 256 517 5 0 0 0 - - -;
+#X obj 396 536 print;
+#X obj 134 366 mull~ 10 1;
 #X connect 0 0 9 0;
 #X connect 0 1 2 0;
 #X connect 0 2 11 0;
@@ -47,10 +50,12 @@
 #X connect 13 0 15 0;
 #X connect 14 0 13 0;
 #X connect 15 0 16 0;
-#X connect 17 0 25 0;
+#X connect 17 0 28 0;
 #X connect 18 0 17 0;
 #X connect 19 0 17 0;
 #X connect 20 0 17 0;
 #X connect 21 0 17 0;
 #X connect 23 0 0 0;
-#X connect 25 0 24 0;
+#X connect 25 0 26 0;
+#X connect 25 0 28 1;
+#X connect 28 0 24 0;

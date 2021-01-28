@@ -1,4 +1,4 @@
-#N canvas 45 759 1117 655 10;
+#N canvas 458 1178 1080 710 10;
 #X obj 588 54 vsl 10 50 0 1 0 0 \$1-\$2-vol-snd \$1-\$2-vol-rcv empty
 0 -9 0 10 -258113 -1 -1 0 1;
 #X obj 626 92 nbx 4 14 -24 72 0 0 \$1-\$2-pitch-snd \$1-\$2-pitch-rcv
@@ -19,9 +19,9 @@ pitch 0 -8 0 10 -261682 -1 -1 0 256;
 #X obj 256 76 hsl 80 10 0 1 0 0 \$1-\$2-speed-snd \$1-\$2-speed-rcv
 speed -2 -6 0 10 -257985 -1 -1 7900 1;
 #X obj 256 96 hsl 80 10 0 1 0 0 \$1-\$2-speedrnd-snd \$1-\$2-speedrnd-rcv
-speedrnd -2 -6 0 10 -260097 -1 -1 0 1;
+speedrnd -2 -6 0 10 -260097 -1 -1 4757 1;
 #X obj 345 76 hsl 80 10 0 1 0 0 \$1-\$2-pos-snd \$1-\$2-pos-rcv pos
--2 -6 0 10 -261234 -1 -1 5849 1;
+-2 -6 0 10 -261234 -1 -1 0 1;
 #X obj 778 129 s \$1-pos-rcv;
 #X obj 748 285 s \$0-peakstab;
 #X obj 749 215 s \$0-sample;
@@ -31,11 +31,11 @@ speedrnd -2 -6 0 10 -260097 -1 -1 0 1;
 #X obj 748 238 r \$0-sample;
 #X msg 748 261 symbol \$1-peaks;
 #X obj 438 76 hsl 80 10 0 1 0 0 \$1-\$2-len-snd \$1-\$2-len-rcv len
--2 -6 0 10 -204800 -1 -1 1400 1;
+-2 -6 0 10 -204800 -1 -1 6220 1;
 #X obj 345 96 hsl 80 10 0 1 0 0 \$1-\$2-posrnd-snd \$1-\$2-posrnd-rcv
-posrnd -2 -6 0 10 -261234 -1 -1 4100 1;
+posrnd -2 -6 0 10 -261234 -1 -1 5175 1;
 #X obj 438 96 hsl 80 10 0 1 0 0 \$1-\$2-lenrnd-snd \$1-\$2-lenrnd-rcv
-lenrnd -2 -6 0 10 -204800 -1 -1 4200 1;
+lenrnd -2 -6 0 10 -204800 -1 -1 4323 1;
 #X obj 59 492 stretchvox \$0;
 #X obj 836 551 catch~ \$0-out1;
 #X obj 940 550 catch~ \$0-out2;
@@ -379,7 +379,7 @@ lenrnd -2 -6 0 10 -204800 -1 -1 4200 1;
 #X obj 578 599 symbol;
 #X msg 677 604 label sample:\$1;
 #X obj 677 625 s \$0-samplename_label;
-#X obj 252 110 cnv 15 200 14 empty \$0-samplename_label sample:set-table-4
+#X obj 252 110 cnv 15 200 14 empty \$0-samplename_label sample:set-table-9
 5 8 0 12 -204786 -66577 0;
 #X obj 520 634 print;
 #X obj 703 227 print;
@@ -408,7 +408,7 @@ lenrnd -2 -6 0 10 -204800 -1 -1 4200 1;
 #X floatatom 144 180 5 0 0 0 - - -;
 #X floatatom 22 232 5 0 0 0 - - -;
 #X floatatom 197 169 5 0 0 0 - - -;
-#X floatatom 174 263 5 0 0 0 - - -;
+#X floatatom 154 316 5 0 0 0 - - -;
 #X obj 268 206 * 32;
 #X obj 75 249 * 39;
 #X obj 242 251 * 1000;
@@ -454,6 +454,7 @@ lenrnd -2 -6 0 10 -204800 -1 -1 4200 1;
 #X msg 693 308 set \$1-setlen;
 #X msg 631 282 set \$1-len \, 0;
 #X msg 878 263 set \$1-nbfrag;
+#X floatatom 252 5 5 0 0 0 - - -;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 6 0 4 0;
@@ -529,6 +530,7 @@ lenrnd -2 -6 0 10 -204800 -1 -1 4200 1;
 #X connect 128 0 80 0;
 #X connect 129 0 74 2;
 #X connect 130 0 69 0;
+#X connect 130 0 146 0;
 #X connect 131 0 0 0;
 #X connect 132 0 12 0;
 #X connect 133 0 14 0;
