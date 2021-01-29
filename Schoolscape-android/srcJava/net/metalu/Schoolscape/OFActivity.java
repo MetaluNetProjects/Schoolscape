@@ -1,6 +1,10 @@
 package net.metalu.Schoolscape;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.StrictMode;
 import android.support.v4.app.ActivityCompat;
+import android.text.Html;
 import android.util.Log;
 import android.os.Build;
 import android.os.Bundle;
@@ -134,6 +138,44 @@ public class OFActivity extends cc.openframeworks.OFActivity implements Activity
 			}
 	}
 
+	public void mailTo(Object... args)
+	{
+		if((args.length>=4)
+				&& args[0].getClass().equals(String.class)
+				&& args[1].getClass().equals(String.class)
+				&& args[2].getClass().equals(String.class)
+				&& args[3].getClass().equals(String.class))
+		{
+			final String file = args[0].toString();
+			final String subject = args[1].toString();
+			final String dest = args[2].toString();
+			final String message = args[3].toString();
+
+			new Thread(new Runnable() {
+				public void run() {
+					StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+					StrictMode.setVmPolicy(builder.build());
+
+					StringBuffer body = new StringBuffer("<html><head></head><body>")
+							.append("<a Created with Schoolscape </a>");
+					//final Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
+					final Intent emailIntent = new Intent(Intent.ACTION_SEND);
+					//emailIntent.setType("text/html");
+					if(dest != "empty") emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{dest});
+					if(subject != "empty") emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+					if(file != "empty") {
+						emailIntent.setType("audio/*"); //mp4
+						emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://"+file));
+					}
+					if(message != "empty") emailIntent.putExtra(Intent.EXTRA_TEXT, message);
+					else emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(body.toString()));
+					//emailIntent.putExtra("com.soundcloud.android.extra.artwork", Uri.parse(artwork));
+					startActivity(Intent.createChooser(emailIntent, "Mail to"));
+				}
+			}).start();
+		}
+	}
+
 	public void archive(Object... args) {
 		if((args.length>1) && args[0].getClass().equals(String.class) && args[1].getClass().equals(String.class)) {
 			File directory = new File(args[0].toString());
@@ -204,6 +246,9 @@ public class OFActivity extends cc.openframeworks.OFActivity implements Activity
 		}
 		else if((args.length >= 3) && args[0].getClass().equals(String.class) && args[0].equals("extract")) {
 			extract(java.util.Arrays.copyOfRange(args, 1, args.length));
+		}
+		else if((args.length>0) && args[0].getClass().equals(String.class) && args[0].equals("mailTo")) {
+			mailTo(java.util.Arrays.copyOfRange(args, 1, args.length));
 		}
 		/*else if((args.length>0) && args[0].getClass().equals(String.class) && args[0].equals("closeSplash")) {
 			Log.i(TAG,"rcvd closeSplash message.");
