@@ -40,34 +40,13 @@ extern "C" {
 const char Tag[]="Schoolscape";
 
 //--------------------------------------------------------------
+int ticksPerBuffer = 1; // 8 * 64 = buffer len of 512
+int numInputs = 1;
+int sampleRate = 44100;
+
 void testApp::setup() {
 
 	setupJava();
-	// the number of libpd ticks per buffer,
-	// used to compute the audio buffer len: tpb * blocksize (always 64)
-	//#ifdef TARGET_LINUX_ARM
-		// longer latency for Raspberry PI
-		//int ticksPerBuffer = 32; // 32 * 64 = buffer len of 2048
-		//int numInputs = 0; // no built in mic
-	//#else
-		int ticksPerBuffer = 1; // 8 * 64 = buffer len of 512
-		int numInputs = 1;
-		int sampleRate = 44100;
-	//#endif
-	
-    //ofSetFrameRate(60);
-	//ofSetVerticalSync(true);
-
-	ofLogNotice(Tag, "init sound");
-//     Ask for permission to record audio,
-//     not needed if no in channels used
-    ofxAndroidRequestPermission(OFX_ANDROID_PERMISSION_RECORD_AUDIO);
-    ofxAndroidRequestPermission(OFX_ANDROID_PERMISSION_WRITE_EXTERNAL_STORAGE);
-	// setup OF sound stream
-	//ofSoundStreamSetup(2, numInputs, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
-	os = NULL;
-	os = opensl_open(sampleRate, numInputs, 2, ticksPerBuffer*PdBase::blockSize(), testApp::opensl_process, (void*)this);
-	if(os == NULL) ofLogError(Tag, "error opening opensl");
 
 	ofxAccelerometer.setup();
 	
@@ -85,7 +64,6 @@ void testApp::setup() {
 	
 	ofLogNotice(Tag, "start pd");
 	puda.start();
-	
 	
 	// ------------ load externals -----------------
 	
@@ -108,15 +86,35 @@ void testApp::setup() {
 	scale_setup();
 	shuffle_setup();
 	iem_receive_setup();
-    // ---------------------------------------------
+
+	if(ofxAndroidCheckPermission(OFX_ANDROID_PERMISSION_RECORD_AUDIO)) runAudio();
+	ofxAndroidRequestPermission(OFX_ANDROID_PERMISSION_RECORD_AUDIO);
+}
+
+void testApp::runAudio() {
+
+	ofLogNotice(Tag, "init sound");
+//     Ask for permission to record audio,
+//     not needed if no in channels used
+	if(! ofxAndroidCheckPermission(OFX_ANDROID_PERMISSION_RECORD_AUDIO)) {
+		numInputs = 0;
+		libpd_init_audio(numInputs, 2, sampleRate);
+	}
 	
+	//ofxAndroidRequestPermission(OFX_ANDROID_PERMISSION_WRITE_EXTERNAL_STORAGE);
+	// setup OF sound stream
+	//ofSoundStreamSetup(2, numInputs, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 4);
+	os = NULL;
+	os = opensl_open(sampleRate, numInputs, 2, ticksPerBuffer*PdBase::blockSize(), testApp::opensl_process, (void*)this);
+	if(os == NULL) ofLogError(Tag, "error opening opensl");
+
+	// ---------------------------------------------
 	
 	ofLogNotice(Tag, "load patch");
 	Patch patch = puda.openPatch(ofToDataPath("pd/pof_main.pd", true));
 	
 	puda.sendSymbol("datadir", ofToDataPath("pd/data", true));
 
-		
 	if(os) opensl_start(os);
 }
 

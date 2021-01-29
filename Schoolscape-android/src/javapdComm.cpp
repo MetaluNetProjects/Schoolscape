@@ -8,6 +8,7 @@
 #include "pofBase.h"
 #include <ofMain.h>
 #include "ofxAndroidUtils.h"
+#include "testApp.h"
 
 using namespace std;
 using namespace pd;
@@ -142,5 +143,9 @@ JNIEXPORT void JNICALL Java_net_metalu_Schoolscape_OFActivity_sendToPd (JNIEnv *
 
 	pofBase::sendToPd(vec);
 	//ofLogNotice("testApp")<< "JavaToPd: " << vec.size() << " args.";
+}
+
+JNIEXPORT void JNICALL Java_net_metalu_Schoolscape_OFActivity_runAudio (JNIEnv *env, jclass, jobjectArray array) {
+	((testApp*)ofGetAppPtr())->runAudio();
 }
 

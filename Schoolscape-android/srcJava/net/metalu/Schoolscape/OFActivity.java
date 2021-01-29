@@ -1,5 +1,6 @@
 package net.metalu.Schoolscape;
 
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import net.metalu.tools.AudioArchive;
 import net.metalu.tools.AudioExtract;
@@ -17,7 +19,7 @@ import net.metalu.tools.AudioExtract;
 import cc.openframeworks.OFAndroid;
 
 @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
-public class OFActivity extends cc.openframeworks.OFActivity{
+public class OFActivity extends cc.openframeworks.OFActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
 
 	static final String TAG = "Schoolscape";
 
@@ -45,23 +47,28 @@ public class OFActivity extends cc.openframeworks.OFActivity{
 		super.onResume();
 		ofApp.resume();
 	}*/
-
+	public void onRequestPermissionsResult (int requestCode,
+													 String[] permissions,
+													 int[] grantResults) {
+		Log.i(TAG,"onRequestPermissionsResult: " + Arrays.toString(permissions) + Arrays.toString(grantResults));
+		runAudioAsync();
+	}
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-	if (OFAndroid.keyDown(keyCode, event)) {
-		return true;
-	} else {
-		return super.onKeyDown(keyCode, event);
-	}
+		if (OFAndroid.keyDown(keyCode, event)) {
+			return true;
+		} else {
+			return super.onKeyDown(keyCode, event);
+		}
 	}
 
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
-	if (OFAndroid.keyUp(keyCode, event)) {
-		return true;
-	} else {
-		return super.onKeyUp(keyCode, event);
-	}
+		if (OFAndroid.keyUp(keyCode, event)) {
+			return true;
+		} else {
+			return super.onKeyUp(keyCode, event);
+		}
 	}
 
 	/*@Override
@@ -275,11 +282,23 @@ public class OFActivity extends cc.openframeworks.OFActivity{
 	// send to Pd:
 	public static native void sendToPd(Object...args);
 
+	// run Pd:
+	public static native void runAudio(Object...args);
+
 	public void sendToPdAsync(final Object...args) {
 		this.runOnUiThread(new Runnable(){
 			@Override
 			public void run() {
 				sendToPd(args);
+			}
+		});
+	}
+
+	public void runAudioAsync(final Object...args) {
+		this.runOnUiThread(new Runnable(){
+			@Override
+			public void run() {
+				runAudio(args);
 			}
 		});
 	}

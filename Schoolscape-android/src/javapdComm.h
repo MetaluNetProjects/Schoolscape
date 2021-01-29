@@ -17,6 +17,7 @@ extern "C" {
 #endif
 
 JNIEXPORT void JNICALL Java_net_metalu_Schoolscape_OFActivity_sendToPd (JNIEnv *env, jclass, jobjectArray array);
+JNIEXPORT void JNICALL Java_net_metalu_Schoolscape_OFActivity_runAudio (JNIEnv *env, jclass, jobjectArray array);
 
 #ifdef __cplusplus
 }

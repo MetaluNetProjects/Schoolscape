@@ -18,6 +18,7 @@ class testApp : public ofxAndroidApp, public PdReceiver {
 	public:
 
 		void setup();
+		void runAudio();
 		void update();
 		void draw();
 		void exit();
