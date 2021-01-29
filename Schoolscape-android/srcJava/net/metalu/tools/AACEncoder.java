@@ -18,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 
 /**
@@ -37,6 +38,7 @@ public class AACEncoder {
 
 	//private static final int CHANNEL_COUNT = 1;
 	private static final int AAC_PROFILE = MediaCodecInfo.CodecProfileLevel.AACObjectLC;
+	//private static final int AAC_PROFILE = MediaCodecInfo.CodecProfileLevel.AACObjectHE;
 	private static final int ADTS_SIZE = 7;
 	private static final int WAV_HEADER_SIZE = 44;
 
@@ -82,7 +84,7 @@ public class AACEncoder {
 			format.setInteger(MediaFormat.KEY_AAC_PROFILE, AAC_PROFILE);
 			format.setInteger(MediaFormat.KEY_SAMPLE_RATE, SampleRate);
 			format.setInteger(MediaFormat.KEY_CHANNEL_COUNT, ChannelCount);
-			format.setInteger(MediaFormat.KEY_BIT_RATE, 128 * 1024); // desired output(!) rate for encoder
+			format.setInteger(MediaFormat.KEY_BIT_RATE, 64 * 1024); // desired output(!) rate for encoder
 			//Log.d(TAG, "format created");
 
 			// get and configure encoding codec
@@ -109,6 +111,112 @@ public class AACEncoder {
 			}
 		}
 	}
+
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+	public void testEncode() {
+
+		MediaCodec codec = null;
+		MediaFormat format;
+		//FileOutputStream outputStream;
+		byte[] sintab = new byte[4096];
+		for (int i = 0; i < 2048; i++) {
+			short s = (short)(32768.0 * Math.sin(i / 2048.0 * 6.28 * 10.0)); // 220Hz sin
+			sintab[2 * i] = (byte) s;
+			sintab[2 * i] = (byte) (s >> 8);
+		}
+
+		try {
+
+			ChannelCount = 1;
+			SampleRate = 44100;
+			// set ouput mime type
+			final String outputMimeType = "audio/mp4a-latm";
+
+			// set output format
+			format = new MediaFormat();
+			format.setString(MediaFormat.KEY_MIME, outputMimeType);
+			format.setInteger(MediaFormat.KEY_AAC_PROFILE, AAC_PROFILE);
+			format.setInteger(MediaFormat.KEY_SAMPLE_RATE, SampleRate);
+			format.setInteger(MediaFormat.KEY_CHANNEL_COUNT, ChannelCount);
+			format.setInteger(MediaFormat.KEY_BIT_RATE, 64 * 1024); // desired output(!) rate for encoder
+			//Log.d(TAG, "format created");
+
+			// get and configure encoding codec
+			codec = MediaCodec.createEncoderByType(outputMimeType);
+			codec.configure(format, null /* surface */, null /* crypto */, MediaCodec.CONFIGURE_FLAG_ENCODE);
+			MediaCodec.BufferInfo info = new MediaCodec.BufferInfo();
+			boolean sawInputEOS = false;
+			boolean sawOutputEOS = false;
+			int noOutputCounter = 0;
+
+			codec.start();
+			int inputCount = 0;
+			int maxcount = 1;
+			while(inputCount < maxcount) {
+				sawInputEOS = (inputCount == (maxcount - 1));
+				int inputBufferIndex = codec.dequeueInputBuffer(QUEUE_TIMEOUT);
+				if(inputBufferIndex >= 0) {
+					ByteBuffer inputBuffer = codec.getInputBuffer(inputBufferIndex);
+					if (inputBuffer != null) {
+						long presentationTimeUs = ((long)1e6 * inputCount * 2048) / 44100; //System.nanoTime() / 1000;
+						// put wav data into inputBuffer for encoding
+						inputBuffer.put(sintab);
+						// queue new input buffer to encode it
+						codec.queueInputBuffer(
+								inputBufferIndex,
+								0,
+								4096,
+								presentationTimeUs,
+								sawInputEOS ? MediaCodec.BUFFER_FLAG_END_OF_STREAM : 0
+						);
+						Log.d(TAG, "encode:: queueInputBuffer ; inputCount = " + inputCount);
+						inputCount++;
+					} else Log.d(TAG, "encode:: inputBuffer is null!");
+				}  else Log.d(TAG, "encode:: inputBufferIndex < 0");
+			}
+
+			while(true) {
+				int outputBufferIndex = codec.dequeueOutputBuffer(info, QUEUE_TIMEOUT);
+				//Log.d(TAG, "encode:: dequeueOutputBuffer outputBufferIndex : " + outputBufferIndex);
+				if (outputBufferIndex >= 0) {
+					if (info.size > 0) {
+						//noOutputCounter = 0;
+						//int outBitsSize = info.size;
+						//int outPacketSize = outBitsSize + ADTS_SIZE;
+						//Log.d(TAG, "encode:: getOutputBuffer");
+						ByteBuffer outputBuffer = codec.getOutputBuffer(outputBufferIndex);
+
+						if (outputBuffer != null) {
+							byte[] data = new byte[info.size];
+							outputBuffer.get(data);
+							Log.d(TAG, "encode:: dequeueOutputBuffer: " + info.size + " : " + Arrays.toString(data));
+						} else Log.d(TAG, "encode:: outputBuffer is null");
+					} else Log.d(TAG, "encode:: dequeueOutputBuffer info.size <= 0 : " + info.size);
+
+					codec.releaseOutputBuffer(outputBufferIndex, false /* render */);
+
+					if (isEndOfStream(info)) {
+						Log.d(TAG, "saw output EOS.");
+						sawOutputEOS = true;
+						break;
+					}
+				} else Log.d(TAG, "encode:: outputBufferIndex < 0: " + outputBufferIndex);
+			}
+
+
+
+		} catch (Exception e) {
+			Log.e(TAG, "error during encoding: " + e);
+
+		} finally {
+			if (codec != null) {
+				codec.flush();
+				codec.stop();
+				codec.release();
+			}
+		}
+	}
+
 
 	private void encodeSong(InputStream inputStream, FileOutputStream outputStream, MediaCodec codec) {
 		if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT_WATCH) {
@@ -219,6 +327,7 @@ public class AACEncoder {
 		boolean sawInputEOS = false;
 		boolean sawOutputEOS = false;
 		int noOutputCounter = 0;
+		int numOutBuf = 0;
 
 		codec.start();
 
@@ -250,13 +359,16 @@ public class AACEncoder {
 							if (bytesRead < 0) {
 								//Log.d(TAG, "saw input EOS.");
 								sawInputEOS = true;
-								bytesRead = 0;
-
+								byte[] zerobuf = new byte[2048];
+								Arrays.fill(zerobuf, (byte)0);
+								inputBuffer.put(zerobuf);
+								bytesRead = 2048;
 							} else {
 								// put wav data into inputBuffer for encoding
 								ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);
 								outStream.write(buffer, 0, bytesRead);
 								inputBuffer.put(outStream.toByteArray());
+								//Log.d(TAG, "encodeLollipopStyle:: bytes got from input buffer: " + bytesRead /*+ " : " + Arrays.toString(outStream.toByteArray())*/);
 
 							}
 
@@ -265,9 +377,10 @@ public class AACEncoder {
 									inputBufferIndex,
 									0,
 									bytesRead,
-									presentationTimeUs,
+									/*presentationTimeUs*/0,
 									sawInputEOS ? MediaCodec.BUFFER_FLAG_END_OF_STREAM : 0
 							);
+							//Log.d(TAG, "encodeLollipopStyle:: bytes to queueInputBuffer: " + bytesRead);
 						}
 					}
 				}
@@ -277,18 +390,19 @@ public class AACEncoder {
 				int outputBufferIndex = codec.dequeueOutputBuffer(info, QUEUE_TIMEOUT);
 				if (outputBufferIndex >= 0) {
 
-					if (info.size > 0) {
+					if ((info.size > 0) && !isCodecInfo(info)) {
 						noOutputCounter = 0;
-					}
+					//}
+						// prepare output buffer including ADTS header
+						int outBitsSize = info.size;
+						int outPacketSize = outBitsSize + ADTS_SIZE;
+						ByteBuffer outputBuffer = codec.getOutputBuffer(outputBufferIndex);
 
-					// prepare output buffer including ADTS header
-					int outBitsSize = info.size;
-					int outPacketSize = outBitsSize + ADTS_SIZE;
-					ByteBuffer outputBuffer = codec.getOutputBuffer(outputBufferIndex);
-
-					if (outputBuffer != null) {
-						// add encoded data to file
-						drainOutputBuffer(outputStream, info, outBitsSize, outPacketSize, outputBuffer);
+						if ((outputBuffer != null) && (numOutBuf >= 2)) {
+							// add encoded data to file
+							drainOutputBuffer(outputStream, info, outBitsSize, outPacketSize, outputBuffer);
+						}
+						numOutBuf++;
 					}
 
 					codec.releaseOutputBuffer(outputBufferIndex, false /* render */);
@@ -316,7 +430,7 @@ public class AACEncoder {
 		// set position and limit of outputBuffer
 		outputBuffer.position(info.offset);
 		outputBuffer.limit(info.offset + outBitsSize);
-
+		//Log.d(TAG, "drainOutputBuffer outBitsSize: " + outBitsSize + " outPacketSize: " + outPacketSize + " info.flags: " + info.flags + " info.size: " + info.size);
 		try {
 			// prepare byte array containing encoded data
 			byte[] data = new byte[outPacketSize];
@@ -328,11 +442,13 @@ public class AACEncoder {
 			outputBuffer.get(data, ADTS_SIZE, outBitsSize);
 
 			// update outputBuffer position
-			outputBuffer.position(info.offset);
+			//outputBuffer.position(info.offset);
 
 			// only write real audio data (exclude codec info and EOS info)
-			if (!isCodecInfo(info) && !isEndOfStream(info)) {
+			if (!isCodecInfo(info) /*&& !isEndOfStream(info)*/) {
+			//if (info.flags == 0) {
 				outputStream.write(data, 0, outPacketSize);
+				//Log.d(TAG, "drainOutputBuffer outputStream.write  outPacketSize: " + outPacketSize + " : " + Arrays.toString(data));
 			}
 
 		} catch (IOException e) {

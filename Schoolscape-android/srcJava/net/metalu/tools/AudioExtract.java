@@ -138,7 +138,7 @@ public class AudioExtract {
 	
 	void finish()
 	{
-		Log.i(TAG,"zipping... ");
+		Log.i(TAG,"unzipped!");
 		//zip(tmpdirectory, tmpzipfile);
 		deleteRecursive(destdirectory);
 		tmpdirectory.renameTo(destdirectory);

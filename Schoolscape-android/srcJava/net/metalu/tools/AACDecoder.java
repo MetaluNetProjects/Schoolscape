@@ -186,27 +186,36 @@ public class AACDecoder {
 				}
 			}
 
-			// Read the output from the codec.
+			/*// Read the output from the codec.
 			if (outputBufferIndex >= 0)
 				// Ensure that the data is placed at the start of the buffer
-				outputBuffers[outputBufferIndex].position(0);
+				outputBuffers[outputBufferIndex].position(0);*/
 
 			outputBufferIndex = decoder.dequeueOutputBuffer(info, 10000);
 			if (outputBufferIndex >= 0) {
 				// Handle EOF
-				if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
+				/*if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
 					decoder.stop();
 					decoder.release();
 					decoder = null;
 					//Log.d(TAG, "readData EOF");
 					return null;
-				}
+				}*/
 
 				//Log.d(TAG, "readData got bytes from decoder: " + info.size);
 
 				byte[] outData = new byte[info.size];
 				outputBuffers[outputBufferIndex].order(ByteOrder.LITTLE_ENDIAN).get(outData);
 				decoder.releaseOutputBuffer(outputBufferIndex, false);
+
+				if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
+					decoder.stop();
+					decoder.release();
+					decoder = null;
+					//Log.d(TAG, "readData EOF, size= " + info.size);
+					//return null;
+				}
+
 				return outData; //outputBuffers[outputBufferIndex];
 
 			} else if (outputBufferIndex == MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED) {
@@ -220,24 +229,4 @@ public class AACDecoder {
 	public int getSampleRate() {
 		return inputFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE);
 	}
-
-	/*// Read the raw audio data in 16-bit format
-	// Returns null on EOF
-	public short[] readShortData() {
-		MediaCodec.BufferInfo info = new MediaCodec.BufferInfo();
-		ByteBuffer data = readData(info);
-
-		if (data == null)
-			return null;
-
-		int samplesRead = info.size/2;
-		short[] returnData = new short[samplesRead];
-
-		// Converting the ByteBuffer to an array doesn't actually make a copy
-		// so we must do so or it will be overwritten later.
-		//System.arraycopy(data.asShortBuffer().array(), 0, returnData, 0, samplesRead);
-		outputBuffers[outputBufferIndex].order(ByteOrder.LITTLE_ENDIAN).asShortBuffer().get(returnData);
-		decoder.releaseOutputBuffer(outputBufferIndex, false);
-		return returnData;
-	}*/
 }

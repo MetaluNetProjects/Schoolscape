@@ -170,6 +170,12 @@ public class AudioArchive {
 		success();
 	}
 	
+	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+	public void archive_(File _directory, File _zipfile) {
+		new AACEncoder().testEncode();
+		return;
+	}
+
 	public void archive(File _directory, File _zipfile) {
 		sourcedirectory = _directory;
 		zipfile = _zipfile;
