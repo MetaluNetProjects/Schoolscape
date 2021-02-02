@@ -1,7 +1,7 @@
 #N canvas 242 627 645 765 10;
 #X obj 31 9 inlet head;
 #X obj 362 178 hsl 128 15 0 20 0 0 list-tunes-pos list-tunes-pos list-pos
--2 -8 0 10 -262144 -1 -1 544 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 339 542 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 2388 1046 602 869 getprop 0;
@@ -321,6 +321,8 @@
 #X obj 338 86 mode/say 1 ChoixTune 10000;
 #X obj 338 113 mode/say 1 ChoixTuneRappel 10000;
 #X msg 130 500 text User Tunes:;
+#X obj 196 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 33 0;
 #X connect 2 0 55 0;
 #X connect 4 0 55 0;
@@ -374,6 +376,7 @@
 #X connect 49 0 48 0;
 #X connect 50 0 35 0;
 #X connect 50 0 66 0;
+#X connect 50 0 69 0;
 #X connect 52 0 55 0;
 #X connect 53 0 4 0;
 #X connect 56 0 6 0;
