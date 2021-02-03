@@ -1,7 +1,7 @@
-#N struct 3889-symarray float x array symbols 3889-sym;
-#N struct 3889-sym symbol name float on;
-#N struct 3900-symarray float x array symbols 3900-sym;
-#N struct 3900-sym symbol name float on;
+#N struct 4301-symarray float x array symbols 4301-sym;
+#N struct 4301-sym symbol name float on;
+#N struct 4312-symarray float x array symbols 4312-sym;
+#N struct 4312-sym symbol name float on;
 #N canvas 623 244 577 542 10;
 #X declare -path ../;
 #X declare -path ../instruments/rj;
@@ -13,7 +13,7 @@
 #X floatatom 222 163 5 0 0 0 - - -;
 #X floatatom 356 160 5 0 0 0 - - -;
 #X floatatom 188 162 5 0 0 0 - - -;
-#N canvas 336 537 468 347 mode 0;
+#N canvas 142 736 645 554 mode 1;
 #X obj 113 20 inlet;
 #X obj 360 125 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -49,6 +49,14 @@
 #X obj 155 46 pofcolor 0.4 0.5 0.5 1;
 #X obj 4 200 s InterfaceModeOpened;
 #X obj 35 170 t b;
+#X obj 234 445 poftexts typo 18;
+#X obj 256 398 loadbang;
+#X obj 234 378 poftranslate 0 0;
+#X obj 249 344 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -34 256;
+#X obj 311 343 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -35 256;
+#X msg 256 420 text Modes: \, width 125;
 #X connect 0 0 25 0;
 #X connect 1 0 24 1;
 #X connect 2 0 24 2;
@@ -76,9 +84,15 @@
 #X connect 20 0 22 0;
 #X connect 23 0 5 0;
 #X connect 25 0 23 0;
+#X connect 25 0 32 0;
 #X connect 25 1 27 0;
 #X connect 27 0 26 0;
 #X connect 29 0 28 0;
+#X connect 31 0 35 0;
+#X connect 32 0 30 0;
+#X connect 33 0 32 1;
+#X connect 34 0 32 2;
+#X connect 35 0 30 0;
 #X restore 63 282 pd mode;
 #X obj 63 260 poftranslate 0 8;
 #X obj 275 54 declare -path ../;
@@ -115,7 +129,7 @@
 -262144 -1 -1 -321 256;
 #X obj 244 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 137.57 256;
-#N canvas 213 586 987 895 set_load/save 0;
+#N canvas 213 586 987 895 set_load/save 1;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -622,15 +636,49 @@
 #X obj 80 66 inlet;
 #X floatatom 102 95 5 0 0 0 - - -;
 #X floatatom 134 94 5 0 0 0 - - -;
-#X msg 177 68 text Sets;
 #X obj 59 125 poftranslate -40 34;
-#X connect 1 0 5 0;
-#X connect 2 0 6 0;
-#X connect 3 0 6 1;
-#X connect 4 0 6 2;
+#X msg 177 68 text Sets:;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 5 2;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X restore 35 118 pd text Sets;
+#N canvas 0 96 450 300 textLoadSave 0;
+#X obj 80 18 inlet;
+#X obj 98 149 poftexts typo 18;
+#X obj 120 102 loadbang;
+#X obj 98 82 poftranslate 0 0;
+#X obj 113 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 11 256;
+#X obj 175 47 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -22 256;
+#X msg 122 124 text Load/Save \, width 125;
+#X connect 0 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 2;
+#X connect 6 0 1 0;
+#X restore 50 68 pd textLoadSave;
+#N canvas 0 96 450 300 textLCreateNeww 0;
+#X obj 80 18 inlet;
+#X obj 98 149 poftexts typo 18;
+#X obj 120 102 loadbang;
+#X obj 98 82 poftranslate 0 0;
+#X obj 113 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 11 256;
+#X obj 175 47 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 58 256;
+#X msg 122 124 text Create New \, width 125;
+#X connect 0 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 2;
+#X connect 6 0 1 0;
+#X restore 22 20 pd textLCreateNeww;
 #X obj 152 89 poftranslate 0 -39;
 #X connect 0 0 126 0;
 #X connect 2 0 13 0;
@@ -772,14 +820,16 @@
 #X connect 124 0 28 0;
 #X connect 125 0 29 0;
 #X connect 126 0 27 0;
-#X connect 126 0 138 0;
+#X connect 126 0 140 0;
 #X connect 126 1 128 0;
 #X connect 128 0 127 0;
 #X connect 131 0 130 0;
 #X connect 133 0 132 0;
 #X connect 136 0 135 0;
-#X connect 138 0 124 0;
-#X connect 138 0 137 0;
+#X connect 140 0 124 0;
+#X connect 140 0 137 0;
+#X connect 140 0 138 0;
+#X connect 140 0 139 0;
 #X restore 150 316 pd set_load/save;
 #X obj 291 345 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 73 256;
