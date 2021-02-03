@@ -1,4 +1,4 @@
-#N canvas 519 1306 450 601 10;
+#N canvas 1506 943 450 879 10;
 #X obj 31 18 inlet;
 #X obj 87 110 loadbang;
 #X obj 154 113 pofcolor 1 0.5 0 1;
@@ -9,10 +9,10 @@
 #X obj 75 14 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -126 256;
 #X obj 138 15 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 62 256;
+-262144 -1 -1 64 256;
 #X obj 154 135 poftexts asimov 25 -1;
 #X floatatom 242 60 5 0 0 0 - - -;
-#N canvas 21 570 471 729 mainNbPart 1;
+#N canvas 21 570 471 729 mainNbPart 0;
 #X msg 11 80 5;
 #X obj 97 77 - 1;
 #X obj 303 53 + 1;
@@ -39,7 +39,7 @@
 #X obj 92 403 - 1;
 #X obj 298 379 + 1;
 #X obj 91 437 t b f b;
-#X obj 125 482 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 125 482 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 245 571 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -123,10 +123,90 @@
 #X obj 173 382 poftexts asimov 25 -1;
 #X floatatom 261 307 5 0 0 0 - - -;
 #X obj 47 326 poftranslate;
-#X obj 45 415 s PartStoreSelHead;
+#X obj 79 407 s PartStoreSelHead;
 #X msg 95 384 text Store;
 #X obj 52 228 t a a;
 #X obj 173 339 poftranslate -88 90;
+#X floatatom 246 486 5 0 0 0 - - -;
+#X obj 127 458 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 104 256;
+#X obj 120 438 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 300 256;
+#N canvas 88 756 450 499 save-tune 0;
+#X obj 96 21 inlet;
+#X obj 96 42 t a a a;
+#X obj 135 67 pofcolor 1 1 1 1;
+#X msg 253 53 draw 1;
+#X obj 253 32 loadbang;
+#X obj 115 280 pofcolor 0.2 0.2 0.2 1;
+#X obj 96 370 pofcolor 0.8 0.8 0.8 1;
+#X obj 19 305 loadbang;
+#X obj 128 350 unpack f f f;
+#X obj 147 259 unpack f f f;
+#X msg 309 259 0.2 0.2 0.2;
+#X msg 309 300 0.8 0.8 0.8;
+#X msg 252 300 0 0 0 1;
+#X obj 228 107 route down;
+#X obj 228 128 b;
+#X obj 377 167 loadbang;
+#X floatatom 169 142 5 0 0 0 - - -;
+#X floatatom 136 191 5 0 0 0 - - -;
+#X obj 135 88 poftouch 250 50;
+#X obj 115 300 pofrect 245 45;
+#X obj 96 391 poftexts asimov 40;
+#X msg 19 326 text SAVE TUNE \, width 200 \, center 1;
+#X obj 169 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 252 258 1 0 0 0;
+#X obj 286 136 t b b;
+#X obj 373 214 del 100;
+#X obj 322 163 del 150;
+#X obj 182 177 s saveTune-rcv;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 1 5 0;
+#X connect 1 2 2 0;
+#X connect 2 0 18 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 19 0;
+#X connect 6 0 20 0;
+#X connect 7 0 21 0;
+#X connect 8 0 6 1;
+#X connect 8 1 6 2;
+#X connect 8 2 6 3;
+#X connect 9 0 5 1;
+#X connect 9 1 5 2;
+#X connect 9 2 5 3;
+#X connect 10 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 22 0;
+#X connect 14 0 24 0;
+#X connect 14 0 27 0;
+#X connect 15 0 10 0;
+#X connect 18 1 13 0;
+#X connect 21 0 20 0;
+#X connect 23 0 9 0;
+#X connect 23 0 12 0;
+#X connect 24 1 23 0;
+#X connect 24 1 26 0;
+#X connect 26 0 10 0;
+#X restore 91 515 pd save-tune;
+#X obj 99 563 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -40 256;
+#X obj 38 587 poftranslate;
+#X obj 92 543 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -126 256;
+#X obj 206 531 loadbang;
+#X obj 125 610 pofcolor 1 0.5 0 1;
+#X obj 125 633 poftexts asimov 25 -1;
+#X obj 66 482 poftranslate;
+#X msg 228 563 text \$1;
+#X obj 294 538 symbol;
+#X obj 288 505 r PofTuneName;
 #X connect 0 0 17 0;
 #X connect 1 0 15 0;
 #X connect 2 0 9 0;
@@ -148,7 +228,20 @@
 #X connect 24 0 27 2;
 #X connect 26 0 31 2;
 #X connect 27 0 28 0;
+#X connect 27 0 42 0;
 #X connect 29 0 25 0;
 #X connect 30 0 27 0;
 #X connect 30 1 31 0;
 #X connect 31 0 20 0;
+#X connect 33 0 42 2;
+#X connect 34 0 42 1;
+#X connect 36 0 37 2;
+#X connect 37 0 40 0;
+#X connect 38 0 37 1;
+#X connect 39 0 43 0;
+#X connect 40 0 41 0;
+#X connect 42 0 35 0;
+#X connect 42 0 37 0;
+#X connect 43 0 41 0;
+#X connect 45 0 44 0;
+#X connect 45 0 43 0;
