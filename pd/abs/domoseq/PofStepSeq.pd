@@ -383,8 +383,8 @@
 #X connect 89 0 82 1;
 #X connect 89 0 90 0;
 #X restore 87 62 pd StepSeq;
-#X obj 259 92 r mainSeq-play;
-#X obj 259 112 == 0;
+#X obj 263 75 r mainSeq-play;
+#X obj 266 106 == 0;
 #X obj 232 94 b;
 #X obj 228 187 s mainSeq-play;
 #X obj 232 132 f 1, f 5;
