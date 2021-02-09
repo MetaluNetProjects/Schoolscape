@@ -1,4 +1,4 @@
-#N canvas 242 627 645 765 10;
+#N canvas 1413 1007 645 800 10;
 #X obj 31 9 inlet head;
 #X obj 362 178 hsl 128 15 0 20 0 0 list-tunes-pos list-tunes-pos list-pos
 -2 -8 0 10 -262144 -1 -1 0 1;
@@ -399,7 +399,7 @@
 #X obj 246 26 r tune;
 #X obj 266 707 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 348 708 s PlaysSeltune;
+#X obj 401 695 s PlaysSeltune;
 #X obj 190 86 r tuneStartRec;
 #X msg 199 118 0;
 #X obj 209 237 print;
@@ -430,6 +430,13 @@
 #X obj 205 594 poftranslate 0 10;
 #X obj 18 615 poftranslate -60 -224;
 #X msg 129 661 text User's Tunes:;
+#X obj 355 658 t a a;
+#X obj 333 690 t b;
+#X obj 368 762 s nbPart-Recall;
+#X msg 332 737 0;
+#X msg 292 689 1;
+#X obj 367 704 del 200;
+#X obj 262 769 s PART_RECALL;
 #X connect 0 0 71 0;
 #X connect 2 0 49 0;
 #X connect 4 0 49 0;
@@ -473,7 +480,7 @@
 #X connect 35 0 61 0;
 #X connect 37 0 29 0;
 #X connect 37 0 53 0;
-#X connect 37 0 54 0;
+#X connect 37 0 83 0;
 #X connect 38 0 36 0;
 #X connect 39 0 64 2;
 #X connect 42 0 59 1;
@@ -509,3 +516,9 @@
 #X connect 80 0 37 0;
 #X connect 81 0 17 0;
 #X connect 82 0 18 0;
+#X connect 83 0 84 0;
+#X connect 83 1 54 0;
+#X connect 84 0 88 0;
+#X connect 86 0 85 0;
+#X connect 86 0 89 0;
+#X connect 88 0 86 0;

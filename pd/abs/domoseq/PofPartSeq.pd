@@ -25,7 +25,7 @@
 #X obj 192 229 t b b b;
 #X msg 350 429 0, f 1;
 #X msg 401 248 1, f 1;
-#X obj 330 158 bng 25 250 50 0 StopSeqPart-snd StopSeqPart-rcv StopSeqPart
+#X obj 304 171 bng 25 250 50 0 StopSeqPart-snd StopSeqPart-rcv StopSeqPart
 17 7 0 10 -204800 -1 -1;
 #X msg 352 196 0, f 1;
 #X obj 400 315 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -298,15 +298,15 @@
 #X connect 41 0 42 0;
 #X connect 41 0 18 0;
 #X connect 42 0 43 0;
-#X restore 417 187 pd Keyboard;
+#X restore 436 201 pd Keyboard;
 #X obj 367 34 bng 25 250 50 0 OpenKb-\$1-snd OpenKb-\$1-rcv OpenKb-\$1
 -2 -10 0 10 -262130 -1 -1;
 #X floatatom 403 514 5 0 0 0 - - -;
 #X obj 338 508 mod 8;
 #X obj 333 601 - 1;
-#X obj 217 197 s mainSeq-play;
+#X obj 225 66 s mainSeq-play;
 #X obj 36 9 inlet;
-#X obj 309 34 tgl 25 0 StartSeqPart-\$1-snd StartSeqPart-\$1-rcv Start
+#X obj 309 33 tgl 25 0 StartSeqPart-\$1-snd StartSeqPart-\$1-rcv Start
 -2 -10 0 10 -260097 -1 -1 0 1;
 #X obj 246 125 sel 1 0;
 #X obj 12 644 aptab2 SONGschoolscape \$1-Seq \$1-Seq 32 1;
@@ -317,7 +317,7 @@
 #X obj 462 560 s \$1-Len;
 #X obj 507 332 s \$1-Seq;
 #X obj 673 259 print kb;
-#X obj 502 143 t b b;
+#X obj 537 141 t b b;
 #X msg 597 334 const 0;
 #X obj 602 369 s \$1-Seq;
 #X obj 578 293 loadbang;
@@ -328,14 +328,14 @@
 #X msg 535 219 0, f 1;
 #X obj 579 208 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 350 103 f \$2;
-#X obj 351 126 s PofPartSeqSolo;
+#X obj 399 101 f \$2;
+#X obj 400 124 s PofPartSeqSolo;
 #X obj 560 21 r PofPartSeqSolo;
 #X obj 560 49 == \$2;
 #X floatatom 558 102 5 0 0 0 - - -;
-#X obj 560 75 change;
+#X obj 553 74 change;
 #X obj 246 98 t f f f;
-#X obj 330 75 sel 1;
+#X obj 346 75 sel 1;
 #X floatatom 284 545 5 0 0 0 - - -;
 #X floatatom 278 507 5 0 0 0 - - -;
 #X obj 232 538 sel 8;
@@ -558,6 +558,11 @@
 #X obj 584 604 r nbPart-Recall;
 #X obj 228 596 s PofPartBang;
 #X obj 441 -3 r AllSeqPartsOff;
+#X obj 474 29 r \$1-Len;
+#X floatatom 406 37 5 0 0 0 - - -;
+#X floatatom 655 70 5 0 0 0 - - -;
+#X obj 324 110 symbol \$1;
+#X obj 353 151 s PofSeqPartType;
 #X connect 0 0 12 0;
 #X connect 1 0 13 1;
 #X connect 2 0 21 0;
@@ -628,13 +633,15 @@
 #X connect 55 0 56 0;
 #X connect 57 0 58 0;
 #X connect 59 0 60 0;
+#X connect 59 0 82 0;
 #X connect 60 0 62 0;
-#X connect 62 0 37 0;
 #X connect 62 0 61 0;
-#X connect 63 0 38 0;
-#X connect 63 1 35 0;
+#X connect 62 0 37 0;
+#X connect 63 0 35 0;
+#X connect 63 1 38 0;
 #X connect 63 2 64 0;
 #X connect 64 0 57 0;
+#X connect 64 0 83 0;
 #X connect 67 0 68 0;
 #X connect 67 0 78 0;
 #X connect 69 0 70 1;
@@ -643,4 +650,6 @@
 #X connect 74 0 75 0;
 #X connect 75 0 69 0;
 #X connect 79 0 37 0;
+#X connect 80 0 81 0;
+#X connect 83 0 84 0;
 #X coords 0 -1 1 1 150 60 1 300 0;

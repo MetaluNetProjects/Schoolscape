@@ -1,4 +1,4 @@
-#N canvas 267 889 807 887 12;
+#N canvas 261 880 807 887 12;
 #X obj 500 113 poftexts vera 35 -1;
 #X floatatom 524 33 5 0 0 0 - - -;
 #X floatatom 561 31 5 0 0 0 - - -;
@@ -49,7 +49,7 @@
 -262144 -1 -1 1 256;
 #X obj 42 511 t a a;
 #X obj 506 241 npPartSelector;
-#N canvas 657 418 525 1132 Part 1;
+#N canvas 657 418 525 1132 Part 0;
 #X obj 102 189 inlet;
 #X obj 224 742 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -361,8 +361,9 @@
 #X obj 488 60 poftranslate -120 -215 0;
 #X obj 125 321 poftranslate 0 -82;
 #X obj 33 190 pofvisible;
-#X obj 279 52 r PofPartRecall;
-#X obj 258 136 s PofPartRecall;
+#X floatatom 237 25 5 0 0 0 - - -;
+#X obj 279 52 r mainSeq-recall;
+#X obj 258 136 s mainSeq-recall;
 #X connect 0 0 41 0;
 #X connect 1 0 52 1;
 #X connect 2 0 52 2;
@@ -414,9 +415,9 @@
 #X connect 45 0 53 2;
 #X connect 46 0 43 0;
 #X connect 47 0 24 0;
-#X connect 48 0 56 0;
+#X connect 48 0 57 0;
 #X connect 52 0 0 0;
 #X connect 53 0 13 0;
 #X connect 54 0 9 0;
-#X connect 55 0 48 1;
-#X connect 55 0 49 0;
+#X connect 56 0 48 1;
+#X connect 56 0 49 0;
