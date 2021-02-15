@@ -49,7 +49,7 @@
 -262144 -1 -1 1 256;
 #X obj 42 511 t a a;
 #X obj 506 241 npPartSelector;
-#N canvas 657 418 525 1132 Part 0;
+#N canvas 657 418 525 1132 Part 1;
 #X obj 102 189 inlet;
 #X obj 224 742 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
