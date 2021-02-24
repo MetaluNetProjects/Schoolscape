@@ -1,8 +1,8 @@
-#N struct 4322-symarray float x array symbols 4322-sym;
-#N struct 4322-sym symbol name float on;
-#N struct 4333-symarray float x array symbols 4333-sym;
-#N struct 4333-sym symbol name float on;
-#N canvas 157 1046 811 452 10;
+#N struct 2351-symarray float x array symbols 2351-sym;
+#N struct 2351-sym symbol name float on;
+#N struct 2362-symarray float x array symbols 2362-sym;
+#N struct 2362-sym symbol name float on;
+#N canvas 157 582 811 452 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
 #X obj 95 264 credit;
@@ -16,7 +16,7 @@
 #X obj 271 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 271 46 s LANDSCAPE;
-#N canvas 2126 991 894 723 abl_link 1;
+#N canvas 1026 2009 894 723 abl_link 0;
 #X obj 164 304 abl_link~;
 #X obj 166 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -187,7 +187,7 @@
 #X obj 736 338 t f f;
 #X obj 709 413 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 818 419 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 818 419 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 773 441 spigot 0;
 #X obj 705 306 r beatFollowerReplaceSwitch;
@@ -198,7 +198,7 @@
 #X obj 241 455 spigot 1;
 #X obj 295 425 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 324 428 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 324 428 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 297 502 spigot 0;
 #X obj 305 372 == 0;
@@ -221,7 +221,6 @@
 #X connect 15 0 1 0;
 #X connect 16 0 20 0;
 #X connect 16 0 96 0;
-#X connect 16 0 105 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
 #X connect 19 0 31 0;
@@ -732,7 +731,7 @@
 #X msg 361 375 1;
 #X obj 381 296 loadbang;
 #X obj 381 317 t b b b;
-#N canvas 261 421 883 855 EDIT_SCREEN 1;
+#N canvas 261 582 883 855 EDIT_SCREEN 0;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
@@ -2399,7 +2398,7 @@
 #X connect 56 0 54 0;
 #X connect 57 0 17 0;
 #X restore 649 568 pd UserTunes;
-#N canvas 136 915 761 852 PofPartSeq 0;
+#N canvas 2961 77 761 936 PofPartSeq 1;
 #X obj 500 113 poftexts vera 35 -1;
 #X floatatom 524 33 5 0 0 0 - - -;
 #X floatatom 561 31 5 0 0 0 - - -;
@@ -2750,7 +2749,6 @@
 #X msg 513 89 text Parts Sequence :;
 #X obj 290 113 r nbPart-Recall;
 #X floatatom 296 162 5 0 0 0 - - -;
-#X obj 520 189 PofPartSeq intro 1;
 #X obj 484 553 PofPartSeq outro 4;
 #X obj 524 253 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
@@ -2767,12 +2765,11 @@
 #X obj 559 480 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 56 256;
 #X obj 491 166 poftranslate, f 21;
-#X obj 443 679 PofPartSeqStructure song 5;
+#X obj 465 679 PofPartSeqStructure song 5;
 #X obj 491 626 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 25 256;
 #X obj 549 626 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 78 256;
-#X obj 450 645 poftranslate, f 21;
 #X obj 460 499 poftranslate, f 21;
 #X obj 503 298 PofPartSeq couplet 2;
 #X obj 515 410 PofPartSeq refrain 3;
@@ -2781,22 +2778,30 @@
 #X obj 153 455 poftouch 845 455;
 #X obj 118 553 poftranslate 0 29;
 #X obj 125 321 poftranslate 0 29;
-#X connect 0 0 56 0;
+#X obj 425 801 PofPartSeqOulipo oulipo 6;
+#X obj 466 755 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 3 256;
+#X obj 524 755 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 78 256;
+#X obj 425 774 poftranslate, f 21;
+#X obj 450 645 poftranslate, f 21;
+#X obj 520 189 PofPartSeqOulip intro 1;
+#X connect 0 0 55 0;
 #X connect 1 0 37 1;
 #X connect 2 0 37 2;
 #X connect 3 0 37 3;
 #X connect 4 0 43 0;
 #X connect 5 0 35 0;
-#X connect 5 1 67 0;
-#X connect 6 0 67 1;
-#X connect 7 0 67 2;
-#X connect 8 0 65 2;
+#X connect 5 1 65 0;
+#X connect 6 0 65 1;
+#X connect 7 0 65 2;
+#X connect 8 0 63 2;
 #X connect 9 0 5 0;
-#X connect 9 1 68 0;
-#X connect 10 0 66 0;
+#X connect 9 1 66 0;
+#X connect 10 0 64 0;
 #X connect 11 0 10 0;
 #X connect 12 0 36 0;
-#X connect 13 0 66 0;
+#X connect 13 0 64 0;
 #X connect 14 0 15 0;
 #X connect 15 0 38 1;
 #X connect 16 0 17 0;
@@ -2805,49 +2810,53 @@
 #X connect 19 0 38 3;
 #X connect 20 0 21 0;
 #X connect 21 0 38 4;
-#X connect 22 0 65 1;
+#X connect 22 0 63 1;
 #X connect 23 0 36 0;
 #X connect 24 0 29 0;
 #X connect 24 1 42 0;
-#X connect 25 0 66 0;
+#X connect 25 0 64 0;
 #X connect 26 0 31 1;
 #X connect 27 0 31 2;
 #X connect 30 0 43 0;
 #X connect 31 0 9 0;
-#X connect 32 0 64 0;
-#X connect 33 0 56 1;
-#X connect 34 0 56 2;
+#X connect 32 0 62 0;
+#X connect 33 0 55 1;
+#X connect 34 0 55 2;
 #X connect 35 1 37 0;
 #X connect 36 0 9 0;
 #X connect 37 0 0 0;
-#X connect 38 0 65 0;
-#X connect 39 0 68 1;
-#X connect 40 0 68 2;
+#X connect 38 0 63 0;
+#X connect 39 0 66 1;
+#X connect 40 0 66 2;
 #X connect 41 0 24 0;
 #X connect 42 0 28 0;
 #X connect 42 0 32 0;
 #X connect 42 1 31 0;
 #X connect 43 0 0 0;
 #X connect 44 0 45 0;
-#X connect 48 0 50 1;
-#X connect 49 0 50 2;
-#X connect 50 0 53 0;
-#X connect 50 0 62 0;
-#X connect 51 0 53 1;
-#X connect 52 0 53 2;
-#X connect 53 0 61 0;
-#X connect 53 0 63 0;
-#X connect 54 0 61 1;
-#X connect 55 0 61 2;
-#X connect 56 0 50 0;
-#X connect 56 0 46 0;
-#X connect 58 0 60 1;
-#X connect 59 0 60 2;
-#X connect 60 0 57 0;
-#X connect 61 0 60 0;
-#X connect 61 0 47 0;
-#X connect 67 0 38 0;
-#X connect 68 0 13 0;
+#X connect 47 0 49 1;
+#X connect 48 0 49 2;
+#X connect 49 0 52 0;
+#X connect 49 0 60 0;
+#X connect 50 0 52 1;
+#X connect 51 0 52 2;
+#X connect 52 0 59 0;
+#X connect 52 0 61 0;
+#X connect 53 0 59 1;
+#X connect 54 0 59 2;
+#X connect 55 0 49 0;
+#X connect 55 0 72 0;
+#X connect 57 0 71 1;
+#X connect 58 0 71 2;
+#X connect 59 0 71 0;
+#X connect 59 0 46 0;
+#X connect 65 0 38 0;
+#X connect 66 0 13 0;
+#X connect 68 0 70 1;
+#X connect 69 0 70 2;
+#X connect 70 0 67 0;
+#X connect 71 0 56 0;
+#X connect 71 0 70 0;
 #X restore 510 654 pd PofPartSeq;
 #X obj 521 602 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -126 256;
@@ -3792,7 +3801,7 @@
 #X restore 98 507 pd bpm-old;
 #X obj 73 457 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 1.59 256;
-#N canvas 783 403 397 663 BPM 1;
+#N canvas 783 403 397 663 BPM 0;
 #X obj 23 7 inlet;
 #X obj 77 103 pofrect 300 50;
 #X obj 50 221 pofcolor 0 0 0 1;
