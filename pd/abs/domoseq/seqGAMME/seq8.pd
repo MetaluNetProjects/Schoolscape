@@ -1,11 +1,11 @@
-#N struct 4322-symarray float x array symbols 4322-sym;
-#N struct 4322-sym symbol name float on;
-#N struct 4333-symarray float x array symbols 4333-sym;
-#N struct 4333-sym symbol name float on;
+#N struct 4341-symarray float x array symbols 4341-sym;
+#N struct 4341-sym symbol name float on;
+#N struct 4352-symarray float x array symbols 4352-sym;
+#N struct 4352-sym symbol name float on;
 #N canvas 1276 942 1142 852 10;
 #X obj 9 605 r CLOCK;
 #X obj 64 702 ndmetro 4 4;
-#X floatatom 19 730 5 0 0 0 - - -;
+#X floatatom 134 803 5 0 0 0 - - -;
 #X obj 64 417 r \$0-stepscumul;
 #X obj 64 442 route 7;
 #X floatatom 23 519 5 0 0 0 - - -;
@@ -13,7 +13,7 @@
 #X obj 64 783 s \$0-step;
 #X obj 1 54 seqstep \$0 0;
 #X obj 1 38 nbx 5 14 1 32 0 0 \$0-denum \$0-denum denum 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 24 256;
 #X obj 122 443 r \$0-denum;
 #X obj 154 508 t b f;
 #X msg 36 12 1;
@@ -58,7 +58,7 @@
 #X obj 259 749 * 40;
 #X obj 769 605 r \$0-denum;
 #X obj 122 38 nbx 5 14 1 300 0 0 \$0-bpm \$0-bpm bpm 0 -8 0 10 -262144
--1 -1 115 256;
+-1 -1 116 256;
 #X obj 181 37 tgl 15 0 \$0-bpm_on \$0-bpm_on bpm_on 0 -8 0 10 -262144
 -1 -1 1 1;
 #X obj 784 625 r \$0-bpm;
@@ -77,12 +77,12 @@
 #X msg 731 434 2;
 #X obj 434 595 r \$0-bpm;
 #X obj 309 37 tgl 15 0 \$1-play \$1-play \$1-play 0 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 117 724 r \$1-play;
 #X obj 64 724 spigot;
 #X obj 436 777 s /BPM;
 #X obj 224 38 nbx 5 14 1 300 0 0 /BPM /BPM /BPM(current) 0 -8 0 10
--262144 -1 -1 115 256;
+-262144 -1 -1 240 256;
 #X obj 467 617 r \$0-bpm_on;
 #X msg 773 433 31;
 #N canvas 1 96 450 300 table 0;
@@ -92,13 +92,13 @@
 #X restore 36 102 graph;
 #X restore 831 77 pd table;
 #X obj 444 25 hradio 15 1 0 12 \$1-recall \$1-recall \$1-recall 0 -8
-0 10 -4034 -1 -1 1;
+0 10 -4034 -1 -1 2;
 #X obj 634 25 hradio 15 1 0 12 \$1-store \$1-store \$1-store 0 -8 0
 10 -258113 -1 -1 8;
 #X obj 313 702 r \$1-recall;
 #X obj 590 414 r \$1-store;
 #X msg 578 4 set \$1;
-#N canvas 44 735 1156 899 \$0-file 1;
+#N canvas 44 735 1156 899 \$0-file 0;
 #X obj 81 270 soundfiler;
 #X obj 190 183 list prepend \$0-table;
 #X obj 52 135 list prepend \$0-table;
@@ -383,7 +383,7 @@
 #X msg 896 63 vis 0 \, vis 1;
 #X obj 896 85 s pd-\$0-file;
 #X obj 61 38 nbx 5 14 0 1e+06 0 0 \$0-loop \$0-loop loop 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 24 256;
 #X obj 64 748 mod 4;
 #X obj 64 464 t f f;
 #X obj 64 605 list prepend 0;
@@ -887,10 +887,10 @@
 #X connect 30 0 25 0;
 #X restore 992 104 pd remotePof;
 #X obj 538 625 r Lock-bpm_on;
-#X obj 537 692 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 537 692 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 538 654 != 1;
-#X obj 480 704 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 480 704 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 434 727 spigot 0;
 #X obj 476 674 spigot 0;
@@ -899,8 +899,6 @@
 #X obj 344 630 print;
 #X connect 0 0 1 0;
 #X connect 1 0 71 0;
-#X connect 1 0 2 0;
-#X connect 1 0 147 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 4 0 88 0;
@@ -966,6 +964,8 @@
 #X connect 83 0 84 0;
 #X connect 84 0 85 0;
 #X connect 87 0 7 0;
+#X connect 87 0 147 0;
+#X connect 87 0 2 0;
 #X connect 88 0 14 0;
 #X connect 88 1 87 1;
 #X connect 89 0 92 0;
