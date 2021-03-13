@@ -1,9 +1,11 @@
+
 package net.metalu.tools;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import java.io.File;
+import java.nio.file.Files;
 //import java.io.IoUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -157,17 +159,40 @@ public class AudioArchive {
 		File destfile = new File(tmpdirectory, relsrcpath.substring(0, relsrcpath.lastIndexOf(".")) + ".aac");
 		new AACEncoder().encode(wavfile, destfile);
 	}
-	
+
+	private void moveFile(File file, File dir) throws IOException {
+		File newFile = new File(dir, file.getName());
+		FileChannel outputChannel = null;
+		FileChannel inputChannel = null;
+		try {
+			outputChannel = new FileOutputStream(newFile).getChannel();
+			inputChannel = new FileInputStream(file).getChannel();
+			inputChannel.transferTo(0, inputChannel.size(), outputChannel);
+			inputChannel.close();
+			file.delete();
+		} finally {
+			if (inputChannel != null) inputChannel.close();
+			if (outputChannel != null) outputChannel.close();
+		}
+
+	}
+
 	void finishZip()
 	{
 		Log.i(TAG,"moving temp dir... ");
 		zip(tmpdirectory, tmpzipfile);
 		zipfile.delete();
-		tmpzipfile.renameTo(zipfile);
-		progress(100);
+		//Files.move(tmpzipfile, zipfile);
+		try {
+			moveFile(tmpzipfile, new File(zipfile.getParent()));
+			progress(100);
+			Log.i(TAG,"done!");
+			success();
+		} catch (IOException e) {
+			e.printStackTrace();
+			failure(e.toString());
+		}
 		deleteRecursive(tmpdirectory);
-		Log.i(TAG,"done!");
-		success();
 	}
 	
 	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
