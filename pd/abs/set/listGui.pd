@@ -1,10 +1,10 @@
-#N canvas 328 350 718 810 10;
+#N canvas 328 245 718 810 10;
 #X obj 21 27 inlet head;
 #X obj 352 44 hsl 128 15 0 20 0 0 list-sets-pos list-sets-pos list-pos
--2 -8 0 10 -262144 -1 -1 212 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 488 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 411 208 602 465 getprop 1;
+#N canvas 411 208 602 465 getprop 0;
 #X obj 156 56 unpack f f;
 #X msg 232 107 getnum /;
 #X floatatom 311 172 5 0 0 0 - - -;
@@ -101,7 +101,7 @@
 #X obj 515 398 s list-sets-update;
 #X obj 448 281 r set;
 #X obj 172 475 outlet;
-#N canvas 1286 1422 1411 463 OK/Reload 1;
+#N canvas 508 592 1411 463 OK/Reload 1;
 #X obj 122 28 r ADMIN;
 #X obj 56 21 inlet;
 #X obj 56 157 t a a;
@@ -203,7 +203,7 @@
 -262144 -1 -1 -23 256;
 #X obj 744 76 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 15 256;
-#N canvas 1676 1103 450 613 SaveSet 1;
+#N canvas 1676 1103 450 613 SaveSet 0;
 #X obj 126 102 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 74 256;
 #X obj 119 82 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -217,7 +217,7 @@
 #X obj 65 126 poftranslate;
 #X obj 294 103 symbol;
 #X obj 69 42 inlet;
-#N canvas 1299 1115 450 499 save-set 1;
+#N canvas 1299 1115 450 499 save-set 0;
 #X obj 96 21 inlet;
 #X obj 96 42 t a a a;
 #X obj 135 67 pofcolor 1 1 1 1;
@@ -310,6 +310,7 @@
 #X floatatom 78 46 5 0 0 0 - - -;
 #X obj 56 78 poftranslate 0 222;
 #X msg 588 163 draw 0;
+#X obj 666 57 pofvisible;
 #X connect 0 0 17 0;
 #X connect 1 0 93 0;
 #X connect 2 0 4 0;
@@ -418,10 +419,11 @@
 #X connect 92 0 93 2;
 #X connect 93 0 59 0;
 #X connect 93 0 38 0;
-#X connect 93 0 57 0;
-#X connect 93 0 82 0;
 #X connect 93 0 91 0;
+#X connect 93 0 95 0;
 #X connect 94 0 39 0;
+#X connect 95 0 57 0;
+#X connect 95 0 82 0;
 #X restore 209 363 pd OK/Reload;
 #N canvas 1 96 759 574 export 0;
 #X obj 109 96 symbol;
