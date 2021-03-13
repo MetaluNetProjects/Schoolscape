@@ -1,8 +1,8 @@
-#N struct 4337-symarray float x array symbols 4337-sym;
-#N struct 4337-sym symbol name float on;
-#N struct 4348-symarray float x array symbols 4348-sym;
-#N struct 4348-sym symbol name float on;
-#N canvas 147 582 811 452 10;
+#N struct 2222-symarray float x array symbols 2222-sym;
+#N struct 2222-sym symbol name float on;
+#N struct 2233-symarray float x array symbols 2233-sym;
+#N struct 2233-sym symbol name float on;
+#N canvas 1042 376 811 452 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
 #X obj 95 264 credit;
@@ -16,24 +16,24 @@
 #X obj 271 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 271 46 s LANDSCAPE;
-#N canvas 1026 2009 894 723 abl_link 0;
+#N canvas 1025 332 894 723 abl_link 1;
 #X obj 164 304 abl_link~;
 #X obj 166 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 166 273 connect \$1;
 #X obj 277 583 s bpm;
 #X obj 248 43 r bpm-r;
-#X msg 227 233 tempo \$1;
+#X msg 257 220 tempo \$1;
 #X floatatom 99 630 5 0 0 0 - - -;
-#X obj 153 202 loadbang;
+#X obj 30 210 loadbang;
 #X obj 23 693 s beat;
 #X floatatom 201 78 5 0 0 0 - - -;
 #X obj 109 12 l declare -stdpath abl_link/external;
-#X obj 153 223 del 1000;
+#X obj 30 231 del 1000;
 #X msg 113 127 advance 0 \, offset 0;
 #X floatatom 344 41 5 0 0 0 - - -;
 #X obj 344 19 r #abl_link_num_peers;
-#X msg 108 247 1;
+#X msg 30 260 1;
 #X obj 655 390 r beat;
 #X obj 755 598 r bpm;
 #X msg 755 619 60000 \$1;
@@ -204,6 +204,7 @@
 #X obj 305 372 == 0;
 #X obj 241 344 t f f;
 #X obj 240 318 r beatFollowerReplaceSwitch;
+#X obj 166 221 r netConnect;
 #X connect 0 0 6 0;
 #X connect 0 0 76 0;
 #X connect 0 0 89 0;
@@ -218,7 +219,6 @@
 #X connect 11 0 15 0;
 #X connect 12 0 0 0;
 #X connect 14 0 13 0;
-#X connect 15 0 1 0;
 #X connect 16 0 20 0;
 #X connect 16 0 96 0;
 #X connect 17 0 18 0;
@@ -323,6 +323,7 @@
 #X connect 112 0 109 0;
 #X connect 112 1 111 0;
 #X connect 113 0 112 0;
+#X connect 114 0 1 0;
 #X restore 367 7 pd abl_link;
 #X obj 122 197 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 304 256;
@@ -731,7 +732,7 @@
 #X msg 361 375 1;
 #X obj 381 296 loadbang;
 #X obj 381 317 t b b b;
-#N canvas 251 582 883 931 EDIT_SCREEN 1;
+#N canvas 251 124 883 931 EDIT_SCREEN 0;
 #X obj 112 -1 r SCREEN;
 #X msg 112 101 1;
 #X msg 157 102 0;
@@ -4652,7 +4653,7 @@
 #X obj 257 125 s SCREEN;
 #X msg 257 98 edit;
 #X msg 293 97 play;
-#N canvas 1510 1050 744 580 PLAY_SCREEN 0;
+#N canvas 1175 475 744 580 PLAY_SCREEN 0;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
@@ -4841,7 +4842,7 @@
 #X obj 165 140 t b b;
 #X msg 230 162 1;
 #X msg 165 184 0;
-#X obj 165 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 165 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 579 264 531 485 WHOisTHERE 0;
 #X obj 31 10 r /SIG;
@@ -5750,7 +5751,7 @@
 -262144 -1 -1 -493 256;
 #X obj 542 35 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 45.57 256;
-#N canvas 1465 921 987 895 set_load/save 0;
+#N canvas 1921 184 987 895 set_load/save 0;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -6802,6 +6803,73 @@
 #X obj 579 233 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -142 256;
 #X obj 33 86 pofvisible;
+#X obj 279 425 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 -109 256;
+#X obj 238 444 poftranslate, f 21;
+#X obj 337 425 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 43 256;
+#N canvas 921 334 450 499 netConnect 0;
+#X obj 96 21 inlet;
+#X obj 96 42 t a a a;
+#X obj 135 67 pofcolor 1 1 1 1;
+#X msg 253 53 draw 1;
+#X obj 253 32 loadbang;
+#X obj 115 280 pofcolor 0.2 0.2 0.2 1;
+#X obj 96 370 pofcolor 0.8 0.8 0.8 1;
+#X obj 19 305 loadbang;
+#X obj 128 350 unpack f f f;
+#X obj 147 259 unpack f f f;
+#X msg 309 259 0.2 0.2 0.2;
+#X msg 309 300 0.8 0.8 0.8;
+#X msg 252 300 0 0 0 1;
+#X obj 252 238 sel 1 0;
+#X obj 228 107 route down;
+#X obj 228 128 b;
+#X obj 349 217 loadbang;
+#X msg 252 258 1 0 0 1;
+#X obj 260 147 == 0;
+#X obj 245 167 f 1;
+#X obj 96 391 poftexts asimov 30;
+#X obj 245 188 s netConnect;
+#X obj 260 126 r netConnect;
+#X obj 252 218 r netConnect;
+#X obj 135 88 poftouch 140 90;
+#X obj 115 300 pofrect 135 85;
+#X msg 19 326 text CONNECT TO NETWORK \, width 130 \, center 1;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 1 5 0;
+#X connect 1 2 2 0;
+#X connect 2 0 24 0;
+#X connect 3 0 24 0;
+#X connect 4 0 3 0;
+#X connect 5 0 25 0;
+#X connect 6 0 20 0;
+#X connect 7 0 26 0;
+#X connect 8 0 6 1;
+#X connect 8 1 6 2;
+#X connect 8 2 6 3;
+#X connect 9 0 5 1;
+#X connect 9 1 5 2;
+#X connect 9 2 5 3;
+#X connect 10 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 17 0;
+#X connect 13 1 10 0;
+#X connect 14 0 15 0;
+#X connect 15 0 19 0;
+#X connect 16 0 10 0;
+#X connect 17 0 9 0;
+#X connect 17 0 12 0;
+#X connect 18 0 19 1;
+#X connect 19 0 21 0;
+#X connect 22 0 18 0;
+#X connect 23 0 13 0;
+#X connect 24 1 14 0;
+#X connect 26 0 20 0;
+#X restore 238 465 pd netConnect;
 #X connect 0 0 6 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
@@ -6883,6 +6951,10 @@
 #X connect 79 0 67 0;
 #X connect 79 0 69 0;
 #X connect 79 0 76 0;
+#X connect 79 0 81 0;
+#X connect 80 0 81 1;
+#X connect 81 0 83 0;
+#X connect 82 0 81 2;
 #X restore 114 161 pd PLAY_SCREEN;
 #X obj 612 31 poffonts asimov Asimov.ttf;
 #X obj 67 350 s OVERLAYHEAD;
