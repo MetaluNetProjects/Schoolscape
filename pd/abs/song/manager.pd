@@ -1,4 +1,4 @@
-#N canvas 504 103 455 292 10;
+#N canvas 484 87 661 292 10;
 #X symbolatom 255 73 0 0 0 0 - - -;
 #X obj 222 104 symbol;
 #X obj 226 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -100,6 +100,8 @@
 #X connect 28 0 6 0;
 #X restore 52 152 pd songs-update-all;
 #X obj 53 209 settings/autosave_xml song;
+#X obj 441 54 SongSchoolscape;
+#X obj 381 58 MAINDIR;
 #X connect 0 0 1 1;
 #X connect 1 0 8 0;
 #X connect 2 0 0 0;

@@ -1,4 +1,4 @@
-#N canvas 165 662 733 246 10;
+#N canvas 638 1116 733 246 10;
 #X declare -path decoupeur -path effects;
 #X declare -path absKEP;
 #X declare -path decoupeur;
@@ -15,7 +15,7 @@
 #X obj 171 26 bng 15 250 50 0 empty empty save 17 7 0 10 -258113 -1
 -1;
 #X obj 83 6 loadbang;
-#N canvas 750 575 450 300 DiversGuts 0;
+#N canvas 740 567 450 300 DiversGuts 1;
 #X obj 148 12 apmaster DECSET;
 #N canvas 1200 1172 1003 300 declare 0;
 #X obj 22 6 declare -path decoupeur -path effects;
@@ -30,7 +30,7 @@
 #X obj 23 169 declare -path gammabs;
 #X obj 22 27 declare -path ./AutoPreset;
 #X restore 36 12 pd declare;
-#N canvas 1157 1172 763 719 loadbank 0;
+#N canvas 775 1164 763 719 loadbank 0;
 #X obj 21 17 loadbang;
 #X obj 22 114 s DECSET-SEQ-fragseq1-vol-rcv;
 #X floatatom 22 92 5 0 0 0 - - -;
@@ -191,8 +191,6 @@
 #X obj 258 114 Aspirateur_audio 7;
 #X obj 325 131 Verres_audio 8;
 #X obj 356 152 Mixeur_audio 9;
-#X obj 567 8 SongSchoolscape;
-#X obj 381 63 MAINDIR;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 2 0 0 0;

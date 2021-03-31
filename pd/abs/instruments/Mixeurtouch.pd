@@ -1,4 +1,4 @@
-#N canvas 2795 62 845 797 10;
+#N canvas 1075 2009 845 899 10;
 #X obj 199 571 outlet;
 #X floatatom 200 62 5 0 0 0 - - -;
 #X obj 254 60 unpack f f;
@@ -55,7 +55,7 @@
 #X obj 369 691 != 1;
 #X floatatom 289 757 5 0 0 0 - - -;
 #X obj 415 6 r seqy-\$1 32;
-#X floatatom 480 754 5 0 0 0 - - -;
+#X floatatom 473 701 5 0 0 0 - - -;
 #X obj 337 743 s seqy-\$1 32;
 #X obj 123 742 s seqx-\$1 32;
 #X obj 442 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -142,7 +142,7 @@
 #X obj 677 542 loadbang;
 #X obj 746 590 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 2902 62 450 586 init 1;
+#N canvas 2902 62 450 586 init 0;
 #X obj 222 450 outlet;
 #X obj 159 100 loadbang;
 #X obj 235 267 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -176,10 +176,13 @@
 1;
 #X obj 113 271 r \$1-on;
 #X obj 56 382 s DECSET-MIX-fragseq\$2-on-rcv;
-#X obj 81 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 81 451 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 81 427 r concert-mute-\$2;
 #X obj 33 450 sel 0;
+#X obj 488 750 aptab2 MASTERschoolscape seqx-\$1 seqx-\$1 128 1;
+#X obj 487 774 aptab2 MASTERschoolscape seqy-\$1 seqy-\$1 128 1;
+#X obj 485 796 aptab2 MASTERschoolscape seqon-\$1 seqon-\$1 128 1;
 #X connect 2 0 1 0;
 #X connect 2 0 4 0;
 #X connect 2 0 76 1;

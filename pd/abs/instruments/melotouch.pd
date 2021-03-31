@@ -1,4 +1,4 @@
-#N canvas 1104 2009 816 892 10;
+#N canvas 1094 2009 816 892 10;
 #X obj 140 651 outlet;
 #X obj 253 92 unpack f f;
 #X obj 247 122 maxlib/scale -260 260 0 1;
@@ -106,7 +106,7 @@
 #X obj 292 789 s seqy-\$1 32;
 #X obj 100 786 s seqx-\$1 32;
 #X obj 167 26 r seqx-\$1 32;
-#X obj 442 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 442 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 520 363 r \$1-on;
 #X obj 520 407 del 100;
@@ -117,7 +117,7 @@
 #X obj 486 544 table seqy-\$1 128;
 #X obj 483 522 table seqx-\$1 128;
 #X obj 594 303 tgl 15 0 \$1-note1-on-snd \$1-note1-on-rcv \$1-note1-on
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 521 450 spigot;
 #X msg 98 356 1, f 1;
 #X obj 118 343 del 500;
@@ -149,7 +149,7 @@
 #X obj 596 403 loadbang;
 #X obj 99 409 metro 5;
 #X obj 6 214 tgl 15 0 \$1-note1-on-snd \$1-note1-on-rcv \$1-note1-on
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 597 429 \$2;
 #X obj 247 157 * 6.9;
 #X obj 338 224 sel 0 1 2 3 4 5 6, f 29;
@@ -237,7 +237,7 @@
 #X msg 612 151 0;
 #X obj 658 123 t b;
 #X msg 658 146 1;
-#X obj 650 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 650 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 726 333 change;
 #X obj 702 167 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -250,8 +250,8 @@
 #X obj 721 376 s VolVox-\$5;
 #X obj 204 656 print;
 #X msg 675 421 1000;
-#X obj 445 813 aptab2 SONGschoolscape seqx-\$1 seqx-\$1 128 1;
-#X obj 445 834 aptab2 SONGschoolscape seqy-\$1 seqy-\$1 128 1;
+#X obj 445 813 aptab2 MASTERschoolscape seqx-\$1 seqx-\$1 128 1;
+#X obj 445 834 aptab2 MASTERschoolscape seqy-\$1 seqy-\$1 128 1;
 #X connect 1 0 2 0;
 #X connect 1 0 76 1;
 #X connect 1 1 3 0;
