@@ -1,4 +1,4 @@
-#N canvas 69 969 680 523 10;
+#N canvas 0 2009 680 523 10;
 #X obj 68 10 loadbang;
 #X obj 68 67 s set-instruments;
 #X obj 133 11 r set-reinit-instruments;
@@ -14,7 +14,7 @@
 #X obj 66 340 table set-table-9 441000;
 #X obj 66 409 table set-table-length 30;
 #X obj 66 428 table set-table-pitch 30;
-#N canvas 1200 909 779 459 loadSet 0;
+#N canvas 759 909 779 459 loadSet 1;
 #X obj 122 54 symbol;
 #X msg 75 32 Test;
 #X obj 122 167 t f b;
@@ -37,7 +37,7 @@
 #X floatatom 25 358 5 0 0 0 - - -;
 #X obj 122 378 t b;
 #X obj 232 145 s datadirInstruments;
-#X symbolatom 378 133 0 0 0 0 - - -;
+#X symbolatom 344 56 0 0 0 0 - - -;
 #X obj 164 405 del 500;
 #X obj 135 331 tabwrite set-table-length;
 #X obj 122 235 t f f, f 17;
@@ -45,6 +45,15 @@
 #X obj 400 321 hradio 15 1 0 11 empty empty empty 0 -8 0 10 -262144
 -1 -1 10;
 #X floatatom 399 367 8 0 0 0 - - -;
+#X msg 344 79 set \$1;
+#X msg 466 119 /dur1/Schoolscape/pd/data/set/Antoine;
+#X msg 465 93 /dur1/Schoolscape/pd/data/set/Alain;
+#X obj 422 145 symbol;
+#X obj 611 42 r;
+#X msg 540 167 /dur1/Schoolscape/pd/data/set/Antoine/homescape;
+#X msg 582 195 /dur1/Schoolscape/pd/data/set/Alain/Schoolscape;
+#X obj 296 1 r SetPrepa;
+#X symbolatom 301 25 0 0 0 0 - - -;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -71,11 +80,19 @@
 #X connect 16 0 0 0;
 #X connect 17 0 2 0;
 #X connect 20 0 23 0;
+#X connect 22 0 29 0;
 #X connect 23 0 18 0;
 #X connect 25 0 9 0;
 #X connect 25 1 24 1;
 #X connect 26 0 28 0;
 #X connect 27 0 26 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 0;
+#X connect 32 0 8 0;
+#X connect 34 0 32 0;
+#X connect 35 0 32 0;
+#X connect 36 0 8 0;
+#X connect 36 0 37 0;
 #X restore 308 186 pd loadSet;
 #X symbolatom 338 246 0 0 0 0 - - -;
 #X obj 305 277 symbol;
@@ -150,7 +167,7 @@
 #X connect 25 0 19 0;
 #X connect 27 0 23 0;
 #X restore 407 188 pd create;
-#N canvas 534 116 666 631 setName 1;
+#N canvas 534 116 666 631 setName 0;
 #X obj 120 49 r datadir;
 #X obj 75 71 pack s s;
 #X symbolatom 263 85 0 0 0 0 - - -;
@@ -424,7 +441,7 @@ Verre Sonnerie;
 #X connect 27 0 2 0;
 #X connect 29 0 28 0;
 #X restore 296 132 pd save-asSet;
-#N canvas 597 1036 563 613 saveSet 1;
+#N canvas 597 1036 563 613 saveSet 0;
 #X obj 152 27 symbol;
 #X msg 97 31 Test;
 #X obj 144 317 t f b;

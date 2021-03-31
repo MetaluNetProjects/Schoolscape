@@ -1,4 +1,4 @@
-#N canvas 492 883 519 529 10;
+#N canvas 433 883 519 529 10;
 #X declare -path ./gammabs;
 #X obj 64 16 r \$2;
 #X obj 184 77 loadbang;
@@ -65,7 +65,7 @@
 #X connect 8 0 22 0;
 #X connect 22 0 7 0;
 #X restore 131 371 pd mull~ 0.1 10;
-#N canvas 1280 1069 450 300 last 1;
+#N canvas 454 1069 450 300 last 0;
 #X obj 148 9 inlet;
 #X obj 153 194 outlet;
 #X obj 155 158 f;
@@ -86,7 +86,9 @@
 #X connect 7 2 2 1;
 #X connect 8 0 2 0;
 #X restore 53 39 pd last;
-#X obj 32 146 print;
+#X obj 54 298 print;
+#X floatatom 52 266 5 0 0 0 - - -;
+#X obj 46 203 s \$1-TeleChord;
 #X connect 0 0 32 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -96,6 +98,8 @@
 #X connect 5 0 16 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
+#X connect 7 0 34 0;
+#X connect 7 0 35 0;
 #X connect 8 0 14 0;
 #X connect 8 1 13 0;
 #X connect 9 0 10 0;

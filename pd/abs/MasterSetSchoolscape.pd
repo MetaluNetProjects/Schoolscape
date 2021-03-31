@@ -7,7 +7,7 @@
 ;
 #X obj 24 167 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 1339 1041 683 614 apmaster_autoload 1;
+#N canvas 1237 959 683 614 apmaster_autoload 1;
 #X obj 406 61 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;
@@ -26,8 +26,8 @@
 #X obj 342 229 r schoolscape_SETTINGSDIR;
 #X msg 342 252 symbol \$1ConfigSong;
 #X symbolatom 19 444 0 0 0 0 - - -;
-#X obj 406 39 r MASTERschoolscape-apmaster-snd;
-#X msg 85 223 fred;
+#X obj 406 16 r MASTERschoolscape-apmaster-snd;
+#X msg 85 223 Velo;
 #X obj 84 422 s MASTERschoolscape-apmaster-rcv;
 #X symbolatom 199 123 0 0 0 0 - - -;
 #X obj 200 99 r set-play-name;
@@ -53,7 +53,6 @@
 #X connect 12 0 11 0;
 #X connect 15 0 16 0;
 #X connect 16 0 14 0;
-#X connect 18 0 0 0;
 #X connect 19 0 6 0;
 #X connect 22 0 21 0;
 #X connect 23 0 24 0;

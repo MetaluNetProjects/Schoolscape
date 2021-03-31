@@ -1,4 +1,4 @@
-#N canvas 2131 909 816 892 10;
+#N canvas 1104 2009 816 892 10;
 #X obj 140 651 outlet;
 #X obj 253 92 unpack f f;
 #X obj 247 122 maxlib/scale -260 260 0 1;
@@ -237,7 +237,7 @@
 #X msg 612 151 0;
 #X obj 658 123 t b;
 #X msg 658 146 1;
-#X obj 650 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 650 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 726 333 change;
 #X obj 702 167 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -250,6 +250,8 @@
 #X obj 721 376 s VolVox-\$5;
 #X obj 204 656 print;
 #X msg 675 421 1000;
+#X obj 445 813 aptab2 SONGschoolscape seqx-\$1 seqx-\$1 128 1;
+#X obj 445 834 aptab2 SONGschoolscape seqy-\$1 seqy-\$1 128 1;
 #X connect 1 0 2 0;
 #X connect 1 0 76 1;
 #X connect 1 1 3 0;

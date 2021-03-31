@@ -1,4 +1,4 @@
-#N canvas 328 245 718 810 10;
+#N canvas 433 237 718 810 10;
 #X obj 21 27 inlet head;
 #X obj 352 44 hsl 128 15 0 20 0 0 list-sets-pos list-sets-pos list-pos
 -2 -8 0 10 -262144 -1 -1 0 1;
@@ -101,7 +101,7 @@
 #X obj 515 398 s list-sets-update;
 #X obj 448 281 r set;
 #X obj 172 475 outlet;
-#N canvas 508 592 1411 463 OK/Reload 1;
+#N canvas 433 584 1080 463 OK/Reload 0;
 #X obj 122 28 r ADMIN;
 #X obj 56 21 inlet;
 #X obj 56 157 t a a;
@@ -425,7 +425,7 @@
 #X connect 95 0 57 0;
 #X connect 95 0 82 0;
 #X restore 209 363 pd OK/Reload;
-#N canvas 1 96 759 574 export 0;
+#N canvas 433 88 759 574 export 0;
 #X obj 109 96 symbol;
 #X obj 178 94 r datadir;
 #X obj 109 116 list prepend;
@@ -513,17 +513,24 @@
 #X obj 359 702 s set-play-name;
 #X obj 403 309 r set-selected;
 #X obj 359 725 r set;
-#X obj 359 748 print set;
+#X obj 359 779 print set;
 #X obj 356 588 b;
 #X obj 218 674 r NomDuSetSelectionné;
 #X obj 191 727 s NomDuSetChargé;
 #X obj 193 701 list;
-#X obj 477 609 print set-selected;
+#X obj 541 533 print set-selected;
 #X obj 200 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 173 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 360 638 t s s s;
+#X obj 232 492 s OK-set;
+#X obj 363 521 r OK-setPrepa;
+#X obj 392 562 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 320 562 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 447 620 0 0 0 0 - - -;
 #X connect 0 0 8 0;
 #X connect 2 0 30 0;
 #X connect 4 0 30 0;
@@ -555,6 +562,7 @@
 #X connect 28 0 4 0;
 #X connect 33 0 54 0;
 #X connect 33 0 59 0;
+#X connect 33 0 62 0;
 #X connect 33 1 34 0;
 #X connect 33 2 35 0;
 #X connect 36 0 37 0;
@@ -563,9 +571,9 @@
 #X connect 43 0 44 2;
 #X connect 44 0 45 0;
 #X connect 46 0 47 1;
+#X connect 46 0 66 0;
 #X connect 47 0 61 0;
 #X connect 51 0 6 0;
-#X connect 52 0 53 0;
 #X connect 54 0 47 0;
 #X connect 54 0 57 0;
 #X connect 55 0 57 1;
@@ -574,3 +582,5 @@
 #X connect 61 0 50 0;
 #X connect 61 1 48 0;
 #X connect 61 2 49 0;
+#X connect 63 0 64 0;
+#X connect 65 0 54 0;

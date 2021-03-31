@@ -1,8 +1,8 @@
-#N struct 8479-symarray float x array symbols 8479-sym;
-#N struct 8479-sym symbol name float on;
-#N struct 8490-symarray float x array symbols 8490-sym;
-#N struct 8490-sym symbol name float on;
-#N canvas 623 244 577 542 10;
+#N struct 2368-symarray float x array symbols 2368-sym;
+#N struct 2368-sym symbol name float on;
+#N struct 2379-symarray float x array symbols 2379-sym;
+#N struct 2379-sym symbol name float on;
+#N canvas 455 954 525 542 10;
 #X declare -path ../;
 #X declare -path ../instruments/rj;
 #X obj 63 27 inlet;
@@ -137,10 +137,10 @@
 #X connect 37 0 35 1;
 #X restore 185 439 pd fx;
 #X obj 148 503 v;
-#X obj 423 289 poftranslate 0 8;
-#X obj 455 267 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 327 274 poftranslate 0 8;
+#X obj 359 252 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 328 256;
-#X obj 517 266 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 421 251 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 20 256;
 #N canvas 537 240 663 465 fader 0;
 #X obj 46 21 inlet;
@@ -208,8 +208,7 @@
 #X connect 23 0 12 2;
 #X connect 24 0 13 2;
 #X connect 25 0 14 2;
-#X restore 493 519 pd fader;
-#X obj 7 113 topBar Balance;
+#X restore 399 485 pd fader;
 #X obj 82 139 pofimage ../img/ConsoleVide.png 800 600;
 #X obj 82 185 pofimage balance/PopUpBalancesVide.png 800 600;
 #X obj 82 161 poftranslate 0 0;
@@ -225,31 +224,32 @@
 #X obj 250 480 cnv 15 100 40 empty empty empty 20 12 0 14 -4032 -66577
 0;
 #X obj 257 488 domoseq/0main;
+#X obj 7 113 topBar Balance;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
-#X connect 1 0 27 0;
-#X connect 1 1 28 0;
+#X connect 1 0 39 0;
+#X connect 1 1 27 0;
 #X connect 1 2 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
-#X connect 5 0 29 1;
-#X connect 6 0 29 2;
-#X connect 7 0 30 2;
-#X connect 9 1 36 0;
+#X connect 5 0 28 1;
+#X connect 6 0 28 2;
+#X connect 7 0 29 2;
+#X connect 9 1 35 0;
 #X connect 9 2 23 0;
 #X connect 13 0 16 0;
 #X connect 14 0 15 0;
 #X connect 16 0 14 0;
 #X connect 17 0 18 0;
-#X connect 19 0 36 1;
-#X connect 20 0 36 2;
+#X connect 19 0 35 1;
+#X connect 20 0 35 2;
 #X connect 24 0 23 1;
 #X connect 25 0 23 2;
-#X connect 28 0 30 0;
-#X connect 30 0 29 0;
-#X connect 31 0 35 1;
-#X connect 32 0 35 2;
+#X connect 27 0 29 0;
+#X connect 29 0 28 0;
+#X connect 30 0 34 1;
+#X connect 31 0 34 2;
+#X connect 32 0 30 0;
 #X connect 33 0 31 0;
-#X connect 34 0 32 0;
-#X connect 35 0 39 0;
-#X connect 36 0 35 0;
+#X connect 34 0 38 0;
+#X connect 35 0 34 0;
