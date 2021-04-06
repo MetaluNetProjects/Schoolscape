@@ -1,4 +1,4 @@
-#N canvas 433 237 718 810 10;
+#N canvas 458 229 718 810 10;
 #X obj 21 27 inlet head;
 #X obj 352 44 hsl 128 15 0 20 0 0 list-sets-pos list-sets-pos list-pos
 -2 -8 0 10 -262144 -1 -1 0 1;
@@ -516,7 +516,7 @@
 #X obj 359 779 print set;
 #X obj 356 588 b;
 #X obj 218 674 r NomDuSetSelectionné;
-#X obj 191 727 s NomDuSetChargé;
+#X obj 212 765 s NomDuSetChargé;
 #X obj 193 701 list;
 #X obj 541 533 print set-selected;
 #X obj 200 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -531,6 +531,11 @@
 #X obj 320 562 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X symbolatom 447 620 0 0 0 0 - - -;
+#X obj 126 603 r PrepaNomDuSetChargé;
+#X obj 119 647 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 103 756 10 0 0 0 - - -;
+#X symbolatom 264 719 10 0 0 0 - - -;
 #X connect 0 0 8 0;
 #X connect 2 0 30 0;
 #X connect 4 0 30 0;
@@ -577,10 +582,13 @@
 #X connect 54 0 47 0;
 #X connect 54 0 57 0;
 #X connect 55 0 57 1;
+#X connect 55 0 70 0;
 #X connect 57 0 56 0;
+#X connect 57 0 69 0;
 #X connect 60 0 32 0;
 #X connect 61 0 50 0;
 #X connect 61 1 48 0;
 #X connect 61 2 49 0;
 #X connect 63 0 64 0;
 #X connect 65 0 54 0;
+#X connect 67 0 68 0;

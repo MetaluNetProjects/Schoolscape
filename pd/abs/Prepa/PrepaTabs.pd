@@ -1,4 +1,4 @@
-#N canvas 454 966 1080 816 12;
+#N canvas 458 958 1080 346 12;
 #X obj 23 49 table \$1-datadirInstruments 200;
 #X obj 15 19 aptab2 PREPAschoolscape \$1-datadirInstruments \$1-datadirInstruments
 200 1, f 75;
@@ -82,7 +82,7 @@
 #X connect 27 0 29 0;
 #X connect 29 0 28 0;
 #X restore 334 80 pd matos;
-#N canvas 458 968 722 882 RecallPrepa 0;
+#N canvas 458 944 722 793 RecallPrepa 1;
 #X obj 97 38 inlet;
 #X obj 166 148 f \$1;
 #X obj 165 176 s NbRecallPrepa;
@@ -107,10 +107,10 @@
 #X msg 65 586 loadfile \$1;
 #X obj 157 563 symbol;
 #X symbolatom 216 502 0 0 0 0 - - -;
-#X obj 31 676 t b;
-#X obj 36 714 del 50;
-#X msg 36 747 const 0;
-#X obj 38 777 s \$1-datadirInstruments;
+#X obj 26 637 t b;
+#X obj 278 671 del 50;
+#X msg 278 704 const 0;
+#X obj 280 734 s \$1-datadirInstruments;
 #X obj 17 159 s All-LoadMASTER;
 #X obj 16 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -118,6 +118,10 @@
 #X obj 11 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 12 100 s All-LoadSONG;
+#X obj 26 687 s PrepaNomDuSetChargé;
+#X obj 26 661 del 10;
+#X obj 105 662 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 29 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -135,12 +139,15 @@
 #X connect 17 0 18 0;
 #X connect 20 0 19 0;
 #X connect 20 0 23 0;
+#X connect 23 0 33 0;
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
 #X connect 28 0 27 0;
 #X connect 29 2 3 0;
 #X connect 29 3 1 0;
 #X connect 30 0 31 0;
+#X connect 33 0 32 0;
+#X connect 33 0 34 0;
 #X restore 31 129 pd RecallPrepa;
 #X obj 31 94 r \$1-PrepaRecall;
 #N canvas 544 1010 754 777 StorePrepa 0;
@@ -192,7 +199,7 @@
 #X obj 267 50 table \$1-set-selected 200;
 #X obj 331 124 aptab2 PREPAschoolscape \$1-set-selected \$1-set-selected
 200 1, f 62;
-#N canvas 0 2009 1213 534 datadirInstrument+set-selected 0;
+#N canvas 0 2009 1539 534 datadirInstrument+set-selected 1;
 #X obj 257 271 r datadirInstruments;
 #X symbolatom 257 296 0 0 0 0 - - -;
 #X obj 86 475 s \$1-datadirInstruments;
@@ -358,38 +365,38 @@
 #X connect 23 1 10 0;
 #X connect 25 0 23 0;
 #X connect 25 1 17 0;
-#X restore 472 246 pd tab2list;
+#X restore 689 244 pd tab2list;
 #X obj 197 429 print;
-#X symbolatom 409 433 0 0 0 0 - - -;
+#X symbolatom 626 431 0 0 0 0 - - -;
 #X obj 214 193 r NomDuSetSelectionné;
 #X symbolatom 225 219 10 0 0 0 - - -;
 #X obj 122 226 symbol;
 #X msg 122 276 symbol \$1/\$2;
 #X obj 122 251 pack s s;
 #X symbolatom 122 361 0 0 0 0 - - -;
-#X obj 686 205 s MASTERschoolscape-apmaster-rcv;
-#X obj 472 47 r NbRecallPrepa;
-#X obj 472 74 == \$1;
-#X obj 472 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 962 188 s MASTERschoolscape-apmaster-rcv;
+#X obj 689 45 r NbRecallPrepa;
+#X obj 689 72 == \$1;
+#X obj 689 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 472 149 sel 1;
-#X obj 472 179 t b b;
+#X obj 689 147 sel 1;
+#X obj 689 177 t b b;
 #X msg 168 122 const 0;
 #X obj 168 145 s \$1-datadirInstruments;
 #X obj 86 47 r OK-set;
 #X obj 175 226 symbol;
 #X obj 122 94 t b b b;
-#X obj 472 121 pipe 20;
-#X obj 948 224 s \$1-set-selected;
-#X msg 946 186 const 0;
-#X msg 686 72 /dur1/Schoolscape/pd/data/set/Antoine/homescape;
-#X msg 686 181 loadfile \$1;
-#X obj 686 144 symbol;
-#X msg 728 100 /dur1/Schoolscape/pd/data/set/Alain/Schoolscape;
+#X obj 689 119 pipe 20;
+#X obj 1224 207 s \$1-set-selected;
+#X msg 1222 169 const 0;
+#X msg 962 55 /dur1/Schoolscape/pd/data/set/Antoine/homescape;
+#X msg 962 164 loadfile \$1;
+#X obj 962 127 symbol;
+#X msg 1004 83 /dur1/Schoolscape/pd/data/set/Alain/Schoolscape;
 #X obj 86 409 symbol;
 #X symbolatom 46 498 0 0 0 0 - - -;
-#X obj 472 280 s SetPrepa;
-#X msg 770 129 /dur1/Schoolscape/pd/data/set/2020-December-15-00h-59mn-12s/Velo
+#X obj 689 278 s SetPrepa;
+#X msg 1046 112 /dur1/Schoolscape/pd/data/set/2020-December-15-00h-59mn-12s/Velo
 ;
 #N canvas 0 2009 450 300 list2tab 0;
 #X obj 88 11 inlet;
@@ -488,7 +495,7 @@
 #X connect 6 0 4 0;
 #X restore 137 302 pd list2tab;
 #X obj 138 331 s \$1-set-selected;
-#N canvas 981 834 541 697 tab2list 0;
+#N canvas 971 826 541 697 tab2list 0;
 #X obj 71 439 list store;
 #X msg 71 411 append \$1;
 #X msg 178 451 bang;
@@ -557,17 +564,17 @@
 #X connect 25 0 26 0;
 #X connect 27 0 22 0;
 #X connect 27 1 23 0;
-#X restore 504 210 pd tab2list;
-#X obj 576 392 s MASTERschoolscape-apmaster-rcv;
-#X msg 576 368 loadfile \$1;
-#X msg 640 260 set \$1;
-#X msg 648 37 /dur1/Schoolscape/pd/data/set/2021-February-14-18h-21mn-47s/Charlotte
+#X restore 721 208 pd tab2list;
+#X obj 793 390 s MASTERschoolscape-apmaster-rcv;
+#X msg 793 366 loadfile \$1;
+#X msg 857 258 set \$1;
+#X msg 924 20 /dur1/Schoolscape/pd/data/set/2021-February-14-18h-21mn-47s/Charlotte
 , f 71;
-#X obj 576 241 t b a;
-#X msg 576 303 /dur1/Schoolscape/pd/data/set/Antoine/homescape, f
+#X obj 793 239 t b a;
+#X msg 793 301 /dur1/Schoolscape/pd/data/set/Antoine/homescape, f
 49;
-#X obj 576 268 del 10;
-#X obj 576 340 symbol;
+#X obj 793 266 del 10;
+#X obj 793 338 symbol;
 #X connect 0 0 1 0;
 #X connect 0 0 9 1;
 #X connect 0 0 31 1;

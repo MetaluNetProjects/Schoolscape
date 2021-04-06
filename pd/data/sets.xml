@@ -1,4 +1,5 @@
 <root>
+	<set file="SetBuffer" name="SetBufferName"/>
 	<set file="BabetteFranceStephaneBarbaraBenoit" name="PREAC++"/>
 	<set file="Antoine" name="homescape"/>
 	<set file="Alain" name="Schoolscape"/>
