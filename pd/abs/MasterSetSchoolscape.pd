@@ -7,7 +7,7 @@
 ;
 #X obj 24 167 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 1237 959 683 614 apmaster_autoload 1;
+#N canvas 1237 959 683 614 apmaster_autoload 0;
 #X obj 406 61 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;
@@ -74,17 +74,17 @@
 #X connect 4 0 0 0;
 #X restore 154 18 pd apmaster_symbol;
 #X symbolatom 3 42 0 0 0 0 - - NameSongSymbol;
-#X msg 67 371 savein;
+#X msg 56 471 savein;
 #X obj 38 104 bng 15 250 50 0 empty empty reload 17 7 1 10 -4034 -1
 -1;
-#X msg 14 371 loadin;
+#X msg 3 471 loadin;
 #X symbolatom 163 228 10 0 0 0 - - -;
-#X obj 147 307 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -4034 -1
+#X obj 136 407 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -4034 -1
 -1 0;
-#X obj 269 307 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -258113
+#X obj 258 407 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -258113
 -1 -1 0;
-#X msg 147 325 _all_ load \$1;
-#X msg 269 326 _all_ store \$1;
+#X msg 136 425 _all_ load \$1;
+#X msg 258 426 _all_ store \$1;
 #X obj 108 256 t b b;
 #X msg 133 278 0, f 1;
 #X obj 44 255 t b b;
@@ -95,8 +95,8 @@
 -1;
 #X obj 106 48 r All-SaveMASTER;
 #X obj 7 208 apmaster MASTERschoolscape;
-#X obj 67 394 s MASTERschoolscape-apmaster-rcv;
-#X obj 172 359 s MASTERschoolscape-pattern-snd;
+#X obj 56 494 s MASTERschoolscape-apmaster-rcv;
+#X obj 161 459 s MASTERschoolscape-pattern-snd;
 #X obj 229 57 r All-LoadMASTER;
 #N canvas 384 310 721 490 getMASTER 0;
 #X obj 68 20 r SYNCER/r;
@@ -158,14 +158,14 @@
 #X connect 26 0 19 0;
 #X connect 27 0 13 0;
 #X restore 132 173 pd getMASTER;
-#X symbolatom 294 442 0 0 0 0 - - -;
-#X symbolatom 258 534 0 0 0 0 - - -;
-#X obj 258 509 r setPropsFilename;
+#X symbolatom 422 557 0 0 0 0 - - -;
+#X symbolatom 530 568 0 0 0 0 - - -;
+#X obj 530 543 r setPropsFilename;
 #X symbolatom 417 496 10 0 0 0 - - -;
 #X obj 421 474 r list-sets-number;
-#X obj 288 419 r set-play-name;
-#X symbolatom 174 483 10 0 0 0 - - -;
-#X obj 176 457 r mainSeq-load;
+#X obj 416 534 r set-play-name;
+#X symbolatom 540 513 10 0 0 0 - - -;
+#X obj 542 487 r mainSeq-load;
 #X obj 597 286 r set;
 #X symbolatom 626 309 0 0 0 0 - - -;
 #X obj 445 279 r NomDuSetSelectionné;
@@ -191,6 +191,10 @@
 1;
 #X obj 223 107 spigot 1;
 #X obj 366 103 pipe 100;
+#X obj 268 185 r NbRecallPrepa;
+#X obj 240 292 r All-SavePatternMASTER;
+#X obj 239 330 t b f;
+#X floatatom 284 352 5 0 0 0 - - -;
 #X connect 1 0 15 0;
 #X connect 2 0 22 0;
 #X connect 3 0 22 1;
@@ -240,4 +244,9 @@
 #X connect 54 0 57 0;
 #X connect 56 0 8 0;
 #X connect 57 0 56 1;
+#X connect 58 0 11 0;
+#X connect 59 0 60 0;
+#X connect 60 0 7 0;
+#X connect 60 1 12 0;
+#X connect 60 1 61 0;
 #X coords 0 -1 1 1 100 180 1 0 0;

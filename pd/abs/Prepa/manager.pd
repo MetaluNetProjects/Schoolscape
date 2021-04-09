@@ -12,7 +12,7 @@
 #X obj 24 17 PrepaTabs 1;
 #X obj 25 41 PrepaTabs 2;
 #X obj 26 66 PrepaTabs 3;
-#N canvas 458 1580 929 296 Prepa-0 1;
+#N canvas 271 1580 929 296 Prepa-0 1;
 #N canvas 0 2009 513 661 matos 0;
 #X obj 124 514 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -215,7 +215,7 @@
 -1 -1;
 #X obj 669 37 r NomDuSetSelectionné;
 #X symbolatom 681 80 0 0 0 0 - - -;
-#N canvas 365 2313 1219 534 datadirInstrument+set-selected 0;
+#N canvas 0 1386 1200 534 datadirInstrument+set-selected 0;
 #X obj 257 271 r datadirInstruments;
 #X symbolatom 257 296 0 0 0 0 - - -;
 #N canvas 0 2009 450 300 list2tab 0;
@@ -586,7 +586,7 @@
 #X msg 924 20 /dur1/Schoolscape/pd/data/set/2021-February-14-18h-21mn-47s/Charlotte
 , f 71;
 #X obj 793 239 t b a;
-#X msg 793 301 /dur1/Schoolscape/pd/data/set/SetBuffer/SetBufferName
+#X msg 793 301 /media/T1/Schoolscape/pd/data/set/Alain/SetBufferName
 , f 49;
 #X obj 793 266 del 10;
 #X obj 793 338 symbol;
@@ -594,7 +594,7 @@
 #X obj 86 475 s 0-datadirInstruments;
 #X obj 168 145 s 0-datadirInstruments;
 #X obj 689 72 == 0;
-#X msg 225 204 SetBufferName;
+#X msg 591 241 SetBufferName;
 #X obj 266 170 loadbang;
 #X obj 202 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -603,6 +603,8 @@
 -1 -1;
 #X obj 30 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 262 196 symbol SetBufferName;
+#X symbolatom 264 230 0 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 0 0 8 1;
 #X connect 0 0 28 1;
@@ -647,11 +649,12 @@
 #X connect 40 0 39 0;
 #X connect 41 0 35 0;
 #X connect 45 0 14 0;
-#X connect 46 0 19 1;
-#X connect 47 0 46 0;
-#X connect 48 0 46 0;
+#X connect 47 0 52 0;
+#X connect 48 0 52 0;
 #X connect 51 0 20 0;
 #X connect 51 0 28 0;
+#X connect 52 0 19 1;
+#X connect 52 0 53 0;
 #X restore 407 83 pd datadirInstrument+set-selected;
 #X obj 15 19 aptab2 PREPAschoolscape 0-datadirInstruments 0-datadirInstruments
 200 1, f 75;
@@ -684,7 +687,6 @@
 #X connect 17 0 1 0;
 #X connect 18 0 20 0;
 #X connect 19 0 18 0;
-#X connect 20 0 2 0;
 #X connect 20 0 21 0;
 #X restore 24 117 pd Prepa-0;
 #X connect 1 0 2 1;

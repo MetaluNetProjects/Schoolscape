@@ -1,8 +1,8 @@
-#N canvas 290 114 921 761 10;
+#N canvas 279 114 921 761 10;
 #X obj 37 6 inlet;
 #X obj 38 330 outlet;
 #X msg 124 406 draw \$1;
-#X obj 124 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 124 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 197 195 5 0 0 0 - - -;
 #X obj 38 309 poftranslate 72;
@@ -18,11 +18,11 @@
 #X obj 310 555 / -290;
 #X obj 352 531 f;
 #X obj 352 508 b;
-#X obj 760 27 loadbang;
-#X floatatom 801 47 5 0 0 0 - - -;
-#X msg 760 49 0.665;
+#X obj 769 23 loadbang;
+#X floatatom 826 61 5 0 0 0 - - -;
+#X msg 785 63 0.665;
 #X obj 129 115 r concert-fader-\$1;
-#X obj 781 79 s concert-fader-\$1;
+#X obj 806 93 s concert-fader-\$1;
 #X obj 380 505 r concert-fader-\$1;
 #X obj 310 661 s concert-fader-\$1;
 #X obj 463 73 r concert-fader-\$1;
@@ -42,7 +42,7 @@
 #X obj 190 643 r concert-mute-\$1;
 #X obj 175 665 f;
 #X obj 175 686 == 0;
-#X obj 721 103 s concert-mute-\$1;
+#X obj 609 52 s concert-mute-\$1;
 #X obj 269 197 poftranslate 0 -145;
 #X obj 269 242 pofimage FenteSlider.png 0 317;
 #X obj 288 351 poftranslate;
@@ -70,8 +70,8 @@
 #X obj 315 267 pofimage BarGraph1px.png 4 313;
 #X obj 104 429 poftouch 55 310;
 #X obj 310 607 spigot 1;
-#X msg 721 82 1;
-#X obj 227 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X msg 746 96 1;
+#X obj 227 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 159 7 r concert-instrument-show;
 #X obj 159 28 sel -1 \$1;
@@ -99,9 +99,9 @@
 #X obj 630 313 pofcolor 1 1 1 1;
 #X obj 738 288 max 0.5;
 #X obj 694 255 f;
-#X obj 776 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 776 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 689 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 689 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 751 206 r TempoMess-isplaying-\$1;
 #X obj 735 386 route up down;
@@ -123,9 +123,9 @@
 #X msg 755 647 0;
 #X msg 680 673 1;
 #X obj 680 503 t b b b b;
-#X obj 647 101 s \$1-OnOff;
-#X obj 647 56 loadbang;
-#X msg 647 77 0;
+#X obj 497 641 s \$1-OnOff;
+#X obj 497 596 loadbang;
+#X msg 497 617 0;
 #X obj 766 528 del 300;
 #X obj 632 358 pofimage instruments/Chronometre.png 45 45;
 #X obj 631 382 poftouch 45 45 1;
@@ -139,6 +139,13 @@
 #X obj 812 301 sel 0 1;
 #X obj 836 327 sel 0 1;
 #X obj 64 93 t a a a;
+#X obj 609 20 inlet;
+#X obj 609 124 outlet;
+#X floatatom 231 670 5 0 0 0 - - -;
+#X obj 487 681 r \$1-OnOff;
+#X floatatom 507 720 5 0 0 0 - - -;
+#X obj 613 89 r concert-mute-\$1;
+#X obj 740 120 s concert-mute-\$1;
 #X connect 0 0 61 0;
 #X connect 2 0 67 0;
 #X connect 3 0 2 0;
@@ -179,6 +186,7 @@
 #X connect 36 0 40 0;
 #X connect 37 0 35 0;
 #X connect 39 0 40 1;
+#X connect 39 0 134 0;
 #X connect 40 0 41 0;
 #X connect 41 0 38 0;
 #X connect 43 0 46 0;
@@ -215,7 +223,7 @@
 #X connect 65 0 66 2;
 #X connect 67 1 64 0;
 #X connect 68 0 14 0;
-#X connect 69 0 42 0;
+#X connect 69 0 138 0;
 #X connect 71 0 72 0;
 #X connect 72 0 73 0;
 #X connect 72 1 73 0;
@@ -285,3 +293,6 @@
 #X connect 131 0 122 0;
 #X connect 131 1 81 0;
 #X connect 131 2 43 0;
+#X connect 132 0 42 0;
+#X connect 135 0 136 0;
+#X connect 137 0 133 0;
