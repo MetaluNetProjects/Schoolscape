@@ -1,8 +1,8 @@
-#N struct 2194-symarray float x array symbols 2194-sym;
-#N struct 2194-sym symbol name float on;
-#N struct 2205-symarray float x array symbols 2205-sym;
-#N struct 2205-sym symbol name float on;
-#N canvas 433 376 811 452 10;
+#N struct 4309-symarray float x array symbols 4309-sym;
+#N struct 4309-sym symbol name float on;
+#N struct 4320-symarray float x array symbols 4320-sym;
+#N struct 4320-sym symbol name float on;
+#N canvas 389 376 811 452 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
 #X obj 95 264 credit;
@@ -570,7 +570,7 @@
 #X connect 48 0 45 0;
 #X connect 49 0 11 0;
 #X restore 548 26 pd olds;
-#N canvas 433 967 834 354 domo-link 1;
+#N canvas 433 967 834 354 domo-link 0;
 #X obj 51 45 loadbang;
 #X obj 23 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -732,7 +732,7 @@
 #X msg 361 375 1;
 #X obj 381 296 loadbang;
 #X obj 381 317 t b b b;
-#N canvas 458 124 883 931 EDIT_SCREEN 0;
+#N canvas 317 124 883 931 EDIT_SCREEN 0;
 #X obj 112 -1 r SCREEN;
 #X msg 112 101 1;
 #X msg 157 102 0;
@@ -4653,7 +4653,7 @@
 #X obj 257 125 s SCREEN;
 #X msg 257 98 edit;
 #X msg 293 97 play;
-#N canvas 737 475 744 580 PLAY_SCREEN 0;
+#N canvas 456 475 744 580 PLAY_SCREEN 1;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
@@ -4990,7 +4990,7 @@
 #X obj 496 152 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 43 256;
 #X obj 390 146 t a a;
-#N canvas 433 351 487 412 InitTunes 1;
+#N canvas 433 351 487 412 InitTunes 0;
 #X obj 291 239 s mainSeq-load;
 #X msg 118 204 0;
 #X obj 52 292 s mainSeq-play;
@@ -5751,7 +5751,7 @@
 -262144 -1 -1 -493 256;
 #X obj 542 35 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 45.57 256;
-#N canvas 458 184 987 895 set_load/save 0;
+#N canvas 213 184 987 895 set_load/save 1;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -5980,7 +5980,7 @@
 #X obj 704 583 isInside 230 50;
 #X msg 703 604 0;
 #X obj 177 604 pofcolor 1 1 1 0.1;
-#X obj 409 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 409 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 682 92 r set-saving;
 #X obj 682 113 sel 1;
@@ -6308,6 +6308,9 @@
 #X obj 124 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 162 185 r InterfaceSetOpened;
+#X obj 315 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 423 182 r InterfaceCreateNewOpened;
 #X connect 0 0 126 0;
 #X connect 2 0 13 0;
 #X connect 3 0 31 0;
@@ -6461,6 +6464,8 @@
 #X connect 140 0 139 0;
 #X connect 142 0 4 0;
 #X connect 144 0 32 0;
+#X connect 145 0 32 0;
+#X connect 146 0 36 0;
 #X restore 448 80 pd set_load/save;
 #X obj 300 112 updating/updating;
 #X obj 300 89 poftranslate 0 8;

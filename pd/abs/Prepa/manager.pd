@@ -12,7 +12,7 @@
 #X obj 24 17 PrepaTabs 1;
 #X obj 25 41 PrepaTabs 2;
 #X obj 26 66 PrepaTabs 3;
-#N canvas 433 1580 929 296 Prepa-0 1;
+#N canvas 271 1580 929 296 Prepa-0 1;
 #N canvas 0 2009 513 661 matos 0;
 #X obj 124 514 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -93,7 +93,7 @@
 #X connect 27 0 29 0;
 #X connect 29 0 28 0;
 #X restore 557 23 pd matos;
-#N canvas 433 917 722 793 RecallPrepa 0;
+#N canvas 432 230 722 793 RecallPrepa 0;
 #X obj 97 38 inlet;
 #X obj 166 148 f \$1;
 #X obj 165 176 s NbRecallPrepa;
@@ -161,7 +161,7 @@
 #X connect 34 0 13 0;
 #X connect 35 0 11 0;
 #X restore 32 239 pd RecallPrepa;
-#N canvas 433 1010 754 777 StorePrepa 0;
+#N canvas 433 1010 754 777 StorePrepa 1;
 #X obj 97 38 inlet;
 #X obj 116 170 s All-SaveSONG;
 #X obj 68 708 s All-SavePREPA;
@@ -184,13 +184,17 @@
 #X obj 129 273 symbol Prepa0;
 #X obj 34 344 s set-save;
 #X obj 70 205 r NbRecallPrepa;
-#X obj 70 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 70 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 70 232 == 0;
 #X obj 37 282 spigot;
+#X obj 292 156 s All-SavePatternMASTER;
+#X msg 291 129 0;
+#X obj 119 104 del 200;
 #X connect 0 0 4 0;
 #X connect 4 0 23 0;
-#X connect 4 2 3 0;
+#X connect 4 1 26 0;
+#X connect 4 2 25 0;
 #X connect 6 0 7 0;
 #X connect 6 0 8 0;
 #X connect 8 0 9 0;
@@ -208,6 +212,8 @@
 #X connect 20 0 22 0;
 #X connect 21 0 23 1;
 #X connect 22 0 21 0;
+#X connect 25 0 24 0;
+#X connect 26 0 3 0;
 #X restore 191 210 pd StorePrepa;
 #X obj 0 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -215,7 +221,7 @@
 -1 -1;
 #X obj 669 37 r NomDuSetSelectionné;
 #X symbolatom 681 80 0 0 0 0 - - -;
-#N canvas 433 772 1080 746 datadirInstrument+set-selected 1;
+#N canvas 433 772 1080 746 datadirInstrument+set-selected 0;
 #X obj 257 271 r datadirInstruments;
 #X symbolatom 258 298 0 0 0 0 - - -;
 #N canvas 0 2009 450 300 list2tab 0;
@@ -683,17 +689,17 @@
 #X obj 90 169 del 5000;
 #X obj 295 78 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 289 127 del 5000;
 #X obj 245 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 150 205 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 296 98 metro 5000;
 #X obj 305 154 r NbRecallPrepa;
 #X obj 305 181 == 0;
-#X obj 305 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 305 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 236 168 spigot 1;
+#X obj 296 98 metro 10000;
+#X obj 290 127 del 10000;
 #X connect 5 0 6 0;
 #X connect 11 0 3 0;
 #X connect 11 0 1 0;
@@ -703,16 +709,16 @@
 #X connect 15 0 1 0;
 #X connect 16 0 2 0;
 #X connect 17 0 1 0;
-#X connect 17 0 21 0;
-#X connect 18 0 22 0;
-#X connect 19 0 26 0;
-#X connect 21 0 7 0;
-#X connect 22 0 19 0;
-#X connect 23 0 24 0;
-#X connect 24 0 25 0;
-#X connect 24 0 26 1;
-#X connect 26 0 2 0;
-#X connect 26 0 20 0;
+#X connect 17 0 20 0;
+#X connect 18 0 25 0;
+#X connect 20 0 7 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 22 0 24 1;
+#X connect 24 0 2 0;
+#X connect 24 0 19 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
 #X restore 24 117 pd Prepa-0;
 #X connect 1 0 2 1;
 #X connect 2 0 7 0;

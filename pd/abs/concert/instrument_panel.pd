@@ -1,4 +1,4 @@
-#N canvas 458 1034 879 453 10;
+#N canvas 321 1034 879 453 10;
 #X obj 59 14 inlet;
 #X floatatom 686 387 5 0 0 0 - - -;
 #X floatatom 735 386 5 0 0 0 - - -;
@@ -7,17 +7,17 @@
 #X obj 643 410 cadreVec 735 444;
 #X floatatom 325 69 5 0 0 0 - - -;
 #X floatatom 369 65 5 0 0 0 - - -;
-#N canvas 104 702 822 864 PLAY/REC 0;
+#N canvas 104 702 822 864 PLAY/REC 1;
 #X obj 48 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 199 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 74 184 symbol;
+#X obj 71 204 symbol;
 #X obj 109 276 r rec-recording;
 #X obj 109 299 spigot;
 #X obj 47 28 r set-rec;
 #X obj 199 95 r set-play;
-#X obj 74 207 s rec-rectab;
+#X obj 71 227 s rec-rectab;
 #X obj 200 245 s rec-playtab;
 #X msg 132 66 symbol set-table-\$1;
 #X obj 109 350 timer;
@@ -284,7 +284,7 @@
 #X obj 362 64 sel 1;
 #X obj 317 18 r set-editing;
 #X obj 317 40 sel 0;
-#X obj 342 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 342 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 462 441 sel 0 1 2 3 4 5 6 7 8 9;
 #X obj 487 578 symbol;
@@ -365,6 +365,9 @@
 #X msg 616 543 RecSonnerie;
 #X obj 648 23 r SwitchRecording;
 #X floatatom 639 54 5 0 0 0 - - -;
+#X obj 140 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 59 176 del 250;
 #X connect 0 0 62 0;
 #X connect 0 0 67 0;
 #X connect 0 0 98 0;
@@ -424,7 +427,7 @@
 #X connect 50 0 54 0;
 #X connect 51 0 57 0;
 #X connect 52 0 57 0;
-#X connect 53 0 2 0;
+#X connect 53 0 115 0;
 #X connect 53 1 51 0;
 #X connect 53 1 105 0;
 #X connect 54 0 52 0;
@@ -454,6 +457,7 @@
 #X connect 66 0 65 0;
 #X connect 67 0 65 0;
 #X connect 68 0 53 0;
+#X connect 68 0 114 0;
 #X connect 70 0 92 0;
 #X connect 71 0 22 0;
 #X connect 72 0 21 0;
@@ -495,6 +499,7 @@
 #X connect 110 0 59 0;
 #X connect 111 0 59 0;
 #X connect 112 0 113 0;
+#X connect 115 0 2 0;
 #X restore 374 164 pd PLAY/REC;
 #N canvas 180 89 546 768 fiddle 0;
 #X obj 149 20 inlet;
@@ -609,7 +614,7 @@
 #X floatatom 81 86 5 0 0 0 - - -;
 #X obj 59 111 poftranslate 35 -230;
 #X obj 180 206 poftranslate -128 -412;
-#N canvas 458 1054 736 666 param-console 1;
+#N canvas 458 1054 736 666 param-console 0;
 #X obj 32 10 inlet;
 #X floatatom 119 523 5 0 0 0 - - -;
 #X floatatom 63 75 5 0 0 0 - - -;

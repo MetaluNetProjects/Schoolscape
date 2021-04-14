@@ -1,4 +1,4 @@
-#N canvas 482 1371 618 849 10;
+#N canvas 482 1071 618 849 10;
 #X obj 123 43 r \$1-say;
 #X obj 168 753 Out~;
 #X obj 327 607 line~;
@@ -116,7 +116,7 @@
 #X obj 473 493 list append;
 #X obj 440 305 t a a;
 #X obj 177 585 readsf~ 1 100000;
-#X obj 184 679 *~ 0.5;
+#X obj 184 679 *~ 0.2;
 #X connect 0 0 6 0;
 #X connect 2 0 3 1;
 #X connect 3 0 59 0;
