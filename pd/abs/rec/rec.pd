@@ -1,4 +1,4 @@
-#N canvas 433 1102 737 748 10;
+#N canvas 451 1000 737 793 10;
 #X obj 144 200 s rec-level;
 #X obj 493 235 table \$0-t 1e+06;
 #X obj 368 482 tabwrite~ \$0-t;
@@ -257,18 +257,20 @@
 #X obj 302 574 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 302 548 == 0;
-#X obj 280 691 s set-save;
+#X obj 332 683 s set-save;
 #X obj 301 485 t b;
-#X obj 208 619 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 186 657 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 247 545 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 284 666 del 1000;
-#X obj 259 625 t b b;
-#X msg 134 671 1;
-#X obj 134 692 s RegularSetNotSaved;
+#X obj 332 661 del 1000;
+#X obj 293 640 t b b, f 7;
+#X msg 293 685 1;
+#X obj 293 706 s RegularSetNotSaved;
 #X obj 112 119 env~;
-#X obj 269 598 spigot 1;
+#X obj 269 598 ddemux;
+#X obj 269 728 s SoundRecorded;
+#X msg 269 622 1, f 1;
 #X connect 3 0 2 0;
 #X connect 4 0 66 0;
 #X connect 4 1 55 0;
@@ -392,4 +394,6 @@
 #X connect 101 0 102 0;
 #X connect 103 0 0 0;
 #X connect 104 0 97 0;
-#X connect 104 0 100 0;
+#X connect 104 0 106 0;
+#X connect 104 1 100 0;
+#X connect 106 0 105 0;

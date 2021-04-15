@@ -1,18 +1,18 @@
-#N canvas 433 1218 450 300 12;
+#N canvas 433 1218 450 376 12;
 #X obj 202 30 MasterPrepaSchoolscape;
-#X symbolatom 104 179 0 0 0 0 - - -;
-#X obj 71 210 symbol;
-#X obj 75 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 73 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 26 176 Test;
-#X obj 104 152 r Prepa;
-#X obj 71 238 s Prepa;
+#X symbolatom 276 252 0 0 0 0 - - -;
+#X obj 243 283 symbol;
+#X obj 247 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 245 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 198 249 Test;
+#X obj 276 225 r Prepa;
+#X obj 243 311 s Prepa;
 #X obj 24 17 PrepaTabs 1;
 #X obj 25 41 PrepaTabs 2;
 #X obj 26 66 PrepaTabs 3;
-#N canvas 433 1580 929 296 Prepa-0 1;
+#N canvas 433 1580 929 296 Prepa-0 0;
 #N canvas 0 2009 513 661 matos 0;
 #X obj 124 514 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -161,7 +161,7 @@
 #X connect 34 0 13 0;
 #X connect 35 0 11 0;
 #X restore 32 239 pd RecallPrepa;
-#N canvas 433 1010 754 777 StorePrepa 1;
+#N canvas 433 1010 754 777 StorePrepa 0;
 #X obj 97 38 inlet;
 #X obj 116 170 s All-SaveSONG;
 #X obj 68 708 s All-SavePREPA;
@@ -719,7 +719,12 @@
 #X connect 24 0 19 0;
 #X connect 25 0 26 0;
 #X connect 26 0 24 0;
-#X restore 24 117 pd Prepa-0;
+#X restore 117 17 pd Prepa-0;
+#X obj 26 91 PrepaTabs 4;
+#X obj 27 115 PrepaTabs 5;
+#X obj 28 140 PrepaTabs 6;
+#X obj 28 165 PrepaTabs 7;
+#X obj 29 190 PrepaTabs 8;
 #X connect 1 0 2 1;
 #X connect 2 0 7 0;
 #X connect 3 0 1 0;
