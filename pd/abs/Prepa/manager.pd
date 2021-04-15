@@ -12,7 +12,7 @@
 #X obj 24 17 PrepaTabs 1;
 #X obj 25 41 PrepaTabs 2;
 #X obj 26 66 PrepaTabs 3;
-#N canvas 271 1580 929 296 Prepa-0 1;
+#N canvas 433 1580 929 296 Prepa-0 1;
 #N canvas 0 2009 513 661 matos 0;
 #X obj 124 514 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -184,17 +184,17 @@
 #X obj 129 273 symbol Prepa0;
 #X obj 34 344 s set-save;
 #X obj 70 205 r NbRecallPrepa;
-#X obj 70 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 70 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 70 232 == 0;
 #X obj 37 282 spigot;
 #X obj 292 156 s All-SavePatternMASTER;
-#X msg 291 129 0;
 #X obj 119 104 del 200;
+#X msg 291 129 1;
 #X connect 0 0 4 0;
 #X connect 4 0 23 0;
-#X connect 4 1 26 0;
-#X connect 4 2 25 0;
+#X connect 4 1 25 0;
+#X connect 4 2 26 0;
 #X connect 6 0 7 0;
 #X connect 6 0 8 0;
 #X connect 8 0 9 0;
@@ -212,8 +212,8 @@
 #X connect 20 0 22 0;
 #X connect 21 0 23 1;
 #X connect 22 0 21 0;
-#X connect 25 0 24 0;
-#X connect 26 0 3 0;
+#X connect 25 0 3 0;
+#X connect 26 0 24 0;
 #X restore 191 210 pd StorePrepa;
 #X obj 0 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -695,7 +695,7 @@
 -1 -1;
 #X obj 305 154 r NbRecallPrepa;
 #X obj 305 181 == 0;
-#X obj 305 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 305 212 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 236 168 spigot 1;
 #X obj 296 98 metro 10000;

@@ -1,8 +1,8 @@
-#N struct 4309-symarray float x array symbols 4309-sym;
-#N struct 4309-sym symbol name float on;
-#N struct 4320-symarray float x array symbols 4320-sym;
-#N struct 4320-sym symbol name float on;
-#N canvas 389 376 811 452 10;
+#N struct 2194-symarray float x array symbols 2194-sym;
+#N struct 2194-sym symbol name float on;
+#N struct 2205-symarray float x array symbols 2205-sym;
+#N struct 2205-sym symbol name float on;
+#N canvas 433 376 811 452 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
 #X obj 95 264 credit;
@@ -4653,7 +4653,7 @@
 #X obj 257 125 s SCREEN;
 #X msg 257 98 edit;
 #X msg 293 97 play;
-#N canvas 456 475 744 580 PLAY_SCREEN 1;
+#N canvas 433 475 744 580 PLAY_SCREEN 0;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
@@ -5751,7 +5751,7 @@
 -262144 -1 -1 -493 256;
 #X obj 542 35 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 45.57 256;
-#N canvas 213 184 987 895 set_load/save 1;
+#N canvas 433 1025 987 895 set_load/save 1;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -5980,7 +5980,7 @@
 #X obj 704 583 isInside 230 50;
 #X msg 703 604 0;
 #X obj 177 604 pofcolor 1 1 1 0.1;
-#X obj 409 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 409 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 682 92 r set-saving;
 #X obj 682 113 sel 1;
@@ -6311,6 +6311,9 @@
 #X obj 315 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 423 182 r InterfaceCreateNewOpened;
+#X obj 819 712 r set-saving;
+#X obj 819 738 == 0;
+#X obj 819 762 s master-instru-mute;
 #X connect 0 0 126 0;
 #X connect 2 0 13 0;
 #X connect 3 0 31 0;
@@ -6466,6 +6469,8 @@
 #X connect 144 0 32 0;
 #X connect 145 0 32 0;
 #X connect 146 0 36 0;
+#X connect 147 0 148 0;
+#X connect 148 0 149 0;
 #X restore 448 80 pd set_load/save;
 #X obj 300 112 updating/updating;
 #X obj 300 89 poftranslate 0 8;
