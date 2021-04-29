@@ -1,4 +1,4 @@
-#N canvas 511 1170 903 679 10;
+#N canvas 158 539 903 679 10;
 #X obj 1 20 cnv 15 99 158 empty empty MASTERS 5 12 1 14 -260097 -1
 0;
 #X obj 33 75 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
@@ -27,7 +27,7 @@
 #X msg 342 252 symbol \$1ConfigSong;
 #X symbolatom 19 444 0 0 0 0 - - -;
 #X obj 406 16 r MASTERschoolscape-apmaster-snd;
-#X msg 85 223 PREAC++;
+#X msg 85 223 Marmande;
 #X obj 84 422 s MASTERschoolscape-apmaster-rcv;
 #X symbolatom 199 123 0 0 0 0 - - -;
 #X obj 200 99 r set-play-name;
@@ -80,7 +80,7 @@
 #X msg 3 471 loadin;
 #X symbolatom 163 228 10 0 0 0 - - -;
 #X obj 136 407 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -4034 -1
--1 -1;
+-1 0;
 #X obj 258 407 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -258113
 -1 -1 0;
 #X msg 136 425 _all_ load \$1;
@@ -211,6 +211,9 @@
 -1;
 #X obj 659 304 s 1-PrepaRecall;
 #X obj 592 329 t b b s;
+#X obj 353 173 s LoadTuneTab;
+#X obj 332 216 t b;
+#X obj 17 347 s LoadTuneTab;
 #X connect 1 0 15 0;
 #X connect 2 0 21 0;
 #X connect 3 0 21 1;
@@ -267,11 +270,13 @@
 #X connect 63 0 11 0;
 #X connect 66 0 11 0;
 #X connect 67 0 11 0;
+#X connect 67 0 77 0;
 #X connect 68 0 7 0;
 #X connect 70 0 72 0;
 #X connect 70 1 17 0;
 #X connect 70 2 9 0;
 #X connect 72 0 73 0;
+#X connect 72 0 78 0;
 #X connect 75 0 74 0;
 #X connect 75 1 48 0;
 #X connect 75 2 48 1;

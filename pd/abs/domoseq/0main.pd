@@ -1,8 +1,8 @@
-#N struct 2194-symarray float x array symbols 2194-sym;
-#N struct 2194-sym symbol name float on;
-#N struct 2205-symarray float x array symbols 2205-sym;
-#N struct 2205-sym symbol name float on;
-#N canvas 433 376 811 452 10;
+#N struct 4365-symarray float x array symbols 4365-sym;
+#N struct 4365-sym symbol name float on;
+#N struct 4376-symarray float x array symbols 4376-sym;
+#N struct 4376-sym symbol name float on;
+#N canvas 389 368 811 452 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
 #X obj 95 264 credit;
@@ -18,7 +18,7 @@
 #X obj 271 46 s LANDSCAPE;
 #N canvas 1025 332 894 723 abl_link 0;
 #X obj 164 304 abl_link~;
-#X obj 166 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 166 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 166 273 connect \$1;
 #X obj 277 583 s bpm;
@@ -732,12 +732,12 @@
 #X msg 361 375 1;
 #X obj 381 296 loadbang;
 #X obj 381 317 t b b b;
-#N canvas 317 124 883 931 EDIT_SCREEN 0;
+#N canvas 307 116 883 931 EDIT_SCREEN 1;
 #X obj 112 -1 r SCREEN;
 #X msg 112 101 1;
 #X msg 157 102 0;
 #X obj 112 122 change;
-#X obj 121 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 121 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 22 59 inlet;
 #X obj 45 348 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -2269,7 +2269,7 @@
 #X restore 77 685 pd sus-tonic;
 #X obj 569 491 poftranslate;
 #X msg 51 256 text Edit Tune:;
-#N canvas 287 992 713 695 UserTunes 0;
+#N canvas 366 641 713 695 UserTunes 1;
 #X obj 113 20 inlet;
 #X obj 362 215 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -2342,6 +2342,8 @@
 #X msg 11 158 draw 0;
 #X obj 41 279 route down;
 #X obj 72 522 sel domoseq/listGuiSong;
+#X obj 64 308 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 16 0;
 #X connect 1 0 15 1;
 #X connect 2 0 15 2;
@@ -2398,6 +2400,7 @@
 #X connect 55 0 54 0;
 #X connect 56 0 54 0;
 #X connect 57 0 17 0;
+#X connect 59 0 17 0;
 #X restore 649 618 pd UserTunes;
 #N canvas 1159 582 761 936 PofPartSeq 0;
 #X obj 500 113 poftexts vera 35 -1;
@@ -4658,7 +4661,7 @@
 #X msg 112 51 1;
 #X msg 157 52 0;
 #X obj 112 72 change;
-#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 22 17 inlet;
 #X obj 112 30 route play;
@@ -5751,7 +5754,7 @@
 -262144 -1 -1 -493 256;
 #X obj 542 35 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 45.57 256;
-#N canvas 433 1025 987 895 set_load/save 1;
+#N canvas 433 1025 987 895 set_load/save 0;
 #X obj 152 10 inlet;
 #X obj 131 165 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;

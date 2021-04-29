@@ -1,4 +1,4 @@
-#N canvas 134 1004 590 300 10;
+#N canvas 124 996 590 300 10;
 #X obj 31 18 inlet;
 #X obj 31 39 t a a;
 #X obj 77 116 loadbang;
@@ -21,6 +21,7 @@
 #X msg 355 203 set \$1;
 #X obj 322 179 change;
 #X floatatom 267 196 5 0 0 0 - - -;
+#X msg 498 182 0;
 #X connect 0 0 1 0;
 #X connect 1 0 15 0;
 #X connect 1 1 11 0;
@@ -38,3 +39,4 @@
 #X connect 18 0 19 0;
 #X connect 19 0 17 0;
 #X connect 20 0 17 0;
+#X connect 22 0 17 0;
