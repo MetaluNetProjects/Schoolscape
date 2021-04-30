@@ -1,4 +1,4 @@
-#N canvas 158 539 903 679 10;
+#N canvas 158 582 903 679 10;
 #X obj 1 20 cnv 15 99 158 empty empty MASTERS 5 12 1 14 -260097 -1
 0;
 #X obj 33 75 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
@@ -211,7 +211,7 @@
 -1;
 #X obj 659 304 s 1-PrepaRecall;
 #X obj 592 329 t b b s;
-#X obj 353 173 s LoadTuneTab;
+#X obj 274 87 s LoadTuneTab;
 #X obj 332 216 t b;
 #X obj 17 347 s LoadTuneTab;
 #X connect 1 0 15 0;
@@ -233,6 +233,7 @@
 #X connect 20 0 19 0;
 #X connect 24 0 18 0;
 #X connect 24 0 54 0;
+#X connect 24 0 76 0;
 #X connect 25 0 10 0;
 #X connect 25 1 1 0;
 #X connect 28 0 27 0;

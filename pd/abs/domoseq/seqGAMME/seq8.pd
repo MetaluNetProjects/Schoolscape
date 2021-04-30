@@ -1,8 +1,8 @@
-#N struct 4365-symarray float x array symbols 4365-sym;
-#N struct 4365-sym symbol name float on;
-#N struct 4376-symarray float x array symbols 4376-sym;
-#N struct 4376-sym symbol name float on;
-#N canvas 1266 934 1142 852 10;
+#N struct 2342-symarray float x array symbols 2342-sym;
+#N struct 2342-sym symbol name float on;
+#N struct 2353-symarray float x array symbols 2353-sym;
+#N struct 2353-sym symbol name float on;
+#N canvas 778 582 1142 852 10;
 #X obj 9 605 r CLOCK;
 #X obj 64 702 ndmetro 4 4;
 #X floatatom 134 803 5 0 0 0 - - -;
@@ -98,7 +98,7 @@
 #X obj 313 702 r \$1-recall;
 #X obj 590 414 r \$1-store;
 #X msg 578 4 set \$1;
-#N canvas 1569 986 1156 899 \$0-file 0;
+#N canvas 1920 62 1156 899 \$0-file 1;
 #X obj 81 270 soundfiler;
 #X obj 190 183 list prepend \$0-table;
 #X obj 52 135 list prepend \$0-table;
@@ -294,7 +294,7 @@
 #X obj 940 131 t b a;
 #X obj 927 168 del 100;
 #X obj 913 199 t b b;
-#N canvas 1370 1249 565 643 aptab2_tune 1;
+#N canvas 2863 62 565 643 aptab2_tune 1;
 #X obj 15 19 aptab2 MASTERschoolscape TuneTab TuneTab 200 1, f 47
 ;
 #X obj 23 49 table TuneTab 200;
@@ -406,7 +406,7 @@
 #X obj 368 252 symbol;
 #X symbolatom 410 283 0 0 0 0 - - -;
 #X obj 364 365 s TuneTab;
-#N canvas 83 840 541 697 tab2list 1;
+#N canvas 83 582 541 697 tab2list 0;
 #X obj 71 439 list store;
 #X msg 71 411 append \$1;
 #X msg 178 451 bang;
@@ -478,8 +478,11 @@
 #X symbolatom 179 224 0 0 0 0 - - -;
 #X msg 399 117 const 0;
 #X obj 397 148 s TuneTab;
-#X obj 283 78 r LoadTuneTab;
+#X obj 303 29 r LoadTuneTab;
 #X obj 281 122 t b b;
+#X obj 286 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 294 71 del 1000;
 #X connect 2 0 8 0;
 #X connect 4 0 8 0;
 #X connect 6 0 5 0;
@@ -496,8 +499,10 @@
 #X connect 16 0 8 0;
 #X connect 17 0 16 0;
 #X connect 19 0 20 0;
-#X connect 21 0 22 0;
+#X connect 21 0 24 0;
 #X connect 22 0 16 0;
+#X connect 22 0 23 0;
+#X connect 24 0 22 0;
 #X restore 580 65 pd aptab2_tune;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;

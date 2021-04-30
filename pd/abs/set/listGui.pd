@@ -1,7 +1,7 @@
-#N canvas 642 832 718 810 10;
+#N canvas 642 582 718 810 10;
 #X obj 21 27 inlet head;
 #X obj 352 44 hsl 128 15 0 20 0 0 list-sets-pos list-sets-pos list-pos
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 2540 1;
 #X obj 488 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 411 208 602 465 getprop 0;
@@ -101,7 +101,7 @@
 #X obj 515 398 s list-sets-update;
 #X obj 448 281 r set;
 #X obj 172 475 outlet;
-#N canvas 433 584 1080 463 OK/Reload 1;
+#N canvas 433 584 1080 463 OK/Reload 0;
 #X obj 122 28 r ADMIN;
 #X obj 56 21 inlet;
 #X obj 56 157 t a a;
@@ -543,6 +543,7 @@
 #X symbolatom 264 719 10 0 0 0 - - -;
 #X obj 247 457 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 62 512 s LoadTuneTab;
 #X connect 0 0 8 0;
 #X connect 2 0 30 0;
 #X connect 4 0 30 0;
@@ -575,6 +576,7 @@
 #X connect 33 0 54 0;
 #X connect 33 0 59 0;
 #X connect 33 0 62 0;
+#X connect 33 0 72 0;
 #X connect 33 1 34 0;
 #X connect 33 2 35 0;
 #X connect 36 0 37 0;
