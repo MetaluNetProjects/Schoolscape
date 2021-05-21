@@ -1,4 +1,4 @@
-#N canvas 279 114 921 761 10;
+#N canvas 152 812 921 761 10;
 #X obj 37 6 inlet;
 #X obj 38 330 outlet;
 #X msg 124 406 draw \$1;
@@ -99,9 +99,9 @@
 #X obj 630 313 pofcolor 1 1 1 1;
 #X obj 738 288 max 0.5;
 #X obj 694 255 f;
-#X obj 776 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 776 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 689 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 689 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 751 206 r TempoMess-isplaying-\$1;
 #X obj 735 386 route up down;
@@ -290,7 +290,6 @@
 #X connect 128 1 130 0;
 #X connect 129 1 99 0;
 #X connect 130 0 99 0;
-#X connect 131 0 122 0;
 #X connect 131 1 81 0;
 #X connect 131 2 43 0;
 #X connect 132 0 42 0;

@@ -1,4 +1,4 @@
-#N canvas 806 1028 763 979 12;
+#N canvas 806 582 763 979 12;
 #X declare -path AutoPreset;
 #X obj 44 14 inlet head;
 #X obj 42 288 t a a;
@@ -82,7 +82,7 @@
 -1 -1;
 #X obj 168 52 r concert-MessClock-\$1;
 #X obj 42 159 pofvisible;
-#N canvas 2281 986 837 924 on-off 0;
+#N canvas 2281 156 837 924 on-off 0;
 #X floatatom 56 44 5 0 0 0 - - -;
 #X floatatom 95 43 5 0 0 0 - - -;
 #X obj 225 29 t b b;
@@ -109,10 +109,10 @@
 #X connect 6 0 1 0;
 #X restore 76 133 pd text on/off;
 #X obj 12 13 inlet;
-#X obj 214 421 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 214 421 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 234 417 s \$1-OnOff;
-#X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 193 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 193 175 set BoutonMachineOff.png;
 #X msg 212 197 set BoutonMachineOn.png;
@@ -203,7 +203,7 @@
 -1 -1;
 #X obj 276 462 r \$1-SaveBut;
 #X obj 18 73 poftranslate 0 0;
-#N canvas 498 391 450 404 text 0;
+#N canvas 498 582 450 404 text 0;
 #X obj 75 312 poftexts typo 18;
 #X obj 124 209 loadbang;
 #X obj 80 66 inlet;
@@ -258,7 +258,6 @@
 #X connect 30 0 7 1;
 #X connect 31 0 7 0;
 #X connect 32 0 27 0;
-#X connect 32 1 56 0;
 #X connect 32 2 9 0;
 #X connect 32 2 21 0;
 #X connect 33 0 38 0;
@@ -398,7 +397,7 @@
 #X restore 305 308 pd text Volume;
 #X msg 254 943 text ClockMess_\$1;
 #X obj 383 885 symbol \$2;
-#N canvas 684 1237 450 428 SoloSubPattern 0;
+#N canvas 684 767 450 428 SoloSubPattern 0;
 #X msg 117 227 \$1 load \$2;
 #X obj 75 56 symbol Inst-\$1;
 #X symbolatom 15 130 10 0 0 0 - - -;
