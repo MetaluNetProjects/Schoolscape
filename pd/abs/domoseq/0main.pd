@@ -1,8 +1,8 @@
-#N struct 4365-symarray float x array symbols 4365-sym;
-#N struct 4365-sym symbol name float on;
-#N struct 4376-symarray float x array symbols 4376-sym;
-#N struct 4376-sym symbol name float on;
-#N canvas 389 368 811 452 10;
+#N struct 2342-symarray float x array symbols 2342-sym;
+#N struct 2342-sym symbol name float on;
+#N struct 2353-symarray float x array symbols 2353-sym;
+#N struct 2353-sym symbol name float on;
+#N canvas 389 582 811 452 10;
 #X declare -path absGAMME;
 #X declare -path ./gammabs;
 #X obj 95 264 credit;
@@ -16,7 +16,7 @@
 #X obj 271 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 271 46 s LANDSCAPE;
-#N canvas 1025 332 894 723 abl_link 0;
+#N canvas 1025 582 894 723 abl_link 0;
 #X obj 164 304 abl_link~;
 #X obj 166 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -732,12 +732,12 @@
 #X msg 361 375 1;
 #X obj 381 296 loadbang;
 #X obj 381 317 t b b b;
-#N canvas 307 116 883 931 EDIT_SCREEN 1;
+#N canvas 307 116 883 931 EDIT_SCREEN 0;
 #X obj 112 -1 r SCREEN;
 #X msg 112 101 1;
 #X msg 157 102 0;
 #X obj 112 122 change;
-#X obj 121 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 121 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 22 59 inlet;
 #X obj 45 348 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -2269,7 +2269,7 @@
 #X restore 77 685 pd sus-tonic;
 #X obj 569 491 poftranslate;
 #X msg 51 256 text Edit Tune:;
-#N canvas 366 641 713 695 UserTunes 1;
+#N canvas 366 641 713 695 UserTunes 0;
 #X obj 113 20 inlet;
 #X obj 362 215 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 138 256;
@@ -4656,12 +4656,12 @@
 #X obj 257 125 s SCREEN;
 #X msg 257 98 edit;
 #X msg 293 97 play;
-#N canvas 433 475 744 580 PLAY_SCREEN 0;
+#N canvas 433 582 744 580 PLAY_SCREEN 1;
 #X obj 112 9 r SCREEN;
 #X msg 112 51 1;
 #X msg 157 52 0;
 #X obj 112 72 change;
-#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 121 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 22 17 inlet;
 #X obj 112 30 route play;
@@ -4795,7 +4795,7 @@
 #X floatatom 95 463 5 0 0 0 - - -;
 #X obj 95 446 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 1.38 256;
-#N canvas 534 353 666 512 whoIsThere 0;
+#N canvas 225 765 666 512 whoIsThere 1;
 #X obj 27 16 inlet;
 #X obj 269 3 inlet;
 #X obj 272 25 pofvisible;
@@ -4815,9 +4815,9 @@
 #X obj 270 176 s whoHead;
 #X obj 270 154 poftranslate;
 #X obj 293 135 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -300 256;
+-262144 -1 -1 -434 256;
 #X obj 351 136 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -205 256;
+-262144 -1 -1 61 256;
 #X obj 440 223 loadbang;
 #X msg 440 243 text Link peers:;
 #X obj 423 183 poftranslate;
@@ -4920,7 +4920,7 @@
 #X obj 351 410 poftexts asimov 40;
 #X obj 10 232 poftranslate;
 #X obj 33 213 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 83 256;
+-262144 -1 -1 85 256;
 #X obj 91 214 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 -101 256;
 #X obj 49 127 pofrect 140 85;
