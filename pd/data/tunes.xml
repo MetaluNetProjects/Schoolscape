@@ -1,9 +1,8 @@
 <root>
+	<tune file="2021-September-23-11h-39mn-26s" name="L'entretienTune"/>
 	<tune file="2021-September-01-16h-07mn-59s" name="GTt"/>
-	<tune file="2021-March-16-09h-53mn-00s" name="Burundi"/>
 	<tune file="2021-July-22-19h-01mn-34s" name="Dub"/>
 	<tune file="2021-January-21-14h-25mn-49s" name="TrucSong"/>
-	<tune file="2021-January-19-23h-06mn-54s" name="TrucBidule"/>
 	<tune file="2021-January-19-23h-05mn-25ss" name="?"/>
 	<tune file="2021-January-19-23h-05mn-25s" name="Triste"/>
 	<tune file="2021-January-19-23h-04mn-14s" name="JeMeSouviens"/>
@@ -12,12 +11,9 @@
 	<tune file="2021-January-19-22h-59mn-32s" name="Siberien"/>
 	<tune file="2021-January-19-22h-50mn-59s" name="EhToto"/>
 	<tune file="2021-January-19-22h-18mn-04s" name="Basic"/>
-	<tune file="2021-February-25-12h-11mn-52s" name="Nouve"/>
 	<tune file="2021-February-14-18h-31mn-08s" name="FreeJazz"/>
-	<tune file="2021-February-05-15h-03mn-12s" name="Nouveautune"/>
 	<tune file="2021-February-05-14h-01mn-00s" name="Mississipi"/>
 	<tune file="2021-February-01-22h-01mn-52s" name="0bsolete"/>
-	<tune file="2021-August-31-16h-46mn-44sss" name="?"/>
 	<tune file="2021-August-31-16h-46mn-44s" name="bruit"/>
 	<tune file="2021-August-31-10h-58mn-25s" name="Niou"/>
 	<tune file="2021-April-14-12h-43mn-02s" name="Marmande"/>
